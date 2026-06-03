@@ -493,6 +493,66 @@ const I18N = {
   'section.gearDetails': { en: 'My gear details', es: 'Detalles de mi equipo', pt: 'Detalhes do meu equipamento', fr: 'Détails de mon équipement', de: 'Meine Ausrüstung', it: 'Dettagli equipaggiamento', nl: 'Mijn uitrusting', ru: 'Моё снаряжение', pl: 'Moje wyposażenie', tr: 'Ekipman detaylarım', ar: 'تفاصيل عتادي', he: 'פרטי הציוד שלי', zh: '我的装备详情', ja: '装備の詳細', ko: '내 장비 상세', id: 'Detail perlengkapan saya', vi: 'Chi tiết trang bị', th: 'รายละเอียดอุปกรณ์' },
   'ui.howTo': { en: 'How to', es: 'Cómo', pt: 'Como', fr: 'Comment', de: 'Anleitung', it: 'Come', nl: 'Hoe', ru: 'Как', pl: 'Jak', tr: 'Nasıl', ar: 'كيف', he: 'איך', zh: '步骤', ja: '手順', ko: '방법', id: 'Cara', vi: 'Cách', th: 'วิธี' },
   'btn.done': { en: 'I did this', es: 'Hecho', pt: 'Feito', fr: 'C’est fait', de: 'Erledigt', it: 'Fatto', nl: 'Gedaan', ru: 'Готово', pl: 'Zrobione', tr: 'Yaptım', ar: 'تم', he: 'עשיתי', zh: '已完成', ja: '完了', ko: '완료', id: 'Selesai', vi: 'Đã xong', th: 'เสร็จแล้ว' },
+  'app.credit': { en: 'Guide by {guide} · App by {app}', es: 'Guía de {guide} · App de {app}', pt: 'Guia de {guide} · App de {app}', fr: 'Guide par {guide} · App par {app}', de: 'Guide von {guide} · App von {app}', it: 'Guida di {guide} · App di {app}', nl: 'Gids van {guide} · App van {app}', ru: 'Гайд: {guide} · Приложение: {app}', pl: 'Poradnik: {guide} · Aplikacja: {app}', tr: 'Rehber: {guide} · Uygulama: {app}', ar: 'دليل {guide} · تطبيق {app}', he: 'מדריך מאת {guide} · אפליקציה מאת {app}', zh: '攻略 {guide} · 应用 {app}', ja: 'ガイド: {guide} · アプリ: {app}', ko: '가이드: {guide} · 앱: {app}', id: 'Panduan oleh {guide} · App oleh {app}', vi: 'Hướng dẫn bởi {guide} · App bởi {app}', th: 'ไกด์โดย {guide} · แอปโดย {app}' },
+  'api.ready': { en: 'API connected · auto-OCR ready', es: 'API conectada · OCR automático listo', pt: 'API conectada · OCR automático pronto', fr: 'API connectée · OCR auto prêt', de: 'API verbunden · Auto-OCR bereit', it: 'API connessa · OCR automatico pronto', nl: 'API verbonden · auto-OCR gereed', ru: 'API подключён · авто-OCR готов', pl: 'API połączone · auto-OCR gotowy', tr: 'API bağlı · oto-OCR hazır', ar: 'API متصل · OCR تلقائي جاهز', he: 'API מחובר · OCR אוטומטי מוכן', zh: 'API 已连接 · 自动 OCR 就绪', ja: 'API 接続済み · 自動OCR対応', ko: 'API 연결됨 · 자동 OCR 준비', id: 'API tersambung · auto-OCR siap', vi: 'API đã kết nối · auto-OCR sẵn sàng', th: 'เชื่อมต่อ API · พร้อม OCR อัตโนมัติ' },
+  'upload.help': { en: 'Upload one screenshot per troop hero (showing all 4 gear pieces). Resources are entered manually below. Or tap any slot below to enter gear manually.', es: 'Sube una captura por héroe (mostrando las 4 piezas). Los recursos se ingresan manualmente abajo. O toca cualquier ranura para añadir equipo manualmente.', pt: 'Envie uma captura por herói (mostrando as 4 peças). Os recursos são inseridos manualmente abaixo. Ou toque em qualquer slot para inserir manualmente.', fr: 'Téléverse une capture par héros (avec les 4 pièces). Les ressources se saisissent manuellement ci-dessous. Ou touche une case pour saisir l’équipement manuellement.', de: 'Lade pro Held einen Screenshot hoch (alle 4 Teile sichtbar). Ressourcen werden unten manuell eingegeben. Oder tippe ein Feld an, um Ausrüstung manuell einzugeben.', it: 'Carica uno screenshot per eroe (con tutti i 4 pezzi). Le risorse si inseriscono manualmente sotto. Oppure tocca uno slot per inserire l’equipaggiamento a mano.', nl: 'Upload één screenshot per held (alle 4 stukken zichtbaar). Bronnen voer je hieronder handmatig in. Of tik op een vak om uitrusting handmatig in te voeren.', ru: 'Загрузите по одному скриншоту на героя (видны все 4 предмета). Ресурсы вводятся вручную ниже. Или нажмите слот, чтобы ввести снаряжение вручную.', pl: 'Prześlij jeden zrzut na bohatera (wszystkie 4 części). Zasoby wpisujesz ręcznie poniżej. Albo dotknij slotu, aby dodać sprzęt ręcznie.', tr: 'Her kahraman için bir ekran görüntüsü yükle (4 parça da görünsün). Kaynaklar aşağıdan elle girilir. Ya da bir yuvaya dokunup ekipmanı elle gir.', ar: 'ارفع لقطة لكل بطل (تظهر القطع الأربع). تُدخل الموارد يدويًا بالأسفل. أو اضغط أي خانة لإدخال العتاد يدويًا.', he: 'העלה צילום מסך אחד לכל גיבור (כל 4 הפריטים נראים). המשאבים מוזנים ידנית למטה. או הקש על משבצת כדי להזין ציוד ידנית.', zh: '每个英雄上传一张截图（显示全部4件装备）。资源在下方手动输入。或点击任意槽位手动输入装备。', ja: 'ヒーローごとに1枚のスクショをアップ（4部位すべて表示）。リソースは下で手動入力。または枠をタップして手動入力。', ko: '영웅마다 스크린샷 1장 업로드(4부위 모두 표시). 자원은 아래에서 직접 입력. 또는 슬롯을 눌러 직접 입력.', id: 'Unggah satu tangkapan per hero (semua 4 gear terlihat). Sumber daya diisi manual di bawah. Atau ketuk slot untuk isi manual.', vi: 'Tải một ảnh chụp mỗi tướng (hiện đủ 4 món). Tài nguyên nhập tay bên dưới. Hoặc chạm ô bất kỳ để nhập thủ công.', th: 'อัปโหลดภาพหน้าจอหนึ่งภาพต่อฮีโร่ (เห็นครบ 4 ชิ้น) ทรัพยากรกรอกเองด้านล่าง หรือแตะช่องใดก็ได้เพื่อกรอกเอง' },
+  'phase.fullPlan': { en: 'Shake’s full plan', es: 'Plan completo de Shake', pt: 'Plano completo do Shake', fr: 'Le plan complet de Shake', de: 'Shakes kompletter Plan', it: 'Piano completo di Shake', nl: 'Shake’s volledige plan', ru: 'Полный план Shake', pl: 'Pełny plan Shake’a', tr: 'Shake’in tam planı', ar: 'خطة Shake الكاملة', he: 'התוכנית המלאה של Shake', zh: 'Shake 的完整计划', ja: 'Shake の完全プラン', ko: 'Shake의 전체 계획', id: 'Rencana lengkap Shake', vi: 'Kế hoạch đầy đủ của Shake', th: 'แผนเต็มของ Shake' },
+  'phase.current': { en: 'Phase {n} · Current', es: 'Fase {n} · Actual', pt: 'Fase {n} · Atual', fr: 'Phase {n} · En cours', de: 'Phase {n} · Aktuell', it: 'Fase {n} · Attuale', nl: 'Fase {n} · Huidig', ru: 'Фаза {n} · Текущая', pl: 'Faza {n} · Bieżąca', tr: 'Aşama {n} · Mevcut', ar: 'المرحلة {n} · الحالية', he: 'שלב {n} · נוכחי', zh: '阶段 {n} · 当前', ja: 'フェーズ {n} · 現在', ko: '단계 {n} · 현재', id: 'Fase {n} · Saat ini', vi: 'Giai đoạn {n} · Hiện tại', th: 'เฟส {n} · ปัจจุบัน' },
+  'phase.done': { en: 'Done', es: 'Hecho', pt: 'Feito', fr: 'Fait', de: 'Fertig', it: 'Fatto', nl: 'Klaar', ru: 'Готово', pl: 'Gotowe', tr: 'Bitti', ar: 'تم', he: 'הושלם', zh: '完成', ja: '完了', ko: '완료', id: 'Selesai', vi: 'Xong', th: 'เสร็จ' },
+  'phase.complete': { en: 'Path Complete', es: 'Camino Completado', pt: 'Caminho Completo', fr: 'Parcours Terminé', de: 'Pfad Abgeschlossen', it: 'Percorso Completato', nl: 'Pad Voltooid', ru: 'Путь Завершён', pl: 'Ścieżka Ukończona', tr: 'Yol Tamamlandı', ar: 'اكتمل المسار', he: 'המסלול הושלם', zh: '路径完成', ja: 'パス完了', ko: '경로 완료', id: 'Jalur Selesai', vi: 'Hoàn thành lộ trình', th: 'เส้นทางเสร็จสมบูรณ์' },
+  'label.march': { en: 'March', es: 'Marcha', pt: 'Marcha', fr: 'Marche', de: 'Marsch', it: 'Marcia', nl: 'Mars', ru: 'Поход', pl: 'Marsz', tr: 'Sefer', ar: 'زحف', he: 'צעידה', zh: '行军', ja: '進軍', ko: '행군', id: 'Pasukan', vi: 'Hành quân', th: 'กองทัพ' },
+  'label.phase': { en: 'Phase', es: 'Fase', pt: 'Fase', fr: 'Phase', de: 'Phase', it: 'Fase', nl: 'Fase', ru: 'Фаза', pl: 'Faza', tr: 'Aşama', ar: 'المرحلة', he: 'שלב', zh: '阶段', ja: 'フェーズ', ko: '단계', id: 'Fase', vi: 'Giai đoạn', th: 'เฟส' },
+  'gear.tapAdd': { en: 'Tap to add', es: 'Toca para añadir', pt: 'Toque para adicionar', fr: 'Toucher pour ajouter', de: 'Antippen zum Hinzufügen', it: 'Tocca per aggiungere', nl: 'Tik om toe te voegen', ru: 'Нажмите, чтобы добавить', pl: 'Dotknij, aby dodać', tr: 'Eklemek için dokun', ar: 'اضغط للإضافة', he: 'הקש להוספה', zh: '点击添加', ja: 'タップで追加', ko: '눌러서 추가', id: 'Ketuk untuk menambah', vi: 'Chạm để thêm', th: 'แตะเพื่อเพิ่ม' },
+  'plan.desc': { en: 'Below are your pending pieces for this phase, ordered so you can do the ones you can afford right now first.', es: 'Abajo están tus piezas pendientes de esta fase, ordenadas para que hagas primero las que ya puedes permitirte.', pt: 'Abaixo estão suas peças pendentes desta fase, ordenadas para fazer primeiro as que já pode pagar.', fr: 'Voici tes pièces en attente pour cette phase, classées pour faire d’abord celles que tu peux te permettre.', de: 'Unten deine offenen Teile dieser Phase, sortiert, damit du zuerst das machst, was du dir leisten kannst.', it: 'Qui sotto i pezzi in sospeso di questa fase, ordinati per fare prima quelli che puoi già permetterti.', nl: 'Hieronder je openstaande stukken voor deze fase, gesorteerd zodat je eerst doet wat je nu kunt betalen.', ru: 'Ниже — незавершённые предметы этой фазы, отсортированы так, чтобы сначала делать доступное вам сейчас.', pl: 'Poniżej oczekujące elementy tej fazy, uszeregowane tak, byś najpierw zrobił to, na co cię stać.', tr: 'Aşağıda bu aşamanın bekleyen parçaları var; şimdi karşılayabileceklerini önce yapacak şekilde sıralandı.', ar: 'في الأسفل قطعك المعلّقة لهذه المرحلة، مرتبة لتبدأ بما تقدر عليه الآن.', he: 'למטה החלקים שנותרו בשלב הזה, מסודרים כך שתעשה קודם את מה שאתה יכול להרשות עכשיו.', zh: '以下是本阶段待办的装备，已排序，便于先做你现在负担得起的。', ja: '以下はこのフェーズの未完了の装備です。今すぐ可能なものから順に並んでいます。', ko: '아래는 이 단계의 남은 장비로, 지금 가능한 것부터 하도록 정렬했습니다.', id: 'Berikut bagian yang tertunda di fase ini, diurut agar yang mampu kamu lakukan sekarang didahulukan.', vi: 'Dưới đây là các món còn lại của giai đoạn này, sắp xếp để bạn làm trước những gì đủ tài nguyên ngay.', th: 'ด้านล่างคือชิ้นที่ค้างของเฟสนี้ เรียงให้ทำสิ่งที่ทำได้ตอนนี้ก่อน' },
+  'plan.saveUp': { en: 'Save up to unlock these {n}', es: 'Ahorra para desbloquear estos {n}', pt: 'Junte para desbloquear estes {n}', fr: 'Économise pour débloquer ces {n}', de: 'Spare, um diese {n} freizuschalten', it: 'Accumula per sbloccare questi {n}', nl: 'Spaar om deze {n} te ontgrendelen', ru: 'Накопите, чтобы открыть эти {n}', pl: 'Uzbieraj, by odblokować te {n}', tr: 'Bu {n} tanesini açmak için biriktir', ar: 'ادّخر لفتح هذه الـ {n}', he: 'חסוך כדי לפתוח את ה-{n}', zh: '攒资源解锁这 {n} 项', ja: '貯めてこの {n} 個を解放', ko: '모아서 이 {n}개를 잠금 해제', id: 'Kumpulkan untuk membuka {n} ini', vi: 'Tích lũy để mở {n} món này', th: 'เก็บสะสมเพื่อปลดล็อก {n} รายการนี้' },
+  'plan.haveEnough': { en: 'You have enough resources for {n} action', es: 'Tienes recursos para {n} acción', pt: 'Você tem recursos para {n} ação', fr: 'Tu as les ressources pour {n} action', de: 'Du hast genug für {n} Aktion', it: 'Hai risorse per {n} azione', nl: 'Je hebt genoeg voor {n} actie', ru: 'Ресурсов хватает на {n} действие', pl: 'Masz zasoby na {n} akcję', tr: '{n} işlem için yeterli kaynağın var', ar: 'لديك موارد لـ {n} إجراء', he: 'יש לך משאבים ל-{n} פעולה', zh: '你有足够资源完成 {n} 项', ja: '{n} 件分のリソースがあります', ko: '{n}개 작업에 충분한 자원이 있습니다', id: 'Sumber daya cukup untuk {n} aksi', vi: 'Bạn đủ tài nguyên cho {n} hành động', th: 'คุณมีทรัพยากรพอสำหรับ {n} อย่าง' },
+  'plan.morePieces': { en: '+ {n} more pieces also waiting for resources', es: '+ {n} piezas más esperando recursos', pt: '+ {n} peças aguardando recursos', fr: '+ {n} pièces en attente de ressources', de: '+ {n} weitere Teile warten auf Ressourcen', it: '+ {n} pezzi in attesa di risorse', nl: '+ {n} stukken wachten ook op bronnen', ru: '+ ещё {n} ждут ресурсов', pl: '+ {n} części czeka na zasoby', tr: '+ {n} parça daha kaynak bekliyor', ar: '+ {n} قطع أخرى تنتظر الموارد', he: '+ {n} פריטים נוספים ממתינים למשאבים', zh: '+ 还有 {n} 件等待资源', ja: '+ あと {n} 個もリソース待ち', ko: '+ {n}개 더 자원 대기 중', id: '+ {n} bagian lagi menunggu sumber daya', vi: '+ {n} món nữa đang chờ tài nguyên', th: '+ อีก {n} ชิ้นรอทรัพยากร' },
+  'total.youHave': { en: '{x} you have', es: '{x} tienes', pt: '{x} você tem', fr: '{x} disponibles', de: '{x} vorhanden', it: '{x} disponibili', nl: '{x} beschikbaar', ru: '{x} есть', pl: '{x} masz', tr: '{x} mevcut', ar: '{x} لديك', he: '{x} יש לך', zh: '已有 {x}', ja: '所持 {x}', ko: '보유 {x}', id: '{x} dimiliki', vi: 'có {x}', th: 'มี {x}' },
+  'total.xpNeeded': { en: 'XP needed', es: 'XP necesaria', pt: 'XP necessária', fr: 'XP requise', de: 'Benötigte XP', it: 'XP necessari', nl: 'Benodigde XP', ru: 'Нужно XP', pl: 'Wymagane XP', tr: 'Gereken XP', ar: 'XP المطلوبة', he: 'XP נדרש', zh: '所需XP', ja: '必要XP', ko: '필요 XP', id: 'XP dibutuhkan', vi: 'XP cần', th: 'XP ที่ต้องใช้' },
+  'total.hammersNeeded': { en: 'Hammers needed', es: 'Martillos necesarios', pt: 'Martelos necessários', fr: 'Marteaux requis', de: 'Benötigte Hämmer', it: 'Martelli necessari', nl: 'Hamers nodig', ru: 'Нужно молотов', pl: 'Wymagane młoty', tr: 'Gereken çekiç', ar: 'المطارق المطلوبة', he: 'פטישים נדרשים', zh: '所需锻锤', ja: '必要ハンマー', ko: '필요 망치', id: 'Palu dibutuhkan', vi: 'Búa cần', th: 'ค้อนที่ต้องใช้' },
+  'total.mgNeeded': { en: 'Mythic Gears', es: 'Engranajes Míticos', pt: 'Engrenagens Míticas', fr: 'Engrenages Mythiques', de: 'Mythische Zahnräder', it: 'Ingranaggi Mitici', nl: 'Mythische Tandwielen', ru: 'Мифические шестерни', pl: 'Mityczne koła', tr: 'Efsanevi Dişli', ar: 'تروس أسطورية', he: 'גלגלי מיתוס', zh: '神话齿轮', ja: '神話ギア', ko: '신화 기어', id: 'Mythic Gears', vi: 'Mythic Gears', th: 'Mythic Gears' },
+  'total.mithrilNeeded': { en: 'Mithril needed', es: 'Mithril necesario', pt: 'Mithril necessário', fr: 'Mithril requis', de: 'Benötigtes Mithril', it: 'Mithril necessario', nl: 'Mithril nodig', ru: 'Нужно Mithril', pl: 'Wymagany Mithril', tr: 'Gereken Mithril', ar: 'Mithril المطلوب', he: 'Mithril נדרש', zh: '所需Mithril', ja: '必要Mithril', ko: '필요 Mithril', id: 'Mithril dibutuhkan', vi: 'Mithril cần', th: 'Mithril ที่ต้องใช้' },
+  'action.ascend': { en: 'Ascend {slot} to Red', es: 'Asciende {slot} a Rojo', pt: 'Ascenda {slot} para Vermelho', fr: 'Fais ascensionner {slot} en Rouge', de: '{slot} zu Rot aufsteigen', it: 'Ascendi {slot} a Rosso', nl: '{slot} naar Rood ascenden', ru: 'Вознесите {slot} до Красного', pl: 'Wznieś {slot} do Czerwonego', tr: '{slot} öğesini Kırmızıya yükselt', ar: 'ارتقِ بـ {slot} إلى الأحمر', he: 'העלה {slot} לאדום', zh: '将{slot}飞升至红色', ja: '{slot}を赤にアセンド', ko: '{slot}을(를) 레드로 승급', id: 'Naikkan {slot} ke Merah', vi: 'Thăng {slot} lên Đỏ', th: 'อัสเซนด์ {slot} เป็นสีแดง' },
+  'action.upgrade': { en: 'Upgrade {slot} to {rarity} Lv.{level}', es: 'Mejora {slot} a {rarity} Nv.{level}', pt: 'Melhore {slot} para {rarity} Nv.{level}', fr: 'Améliore {slot} en {rarity} Niv.{level}', de: '{slot} auf {rarity} Stufe {level} verbessern', it: 'Migliora {slot} a {rarity} Liv.{level}', nl: 'Verbeter {slot} naar {rarity} Lv.{level}', ru: 'Улучшите {slot} до {rarity} ур.{level}', pl: 'Ulepsz {slot} do {rarity} poz.{level}', tr: '{slot} öğesini {rarity} Sv.{level} yükselt', ar: 'طوّر {slot} إلى {rarity} مستوى {level}', he: 'שדרג {slot} ל-{rarity} רמה {level}', zh: '将{slot}升级到{rarity} 等级{level}', ja: '{slot}を{rarity} Lv.{level}に強化', ko: '{slot}을(를) {rarity} Lv.{level}로 강화', id: 'Tingkatkan {slot} ke {rarity} Lv.{level}', vi: 'Nâng {slot} lên {rarity} Cấp {level}', th: 'อัปเกรด {slot} เป็น {rarity} Lv.{level}' },
+  'spec.title': { en: 'Endgame Specialization', es: 'Especialización Final', pt: 'Especialização Final', fr: 'Spécialisation de Fin', de: 'Endgame-Spezialisierung', it: 'Specializzazione Finale', nl: 'Endgame-Specialisatie', ru: 'Финальная специализация', pl: 'Specjalizacja Końcowa', tr: 'Son Oyun Uzmanlığı', ar: 'تخصص نهاية اللعبة', he: 'התמחות אנדגיים', zh: '终局专精', ja: 'エンドゲーム特化', ko: '엔드게임 특화', id: 'Spesialisasi Akhir', vi: 'Chuyên môn hóa cuối', th: 'การเชี่ยวชาญช่วงท้ายเกม' },
+  'spec.subtitle': { en: 'Continues from Phase 7 — finish the base path first', es: 'Continúa desde la Fase 7 — termina el camino base primero', pt: 'Continua da Fase 7 — termine o caminho base primeiro', fr: 'Suite de la Phase 7 — termine d’abord le parcours de base', de: 'Geht ab Phase 7 weiter — schließe zuerst den Basispfad ab', it: 'Continua dalla Fase 7 — completa prima il percorso base', nl: 'Gaat verder vanaf Fase 7 — voltooi eerst het basispad', ru: 'Продолжение с Фазы 7 — сначала пройдите базовый путь', pl: 'Kontynuacja od Fazy 7 — najpierw ukończ ścieżkę bazową', tr: '7. Aşamadan devam eder — önce temel yolu bitir', ar: 'يكمل من المرحلة 7 — أنهِ المسار الأساسي أولًا', he: 'ממשיך משלב 7 — סיים קודם את המסלול הבסיסי', zh: '从第7阶段继续 — 先完成基础路径', ja: 'フェーズ7の続き — まず基本パスを完了', ko: '7단계에서 이어집니다 — 기본 경로를 먼저 완료', id: 'Lanjut dari Fase 7 — selesaikan jalur dasar dulu', vi: 'Tiếp nối từ Giai đoạn 7 — hoàn thành lộ trình cơ bản trước', th: 'ต่อจากเฟส 7 — ทำเส้นทางพื้นฐานให้เสร็จก่อน' },
+  'spec.offense': { en: 'Rally Attack', es: 'Ataque de Rally', pt: 'Ataque de Rally', fr: 'Attaque de Ralliement', de: 'Rally-Angriff', it: 'Attacco Rally', nl: 'Rally-aanval', ru: 'Атака (рейд)', pl: 'Atak Rally', tr: 'Rally Saldırısı', ar: 'هجوم الحشد', he: 'מתקפת ראלי', zh: '集结进攻', ja: 'ラリー攻撃', ko: '집결 공격', id: 'Serangan Rally', vi: 'Tấn công Rally', th: 'โจมตีแบบ Rally' },
+  'spec.defense': { en: 'Defense Garrison', es: 'Guarnición Defensiva', pt: 'Guarnição Defensiva', fr: 'Garnison Défensive', de: 'Verteidigungsgarnison', it: 'Guarnigione Difensiva', nl: 'Verdedigingsgarnizoen', ru: 'Оборона (гарнизон)', pl: 'Garnizon Obronny', tr: 'Savunma Garnizonu', ar: 'حامية دفاعية', he: 'חיל מצב הגנתי', zh: '防御驻军', ja: '防衛駐屯', ko: '방어 주둔', id: 'Garnisun Pertahanan', vi: 'Đồn trú phòng thủ', th: 'กองรักษาการณ์ป้องกัน' },
+  'spec.follow': { en: 'Follow the {label} path', es: 'Seguir el camino {label}', pt: 'Seguir o caminho {label}', fr: 'Suivre le parcours {label}', de: 'Dem {label}-Pfad folgen', it: 'Segui il percorso {label}', nl: 'Volg het {label}-pad', ru: 'Следовать пути «{label}»', pl: 'Podążaj ścieżką {label}', tr: '{label} yolunu izle', ar: 'اتبع مسار {label}', he: 'עקוב אחר מסלול {label}', zh: '跟随{label}路径', ja: '{label} パスを進む', ko: '{label} 경로 따르기', id: 'Ikuti jalur {label}', vi: 'Theo lộ trình {label}', th: 'ไปตามเส้นทาง {label}' },
+  'spec.following': { en: 'Following this path', es: 'Siguiendo este camino', pt: 'Seguindo este caminho', fr: 'Parcours suivi', de: 'Diesem Pfad folgend', it: 'Stai seguendo questo percorso', nl: 'Dit pad volgend', ru: 'Этот путь выбран', pl: 'Podążasz tą ścieżką', tr: 'Bu yolu izliyorsun', ar: 'تتبع هذا المسار', he: 'עוקב אחר מסלול זה', zh: '正在跟随此路径', ja: 'このパスを進行中', ko: '이 경로를 따르는 중', id: 'Mengikuti jalur ini', vi: 'Đang theo lộ trình này', th: 'กำลังไปตามเส้นทางนี้' },
+  'res.mithril': { en: 'Mithril', es: 'Mithril', pt: 'Mithril', fr: 'Mithril', de: 'Mithril', it: 'Mithril', nl: 'Mithril', ru: 'Mithril', pl: 'Mithril', tr: 'Mithril', ar: 'Mithril', he: 'Mithril', zh: 'Mithril', ja: 'Mithril', ko: 'Mithril', id: 'Mithril', vi: 'Mithril', th: 'Mithril' },
+  'brand.subtitle': { en: 'ALLIANCE GEAR PROGRESSION ADVISOR', es: 'ASESOR DE PROGRESIÓN DE EQUIPO DE LA ALIANZA', pt: 'CONSELHEIRO DE PROGRESSÃO DE EQUIPAMENTO', fr: 'CONSEILLER DE PROGRESSION D’ÉQUIPEMENT', de: 'ALLIANZ-AUSRÜSTUNGSBERATER', it: 'CONSULENTE DI PROGRESSIONE EQUIPAGGIAMENTO', nl: 'ALLIANTIE-UITRUSTINGSADVISEUR', ru: 'СОВЕТНИК ПО СНАРЯЖЕНИЮ АЛЬЯНСА', pl: 'DORADCA ROZWOJU SPRZĘTU SOJUSZU', tr: 'İTTİFAK EKİPMAN İLERLEME DANIŞMANI', ar: 'مستشار تطوير عتاد التحالف', he: 'יועץ התקדמות ציוד הברית', zh: '联盟装备进度顾问', ja: '同盟装備プログレッションアドバイザー', ko: '연합 장비 진행 어드바이저', id: 'PENASIHAT PROGRES GEAR ALIANSI', vi: 'CỐ VẤN TIẾN TRÌNH TRANG BỊ LIÊN MINH', th: 'ที่ปรึกษาความก้าวหน้าอุปกรณ์พันธมิตร' },
+  'section.progress': { en: 'SHAKE’S PATH — YOUR PROGRESS', es: 'CAMINO DE SHAKE — TU PROGRESO', pt: 'CAMINHO DE SHAKE — SEU PROGRESSO', fr: 'PARCOURS DE SHAKE — TA PROGRESSION', de: 'SHAKES PFAD — DEIN FORTSCHRITT', it: 'PERCORSO DI SHAKE — I TUOI PROGRESSI', nl: 'SHAKE’S PAD — JOUW VOORTGANG', ru: 'ПУТЬ SHAKE — ВАШ ПРОГРЕСС', pl: 'ŚCIEŻKA SHAKE — TWÓJ POSTĘP', tr: 'SHAKE’İN YOLU — İLERLEMEN', ar: 'مسار Shake — تقدمك', he: 'המסלול של Shake — ההתקדמות שלך', zh: 'SHAKE 之路 — 你的进度', ja: 'SHAKE のパス — あなたの進捗', ko: 'SHAKE의 경로 — 내 진행도', id: 'JALUR SHAKE — KEMAJUANMU', vi: 'LỘ TRÌNH CỦA SHAKE — TIẾN ĐỘ CỦA BẠN', th: 'เส้นทางของ SHAKE — ความคืบหน้าของคุณ' },
+  'section.heroes': { en: 'YOUR 3 MARCH HEROES', es: 'TUS 3 HÉROES DE MARCHA', pt: 'SEUS 3 HERÓIS DE MARCHA', fr: 'TES 3 HÉROS DE MARCHE', de: 'DEINE 3 MARSCHHELDEN', it: 'I TUOI 3 EROI DI MARCIA', nl: 'JE 3 MARSHELDEN', ru: 'ВАШИ 3 ГЕРОЯ ПОХОДА', pl: 'TWOI 3 BOHATEROWIE MARSZU', tr: '3 SEFER KAHRAMANIN', ar: 'أبطال الزحف الثلاثة', he: '3 גיבורי הצעידה שלך', zh: '你的3位行军英雄', ja: '進軍ヒーロー3名', ko: '내 행군 영웅 3명', id: '3 HERO PASUKANMU', vi: '3 TƯỚNG HÀNH QUÂN CỦA BẠN', th: '3 ฮีโร่กองทัพของคุณ' },
+  'section.actionPlan': { en: 'YOUR ACTION PLAN', es: 'TU PLAN DE ACCIÓN', pt: 'SEU PLANO DE AÇÃO', fr: 'TON PLAN D’ACTION', de: 'DEIN AKTIONSPLAN', it: 'IL TUO PIANO D’AZIONE', nl: 'JOUW ACTIEPLAN', ru: 'ВАШ ПЛАН ДЕЙСТВИЙ', pl: 'TWÓJ PLAN DZIAŁANIA', tr: 'EYLEM PLANIN', ar: 'خطة عملك', he: 'תוכנית הפעולה שלך', zh: '你的行动计划', ja: 'あなたのアクションプラン', ko: '내 액션 플랜', id: 'RENCANA AKSIMU', vi: 'KẾ HOẠCH HÀNH ĐỘNG CỦA BẠN', th: 'แผนปฏิบัติการของคุณ' },
+  'section.readyNow': { en: 'READY NOW', es: 'LISTO AHORA', pt: 'PRONTO AGORA', fr: 'PRÊT MAINTENANT', de: 'JETZT BEREIT', it: 'PRONTO ORA', nl: 'NU KLAAR', ru: 'ГОТОВО СЕЙЧАС', pl: 'GOTOWE TERAZ', tr: 'ŞİMDİ HAZIR', ar: 'جاهز الآن', he: 'מוכן עכשיו', zh: '现在可做', ja: '今すぐ可能', ko: '지금 가능', id: 'SIAP SEKARANG', vi: 'SẴN SÀNG NGAY', th: 'พร้อมตอนนี้' },
+  'section.needMore': { en: 'NEED MORE RESOURCES', es: 'NECESITAS MÁS RECURSOS', pt: 'PRECISA DE MAIS RECURSOS', fr: 'PLUS DE RESSOURCES REQUISES', de: 'MEHR RESSOURCEN NÖTIG', it: 'SERVONO PIÙ RISORSE', nl: 'MEER BRONNEN NODIG', ru: 'НУЖНО БОЛЬШЕ РЕСУРСОВ', pl: 'POTRZEBA WIĘCEJ ZASOBÓW', tr: 'DAHA FAZLA KAYNAK GEREK', ar: 'تحتاج موارد أكثر', he: 'צריך עוד משאבים', zh: '需要更多资源', ja: 'リソースが足りない', ko: '자원이 더 필요', id: 'BUTUH LEBIH BANYAK SUMBER DAYA', vi: 'CẦN THÊM TÀI NGUYÊN', th: 'ต้องการทรัพยากรเพิ่ม' },
+  'section.totalCost': { en: 'TOTAL COST TO COMPLETE PHASE', es: 'COSTO TOTAL PARA COMPLETAR FASE', pt: 'CUSTO TOTAL PARA COMPLETAR A FASE', fr: 'COÛT TOTAL POUR TERMINER LA PHASE', de: 'GESAMTKOSTEN FÜR PHASE', it: 'COSTO TOTALE PER COMPLETARE LA FASE', nl: 'TOTALE KOSTEN OM FASE TE VOLTOOIEN', ru: 'ОБЩАЯ СТОИМОСТЬ ФАЗЫ', pl: 'CAŁKOWITY KOSZT UKOŃCZENIA FAZY', tr: 'AŞAMAYI BİTİRME TOPLAM MALİYETİ', ar: 'التكلفة الإجمالية لإكمال المرحلة', he: 'עלות כוללת להשלמת שלב', zh: '完成阶段的总成本', ja: 'フェーズ完了の総コスト', ko: '단계 완료 총비용', id: 'TOTAL BIAYA MENYELESAIKAN FASE', vi: 'TỔNG CHI PHÍ HOÀN THÀNH GIAI ĐOẠN', th: 'ต้นทุนรวมเพื่อจบเฟส' },
+  'section.alreadyDone': { en: 'ALREADY DONE IN PHASE', es: 'YA HECHO EN FASE', pt: 'JÁ FEITO NA FASE', fr: 'DÉJÀ FAIT EN PHASE', de: 'BEREITS ERLEDIGT IN PHASE', it: 'GIÀ FATTO NELLA FASE', nl: 'AL GEDAAN IN FASE', ru: 'УЖЕ СДЕЛАНО В ФАЗЕ', pl: 'JUŻ ZROBIONE W FAZIE', tr: 'AŞAMADA TAMAMLANANLAR', ar: 'تم بالفعل في المرحلة', he: 'כבר בוצע בשלב', zh: '本阶段已完成', ja: 'このフェーズで完了済み', ko: '이 단계에서 완료됨', id: 'SUDAH SELESAI DI FASE', vi: 'ĐÃ XONG TRONG GIAI ĐOẠN', th: 'ทำเสร็จแล้วในเฟส' },
+  'section.feedback': { en: 'COMMANDER FEEDBACK', es: 'COMENTARIOS DEL COMANDANTE', pt: 'FEEDBACK DO COMANDANTE', fr: 'AVIS DES COMMANDANTS', de: 'KOMMANDANTEN-FEEDBACK', it: 'FEEDBACK DEI COMANDANTI', nl: 'COMMANDANT-FEEDBACK', ru: 'ОТЗЫВЫ КОМАНДИРОВ', pl: 'OPINIE DOWÓDCÓW', tr: 'KOMUTAN GERİ BİLDİRİMİ', ar: 'آراء القادة', he: 'משוב מפקדים', zh: '指挥官反馈', ja: '指揮官フィードバック', ko: '지휘관 피드백', id: 'MASUKAN KOMANDAN', vi: 'PHẢN HỒI CHỈ HUY', th: 'ความคิดเห็นผู้บัญชาการ' },
+  'tap.change': { en: 'tap to change', es: 'toca para cambiar', pt: 'toque para trocar', fr: 'toucher pour changer', de: 'zum Ändern tippen', it: 'tocca per cambiare', nl: 'tik om te wijzigen', ru: 'нажмите, чтобы изменить', pl: 'dotknij, by zmienić', tr: 'değiştirmek için dokun', ar: 'اضغط للتغيير', he: 'הקש לשינוי', zh: '点击更换', ja: 'タップで変更', ko: '눌러서 변경', id: 'ketuk untuk ubah', vi: 'chạm để đổi', th: 'แตะเพื่อเปลี่ยน' },
+  'tap.phase': { en: 'tap any phase for details', es: 'toca una fase para detalles', pt: 'toque numa fase para detalhes', fr: 'touche une phase pour les détails', de: 'Phase für Details antippen', it: 'tocca una fase per i dettagli', nl: 'tik op een fase voor details', ru: 'нажмите фазу для деталей', pl: 'dotknij fazy, by zobaczyć szczegóły', tr: 'detay için bir aşamaya dokun', ar: 'اضغط أي مرحلة للتفاصيل', he: 'הקש על שלב לפרטים', zh: '点击任意阶段查看详情', ja: 'フェーズをタップで詳細', ko: '단계를 눌러 상세 보기', id: 'ketuk fase untuk detail', vi: 'chạm giai đoạn để xem chi tiết', th: 'แตะเฟสใดก็ได้เพื่อดูรายละเอียด' },
+  'phase.youHere': { en: '⚡ YOU ARE HERE', es: '⚡ ESTÁS AQUÍ', pt: '⚡ VOCÊ ESTÁ AQUI', fr: '⚡ TU ES ICI', de: '⚡ DU BIST HIER', it: '⚡ SEI QUI', nl: '⚡ JE BENT HIER', ru: '⚡ ВЫ ЗДЕСЬ', pl: '⚡ JESTEŚ TUTAJ', tr: '⚡ BURADASIN', ar: '⚡ أنت هنا', he: '⚡ אתה כאן', zh: '⚡ 你在这里', ja: '⚡ 現在ここ', ko: '⚡ 현재 위치', id: '⚡ KAMU DI SINI', vi: '⚡ BẠN Ở ĐÂY', th: '⚡ คุณอยู่ที่นี่' },
+  'phase.completed': { en: '✓ COMPLETED', es: '✓ COMPLETADO', pt: '✓ CONCLUÍDO', fr: '✓ TERMINÉ', de: '✓ ABGESCHLOSSEN', it: '✓ COMPLETATO', nl: '✓ VOLTOOID', ru: '✓ ЗАВЕРШЕНО', pl: '✓ UKOŃCZONE', tr: '✓ TAMAMLANDI', ar: '✓ اكتمل', he: '✓ הושלם', zh: '✓ 已完成', ja: '✓ 完了', ko: '✓ 완료', id: '✓ SELESAI', vi: '✓ HOÀN THÀNH', th: '✓ เสร็จสิ้น' },
+  'phase.locked': { en: '🔒 LOCKED — DO PHASES BEFORE THIS FIRST', es: '🔒 BLOQUEADO — HAZ ANTES LAS FASES PREVIAS', pt: '🔒 BLOQUEADO — FAÇA AS FASES ANTERIORES PRIMEIRO', fr: '🔒 VERROUILLÉ — FAIS D’ABORD LES PHASES PRÉCÉDENTES', de: '🔒 GESPERRT — ERST FRÜHERE PHASEN', it: '🔒 BLOCCATO — PRIMA LE FASI PRECEDENTI', nl: '🔒 VERGRENDELD — DOE EERST EERDERE FASES', ru: '🔒 ЗАБЛОКИРОВАНО — СНАЧАЛА ПРЕДЫДУЩИЕ ФАЗЫ', pl: '🔒 ZABLOKOWANE — NAJPIERW WCZEŚNIEJSZE FAZY', tr: '🔒 KİLİTLİ — ÖNCE ÖNCEKİ AŞAMALAR', ar: '🔒 مقفل — أكمل المراحل السابقة أولًا', he: '🔒 נעול — בצע קודם את השלבים הקודמים', zh: '🔒 已锁定 — 请先完成前面的阶段', ja: '🔒 ロック — 先に前のフェーズを', ko: '🔒 잠김 — 이전 단계를 먼저', id: '🔒 TERKUNCI — SELESAIKAN FASE SEBELUMNYA DULU', vi: '🔒 KHÓA — LÀM CÁC GIAI ĐOẠN TRƯỚC TRƯỚC ĐÃ', th: '🔒 ล็อก — ทำเฟสก่อนหน้าให้เสร็จก่อน' },
+  'btn.pickHero': { en: 'Pick hero', es: 'Elegir héroe', pt: 'Escolher herói', fr: 'Choisir héros', de: 'Held wählen', it: 'Scegli eroe', nl: 'Kies held', ru: 'Выбрать героя', pl: 'Wybierz bohatera', tr: 'Kahraman seç', ar: 'اختر بطلًا', he: 'בחר גיבור', zh: '选择英雄', ja: 'ヒーロー選択', ko: '영웅 선택', id: 'Pilih hero', vi: 'Chọn tướng', th: 'เลือกฮีโร่' },
+  'btn.change': { en: 'Change', es: 'Cambiar', pt: 'Alterar', fr: 'Modifier', de: 'Ändern', it: 'Cambia', nl: 'Wijzig', ru: 'Изменить', pl: 'Zmień', tr: 'Değiştir', ar: 'تغيير', he: 'שנה', zh: '更改', ja: '変更', ko: '변경', id: 'Ubah', vi: 'Đổi', th: 'เปลี่ยน' },
+  'btn.doNow': { en: 'DO NOW', es: 'HAZLO YA', pt: 'FAZER AGORA', fr: 'FAIRE MAINTENANT', de: 'JETZT MACHEN', it: 'FALLO ORA', nl: 'NU DOEN', ru: 'СДЕЛАТЬ СЕЙЧАС', pl: 'ZRÓB TERAZ', tr: 'ŞİMDİ YAP', ar: 'افعل الآن', he: 'בצע עכשיו', zh: '立即执行', ja: '今すぐ実行', ko: '지금 하기', id: 'LAKUKAN SEKARANG', vi: 'LÀM NGAY', th: 'ทำเลย' },
+  'btn.feedback': { en: 'Send Feedback', es: 'Enviar comentario', pt: 'Enviar feedback', fr: 'Envoyer un avis', de: 'Feedback senden', it: 'Invia feedback', nl: 'Feedback sturen', ru: 'Отправить отзыв', pl: 'Wyślij opinię', tr: 'Geri bildirim gönder', ar: 'إرسال ملاحظات', he: 'שלח משוב', zh: '发送反馈', ja: 'フィードバック送信', ko: '피드백 보내기', id: 'Kirim masukan', vi: 'Gửi phản hồi', th: 'ส่งความคิดเห็น' },
+  'btn.close': { en: 'Close', es: 'Cerrar', pt: 'Fechar', fr: 'Fermer', de: 'Schließen', it: 'Chiudi', nl: 'Sluiten', ru: 'Закрыть', pl: 'Zamknij', tr: 'Kapat', ar: 'إغلاق', he: 'סגור', zh: '关闭', ja: '閉じる', ko: '닫기', id: 'Tutup', vi: 'Đóng', th: 'ปิด' },
+  'btn.reset': { en: 'Reset all data', es: 'Borrar todos los datos', pt: 'Apagar todos os dados', fr: 'Réinitialiser les données', de: 'Alle Daten zurücksetzen', it: 'Reimposta tutti i dati', nl: 'Alle gegevens wissen', ru: 'Сбросить все данные', pl: 'Zresetuj wszystkie dane', tr: 'Tüm verileri sıfırla', ar: 'إعادة تعيين كل البيانات', he: 'אפס את כל הנתונים', zh: '重置所有数据', ja: '全データをリセット', ko: '모든 데이터 초기화', id: 'Atur ulang semua data', vi: 'Đặt lại toàn bộ dữ liệu', th: 'รีเซ็ตข้อมูลทั้งหมด' },
+  'res.xp': { en: 'XP', es: 'XP', pt: 'XP', fr: 'XP', de: 'XP', it: 'XP', nl: 'XP', ru: 'XP', pl: 'XP', tr: 'XP', ar: 'XP', he: 'XP', zh: 'XP', ja: 'XP', ko: 'XP', id: 'XP', vi: 'XP', th: 'XP' },
+  'res.hammers': { en: 'Hammers', es: 'Martillos', pt: 'Martelos', fr: 'Marteaux', de: 'Hämmer', it: 'Martelli', nl: 'Hamers', ru: 'Молоты', pl: 'Młoty', tr: 'Çekiçler', ar: 'مطارق', he: 'פטישים', zh: '锻锤', ja: 'ハンマー', ko: '망치', id: 'Palu', vi: 'Búa', th: 'ค้อน' },
+  'res.mythicGears': { en: 'Mythic Gears', es: 'Engranajes Míticos', pt: 'Engrenagens Míticas', fr: 'Engrenages Mythiques', de: 'Mythische Zahnräder', it: 'Ingranaggi Mitici', nl: 'Mythische Tandwielen', ru: 'Мифические шестерни', pl: 'Mityczne koła', tr: 'Efsanevi Dişli', ar: 'تروس أسطورية', he: 'גלגלי מיתוס', zh: '神话齿轮', ja: '神話ギア', ko: '신화 기어', id: 'Mythic Gears', vi: 'Mythic Gears', th: 'Mythic Gears' },
+  'rarity.grey': { en: 'Grey', es: 'Gris', pt: 'Cinza', fr: 'Gris', de: 'Grau', it: 'Grigio', nl: 'Grijs', ru: 'Серый', pl: 'Szary', tr: 'Gri', ar: 'رمادي', he: 'אפור', zh: '灰色', ja: 'グレー', ko: '회색', id: 'Abu-abu', vi: 'Xám', th: 'เทา' },
+  'rarity.green': { en: 'Green', es: 'Verde', pt: 'Verde', fr: 'Vert', de: 'Grün', it: 'Verde', nl: 'Groen', ru: 'Зелёный', pl: 'Zielony', tr: 'Yeşil', ar: 'أخضر', he: 'ירוק', zh: '绿色', ja: 'グリーン', ko: '초록', id: 'Hijau', vi: 'Xanh lá', th: 'เขียว' },
+  'rarity.blue': { en: 'Blue', es: 'Azul', pt: 'Azul', fr: 'Bleu', de: 'Blau', it: 'Blu', nl: 'Blauw', ru: 'Синий', pl: 'Niebieski', tr: 'Mavi', ar: 'أزرق', he: 'כחול', zh: '蓝色', ja: 'ブルー', ko: '파랑', id: 'Biru', vi: 'Xanh dương', th: 'น้ำเงิน' },
+  'rarity.purple': { en: 'Epic', es: 'Épico', pt: 'Épico', fr: 'Épique', de: 'Episch', it: 'Epico', nl: 'Episch', ru: 'Эпический', pl: 'Epicki', tr: 'Epik', ar: 'ملحمي', he: 'אפי', zh: '史诗', ja: 'エピック', ko: '에픽', id: 'Epik', vi: 'Sử thi', th: 'เอปิก' },
+  'rarity.mythic': { en: 'Mythic', es: 'Mítico', pt: 'Mítico', fr: 'Mythique', de: 'Mythisch', it: 'Mitico', nl: 'Mythisch', ru: 'Мифический', pl: 'Mityczny', tr: 'Efsanevi', ar: 'أسطوري', he: 'מיתי', zh: '神话', ja: 'ミシック', ko: '미식', id: 'Mitos', vi: 'Thần thoại', th: 'มิธิก' },
+  'rarity.red': { en: 'Red', es: 'Rojo', pt: 'Vermelho', fr: 'Rouge', de: 'Rot', it: 'Rosso', nl: 'Rood', ru: 'Красный', pl: 'Czerwony', tr: 'Kırmızı', ar: 'أحمر', he: 'אדום', zh: '红色', ja: 'レッド', ko: '레드', id: 'Merah', vi: 'Đỏ', th: 'แดง' },
+  'upload.btn': { en: 'Upload gear screenshots (3 heroes)', es: 'Sube capturas de equipo (3 héroes)', pt: 'Envie capturas de equipamento (3 heróis)', fr: 'Téléverse des captures d’équipement (3 héros)', de: 'Ausrüstungs-Screenshots hochladen (3 Helden)', it: 'Carica screenshot equipaggiamento (3 eroi)', nl: 'Upload uitrustingsscreenshots (3 helden)', ru: 'Загрузите скриншоты снаряжения (3 героя)', pl: 'Prześlij zrzuty sprzętu (3 bohaterów)', tr: 'Ekipman ekran görüntüsü yükle (3 kahraman)', ar: 'ارفع لقطات العتاد (3 أبطال)', he: 'העלה צילומי ציוד (3 גיבורים)', zh: '上传装备截图（3位英雄）', ja: '装備のスクショをアップ（3ヒーロー）', ko: '장비 스크린샷 업로드 (영웅 3명)', id: 'Unggah tangkapan gear (3 hero)', vi: 'Tải ảnh trang bị (3 tướng)', th: 'อัปโหลดภาพอุปกรณ์ (3 ฮีโร่)' },
+  'upload.processing': { en: 'Processing...', es: 'Procesando...', pt: 'Processando...', fr: 'Traitement...', de: 'Verarbeitung...', it: 'Elaborazione...', nl: 'Verwerken...', ru: 'Обработка...', pl: 'Przetwarzanie...', tr: 'İşleniyor...', ar: 'جارٍ المعالجة...', he: 'מעבד...', zh: '处理中…', ja: '処理中…', ko: '처리 중…', id: 'Memproses...', vi: 'Đang xử lý...', th: 'กำลังประมวลผล...' },
+  'visits.label': { en: 'visits', es: 'visitas', pt: 'visitas', fr: 'visites', de: 'Besuche', it: 'visite', nl: 'bezoeken', ru: 'посещений', pl: 'odwiedzin', tr: 'ziyaret', ar: 'زيارة', he: 'ביקורים', zh: '次访问', ja: '訪問', ko: '방문', id: 'kunjungan', vi: 'lượt xem', th: 'การเข้าชม' },
 };
 
 const T = (key, lang = 'en', vars) => {
@@ -1322,7 +1382,8 @@ const formatActionLabel = (action) => {
 // ═══════════════════════════════════════════════════════════════════
 //   IMAGE UPLOADER
 // ═══════════════════════════════════════════════════════════════════
-const ImageUploader = ({ onFilesChosen, disabled }) => {
+const ImageUploader = ({ onFilesChosen, disabled, t }) => {
+  const tr = t || ((k) => k);
   const inputRef = useRef(null);
   const handleChange = (e) => {
     const files = Array.from(e.target.files || []);
@@ -1357,7 +1418,7 @@ const ImageUploader = ({ onFilesChosen, disabled }) => {
           letterSpacing: 0.3,
         }}>
         <Upload size={18} />
-        {disabled ? 'Processing...' : 'Upload gear screenshots (3 heroes)'}
+        {disabled ? tr('upload.processing') : tr('upload.btn')}
       </button>
     </>
   );
@@ -1641,7 +1702,8 @@ const HeroPickerModal = ({ troop, currentHero, onPick, onClose }) => {
 // ═══════════════════════════════════════════════════════════════════
 //   HERO SELECTOR — top section showing your 3 march heroes
 // ═══════════════════════════════════════════════════════════════════
-const HeroSelector = ({ heroes, customImages, onPickTroop }) => {
+const HeroSelector = ({ heroes, customImages, onPickTroop, t }) => {
+  const tr = t || ((k) => k);
   return (
     <div style={{
       background: 'var(--kp-panel)',
@@ -1653,7 +1715,7 @@ const HeroSelector = ({ heroes, customImages, onPickTroop }) => {
         fontSize: 10, color: 'var(--kp-text-dim)', fontWeight: 700,
         letterSpacing: 0.6, marginBottom: 10, textAlign: 'center',
       }}>
-        YOUR 3 MARCH HEROES
+        {tr('section.heroes')}
       </div>
       <div style={{
         display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8,
@@ -1688,19 +1750,19 @@ const HeroSelector = ({ heroes, customImages, onPickTroop }) => {
                 whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
                 maxWidth: '100%',
               }}>
-                {name || 'Pick hero'}
+                {name || tr('btn.pickHero')}
               </div>
               <div style={{
                 fontSize: 9, color: troopColor, fontWeight: 800,
                 letterSpacing: 0.5,
               }}>
-                {TROOP_LABEL[troop].toUpperCase()}
+                {tr('troop.' + troop).toUpperCase()}
               </div>
               <div style={{
                 fontSize: 9, color: 'var(--kp-text-faint)', marginTop: -2,
                 display: 'flex', alignItems: 'center', gap: 3,
               }}>
-                <Edit3 size={9} /> tap to change
+                <Edit3 size={9} /> {tr('tap.change')}
               </div>
             </button>
           );
@@ -1713,7 +1775,8 @@ const HeroSelector = ({ heroes, customImages, onPickTroop }) => {
 // ═══════════════════════════════════════════════════════════════════
 //   HERO BOARD — shows a troop's 4 pieces in a 2x2 layout
 // ═══════════════════════════════════════════════════════════════════
-const HeroBoard = ({ troop, heroName, heroImage, gear, onEdit }) => {
+const HeroBoard = ({ troop, heroName, heroImage, gear, onEdit, t }) => {
+  const tr = t || ((k) => k);
   const troopColor = TROOP_COLOR[troop];
   return (
     <div style={{
@@ -1729,10 +1792,10 @@ const HeroBoard = ({ troop, heroName, heroImage, gear, onEdit }) => {
         <HeroPortrait name={heroName} troop={troop} customImage={heroImage} size={38} />
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ fontFamily: 'Cinzel, serif', fontWeight: 700, color: 'var(--kp-text)', fontSize: 15 }}>
-            {heroName || TROOP_LABEL[troop]}
+            {heroName || tr('troop.' + troop)}
           </div>
           <div style={{ fontSize: 10, color: troopColor, fontWeight: 700, letterSpacing: 0.5 }}>
-            {TROOP_LABEL[troop].toUpperCase()} MARCH
+            {tr('troop.' + troop).toUpperCase()} {tr('label.march').toUpperCase()}
           </div>
         </div>
       </div>
@@ -1758,7 +1821,7 @@ const HeroBoard = ({ troop, heroName, heroImage, gear, onEdit }) => {
                   fontSize: 9, fontWeight: 700,
                   color: 'var(--kp-text-dim)', letterSpacing: 0.5,
                 }}>
-                  {SLOT_LABEL[slot].toUpperCase()}
+                  {tr('slot.' + slot).toUpperCase()}
                 </div>
                 {piece ? (
                   <>
@@ -1766,7 +1829,7 @@ const HeroBoard = ({ troop, heroName, heroImage, gear, onEdit }) => {
                       fontSize: 10, fontWeight: 700,
                       color: theme.glow, letterSpacing: 0.3,
                     }}>
-                      {RARITY_LABEL[piece.rarity]}
+                      {tr('rarity.' + piece.rarity)}
                     </div>
                     <div style={{
                       fontSize: 13, fontWeight: 800, color: 'var(--kp-text)',
@@ -1777,7 +1840,7 @@ const HeroBoard = ({ troop, heroName, heroImage, gear, onEdit }) => {
                   </>
                 ) : (
                   <div style={{ fontSize: 10, color: 'var(--kp-text-fainter)', fontStyle: 'italic', marginTop: 4 }}>
-                    Tap to add
+                    {tr('gear.tapAdd')}
                   </div>
                 )}
               </div>
@@ -1829,7 +1892,8 @@ const summarizePhaseActions = (phase) => {
   return lines;
 };
 
-const PhaseOverview = ({ currentPhase, gear, path = SHAKES_PATH }) => {
+const PhaseOverview = ({ currentPhase, gear, path = SHAKES_PATH, t }) => {
+  const tr = t || ((k, v) => k);
   const [openPhase, setOpenPhase] = useState(null); // phase number when expanded
   const [showFull, setShowFull] = useState(false);
   const phases = path.filter(p => !p.isStop && !p.isChoose);
@@ -1852,7 +1916,7 @@ const PhaseOverview = ({ currentPhase, gear, path = SHAKES_PATH }) => {
         letterSpacing: 0.6, marginBottom: 9, textAlign: 'center',
         display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
       }}>
-        SHAKE'S PATH — YOUR PROGRESS
+        {tr('section.progress')}
         <span style={{
           fontSize: 9, color: 'var(--kp-text-faint)', fontWeight: 600,
           padding: '1px 6px', borderRadius: 99,
@@ -1860,7 +1924,7 @@ const PhaseOverview = ({ currentPhase, gear, path = SHAKES_PATH }) => {
           border: '1px solid rgba(201,169,97,0.2)',
           textTransform: 'none', letterSpacing: 0.3,
         }}>
-          tap any phase for details
+          {tr('tap.phase')}
         </span>
       </div>
 
@@ -1908,7 +1972,7 @@ const PhaseOverview = ({ currentPhase, gear, path = SHAKES_PATH }) => {
         color: 'var(--kp-text-gold)', fontSize: 11, fontWeight: 700, fontFamily: 'inherit',
         cursor: 'pointer', letterSpacing: 0.4,
       }}>
-        📜 Shake's full plan {showFull ? <ChevronDown size={13} /> : <ChevronRight size={13} />}
+        📜 {tr('phase.fullPlan')} {showFull ? <ChevronDown size={13} /> : <ChevronRight size={13} />}
       </button>
       {showFull && (
         <div style={{ marginTop: 8, display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -1997,10 +2061,10 @@ const PhaseOverview = ({ currentPhase, gear, path = SHAKES_PATH }) => {
               </div>
               <div style={{ fontSize: 9, color: 'var(--kp-text-dim)', letterSpacing: 0.4, fontWeight: 600 }}>
                 {expandedPhase.phase === currentPhase.phase
-                  ? '⚡ YOU ARE HERE'
+                  ? tr('phase.youHere')
                   : currentPhase.phase > expandedPhase.phase
-                    ? '✓ COMPLETED'
-                    : '🔒 LOCKED — DO PHASES BEFORE THIS FIRST'}
+                    ? tr('phase.completed')
+                    : tr('phase.locked')}
               </div>
             </div>
           </div>
@@ -2162,16 +2226,17 @@ const CostPill = ({ icon, label, cost, have, color }) => {
 const StepCard = ({ analyzed, stepNumber, hero, resources, onMarkDone, t }) => {
   const { action, piece, canAfford } = analyzed;
   const [showSteps, setShowSteps] = useState(stepNumber === 1);
-  const troopName = TROOP_LABEL[action.troop];
-  const slotName = SLOT_LABEL[action.slot];
+  const tr = t || ((k, v) => k);
+  const troopName = tr('troop.' + action.troop);
+  const slotName = tr('slot.' + action.slot);
   const troopColor = TROOP_COLOR[action.troop];
   const isAscend = action.type === 'ascend';
   const cost = getTotalCost(analyzed);
   const inGameSteps = buildInGameSteps(analyzed, t);
 
   const title = isAscend
-    ? `Ascend ${slotName} to RED`
-    : `Upgrade ${slotName} to ${RARITY_LABEL[action.rarity]} Lv.${action.level}`;
+    ? tr('action.ascend', { slot: slotName })
+    : tr('action.upgrade', { slot: slotName, rarity: tr('rarity.' + action.rarity), level: action.level });
 
   const canToggle = inGameSteps.length > 0;
   return (
@@ -2232,7 +2297,7 @@ const StepCard = ({ analyzed, stepNumber, hero, resources, onMarkDone, t }) => {
             color: '#86efac', fontSize: 9, fontWeight: 800,
             letterSpacing: 0.5, flexShrink: 0,
           }}>
-            DO NOW
+            {tr('btn.doNow')}
           </div>
         )}
       </div>
@@ -2328,7 +2393,7 @@ const StepCard = ({ analyzed, stepNumber, hero, resources, onMarkDone, t }) => {
 // ═══════════════════════════════════════════════════════════════════
 //   RESOURCE PILLS
 // ═══════════════════════════════════════════════════════════════════
-const ResourcePills = ({ resources, onEdit }) => {
+const ResourcePills = ({ resources, onEdit, t }) => {
   const items = [
     { key: 'xp',          label: 'XP',           icon: Sparkles, color: '#22d3ee', getValue: (r) => totalXp(r) },
     { key: 'hammers',     label: 'Hammers',      icon: Hammer,   color: '#fbbf24', getValue: (r) => r?.hammers },
@@ -2354,7 +2419,7 @@ const ResourcePills = ({ resources, onEdit }) => {
             <Icon size={18} color={item.color} />
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ fontSize: 9, color: item.color, fontWeight: 700, letterSpacing: 0.4 }}>
-                {item.label.toUpperCase()}
+                {(t ? t('res.' + item.key) : item.label).toUpperCase()}
               </div>
               <div style={{
                 fontSize: 14, fontWeight: 800, color: 'var(--kp-text)',
@@ -3579,7 +3644,8 @@ const buildActivePath = (specId) => {
   return SHAKES_PATH; // 1–7 + the chooser (phase 8)
 };
 
-const SpecializationTabs = ({ active, onChoose }) => {
+const SpecializationTabs = ({ active, onChoose, t }) => {
+  const tr = t || ((k, v) => k);
   const [tab, setTab] = useState(active || 'offense');
   const spec = SPEC_PATHS[tab];
   return (
@@ -3590,10 +3656,10 @@ const SpecializationTabs = ({ active, onChoose }) => {
       boxShadow: '0 4px 18px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)',
     }}>
       <div style={{ fontFamily: 'Cinzel, serif', fontSize: 13, fontWeight: 800, color: 'var(--kp-text-gold)', letterSpacing: 1, marginBottom: 2, display: 'flex', alignItems: 'center', gap: 7 }}>
-        <Crown size={14} /> ENDGAME SPECIALIZATION
+        <Crown size={14} /> {tr('spec.title').toUpperCase()}
       </div>
       <div style={{ fontSize: 10, color: 'var(--kp-text-dim)', marginBottom: 11, letterSpacing: 0.3 }}>
-        Continues from Phase 7 — finish the base path first
+        {tr('spec.subtitle')}
       </div>
       <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
         {['offense', 'defense'].map(id => {
@@ -3610,7 +3676,7 @@ const SpecializationTabs = ({ active, onChoose }) => {
               display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
               boxShadow: active ? `0 0 14px ${s.color}24` : 'none',
             }}>
-              <Icon size={14} color={active ? s.color : undefined} /> {s.label}
+              <Icon size={14} color={active ? s.color : undefined} /> {tr('spec.' + id)}
             </button>
           );
         })}
@@ -3622,7 +3688,7 @@ const SpecializationTabs = ({ active, onChoose }) => {
             background: 'var(--kp-surface-3)', border: '1px solid rgba(201,169,97,0.14)',
           }}>
             <div style={{ fontFamily: 'Cinzel, serif', fontSize: 11, fontWeight: 800, color: spec.color, letterSpacing: 0.6, marginBottom: 6 }}>
-              PHASE {ph.n}
+              {tr('label.phase').toUpperCase()} {ph.n}
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px 12px' }}>
               {ph.codes.map((code, i) => {
@@ -3631,7 +3697,7 @@ const SpecializationTabs = ({ active, onChoose }) => {
                 return (
                   <span key={i} style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 11.5, color: '#dce4f0' }}>
                     <span style={{ width: 7, height: 7, borderRadius: 99, background: tc, flexShrink: 0 }} />
-                    {TROOP_LABEL[tgt.troop]} {SLOT_LABEL[tgt.slot]}
+                    {tr('troop.' + tgt.troop)} {tr('slot.' + tgt.slot)}
                     <span style={{ color: 'var(--kp-text-faint)' }}>→</span>
                     <b style={{ color: '#fca5a5' }}>Red {tgt.level}</b>
                   </span>
@@ -3658,8 +3724,8 @@ const SpecializationTabs = ({ active, onChoose }) => {
             display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 7,
           }}>
           {active === tab
-            ? <><Check size={15} /> Following this path</>
-            : <>Follow the {spec.label} path <ArrowRight size={15} /></>}
+            ? <><Check size={15} /> {tr('spec.following')}</>
+            : <>{tr('spec.follow', { label: tr('spec.' + tab) })} <ArrowRight size={15} /></>}
         </button>
       )}
     </div>
@@ -4151,7 +4217,7 @@ export default function App() {
             {t('brand.subtitle')}
           </div>
           <div style={{ fontSize: 10, color: '#c79a6a', letterSpacing: 0.5, marginTop: 3 }}>
-            Guide by {GUIDE_AUTHOR} · App by <span style={{ color: '#fbbf24', fontWeight: 700 }}>{APP_AUTHOR}</span>
+            {t('app.credit', { guide: GUIDE_AUTHOR, app: APP_AUTHOR })}
           </div>
         </div>
 
@@ -4167,7 +4233,7 @@ export default function App() {
             <>
               <Check size={14} color="#86efac" />
               <div style={{ flex: 1, fontSize: 11, color: '#86efac', fontWeight: 600 }}>
-                API connected · auto-OCR ready
+                {t('api.ready')}
               </div>
               <button onClick={() => { setApiSetupErrorMode(false); setShowApiSetup(true); }} style={{
                 padding: '4px 9px', borderRadius: 5,
@@ -4175,7 +4241,7 @@ export default function App() {
                 color: '#86efac', fontSize: 10, fontWeight: 700,
                 cursor: 'pointer',
               }}>
-                Change
+                {t('btn.change')}
               </button>
             </>
           ) : (
@@ -4199,7 +4265,7 @@ export default function App() {
 
         {/* Upload */}
         <div style={{ marginBottom: 16 }}>
-          <ImageUploader onFilesChosen={handleUpload} disabled={parsing} />
+          <ImageUploader onFilesChosen={handleUpload} disabled={parsing} t={t} />
           {parsing && (
             <div style={{
               marginTop: 8, padding: '10px 12px',
@@ -4246,19 +4312,19 @@ export default function App() {
             </div>
           )}
           <div style={{ fontSize: 10, color: 'var(--kp-text-fainter)', marginTop: 6, lineHeight: 1.4, textAlign: 'center' }}>
-            Upload one screenshot per troop hero (showing all 4 gear pieces). Resources are entered manually below.
-            Or tap any slot below to enter gear manually.
+            {t('upload.help')}
           </div>
         </div>
 
         {/* Resources */}
-        <ResourcePills resources={state.resources} onEdit={() => setEditingResources(true)} />
+        <ResourcePills resources={state.resources} onEdit={() => setEditingResources(true)} t={t} />
 
         {/* Phase overview */}
-        <PhaseOverview currentPhase={phase} gear={state.gear} path={activePath} />
+        <PhaseOverview currentPhase={phase} gear={state.gear} path={activePath} t={t} />
 
         {/* Hero selector — pick your 3 march heroes */}
         <HeroSelector
+          t={t}
           heroes={state.heroes}
           customImages={state.heroImages || {}}
           onPickTroop={(troop) => setPickingTroopFor(troop)}
@@ -4283,6 +4349,7 @@ export default function App() {
           }}>
             {TROOPS.map(t2 => (
               <HeroBoard
+                t={t}
                 key={t2}
                 troop={t2}
                 heroName={state.heroes[t2]}
@@ -4326,7 +4393,7 @@ export default function App() {
               </div>
               <div style={{ flex: 1 }}>
                 <div style={{ fontSize: 10, color: 'var(--kp-text-dim)', fontWeight: 700, letterSpacing: 0.6 }}>
-                  {phase.isStop ? 'PATH COMPLETE' : `PHASE ${phase.phase} · CURRENT`}
+                  {phase.isStop ? t('phase.complete') : t('phase.current', { n: phase.phase })}
                 </div>
                 <div style={{ fontFamily: 'Cinzel, serif', fontSize: 17, fontWeight: 800, color: 'var(--kp-text)', letterSpacing: 0.4 }}>
                   {phase.title}
@@ -4338,7 +4405,7 @@ export default function App() {
                     {completed.length}/{phase.actions.length}
                   </div>
                   <div style={{ fontSize: 9, color: 'var(--kp-text-dim)', letterSpacing: 0.4, fontWeight: 600 }}>
-                    DONE
+                    {t('phase.done').toUpperCase()}
                   </div>
                 </div>
               )}
@@ -4404,12 +4471,11 @@ export default function App() {
                 }}>
                   <Target size={15} color="#fbbf24" />
                   <div style={{ fontFamily: 'Cinzel, serif', fontSize: 14, fontWeight: 800, color: '#fbbf24', letterSpacing: 0.4 }}>
-                    YOUR ACTION PLAN
+                    {t('section.actionPlan')}
                   </div>
                 </div>
                 <div style={{ fontSize: 11, color: '#c0a878', lineHeight: 1.55 }}>
-                  Phase 2 wants you to <b>ascend 7 pieces to Red gear</b>. Below are the {actions.length} that are still pending,
-                  ordered by which you can do <b style={{ color: '#86efac' }}>right now</b> with your resources.
+                  {t('plan.desc')}
                 </div>
               </div>
 
@@ -4428,10 +4494,10 @@ export default function App() {
                       letterSpacing: 0.5,
                       display: 'flex', alignItems: 'center', gap: 5,
                     }}>
-                      <Check size={11} /> READY NOW
+                      <Check size={11} /> {t('section.readyNow')}
                     </div>
                     <div style={{ fontSize: 10, color: 'var(--kp-text-dim)' }}>
-                      You have enough resources for {ready.length} {ready.length === 1 ? 'action' : 'actions'}
+                      {t('plan.haveEnough', { n: ready.length })}
                     </div>
                     <div style={{ flex: 1, height: 1, background: 'linear-gradient(90deg, rgba(34,197,94,0.3), transparent)' }} />
                   </div>
@@ -4469,10 +4535,10 @@ export default function App() {
                       letterSpacing: 0.5,
                       display: 'flex', alignItems: 'center', gap: 5,
                     }}>
-                      <AlertTriangle size={10} /> NEED MORE RESOURCES
+                      <AlertTriangle size={10} /> {t('section.needMore')}
                     </div>
                     <div style={{ fontSize: 10, color: 'var(--kp-text-dim)' }}>
-                      Save up to unlock these {waiting.length}
+                      {t('plan.saveUp', { n: waiting.length })}
                     </div>
                     <div style={{ flex: 1, height: 1, background: 'linear-gradient(90deg, rgba(251,191,36,0.3), transparent)' }} />
                   </div>
@@ -4493,7 +4559,7 @@ export default function App() {
                     })}
                     {waiting.length > 5 && (
                       <div style={{ textAlign: 'center', fontSize: 11, color: 'var(--kp-text-faint)', fontStyle: 'italic', padding: 8 }}>
-                        + {waiting.length - 5} more {waiting.length - 5 === 1 ? 'piece' : 'pieces'} also waiting for resources
+                        {t('plan.morePieces', { n: waiting.length - 5 })}
                       </div>
                     )}
                   </div>
@@ -4511,38 +4577,38 @@ export default function App() {
             borderRadius: 11, padding: 13, marginBottom: 14,
           }}>
             <div style={{ fontSize: 10, color: 'var(--kp-text-dim)', fontWeight: 700, letterSpacing: 0.5, marginBottom: 9 }}>
-              TOTAL COST TO COMPLETE PHASE {phase.phase}
+              {t('section.totalCost')} {phase.phase}
             </div>
             <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
               {total.xp > 0 && (
                 <div>
-                  <div style={{ fontSize: 9, color: '#22d3ee', fontWeight: 700, letterSpacing: 0.4 }}>XP NEEDED</div>
+                  <div style={{ fontSize: 9, color: '#22d3ee', fontWeight: 700, letterSpacing: 0.4 }}>{t('total.xpNeeded').toUpperCase()}</div>
                   <div style={{ fontSize: 16, fontWeight: 800, color: canAfford(total.xp, 'xp') ? '#86efac' : '#fca5a5', fontFamily: 'Cinzel, serif' }}>
                     {fmt(total.xp)}
                     <span style={{ fontSize: 11, color: 'var(--kp-text-faint)', fontWeight: 500, marginLeft: 5 }}>
-                      / {fmt(totalXp(state.resources))} you have
+                      / {t('total.youHave', { x: fmt(totalXp(state.resources)) })}
                     </span>
                   </div>
                 </div>
               )}
               {total.hammers > 0 && (
                 <div>
-                  <div style={{ fontSize: 9, color: '#fbbf24', fontWeight: 700, letterSpacing: 0.4 }}>HAMMERS NEEDED</div>
+                  <div style={{ fontSize: 9, color: '#fbbf24', fontWeight: 700, letterSpacing: 0.4 }}>{t('total.hammersNeeded').toUpperCase()}</div>
                   <div style={{ fontSize: 16, fontWeight: 800, color: canAfford(total.hammers, 'hammers') ? '#86efac' : '#fca5a5', fontFamily: 'Cinzel, serif' }}>
                     {total.hammers}
                     <span style={{ fontSize: 11, color: 'var(--kp-text-faint)', fontWeight: 500, marginLeft: 5 }}>
-                      / {state.resources.hammers || 0} you have
+                      / {t('total.youHave', { x: state.resources.hammers || 0 })}
                     </span>
                   </div>
                 </div>
               )}
               {total.mg > 0 && (
                 <div>
-                  <div style={{ fontSize: 9, color: '#a855f7', fontWeight: 700, letterSpacing: 0.4 }}>MYTHIC GEARS</div>
+                  <div style={{ fontSize: 9, color: '#a855f7', fontWeight: 700, letterSpacing: 0.4 }}>{t('total.mgNeeded').toUpperCase()}</div>
                   <div style={{ fontSize: 16, fontWeight: 800, color: canAfford(total.mg, 'mythicGears') ? '#86efac' : '#fca5a5', fontFamily: 'Cinzel, serif' }}>
                     {total.mg}
                     <span style={{ fontSize: 11, color: 'var(--kp-text-faint)', fontWeight: 500, marginLeft: 5 }}>
-                      / {state.resources.mythicGears || 0} you have
+                      / {t('total.youHave', { x: state.resources.mythicGears || 0 })}
                     </span>
                   </div>
                 </div>
@@ -4560,7 +4626,7 @@ export default function App() {
           }}>
             <div style={{ fontSize: 10, color: '#86efac', fontWeight: 700, letterSpacing: 0.5, marginBottom: 8 }}>
               <Check size={11} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 4 }} />
-              ALREADY DONE IN PHASE {phase.phase}
+              {t('section.alreadyDone')} {phase.phase}
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
               {completed.map((c, i) => {
@@ -4589,7 +4655,7 @@ export default function App() {
 
         {/* Endgame specialization — only relevant once the base path (P1–7) is done */}
         {(phase.isChoose || phase.isStop || phase.spec || state.specialization) && (
-          <SpecializationTabs active={state.specialization} onChoose={setSpecialization} />
+          <SpecializationTabs active={state.specialization} onChoose={setSpecialization} t={t} />
         )}
 
         <CommentsSection t={t} />
