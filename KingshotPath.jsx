@@ -15,7 +15,7 @@ import {
 const BRAND_TITLE = "SHAKE'S RED GEAR GUIDE";
 const GUIDE_AUTHOR = 'Shake';   // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2';  // built this app
-const APP_VERSION = 'v1.0';     // bump this on every new build so you can confirm the deploy is live
+const APP_VERSION = 'v1.1';     // bump this on every new build so you can confirm the deploy is live
 const TROOPS = ['infantry', 'archer', 'cavalry'];
 const TROOP_LABEL = { infantry: 'Infantry', archer: 'Archer', cavalry: 'Cavalry' };
 const TROOP_CODE = { infantry: 'I', archer: 'A', cavalry: 'C' };
@@ -4390,16 +4390,24 @@ export default function App() {
 
         {/* Hero boards — collapsible gear breakdown */}
         <button onClick={() => setShowGear(s => !s)} className="kp-card" style={{
-          width: '100%', display: 'flex', alignItems: 'center', gap: 8,
-          padding: '10px 14px', borderRadius: 10, marginBottom: showGear ? 10 : 18,
-          background: 'var(--kp-panel)', border: '1px solid rgba(201,169,97,0.22)',
-          boxShadow: '0 4px 18px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)',
-          color: 'var(--kp-text-gold)', fontSize: 12, fontWeight: 700,
-          fontFamily: 'inherit', cursor: 'pointer', letterSpacing: 0.4,
+          width: '100%', display: 'flex', alignItems: 'center', gap: 10,
+          padding: '13px 15px', borderRadius: 11, marginBottom: showGear ? 10 : 18,
+          background: 'linear-gradient(135deg, rgba(201,169,97,0.22), rgba(26,38,58,0.92))',
+          border: '1.5px solid rgba(201,169,97,0.55)',
+          boxShadow: '0 0 18px rgba(201,169,97,0.18), inset 0 1px 0 rgba(255,255,255,0.08)',
+          color: 'var(--kp-text-gold)', fontFamily: 'Cinzel, serif', fontSize: 14, fontWeight: 800,
+          cursor: 'pointer', letterSpacing: 0.5,
         }}>
-          <Shield size={14} />
+          <Shield size={17} color="#fbbf24" />
           <span style={{ flex: 1, textAlign: 'left' }}>{t('section.gearDetails')}</span>
-          {showGear ? <ChevronDown size={15} /> : <ChevronRight size={15} />}
+          <span style={{
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            width: 24, height: 24, borderRadius: '50%',
+            background: 'rgba(251,191,36,0.18)', border: '1px solid rgba(251,191,36,0.5)',
+            color: '#fbbf24', flexShrink: 0,
+          }}>
+            {showGear ? <ChevronDown size={15} /> : <ChevronRight size={15} />}
+          </span>
         </button>
         {showGear && (
           <div className="heroes-grid" style={{
