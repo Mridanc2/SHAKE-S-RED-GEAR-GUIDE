@@ -15,6 +15,7 @@ import {
 const BRAND_TITLE = "SHAKE'S RED GEAR GUIDE";
 const GUIDE_AUTHOR = 'Shake';   // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2';  // built this app
+const APP_VERSION = 'v1.0';     // bump this on every new build so you can confirm the deploy is live
 const TROOPS = ['infantry', 'archer', 'cavalry'];
 const TROOP_LABEL = { infantry: 'Infantry', archer: 'Archer', cavalry: 'Cavalry' };
 const TROOP_CODE = { infantry: 'I', archer: 'A', cavalry: 'C' };
@@ -3818,6 +3819,9 @@ const Footer = ({ onFeedback, t }) => {
           xXx COMMANDERS · KINGDOM 1494
         </div>
         Built for the alliance · Guide by {GUIDE_AUTHOR} · App by {APP_AUTHOR}
+        <div style={{ marginTop: 4, color: 'var(--kp-text-fainter)', letterSpacing: 0.5 }}>
+          {APP_VERSION}
+        </div>
       </div>
     </div>
   );

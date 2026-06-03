@@ -50,6 +50,7 @@ import { Upload, Check, X, AlertTriangle, ChevronRight, ChevronDown, Star, Hamme
 const BRAND_TITLE = "SHAKE'S RED GEAR GUIDE";
 const GUIDE_AUTHOR = 'Shake'; // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2'; // built this app
+const APP_VERSION = 'v1.0'; // bump this on every new build so you can confirm the deploy is live
 const TROOPS = ['infantry', 'archer', 'cavalry'];
 const TROOP_LABEL = {
   infantry: 'Infantry',
@@ -7914,7 +7915,13 @@ const Footer = ({
       color: 'var(--kp-text-dim)',
       marginBottom: 2
     }
-  }, "xXx COMMANDERS \xB7 KINGDOM 1494"), "Built for the alliance \xB7 Guide by ", GUIDE_AUTHOR, " \xB7 App by ", APP_AUTHOR));
+  }, "xXx COMMANDERS \xB7 KINGDOM 1494"), "Built for the alliance \xB7 Guide by ", GUIDE_AUTHOR, " \xB7 App by ", APP_AUTHOR, /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 4,
+      color: 'var(--kp-text-fainter)',
+      letterSpacing: 0.5
+    }
+  }, APP_VERSION)));
 };
 
 // ═══════════════════════════════════════════════════════════════════
