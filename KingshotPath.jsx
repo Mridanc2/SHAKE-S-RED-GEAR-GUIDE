@@ -1098,8 +1098,11 @@ If you can't determine a number, return null for that field. Output JSON only.`;
     }],
     generationConfig: {
       temperature: 0,
-      maxOutputTokens: 4000,
+      maxOutputTokens: 8192,
       responseMimeType: 'application/json',
+      // Gemini 2.5 Flash spends "thinking" tokens from the same budget, which can
+      // truncate the JSON mid-output. Disable thinking so the whole budget is the answer.
+      thinkingConfig: { thinkingBudget: 0 },
     },
   };
 
@@ -1205,6 +1208,13 @@ If you can't determine a number, return null for that field. Output JSON only.`;
     const blockReason = data.promptFeedback?.blockReason;
     const reason = blockReason ? `blocked (${blockReason})` : finishReason ? `stopped: ${finishReason}` : 'empty';
     const e = new Error(`Gemini returned no text (${reason}). Try smaller/clearer screenshots.`);
+    e.code = 'API_ERROR';
+    throw e;
+  }
+
+  // Truncated mid-output (rare now that thinking is disabled) → actionable message
+  if (data.candidates?.[0]?.finishReason === 'MAX_TOKENS') {
+    const e = new Error('Gemini ran out of room reading your screenshots. Try one hero at a time, or crop tighter to just the gear panel.');
     e.code = 'API_ERROR';
     throw e;
   }
@@ -2749,18 +2759,19 @@ const ApiSetupModal = ({ initialKey, onSave, onClose, errorMode }) => {
   const [testResult, setTestResult] = useState(null); // 'ok' | { error }
 
   const testKey = async () => {
-    if (!key.trim()) return;
+    const k = (key || '').replace(/\s+/g, ''); // strip any spaces/newlines from paste
+    if (!k) return;
     setTesting(true);
     setTestResult(null);
     try {
       const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${encodeURIComponent(key.trim())}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(k)}`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             contents: [{ parts: [{ text: 'ping' }] }],
-            generationConfig: { maxOutputTokens: 5 },
+            generationConfig: { maxOutputTokens: 5, thinkingConfig: { thinkingBudget: 0 } },
           }),
         }
       );
@@ -2769,7 +2780,11 @@ const ApiSetupModal = ({ initialKey, onSave, onClose, errorMode }) => {
       } else if (res.status === 400 || res.status === 401 || res.status === 403) {
         const txt = await res.text();
         if (txt.includes('API_KEY_INVALID') || txt.includes('API key not valid')) {
-          setTestResult({ error: 'Key rejected. Make sure you copied it correctly (starts with "AIza").' });
+          setTestResult({ error: 'Google rejected this key. Copy the whole key with no extra characters (it starts with "AIza"). If you just created it, wait 1–2 minutes — new keys take a moment to activate. The key must come from aistudio.google.com/apikey.' });
+        } else if (txt.includes('SERVICE_DISABLED') || txt.includes('has not been used') || txt.includes('disabled')) {
+          setTestResult({ error: 'The Generative Language API isn’t enabled for this key’s project. Create the key at aistudio.google.com/apikey (it enables the API automatically).' });
+        } else if (txt.includes('referer') || txt.includes('referrer') || txt.includes('API_KEY_HTTP_REFERRER_BLOCKED')) {
+          setTestResult({ error: 'This key is restricted to certain websites. Remove the restriction in Google Cloud, or make a new unrestricted key at aistudio.google.com/apikey.' });
         } else {
           setTestResult({ error: `API returned ${res.status}: ${txt.slice(0, 120)}` });
         }
@@ -2904,7 +2919,7 @@ const ApiSetupModal = ({ initialKey, onSave, onClose, errorMode }) => {
         <input
           type="password"
           value={key}
-          onChange={(e) => { setKey(e.target.value); setTestResult(null); }}
+          onChange={(e) => { setKey(e.target.value.replace(/\s+/g, '')); setTestResult(null); }}
           placeholder="AIza..."
           style={{
             width: '100%', padding: '10px 12px', marginBottom: 8,
@@ -2947,7 +2962,7 @@ const ApiSetupModal = ({ initialKey, onSave, onClose, errorMode }) => {
           }}>
             {testing ? 'Testing...' : 'Test connection'}
           </button>
-          <button onClick={() => onSave(key.trim())} disabled={!key.trim()} style={{
+          <button onClick={() => onSave(key.replace(/\s+/g, ''))} disabled={!key.trim()} style={{
             flex: 1, padding: '10px 14px', borderRadius: 8,
             background: key.trim() ? 'linear-gradient(135deg, #c9a961, #8b6914)' : 'rgba(201,169,97,0.1)',
             color: key.trim() ? '#0f0d0a' : 'var(--kp-text-fainter)',
