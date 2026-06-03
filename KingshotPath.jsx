@@ -15,7 +15,7 @@ import {
 const BRAND_TITLE = "SHAKES' RED GEAR GUIDE";
 const GUIDE_AUTHOR = 'Shakes';   // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2';  // built this app
-const APP_VERSION = 'v1.2';     // bump this on every new build so you can confirm the deploy is live
+const APP_VERSION = 'v1.4';     // bump this on every new build so you can confirm the deploy is live
 const TROOPS = ['infantry', 'archer', 'cavalry'];
 const TROOP_LABEL = { infantry: 'Infantry', archer: 'Archer', cavalry: 'Cavalry' };
 const TROOP_CODE = { infantry: 'I', archer: 'A', cavalry: 'C' };
@@ -1059,7 +1059,7 @@ For each HERO GEAR PANEL, extract:
 - Hero name (shown at the top of the screen — examples: Petra, Amadeus, Marlin, Zoe, Howard, Hilde, Helga, Alcar, Yang, Vivian, Triton, Sophia, Thrud, Long Fei, Margot, Rosa)
 - Troop type: 'infantry', 'archer', or 'cavalry'. Infer from the small icon next to the gear (shield = infantry, crosshair/arrow = archer, star/compass = cavalry). Known mappings: Zoe/Amadeus/Howard/Helga/Alcar/Long Fei/Triton = infantry; Marlin/Rosa/Vivian/Yang = archer; Hilde/Petra/Margot/Thrud/Sophia = cavalry.
 - For each of the 4 gear slots (top-left=HELMET, top-right=GLOVES, bottom-left=CHEST, bottom-right=BOOTS):
-  - Rarity from gear color: grey, green, blue, purple, mythic (golden/yellow), red (crimson with red glow)
+  - Rarity — the MOST important and most-often-wrong field. Judge ONLY by the colour of each gear icon's frame/border and glow. Do NOT default to "mythic". Tiers low→high: grey, green, blue, purple (epic), mythic, red. mythic = GOLD/orange-gold frame; red = bright CRIMSON/RED frame with a red glow, the TOP tier ABOVE mythic. Many advanced players run ALL-RED gear, so four red pieces on one hero is normal. If the frame is red/crimson rather than gold, it is "red", not "mythic".
   - Enhancement Level: the +XX number in the corner of the gear icon (range 0-100 for Mythic, and 1-100 for Red — Red's counter restarts at 1 right after ascending)
   - Mastery Level: the "Lv.X" label at the bottom (range 0-20)
 
@@ -1070,10 +1070,10 @@ Return STRICT JSON in exactly this format (no markdown fences, no extra commenta
       "name": "Petra",
       "troop": "cavalry",
       "gear": {
-        "helmet": { "rarity": "mythic", "level": 100, "mastery": 7 },
-        "chest":  { "rarity": "mythic", "level": 51,  "mastery": 2 },
-        "gloves": { "rarity": "mythic", "level": 50,  "mastery": 2 },
-        "boots":  { "rarity": "mythic", "level": 95,  "mastery": 7 }
+        "helmet": { "rarity": "red", "level": 30, "mastery": 12 },
+        "chest":  { "rarity": "red", "level": 19, "mastery": 10 },
+        "gloves": { "rarity": "mythic", "level": 100, "mastery": 7 },
+        "boots":  { "rarity": "red", "level": 1,  "mastery": 10 }
       }
     }
   ]
@@ -3003,7 +3003,7 @@ const DISCORD_URL = 'https://discord.gg/Rdep4J2x';
 // "— Name" to set the author (e.g.  Great tool! — Marlin). Otherwise the
 // author is the GitHub username that opened the issue.
 // Leave FEEDBACK_REPO as '' to disable the live fetch and use the examples below.
-const FEEDBACK_REPO = '';            // e.g. 'mridanc/kingshot-path'  (owner/repo)
+const FEEDBACK_REPO = 'Mridanc2/SHAKE-S-RED-GEAR-GUIDE';  // owner/repo for feedback issues
 const FEEDBACK_LABEL = 'approved';   // the label you add to approve a comment
 
 // Built-in starter comments — shown until live GitHub feedback is configured,
@@ -3024,19 +3024,19 @@ const FeedbackModal = ({ onClose }) => {
   const [author, setAuthor] = useState('');
   const [message, setMessage] = useState('');
   const [stage, setStage] = useState('form'); // 'form' | 'submitted'
-  const [formatted, setFormatted] = useState('');
+  const [issueUrl, setIssueUrl] = useState('');
 
   const submit = () => {
     if (!message.trim()) return;
-    const trimmedAuthor = author.trim() || 'Anonymous';
-    const date = new Date().toISOString().slice(0, 10);
-    const escaped = message.trim().replace(/'/g, "\\'").replace(/\n/g, ' ');
-    const entry = `  { text: '${escaped}', author: '${trimmedAuthor.replace(/'/g, "\\'")}', date: '${date}' },`;
-    setFormatted(entry);
+    const who = author.trim();
+    const msg = message.trim().replace(/\s+/g, ' ');
+    // The app shows the issue TITLE as the quote, formatted "text — Author".
+    const title = who ? `${msg.slice(0, 180)} — ${who}` : msg.slice(0, 200);
+    const body = `Feedback for Shakes' Red Gear Guide\n\n> ${msg}\n\n— ${who || 'Anonymous'}\n\n---\nAdmin: add the "${FEEDBACK_LABEL}" label to publish this in the app.`;
+    const url = `https://github.com/${FEEDBACK_REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+    setIssueUrl(url);
     setStage('submitted');
-    try {
-      navigator.clipboard?.writeText(entry);
-    } catch {}
+    try { window.open(url, '_blank', 'noopener'); } catch {}
   };
 
   return (
@@ -3072,63 +3072,33 @@ const FeedbackModal = ({ onClose }) => {
               <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 5 }}>
                 <Check size={14} color="#86efac" />
                 <div style={{ fontSize: 12, color: '#86efac', fontWeight: 700 }}>
-                  Feedback formatted & copied to clipboard!
+                  Almost done — post it on GitHub
                 </div>
               </div>
               <div style={{ fontSize: 11, color: '#d4f4dc', lineHeight: 1.5 }}>
-                Paste this in our Discord <b>#feedback</b> channel so an admin can review and approve it. Once approved, it appears for everyone in the app.
+                A GitHub page opened in a new tab with your feedback filled in. Just press <b>“Submit new issue”</b> there to send it. Once an admin approves it, it shows up in the app for everyone. (A free GitHub account is needed to post.)
               </div>
             </div>
 
-            <label style={{ display: 'block', fontSize: 10, fontWeight: 700, color: 'var(--kp-text-dim)', marginBottom: 5, letterSpacing: 0.4 }}>
-              YOUR FORMATTED COMMENT
-            </label>
-            <textarea
-              readOnly
-              value={formatted}
-              rows={3}
+            <a
+              href={issueUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
-                width: '100%', padding: '10px 12px', marginBottom: 12,
-                background: 'rgba(0,0,0,0.5)',
-                border: '1px solid rgba(201,169,97,0.3)',
-                borderRadius: 7, color: '#fbbf24', fontSize: 11,
-                fontFamily: 'monospace', outline: 'none', resize: 'vertical',
-                boxSizing: 'border-box',
-              }}
-              onClick={(e) => e.target.select()}
-            />
-
-            <div style={{ display: 'flex', gap: 8 }}>
-              <a
-                href={DISCORD_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  flex: 1, padding: '11px 14px', borderRadius: 8,
-                  background: 'linear-gradient(135deg, #5865f2, #404eed)',
-                  color: '#fff', textDecoration: 'none',
-                  fontFamily: 'Cinzel, serif', fontSize: 13, fontWeight: 800,
-                  letterSpacing: 0.4, cursor: 'pointer',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
-                }}>
-                💬 Open Discord
-              </a>
-              <button
-                onClick={() => { navigator.clipboard?.writeText(formatted); }}
-                style={{
-                  padding: '11px 14px', borderRadius: 8,
-                  background: 'rgba(201,169,97,0.15)',
-                  color: 'var(--kp-text-gold)',
-                  border: '1px solid rgba(201,169,97,0.4)',
-                  fontFamily: 'inherit', fontSize: 12, fontWeight: 700,
-                  cursor: 'pointer',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5,
-                }}>
-                <Copy size={12} /> Copy again
-              </button>
+                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 7,
+                width: '100%', padding: '12px 14px', borderRadius: 8, boxSizing: 'border-box',
+                background: 'linear-gradient(135deg, #c9a961, #8b6914)', color: '#0f0d0a',
+                textDecoration: 'none', fontFamily: 'Cinzel, serif', fontSize: 13, fontWeight: 800,
+                letterSpacing: 0.4,
+              }}>
+              ↗ Open the GitHub page
+            </a>
+            <div style={{ fontSize: 10, color: 'var(--kp-text-faint)', textAlign: 'center', marginTop: 6, lineHeight: 1.4 }}>
+              If no tab opened, tap the button above.
             </div>
+
             <button onClick={onClose} style={{
-              width: '100%', marginTop: 9, padding: '8px 14px', borderRadius: 7,
+              width: '100%', marginTop: 12, padding: '8px 14px', borderRadius: 7,
               background: 'transparent', color: 'var(--kp-text-faint)',
               border: '1px solid rgba(201,169,97,0.15)',
               fontFamily: 'inherit', fontSize: 11, fontWeight: 600,
@@ -3206,7 +3176,7 @@ const FeedbackModal = ({ onClose }) => {
               border: '1px dashed rgba(34,211,238,0.3)',
               fontSize: 10, color: '#67e8f9', lineHeight: 1.5,
             }}>
-              💡 Your message will be formatted and copied to clipboard. Paste it in Discord — once an admin approves it, your comment appears in the app.
+              💡 Submit opens a pre-filled GitHub issue — post it there with one tap. After an admin approves it, your comment appears in the app.
             </div>
           </>
         )}
