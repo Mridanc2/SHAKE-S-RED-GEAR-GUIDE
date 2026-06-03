@@ -15,7 +15,7 @@ import {
 const BRAND_TITLE = "SHAKES' RED GEAR GUIDE";
 const GUIDE_AUTHOR = 'Shakes';   // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2';  // built this app
-const APP_VERSION = 'v1.4';     // bump this on every new build so you can confirm the deploy is live
+const APP_VERSION = 'v2.0';     // bump this on every new build so you can confirm the deploy is live
 const TROOPS = ['infantry', 'archer', 'cavalry'];
 const TROOP_LABEL = { infantry: 'Infantry', archer: 'Archer', cavalry: 'Cavalry' };
 const TROOP_CODE = { infantry: 'I', archer: 'A', cavalry: 'C' };
@@ -504,6 +504,7 @@ const I18N = {
   'label.march': { en: 'March', es: 'Marcha', pt: 'Marcha', fr: 'Marche', de: 'Marsch', it: 'Marcia', nl: 'Mars', ru: 'Поход', pl: 'Marsz', tr: 'Sefer', ar: 'زحف', he: 'צעידה', zh: '行军', ja: '進軍', ko: '행군', id: 'Pasukan', vi: 'Hành quân', th: 'กองทัพ' },
   'label.phase': { en: 'Phase', es: 'Fase', pt: 'Fase', fr: 'Phase', de: 'Phase', it: 'Fase', nl: 'Fase', ru: 'Фаза', pl: 'Faza', tr: 'Aşama', ar: 'المرحلة', he: 'שלב', zh: '阶段', ja: 'フェーズ', ko: '단계', id: 'Fase', vi: 'Giai đoạn', th: 'เฟส' },
   'gear.tapAdd': { en: 'Tap to add', es: 'Toca para añadir', pt: 'Toque para adicionar', fr: 'Toucher pour ajouter', de: 'Antippen zum Hinzufügen', it: 'Tocca per aggiungere', nl: 'Tik om toe te voegen', ru: 'Нажмите, чтобы добавить', pl: 'Dotknij, aby dodać', tr: 'Eklemek için dokun', ar: 'اضغط للإضافة', he: 'הקש להוספה', zh: '点击添加', ja: 'タップで追加', ko: '눌러서 추가', id: 'Ketuk untuk menambah', vi: 'Chạm để thêm', th: 'แตะเพื่อเพิ่ม' },
+  'gear.markAll': { en: 'Set all gear to:', es: 'Marcar todo como:', pt: 'Marcar tudo como:', fr: 'Tout définir sur :', de: 'Alles setzen auf:', it: 'Imposta tutto su:', nl: 'Alles instellen op:', ru: 'Задать всё как:', pl: 'Ustaw wszystko na:', tr: 'Hepsini şuna ayarla:', ar: 'تعيين الكل إلى:', he: 'סמן הכל כ:', zh: '全部设为：', ja: 'すべて設定:', ko: '전체 설정:', id: 'Atur semua ke:', vi: 'Đặt tất cả thành:', th: 'ตั้งทั้งหมดเป็น:' },
   'plan.desc': { en: 'Below are your pending pieces for this phase, ordered so you can do the ones you can afford right now first.', es: 'Abajo están tus piezas pendientes de esta fase, ordenadas para que hagas primero las que ya puedes permitirte.', pt: 'Abaixo estão suas peças pendentes desta fase, ordenadas para fazer primeiro as que já pode pagar.', fr: 'Voici tes pièces en attente pour cette phase, classées pour faire d’abord celles que tu peux te permettre.', de: 'Unten deine offenen Teile dieser Phase, sortiert, damit du zuerst das machst, was du dir leisten kannst.', it: 'Qui sotto i pezzi in sospeso di questa fase, ordinati per fare prima quelli che puoi già permetterti.', nl: 'Hieronder je openstaande stukken voor deze fase, gesorteerd zodat je eerst doet wat je nu kunt betalen.', ru: 'Ниже — незавершённые предметы этой фазы, отсортированы так, чтобы сначала делать доступное вам сейчас.', pl: 'Poniżej oczekujące elementy tej fazy, uszeregowane tak, byś najpierw zrobił to, na co cię stać.', tr: 'Aşağıda bu aşamanın bekleyen parçaları var; şimdi karşılayabileceklerini önce yapacak şekilde sıralandı.', ar: 'في الأسفل قطعك المعلّقة لهذه المرحلة، مرتبة لتبدأ بما تقدر عليه الآن.', he: 'למטה החלקים שנותרו בשלב הזה, מסודרים כך שתעשה קודם את מה שאתה יכול להרשות עכשיו.', zh: '以下是本阶段待办的装备，已排序，便于先做你现在负担得起的。', ja: '以下はこのフェーズの未完了の装備です。今すぐ可能なものから順に並んでいます。', ko: '아래는 이 단계의 남은 장비로, 지금 가능한 것부터 하도록 정렬했습니다.', id: 'Berikut bagian yang tertunda di fase ini, diurut agar yang mampu kamu lakukan sekarang didahulukan.', vi: 'Dưới đây là các món còn lại của giai đoạn này, sắp xếp để bạn làm trước những gì đủ tài nguyên ngay.', th: 'ด้านล่างคือชิ้นที่ค้างของเฟสนี้ เรียงให้ทำสิ่งที่ทำได้ตอนนี้ก่อน' },
   'plan.saveUp': { en: 'Save up to unlock these {n}', es: 'Ahorra para desbloquear estos {n}', pt: 'Junte para desbloquear estes {n}', fr: 'Économise pour débloquer ces {n}', de: 'Spare, um diese {n} freizuschalten', it: 'Accumula per sbloccare questi {n}', nl: 'Spaar om deze {n} te ontgrendelen', ru: 'Накопите, чтобы открыть эти {n}', pl: 'Uzbieraj, by odblokować te {n}', tr: 'Bu {n} tanesini açmak için biriktir', ar: 'ادّخر لفتح هذه الـ {n}', he: 'חסוך כדי לפתוח את ה-{n}', zh: '攒资源解锁这 {n} 项', ja: '貯めてこの {n} 個を解放', ko: '모아서 이 {n}개를 잠금 해제', id: 'Kumpulkan untuk membuka {n} ini', vi: 'Tích lũy để mở {n} món này', th: 'เก็บสะสมเพื่อปลดล็อก {n} รายการนี้' },
   'plan.haveEnough': { en: 'You have enough resources for {n} action', es: 'Tienes recursos para {n} acción', pt: 'Você tem recursos para {n} ação', fr: 'Tu as les ressources pour {n} action', de: 'Du hast genug für {n} Aktion', it: 'Hai risorse per {n} azione', nl: 'Je hebt genoeg voor {n} actie', ru: 'Ресурсов хватает на {n} действие', pl: 'Masz zasoby na {n} akcję', tr: '{n} işlem için yeterli kaynağın var', ar: 'لديك موارد لـ {n} إجراء', he: 'יש לך משאבים ל-{n} פעולה', zh: '你有足够资源完成 {n} 项', ja: '{n} 件分のリソースがあります', ko: '{n}개 작업에 충분한 자원이 있습니다', id: 'Sumber daya cukup untuk {n} aksi', vi: 'Bạn đủ tài nguyên cho {n} hành động', th: 'คุณมีทรัพยากรพอสำหรับ {n} อย่าง' },
@@ -1059,7 +1060,7 @@ For each HERO GEAR PANEL, extract:
 - Hero name (shown at the top of the screen — examples: Petra, Amadeus, Marlin, Zoe, Howard, Hilde, Helga, Alcar, Yang, Vivian, Triton, Sophia, Thrud, Long Fei, Margot, Rosa)
 - Troop type: 'infantry', 'archer', or 'cavalry'. Infer from the small icon next to the gear (shield = infantry, crosshair/arrow = archer, star/compass = cavalry). Known mappings: Zoe/Amadeus/Howard/Helga/Alcar/Long Fei/Triton = infantry; Marlin/Rosa/Vivian/Yang = archer; Hilde/Petra/Margot/Thrud/Sophia = cavalry.
 - For each of the 4 gear slots (top-left=HELMET, top-right=GLOVES, bottom-left=CHEST, bottom-right=BOOTS):
-  - Rarity — the MOST important and most-often-wrong field. Judge ONLY by the colour of each gear icon's frame/border and glow. Do NOT default to "mythic". Tiers low→high: grey, green, blue, purple (epic), mythic, red. mythic = GOLD/orange-gold frame; red = bright CRIMSON/RED frame with a red glow, the TOP tier ABOVE mythic. Many advanced players run ALL-RED gear, so four red pieces on one hero is normal. If the frame is red/crimson rather than gold, it is "red", not "mythic".
+  - RARITY — read it from the thick OUTER BORDER colour of each gear icon. Look only at that border ring, NOT the picture inside the icon and NOT the tiny corner badges or number bubbles. For an equipped, geared hero the border is almost always GOLD/orange (= "mythic") or bright RED/crimson (= "red", the top tier). The lower tiers, by border colour, are: grey, green, blue, purple ("purple" = Epic). Decide ONLY by the border ring: gold border → "mythic"; red border → "red". Then sanity-check with the enhancement "+XX" number: +XX above 80 ⇒ only mythic or red; above 60 ⇒ Epic or higher; above 40 ⇒ blue or higher; above 20 ⇒ green or higher. A piece at +65 or +75 can never be grey/green/blue — pick at least the rarity its level allows.
   - Enhancement Level: the +XX number in the corner of the gear icon (range 0-100 for Mythic, and 1-100 for Red — Red's counter restarts at 1 right after ascending)
   - Mastery Level: the "Lv.X" label at the bottom (range 0-20)
 
@@ -1082,7 +1083,9 @@ If you can't determine a number, return null for that field. Output JSON only.`;
 
   // List of models to try in order. Free tier models have rate/availability limits;
   // if the main one is overloaded we fall back to lite or 2.0.
-  const MODELS_TO_TRY = ['gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-flash-latest'];
+  // Pro reads gear-frame rarity (red vs mythic) far better than flash. It's free
+  // but capped (~5/min, ~50/day per key); if a user hits that, we fall back to flash.
+  const MODELS_TO_TRY = ['gemini-2.5-pro', 'gemini-2.5-flash', 'gemini-2.5-flash-lite'];
   const MAX_RETRIES_PER_MODEL = 2;
 
   const buildEndpoint = (model) =>
@@ -1101,9 +1104,9 @@ If you can't determine a number, return null for that field. Output JSON only.`;
       temperature: 0,
       maxOutputTokens: 8192,
       responseMimeType: 'application/json',
-      // Gemini 2.5 Flash spends "thinking" tokens from the same budget, which can
-      // truncate the JSON mid-output. Disable thinking so the whole budget is the answer.
-      thinkingConfig: { thinkingBudget: 0 },
+      // Give the model a little room to reason about border colours, but cap it so
+      // the JSON (a few hundred tokens) is never truncated by thinking.
+      thinkingConfig: { thinkingBudget: 2048 },
     },
   };
 
@@ -1809,9 +1812,10 @@ const HeroSelector = ({ heroes, customImages, onPickTroop, t }) => {
 // ═══════════════════════════════════════════════════════════════════
 //   HERO BOARD — shows a troop's 4 pieces in a 2x2 layout
 // ═══════════════════════════════════════════════════════════════════
-const HeroBoard = ({ troop, heroName, heroImage, gear, onEdit, t }) => {
+const HeroBoard = ({ troop, heroName, heroImage, gear, onEdit, onBulkRarity, onSetRarity, t }) => {
   const tr = t || ((k) => k);
   const troopColor = TROOP_COLOR[troop];
+  const hasGear = SLOTS.some(s => gear[gearKey(troop, s)]);
   return (
     <div style={{
       background: 'var(--kp-panel)',
@@ -1834,51 +1838,81 @@ const HeroBoard = ({ troop, heroName, heroImage, gear, onEdit, t }) => {
         </div>
       </div>
 
+      {hasGear && onBulkRarity && (
+        <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 6, marginBottom: 11 }}>
+          <span style={{ fontSize: 9.5, color: 'var(--kp-text-faint)', fontWeight: 700, letterSpacing: 0.3 }}>
+            {tr('gear.markAll')}
+          </span>
+          {[['red', '#ef4444'], ['mythic', '#fbbf24'], ['purple', '#c084fc']].map(([r, c]) => (
+            <button key={r} onClick={() => onBulkRarity(troop, r)} className="kp-card" style={{
+              padding: '4px 11px', borderRadius: 99, fontSize: 11, fontWeight: 700,
+              background: `${c}1f`, border: `1px solid ${c}66`, color: c,
+              cursor: 'pointer', fontFamily: 'inherit', letterSpacing: 0.2,
+            }}>
+              {tr('rarity.' + r)}
+            </button>
+          ))}
+        </div>
+      )}
+
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
         {SLOTS.map(slot => {
           const piece = gear[gearKey(troop, slot)];
           const theme = piece ? RARITY_THEME[piece.rarity] : null;
           return (
-            <button key={slot} onClick={() => onEdit(troop, slot)} style={{
+            <div key={slot} style={{
               padding: 9, borderRadius: 9,
               background: piece
                 ? `linear-gradient(135deg, ${theme.bg}33, rgba(0,0,0,0.4))`
                 : 'var(--kp-surface-3)',
               border: piece ? `1px solid ${theme.edge}66` : '1px dashed rgba(201,169,97,0.25)',
-              cursor: 'pointer', fontFamily: 'inherit',
-              display: 'flex', alignItems: 'center', gap: 9,
-              minHeight: 64,
+              display: 'flex', flexDirection: 'column', gap: 7,
             }}>
-              <GearArt troop={troop} slot={slot} rarity={piece?.rarity || 'grey'} size={40} />
-              <div style={{ flex: 1, minWidth: 0, textAlign: 'left' }}>
-                <div style={{
-                  fontSize: 9, fontWeight: 700,
-                  color: 'var(--kp-text-dim)', letterSpacing: 0.5,
-                }}>
-                  {tr('slot.' + slot).toUpperCase()}
-                </div>
-                {piece ? (
-                  <>
-                    <div style={{
-                      fontSize: 10, fontWeight: 700,
-                      color: theme.glow, letterSpacing: 0.3,
-                    }}>
-                      {tr('rarity.' + piece.rarity)}
-                    </div>
-                    <div style={{
-                      fontSize: 13, fontWeight: 800, color: 'var(--kp-text)',
-                      fontFamily: 'Cinzel, serif',
-                    }}>
-                      L{piece.level}{piece.mastery ? ` +${piece.mastery}` : ''}
-                    </div>
-                  </>
-                ) : (
-                  <div style={{ fontSize: 10, color: 'var(--kp-text-fainter)', fontStyle: 'italic', marginTop: 4 }}>
-                    {tr('gear.tapAdd')}
+              <div onClick={() => onEdit(troop, slot)} style={{
+                display: 'flex', alignItems: 'center', gap: 9, cursor: 'pointer', minHeight: 48,
+              }}>
+                <GearArt troop={troop} slot={slot} rarity={piece?.rarity || 'grey'} size={40} />
+                <div style={{ flex: 1, minWidth: 0, textAlign: 'left' }}>
+                  <div style={{ fontSize: 9, fontWeight: 700, color: 'var(--kp-text-dim)', letterSpacing: 0.5 }}>
+                    {tr('slot.' + slot).toUpperCase()}
                   </div>
-                )}
+                  {piece ? (
+                    <>
+                      <div style={{ fontSize: 10, fontWeight: 700, color: theme.glow, letterSpacing: 0.3 }}>
+                        {tr('rarity.' + piece.rarity)}
+                      </div>
+                      <div style={{ fontSize: 13, fontWeight: 800, color: 'var(--kp-text)', fontFamily: 'Cinzel, serif' }}>
+                        L{piece.level}{piece.mastery ? ` +${piece.mastery}` : ''}
+                      </div>
+                    </>
+                  ) : (
+                    <div style={{ fontSize: 10, color: 'var(--kp-text-fainter)', fontStyle: 'italic', marginTop: 4 }}>
+                      {tr('gear.tapAdd')}
+                    </div>
+                  )}
+                </div>
               </div>
-            </button>
+              {piece && onSetRarity && (
+                <div style={{ display: 'flex', gap: 4 }}>
+                  {EDITABLE_RARITIES.map(r => {
+                    const active = piece.rarity === r;
+                    const col = (RARITY_THEME[r] && RARITY_THEME[r].glow) || '#c9a961';
+                    return (
+                      <button key={r} onClick={() => onSetRarity(troop, slot, r)} title={tr('rarity.' + r)} style={{
+                        flex: 1, height: 19, borderRadius: 5, padding: 0, cursor: 'pointer',
+                        background: active ? col : `${col}22`,
+                        border: active ? '1.5px solid #fff' : `1px solid ${col}66`,
+                        boxShadow: active ? `0 0 6px ${col}` : 'none',
+                        fontSize: 8.5, fontWeight: 800, fontFamily: 'inherit',
+                        color: active ? '#0f0d0a' : col, letterSpacing: 0.3,
+                      }}>
+                        {tr('rarity.' + r).slice(0, 1).toUpperCase()}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
           );
         })}
       </div>
@@ -4394,6 +4428,20 @@ export default function App() {
                 onEdit={(troop, slot) => setEditingPiece({
                   troop, slot,
                   piece: state.gear[gearKey(troop, slot)] || null,
+                })}
+                onBulkRarity={(troop, rarity) => setState(prev => {
+                  const gear = { ...prev.gear };
+                  SLOTS.forEach(slot => {
+                    const k = gearKey(troop, slot);
+                    if (gear[k]) gear[k] = { ...gear[k], rarity };
+                  });
+                  return { ...prev, gear };
+                })}
+                onSetRarity={(troop, slot, rarity) => setState(prev => {
+                  const gear = { ...prev.gear };
+                  const k = gearKey(troop, slot);
+                  if (gear[k]) gear[k] = { ...gear[k], rarity };
+                  return { ...prev, gear };
                 })}
               />
             ))}
