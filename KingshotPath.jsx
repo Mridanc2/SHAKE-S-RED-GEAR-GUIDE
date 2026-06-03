@@ -4279,7 +4279,7 @@ export default function App() {
         </button>
         {showGear && (
           <div className="heroes-grid" style={{
-            display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10, marginBottom: 18,
+            display: 'grid', gridTemplateColumns: '1fr', gap: 10, marginBottom: 18,
           }}>
             {TROOPS.map(t2 => (
               <HeroBoard
