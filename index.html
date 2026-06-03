@@ -41,16 +41,16 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Upload, Check, X, AlertTriangle, ChevronRight, ChevronDown, Star, Hammer, Sparkles, Crown, Shield, Sword, Target, Lock, Info, Trash2, RotateCcw, ArrowRight, Zap, Flame, Edit3, Copy, Gem } from 'lucide-react';
 
 // ═══════════════════════════════════════════════════════════════════
-//   KINGSHOT PATH ADVISOR — follows Shake's Red Gear Guide
+//   KINGSHOT PATH ADVISOR — follows Shakes' Red Gear Guide
 //   Upload your 3 march heroes + resources → get a personal phase plan
 // ═══════════════════════════════════════════════════════════════════
 
 // ── Troops, slots, rarities ──
 // Fixed brand wordmark — same in every language (it's the guide's name).
-const BRAND_TITLE = "SHAKE'S RED GEAR GUIDE";
-const GUIDE_AUTHOR = 'Shake'; // created the strategy / guide
+const BRAND_TITLE = "SHAKES' RED GEAR GUIDE";
+const GUIDE_AUTHOR = 'Shakes'; // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2'; // built this app
-const APP_VERSION = 'v1.1'; // bump this on every new build so you can confirm the deploy is live
+const APP_VERSION = 'v1.2'; // bump this on every new build so you can confirm the deploy is live
 const TROOPS = ['infantry', 'archer', 'cavalry'];
 const TROOP_LABEL = {
   infantry: 'Infantry',
@@ -409,7 +409,7 @@ const TRANSLATIONS = {
     'rarity.purple': 'Epic',
     'rarity.mythic': 'Mythic',
     'rarity.red': 'Red',
-    'section.progress': "SHAKE'S PATH — YOUR PROGRESS",
+    'section.progress': "SHAKES' PATH — YOUR PROGRESS",
     'section.heroes': 'YOUR 3 MARCH HEROES',
     'section.actionPlan': 'YOUR ACTION PLAN',
     'section.readyNow': 'READY NOW',
@@ -459,7 +459,7 @@ const TRANSLATIONS = {
     'rarity.purple': 'Épico',
     'rarity.mythic': 'Mítico',
     'rarity.red': 'Rojo',
-    'section.progress': 'CAMINO DE SHAKE — TU PROGRESO',
+    'section.progress': 'CAMINO DE SHAKES — TU PROGRESO',
     'section.heroes': 'TUS 3 HÉROES DE MARCHA',
     'section.actionPlan': 'TU PLAN DE ACCIÓN',
     'section.readyNow': 'LISTO AHORA',
@@ -505,7 +505,7 @@ const TRANSLATIONS = {
     'rarity.purple': 'Épico',
     'rarity.mythic': 'Mítico',
     'rarity.red': 'Vermelho',
-    'section.progress': 'CAMINHO DO SHAKE — SEU PROGRESSO',
+    'section.progress': 'CAMINHO DO SHAKES — SEU PROGRESSO',
     'section.heroes': 'SEUS 3 HERÓIS DE MARCHA',
     'section.actionPlan': 'SEU PLANO DE AÇÃO',
     'section.readyNow': 'PRONTO AGORA',
@@ -551,7 +551,7 @@ const TRANSLATIONS = {
     'rarity.purple': 'Épique',
     'rarity.mythic': 'Mythique',
     'rarity.red': 'Rouge',
-    'section.progress': 'CHEMIN DE SHAKE — VOTRE PROGRESSION',
+    'section.progress': 'CHEMIN DE SHAKES — VOTRE PROGRESSION',
     'section.heroes': 'VOS 3 HÉROS DE MARCHE',
     'section.actionPlan': 'VOTRE PLAN D\'ACTION',
     'section.readyNow': 'PRÊT MAINTENANT',
@@ -747,7 +747,7 @@ const TRANSLATIONS = {
     'rarity.purple': 'אפי',
     'rarity.mythic': 'מיתי',
     'rarity.red': 'אדום',
-    'section.progress': 'המסלול של SHAKE — ההתקדמות שלך',
+    'section.progress': 'המסלול של SHAKES — ההתקדמות שלך',
     'section.heroes': '3 הגיבורים שלך',
     'section.actionPlan': 'תוכנית הפעולה שלך',
     'section.readyNow': 'מוכן עכשיו',
@@ -1406,24 +1406,24 @@ const I18N = {
     th: 'อัปโหลดภาพหน้าจอหนึ่งภาพต่อฮีโร่ (เห็นครบ 4 ชิ้น) ทรัพยากรกรอกเองด้านล่าง หรือแตะช่องใดก็ได้เพื่อกรอกเอง'
   },
   'phase.fullPlan': {
-    en: 'Shake’s full plan',
-    es: 'Plan completo de Shake',
-    pt: 'Plano completo do Shake',
-    fr: 'Le plan complet de Shake',
+    en: 'Shakes’ full plan',
+    es: 'Plan completo de Shakes',
+    pt: 'Plano completo do Shakes',
+    fr: 'Le plan complet de Shakes',
     de: 'Shakes kompletter Plan',
-    it: 'Piano completo di Shake',
-    nl: 'Shake’s volledige plan',
-    ru: 'Полный план Shake',
-    pl: 'Pełny plan Shake’a',
-    tr: 'Shake’in tam planı',
-    ar: 'خطة Shake الكاملة',
-    he: 'התוכנית המלאה של Shake',
-    zh: 'Shake 的完整计划',
-    ja: 'Shake の完全プラン',
-    ko: 'Shake의 전체 계획',
-    id: 'Rencana lengkap Shake',
-    vi: 'Kế hoạch đầy đủ của Shake',
-    th: 'แผนเต็มของ Shake'
+    it: 'Piano completo di Shakes',
+    nl: 'Shakes’ volledige plan',
+    ru: 'Полный план Shakes',
+    pl: 'Pełny plan Shakes’a',
+    tr: 'Shakes’in tam planı',
+    ar: 'خطة Shakes الكاملة',
+    he: 'התוכנית המלאה של Shakes',
+    zh: 'Shakes 的完整计划',
+    ja: 'Shakes の完全プラン',
+    ko: 'Shakes의 전체 계획',
+    id: 'Rencana lengkap Shakes',
+    vi: 'Kế hoạch đầy đủ của Shakes',
+    th: 'แผนเต็มของ Shakes'
   },
   'phase.current': {
     en: 'Phase {n} · Current',
@@ -1926,24 +1926,24 @@ const I18N = {
     th: 'ที่ปรึกษาความก้าวหน้าอุปกรณ์พันธมิตร'
   },
   'section.progress': {
-    en: 'SHAKE’S PATH — YOUR PROGRESS',
-    es: 'CAMINO DE SHAKE — TU PROGRESO',
-    pt: 'CAMINHO DE SHAKE — SEU PROGRESSO',
-    fr: 'PARCOURS DE SHAKE — TA PROGRESSION',
+    en: 'SHAKES’ PATH — YOUR PROGRESS',
+    es: 'CAMINO DE SHAKES — TU PROGRESO',
+    pt: 'CAMINHO DE SHAKES — SEU PROGRESSO',
+    fr: 'PARCOURS DE SHAKES — TA PROGRESSION',
     de: 'SHAKES PFAD — DEIN FORTSCHRITT',
-    it: 'PERCORSO DI SHAKE — I TUOI PROGRESSI',
-    nl: 'SHAKE’S PAD — JOUW VOORTGANG',
-    ru: 'ПУТЬ SHAKE — ВАШ ПРОГРЕСС',
-    pl: 'ŚCIEŻKA SHAKE — TWÓJ POSTĘP',
-    tr: 'SHAKE’İN YOLU — İLERLEMEN',
-    ar: 'مسار Shake — تقدمك',
-    he: 'המסלול של Shake — ההתקדמות שלך',
-    zh: 'SHAKE 之路 — 你的进度',
-    ja: 'SHAKE のパス — あなたの進捗',
-    ko: 'SHAKE의 경로 — 내 진행도',
-    id: 'JALUR SHAKE — KEMAJUANMU',
-    vi: 'LỘ TRÌNH CỦA SHAKE — TIẾN ĐỘ CỦA BẠN',
-    th: 'เส้นทางของ SHAKE — ความคืบหน้าของคุณ'
+    it: 'PERCORSO DI SHAKES — I TUOI PROGRESSI',
+    nl: 'SHAKES’ PAD — JOUW VOORTGANG',
+    ru: 'ПУТЬ SHAKES — ВАШ ПРОГРЕСС',
+    pl: 'ŚCIEŻKA SHAKES — TWÓJ POSTĘP',
+    tr: 'SHAKES’İN YOLU — İLERLEMEN',
+    ar: 'مسار Shakes — تقدمك',
+    he: 'המסלול של Shakes — ההתקדמות שלך',
+    zh: 'SHAKES 之路 — 你的进度',
+    ja: 'SHAKES のパス — あなたの進捗',
+    ko: 'SHAKES의 경로 — 내 진행도',
+    id: 'JALUR SHAKES — KEMAJUANMU',
+    vi: 'LỘ TRÌNH CỦA SHAKES — TIẾN ĐỘ CỦA BẠN',
+    th: 'เส้นทางของ SHAKES — ความคืบหน้าของคุณ'
   },
   'section.heroes': {
     en: 'YOUR 3 MARCH HEROES',
@@ -3169,7 +3169,7 @@ const redMgToReach = (fromLevel, toLevel) => {
 };
 
 // ═══════════════════════════════════════════════════════════════════
-//   SHAKE'S RED GEAR GUIDE — 7 phases + specialization stop
+//   SHAKES' RED GEAR GUIDE — 7 phases + specialization stop
 //   Each phase has actions that must be completed before moving on
 // ═══════════════════════════════════════════════════════════════════
 const SHAKES_PATH = [{

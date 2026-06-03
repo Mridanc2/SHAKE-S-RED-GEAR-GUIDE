@@ -6,16 +6,16 @@ import {
 } from 'lucide-react';
 
 // ═══════════════════════════════════════════════════════════════════
-//   KINGSHOT PATH ADVISOR — follows Shake's Red Gear Guide
+//   KINGSHOT PATH ADVISOR — follows Shakes' Red Gear Guide
 //   Upload your 3 march heroes + resources → get a personal phase plan
 // ═══════════════════════════════════════════════════════════════════
 
 // ── Troops, slots, rarities ──
 // Fixed brand wordmark — same in every language (it's the guide's name).
-const BRAND_TITLE = "SHAKE'S RED GEAR GUIDE";
-const GUIDE_AUTHOR = 'Shake';   // created the strategy / guide
+const BRAND_TITLE = "SHAKES' RED GEAR GUIDE";
+const GUIDE_AUTHOR = 'Shakes';   // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2';  // built this app
-const APP_VERSION = 'v1.1';     // bump this on every new build so you can confirm the deploy is live
+const APP_VERSION = 'v1.2';     // bump this on every new build so you can confirm the deploy is live
 const TROOPS = ['infantry', 'archer', 'cavalry'];
 const TROOP_LABEL = { infantry: 'Infantry', archer: 'Archer', cavalry: 'Cavalry' };
 const TROOP_CODE = { infantry: 'I', archer: 'A', cavalry: 'C' };
@@ -187,7 +187,7 @@ const TRANSLATIONS = {
     'slot.helmet': 'Helmet', 'slot.chest': 'Chest', 'slot.gloves': 'Gloves', 'slot.boots': 'Boots',
     'rarity.grey': 'Grey', 'rarity.green': 'Green', 'rarity.blue': 'Blue',
     'rarity.purple': 'Epic', 'rarity.mythic': 'Mythic', 'rarity.red': 'Red',
-    'section.progress': "SHAKE'S PATH — YOUR PROGRESS",
+    'section.progress': "SHAKES' PATH — YOUR PROGRESS",
     'section.heroes': 'YOUR 3 MARCH HEROES',
     'section.actionPlan': 'YOUR ACTION PLAN',
     'section.readyNow': 'READY NOW',
@@ -228,7 +228,7 @@ const TRANSLATIONS = {
     'slot.helmet': 'Casco', 'slot.chest': 'Pecho', 'slot.gloves': 'Guantes', 'slot.boots': 'Botas',
     'rarity.grey': 'Gris', 'rarity.green': 'Verde', 'rarity.blue': 'Azul',
     'rarity.purple': 'Épico', 'rarity.mythic': 'Mítico', 'rarity.red': 'Rojo',
-    'section.progress': 'CAMINO DE SHAKE — TU PROGRESO',
+    'section.progress': 'CAMINO DE SHAKES — TU PROGRESO',
     'section.heroes': 'TUS 3 HÉROES DE MARCHA',
     'section.actionPlan': 'TU PLAN DE ACCIÓN',
     'section.readyNow': 'LISTO AHORA',
@@ -258,7 +258,7 @@ const TRANSLATIONS = {
     'slot.helmet': 'Capacete', 'slot.chest': 'Peitoral', 'slot.gloves': 'Luvas', 'slot.boots': 'Botas',
     'rarity.grey': 'Cinza', 'rarity.green': 'Verde', 'rarity.blue': 'Azul',
     'rarity.purple': 'Épico', 'rarity.mythic': 'Mítico', 'rarity.red': 'Vermelho',
-    'section.progress': 'CAMINHO DO SHAKE — SEU PROGRESSO',
+    'section.progress': 'CAMINHO DO SHAKES — SEU PROGRESSO',
     'section.heroes': 'SEUS 3 HERÓIS DE MARCHA',
     'section.actionPlan': 'SEU PLANO DE AÇÃO',
     'section.readyNow': 'PRONTO AGORA',
@@ -288,7 +288,7 @@ const TRANSLATIONS = {
     'slot.helmet': 'Casque', 'slot.chest': 'Torse', 'slot.gloves': 'Gants', 'slot.boots': 'Bottes',
     'rarity.grey': 'Gris', 'rarity.green': 'Vert', 'rarity.blue': 'Bleu',
     'rarity.purple': 'Épique', 'rarity.mythic': 'Mythique', 'rarity.red': 'Rouge',
-    'section.progress': 'CHEMIN DE SHAKE — VOTRE PROGRESSION',
+    'section.progress': 'CHEMIN DE SHAKES — VOTRE PROGRESSION',
     'section.heroes': 'VOS 3 HÉROS DE MARCHE',
     'section.actionPlan': 'VOTRE PLAN D\'ACTION',
     'section.readyNow': 'PRÊT MAINTENANT',
@@ -395,7 +395,7 @@ const TRANSLATIONS = {
     'slot.helmet': 'קסדה', 'slot.chest': 'חזה', 'slot.gloves': 'כפפות', 'slot.boots': 'מגפיים',
     'rarity.grey': 'אפור', 'rarity.green': 'ירוק', 'rarity.blue': 'כחול',
     'rarity.purple': 'אפי', 'rarity.mythic': 'מיתי', 'rarity.red': 'אדום',
-    'section.progress': 'המסלול של SHAKE — ההתקדמות שלך',
+    'section.progress': 'המסלול של SHAKES — ההתקדמות שלך',
     'section.heroes': '3 הגיבורים שלך',
     'section.actionPlan': 'תוכנית הפעולה שלך',
     'section.readyNow': 'מוכן עכשיו', 'section.needMore': 'צריך עוד משאבים',
@@ -497,7 +497,7 @@ const I18N = {
   'app.credit': { en: 'Guide by {guide} · App by {app}', es: 'Guía de {guide} · App de {app}', pt: 'Guia de {guide} · App de {app}', fr: 'Guide par {guide} · App par {app}', de: 'Guide von {guide} · App von {app}', it: 'Guida di {guide} · App di {app}', nl: 'Gids van {guide} · App van {app}', ru: 'Гайд: {guide} · Приложение: {app}', pl: 'Poradnik: {guide} · Aplikacja: {app}', tr: 'Rehber: {guide} · Uygulama: {app}', ar: 'دليل {guide} · تطبيق {app}', he: 'מדריך מאת {guide} · אפליקציה מאת {app}', zh: '攻略 {guide} · 应用 {app}', ja: 'ガイド: {guide} · アプリ: {app}', ko: '가이드: {guide} · 앱: {app}', id: 'Panduan oleh {guide} · App oleh {app}', vi: 'Hướng dẫn bởi {guide} · App bởi {app}', th: 'ไกด์โดย {guide} · แอปโดย {app}' },
   'api.ready': { en: 'API connected · auto-OCR ready', es: 'API conectada · OCR automático listo', pt: 'API conectada · OCR automático pronto', fr: 'API connectée · OCR auto prêt', de: 'API verbunden · Auto-OCR bereit', it: 'API connessa · OCR automatico pronto', nl: 'API verbonden · auto-OCR gereed', ru: 'API подключён · авто-OCR готов', pl: 'API połączone · auto-OCR gotowy', tr: 'API bağlı · oto-OCR hazır', ar: 'API متصل · OCR تلقائي جاهز', he: 'API מחובר · OCR אוטומטי מוכן', zh: 'API 已连接 · 自动 OCR 就绪', ja: 'API 接続済み · 自動OCR対応', ko: 'API 연결됨 · 자동 OCR 준비', id: 'API tersambung · auto-OCR siap', vi: 'API đã kết nối · auto-OCR sẵn sàng', th: 'เชื่อมต่อ API · พร้อม OCR อัตโนมัติ' },
   'upload.help': { en: 'Upload one screenshot per troop hero (showing all 4 gear pieces). Resources are entered manually below. Or tap any slot below to enter gear manually.', es: 'Sube una captura por héroe (mostrando las 4 piezas). Los recursos se ingresan manualmente abajo. O toca cualquier ranura para añadir equipo manualmente.', pt: 'Envie uma captura por herói (mostrando as 4 peças). Os recursos são inseridos manualmente abaixo. Ou toque em qualquer slot para inserir manualmente.', fr: 'Téléverse une capture par héros (avec les 4 pièces). Les ressources se saisissent manuellement ci-dessous. Ou touche une case pour saisir l’équipement manuellement.', de: 'Lade pro Held einen Screenshot hoch (alle 4 Teile sichtbar). Ressourcen werden unten manuell eingegeben. Oder tippe ein Feld an, um Ausrüstung manuell einzugeben.', it: 'Carica uno screenshot per eroe (con tutti i 4 pezzi). Le risorse si inseriscono manualmente sotto. Oppure tocca uno slot per inserire l’equipaggiamento a mano.', nl: 'Upload één screenshot per held (alle 4 stukken zichtbaar). Bronnen voer je hieronder handmatig in. Of tik op een vak om uitrusting handmatig in te voeren.', ru: 'Загрузите по одному скриншоту на героя (видны все 4 предмета). Ресурсы вводятся вручную ниже. Или нажмите слот, чтобы ввести снаряжение вручную.', pl: 'Prześlij jeden zrzut na bohatera (wszystkie 4 części). Zasoby wpisujesz ręcznie poniżej. Albo dotknij slotu, aby dodać sprzęt ręcznie.', tr: 'Her kahraman için bir ekran görüntüsü yükle (4 parça da görünsün). Kaynaklar aşağıdan elle girilir. Ya da bir yuvaya dokunup ekipmanı elle gir.', ar: 'ارفع لقطة لكل بطل (تظهر القطع الأربع). تُدخل الموارد يدويًا بالأسفل. أو اضغط أي خانة لإدخال العتاد يدويًا.', he: 'העלה צילום מסך אחד לכל גיבור (כל 4 הפריטים נראים). המשאבים מוזנים ידנית למטה. או הקש על משבצת כדי להזין ציוד ידנית.', zh: '每个英雄上传一张截图（显示全部4件装备）。资源在下方手动输入。或点击任意槽位手动输入装备。', ja: 'ヒーローごとに1枚のスクショをアップ（4部位すべて表示）。リソースは下で手動入力。または枠をタップして手動入力。', ko: '영웅마다 스크린샷 1장 업로드(4부위 모두 표시). 자원은 아래에서 직접 입력. 또는 슬롯을 눌러 직접 입력.', id: 'Unggah satu tangkapan per hero (semua 4 gear terlihat). Sumber daya diisi manual di bawah. Atau ketuk slot untuk isi manual.', vi: 'Tải một ảnh chụp mỗi tướng (hiện đủ 4 món). Tài nguyên nhập tay bên dưới. Hoặc chạm ô bất kỳ để nhập thủ công.', th: 'อัปโหลดภาพหน้าจอหนึ่งภาพต่อฮีโร่ (เห็นครบ 4 ชิ้น) ทรัพยากรกรอกเองด้านล่าง หรือแตะช่องใดก็ได้เพื่อกรอกเอง' },
-  'phase.fullPlan': { en: 'Shake’s full plan', es: 'Plan completo de Shake', pt: 'Plano completo do Shake', fr: 'Le plan complet de Shake', de: 'Shakes kompletter Plan', it: 'Piano completo di Shake', nl: 'Shake’s volledige plan', ru: 'Полный план Shake', pl: 'Pełny plan Shake’a', tr: 'Shake’in tam planı', ar: 'خطة Shake الكاملة', he: 'התוכנית המלאה של Shake', zh: 'Shake 的完整计划', ja: 'Shake の完全プラン', ko: 'Shake의 전체 계획', id: 'Rencana lengkap Shake', vi: 'Kế hoạch đầy đủ của Shake', th: 'แผนเต็มของ Shake' },
+  'phase.fullPlan': { en: 'Shakes’ full plan', es: 'Plan completo de Shakes', pt: 'Plano completo do Shakes', fr: 'Le plan complet de Shakes', de: 'Shakes kompletter Plan', it: 'Piano completo di Shakes', nl: 'Shakes’ volledige plan', ru: 'Полный план Shakes', pl: 'Pełny plan Shakes’a', tr: 'Shakes’in tam planı', ar: 'خطة Shakes الكاملة', he: 'התוכנית המלאה של Shakes', zh: 'Shakes 的完整计划', ja: 'Shakes の完全プラン', ko: 'Shakes의 전체 계획', id: 'Rencana lengkap Shakes', vi: 'Kế hoạch đầy đủ của Shakes', th: 'แผนเต็มของ Shakes' },
   'phase.current': { en: 'Phase {n} · Current', es: 'Fase {n} · Actual', pt: 'Fase {n} · Atual', fr: 'Phase {n} · En cours', de: 'Phase {n} · Aktuell', it: 'Fase {n} · Attuale', nl: 'Fase {n} · Huidig', ru: 'Фаза {n} · Текущая', pl: 'Faza {n} · Bieżąca', tr: 'Aşama {n} · Mevcut', ar: 'المرحلة {n} · الحالية', he: 'שלב {n} · נוכחי', zh: '阶段 {n} · 当前', ja: 'フェーズ {n} · 現在', ko: '단계 {n} · 현재', id: 'Fase {n} · Saat ini', vi: 'Giai đoạn {n} · Hiện tại', th: 'เฟส {n} · ปัจจุบัน' },
   'phase.done': { en: 'Done', es: 'Hecho', pt: 'Feito', fr: 'Fait', de: 'Fertig', it: 'Fatto', nl: 'Klaar', ru: 'Готово', pl: 'Gotowe', tr: 'Bitti', ar: 'تم', he: 'הושלם', zh: '完成', ja: '完了', ko: '완료', id: 'Selesai', vi: 'Xong', th: 'เสร็จ' },
   'phase.complete': { en: 'Path Complete', es: 'Camino Completado', pt: 'Caminho Completo', fr: 'Parcours Terminé', de: 'Pfad Abgeschlossen', it: 'Percorso Completato', nl: 'Pad Voltooid', ru: 'Путь Завершён', pl: 'Ścieżka Ukończona', tr: 'Yol Tamamlandı', ar: 'اكتمل المسار', he: 'המסלול הושלם', zh: '路径完成', ja: 'パス完了', ko: '경로 완료', id: 'Jalur Selesai', vi: 'Hoàn thành lộ trình', th: 'เส้นทางเสร็จสมบูรณ์' },
@@ -523,7 +523,7 @@ const I18N = {
   'spec.following': { en: 'Following this path', es: 'Siguiendo este camino', pt: 'Seguindo este caminho', fr: 'Parcours suivi', de: 'Diesem Pfad folgend', it: 'Stai seguendo questo percorso', nl: 'Dit pad volgend', ru: 'Этот путь выбран', pl: 'Podążasz tą ścieżką', tr: 'Bu yolu izliyorsun', ar: 'تتبع هذا المسار', he: 'עוקב אחר מסלול זה', zh: '正在跟随此路径', ja: 'このパスを進行中', ko: '이 경로를 따르는 중', id: 'Mengikuti jalur ini', vi: 'Đang theo lộ trình này', th: 'กำลังไปตามเส้นทางนี้' },
   'res.mithril': { en: 'Mithril', es: 'Mithril', pt: 'Mithril', fr: 'Mithril', de: 'Mithril', it: 'Mithril', nl: 'Mithril', ru: 'Mithril', pl: 'Mithril', tr: 'Mithril', ar: 'Mithril', he: 'Mithril', zh: 'Mithril', ja: 'Mithril', ko: 'Mithril', id: 'Mithril', vi: 'Mithril', th: 'Mithril' },
   'brand.subtitle': { en: 'ALLIANCE GEAR PROGRESSION ADVISOR', es: 'ASESOR DE PROGRESIÓN DE EQUIPO DE LA ALIANZA', pt: 'CONSELHEIRO DE PROGRESSÃO DE EQUIPAMENTO', fr: 'CONSEILLER DE PROGRESSION D’ÉQUIPEMENT', de: 'ALLIANZ-AUSRÜSTUNGSBERATER', it: 'CONSULENTE DI PROGRESSIONE EQUIPAGGIAMENTO', nl: 'ALLIANTIE-UITRUSTINGSADVISEUR', ru: 'СОВЕТНИК ПО СНАРЯЖЕНИЮ АЛЬЯНСА', pl: 'DORADCA ROZWOJU SPRZĘTU SOJUSZU', tr: 'İTTİFAK EKİPMAN İLERLEME DANIŞMANI', ar: 'مستشار تطوير عتاد التحالف', he: 'יועץ התקדמות ציוד הברית', zh: '联盟装备进度顾问', ja: '同盟装備プログレッションアドバイザー', ko: '연합 장비 진행 어드바이저', id: 'PENASIHAT PROGRES GEAR ALIANSI', vi: 'CỐ VẤN TIẾN TRÌNH TRANG BỊ LIÊN MINH', th: 'ที่ปรึกษาความก้าวหน้าอุปกรณ์พันธมิตร' },
-  'section.progress': { en: 'SHAKE’S PATH — YOUR PROGRESS', es: 'CAMINO DE SHAKE — TU PROGRESO', pt: 'CAMINHO DE SHAKE — SEU PROGRESSO', fr: 'PARCOURS DE SHAKE — TA PROGRESSION', de: 'SHAKES PFAD — DEIN FORTSCHRITT', it: 'PERCORSO DI SHAKE — I TUOI PROGRESSI', nl: 'SHAKE’S PAD — JOUW VOORTGANG', ru: 'ПУТЬ SHAKE — ВАШ ПРОГРЕСС', pl: 'ŚCIEŻKA SHAKE — TWÓJ POSTĘP', tr: 'SHAKE’İN YOLU — İLERLEMEN', ar: 'مسار Shake — تقدمك', he: 'המסלול של Shake — ההתקדמות שלך', zh: 'SHAKE 之路 — 你的进度', ja: 'SHAKE のパス — あなたの進捗', ko: 'SHAKE의 경로 — 내 진행도', id: 'JALUR SHAKE — KEMAJUANMU', vi: 'LỘ TRÌNH CỦA SHAKE — TIẾN ĐỘ CỦA BẠN', th: 'เส้นทางของ SHAKE — ความคืบหน้าของคุณ' },
+  'section.progress': { en: 'SHAKES’ PATH — YOUR PROGRESS', es: 'CAMINO DE SHAKES — TU PROGRESO', pt: 'CAMINHO DE SHAKES — SEU PROGRESSO', fr: 'PARCOURS DE SHAKES — TA PROGRESSION', de: 'SHAKES PFAD — DEIN FORTSCHRITT', it: 'PERCORSO DI SHAKES — I TUOI PROGRESSI', nl: 'SHAKES’ PAD — JOUW VOORTGANG', ru: 'ПУТЬ SHAKES — ВАШ ПРОГРЕСС', pl: 'ŚCIEŻKA SHAKES — TWÓJ POSTĘP', tr: 'SHAKES’İN YOLU — İLERLEMEN', ar: 'مسار Shakes — تقدمك', he: 'המסלול של Shakes — ההתקדמות שלך', zh: 'SHAKES 之路 — 你的进度', ja: 'SHAKES のパス — あなたの進捗', ko: 'SHAKES의 경로 — 내 진행도', id: 'JALUR SHAKES — KEMAJUANMU', vi: 'LỘ TRÌNH CỦA SHAKES — TIẾN ĐỘ CỦA BẠN', th: 'เส้นทางของ SHAKES — ความคืบหน้าของคุณ' },
   'section.heroes': { en: 'YOUR 3 MARCH HEROES', es: 'TUS 3 HÉROES DE MARCHA', pt: 'SEUS 3 HERÓIS DE MARCHA', fr: 'TES 3 HÉROS DE MARCHE', de: 'DEINE 3 MARSCHHELDEN', it: 'I TUOI 3 EROI DI MARCIA', nl: 'JE 3 MARSHELDEN', ru: 'ВАШИ 3 ГЕРОЯ ПОХОДА', pl: 'TWOI 3 BOHATEROWIE MARSZU', tr: '3 SEFER KAHRAMANIN', ar: 'أبطال الزحف الثلاثة', he: '3 גיבורי הצעידה שלך', zh: '你的3位行军英雄', ja: '進軍ヒーロー3名', ko: '내 행군 영웅 3명', id: '3 HERO PASUKANMU', vi: '3 TƯỚNG HÀNH QUÂN CỦA BẠN', th: '3 ฮีโร่กองทัพของคุณ' },
   'section.actionPlan': { en: 'YOUR ACTION PLAN', es: 'TU PLAN DE ACCIÓN', pt: 'SEU PLANO DE AÇÃO', fr: 'TON PLAN D’ACTION', de: 'DEIN AKTIONSPLAN', it: 'IL TUO PIANO D’AZIONE', nl: 'JOUW ACTIEPLAN', ru: 'ВАШ ПЛАН ДЕЙСТВИЙ', pl: 'TWÓJ PLAN DZIAŁANIA', tr: 'EYLEM PLANIN', ar: 'خطة عملك', he: 'תוכנית הפעולה שלך', zh: '你的行动计划', ja: 'あなたのアクションプラン', ko: '내 액션 플랜', id: 'RENCANA AKSIMU', vi: 'KẾ HOẠCH HÀNH ĐỘNG CỦA BẠN', th: 'แผนปฏิบัติการของคุณ' },
   'section.readyNow': { en: 'READY NOW', es: 'LISTO AHORA', pt: 'PRONTO AGORA', fr: 'PRÊT MAINTENANT', de: 'JETZT BEREIT', it: 'PRONTO ORA', nl: 'NU KLAAR', ru: 'ГОТОВО СЕЙЧАС', pl: 'GOTOWE TERAZ', tr: 'ŞİMDİ HAZIR', ar: 'جاهز الآن', he: 'מוכן עכשיו', zh: '现在可做', ja: '今すぐ可能', ko: '지금 가능', id: 'SIAP SEKARANG', vi: 'SẴN SÀNG NGAY', th: 'พร้อมตอนนี้' },
@@ -722,7 +722,7 @@ const redMgToReach = (fromLevel, toLevel) => {
 };
 
 // ═══════════════════════════════════════════════════════════════════
-//   SHAKE'S RED GEAR GUIDE — 7 phases + specialization stop
+//   SHAKES' RED GEAR GUIDE — 7 phases + specialization stop
 //   Each phase has actions that must be completed before moving on
 // ═══════════════════════════════════════════════════════════════════
 const SHAKES_PATH = [
