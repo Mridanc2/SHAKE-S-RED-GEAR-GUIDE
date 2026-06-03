@@ -553,6 +553,29 @@ const I18N = {
   'upload.btn': { en: 'Upload gear screenshots (3 heroes)', es: 'Sube capturas de equipo (3 héroes)', pt: 'Envie capturas de equipamento (3 heróis)', fr: 'Téléverse des captures d’équipement (3 héros)', de: 'Ausrüstungs-Screenshots hochladen (3 Helden)', it: 'Carica screenshot equipaggiamento (3 eroi)', nl: 'Upload uitrustingsscreenshots (3 helden)', ru: 'Загрузите скриншоты снаряжения (3 героя)', pl: 'Prześlij zrzuty sprzętu (3 bohaterów)', tr: 'Ekipman ekran görüntüsü yükle (3 kahraman)', ar: 'ارفع لقطات العتاد (3 أبطال)', he: 'העלה צילומי ציוד (3 גיבורים)', zh: '上传装备截图（3位英雄）', ja: '装備のスクショをアップ（3ヒーロー）', ko: '장비 스크린샷 업로드 (영웅 3명)', id: 'Unggah tangkapan gear (3 hero)', vi: 'Tải ảnh trang bị (3 tướng)', th: 'อัปโหลดภาพอุปกรณ์ (3 ฮีโร่)' },
   'upload.processing': { en: 'Processing...', es: 'Procesando...', pt: 'Processando...', fr: 'Traitement...', de: 'Verarbeitung...', it: 'Elaborazione...', nl: 'Verwerken...', ru: 'Обработка...', pl: 'Przetwarzanie...', tr: 'İşleniyor...', ar: 'جارٍ المعالجة...', he: 'מעבד...', zh: '处理中…', ja: '処理中…', ko: '처리 중…', id: 'Memproses...', vi: 'Đang xử lý...', th: 'กำลังประมวลผล...' },
   'visits.label': { en: 'visits', es: 'visitas', pt: 'visitas', fr: 'visites', de: 'Besuche', it: 'visite', nl: 'bezoeken', ru: 'посещений', pl: 'odwiedzin', tr: 'ziyaret', ar: 'زيارة', he: 'ביקורים', zh: '次访问', ja: '訪問', ko: '방문', id: 'kunjungan', vi: 'lượt xem', th: 'การเข้าชม' },
+  'phaseT.1': { en: 'Lethality Anchors', es: 'Anclas de Letalidad', pt: 'Âncoras de Letalidade', fr: 'Ancres de Létalité', de: 'Letalitäts-Anker', it: 'Àncore di Letalità', nl: 'Letaliteitsankers', ru: 'Опоры летальности', pl: 'Kotwice Śmiercionośności', tr: 'Ölümcüllük Çıpaları', ar: 'ركائز الفتك', he: 'עוגני קטלניות', zh: '杀伤力基石', ja: '殺傷力の要', ko: '치명타 핵심', id: 'Jangkar Lethality', vi: 'Trụ cột Sát thương', th: 'หลักความร้ายแรง' },
+  'phaseT.2': { en: 'Cover All Slots → Ascend to Red', es: 'Cubre todas las ranuras → Asciende a Rojo', pt: 'Cubra todos os slots → Ascenda a Vermelho', fr: 'Couvre tous les emplacements → Ascension Rouge', de: 'Alle Slots abdecken → zu Rot aufsteigen', it: 'Copri tutti gli slot → Ascendi a Rosso', nl: 'Vul alle slots → Ascend naar Rood', ru: 'Закройте все слоты → вознесение до Красного', pl: 'Wypełnij wszystkie sloty → Wznieś do Czerwonego', tr: 'Tüm yuvaları doldur → Kırmızıya yükselt', ar: 'غطِّ كل الخانات → ارتقِ للأحمر', he: 'כסה את כל המשבצות → העלה לאדום', zh: '填满所有槽位 → 飞升至红色', ja: '全枠を埋める → 赤にアセンド', ko: '모든 슬롯 채우기 → 레드로 승급', id: 'Isi semua slot → Naik ke Merah', vi: 'Phủ hết các ô → Thăng lên Đỏ', th: 'เติมทุกช่อง → อัสเซนด์เป็นแดง' },
+  'phaseT.3': { en: 'Push the Anchors Higher', es: 'Sube más las Anclas', pt: 'Eleve mais as Âncoras', fr: 'Pousse les Ancres plus haut', de: 'Anker höher treiben', it: 'Spingi più in alto le Àncore', nl: 'Duw de Ankers hoger', ru: 'Поднимите опоры выше', pl: 'Podnieś Kotwice wyżej', tr: 'Çıpaları daha yükselt', ar: 'ارفع الركائز أعلى', he: 'דחוף את העוגנים גבוה יותר', zh: '继续提升基石', ja: '要をさらに強化', ko: '핵심을 더 높이기', id: 'Dorong Jangkar lebih tinggi', vi: 'Đẩy Trụ cột cao hơn', th: 'ดันหลักให้สูงขึ้น' },
+  'phaseT.4': { en: 'First Red Push', es: 'Primer Empuje Rojo', pt: 'Primeiro Avanço Vermelho', fr: 'Première Poussée Rouge', de: 'Erster Rot-Schub', it: 'Prima Spinta Rossa', nl: 'Eerste Rode Push', ru: 'Первый красный рывок', pl: 'Pierwszy Czerwony Skok', tr: 'İlk Kırmızı İtiş', ar: 'الدفعة الحمراء الأولى', he: 'דחיפת אדום ראשונה', zh: '首轮红色推进', ja: '最初のレッド強化', ko: '첫 레드 강화', id: 'Dorongan Merah Pertama', vi: 'Đợt Đỏ đầu tiên', th: 'ดันสีแดงรอบแรก' },
+  'phaseT.5': { en: 'Remaining Red Pieces', es: 'Piezas Rojas Restantes', pt: 'Peças Vermelhas Restantes', fr: 'Pièces Rouges Restantes', de: 'Übrige Rot-Teile', it: 'Pezzi Rossi Rimanenti', nl: 'Resterende Rode Stukken', ru: 'Оставшиеся красные части', pl: 'Pozostałe Czerwone Części', tr: 'Kalan Kırmızı Parçalar', ar: 'القطع الحمراء المتبقية', he: 'חלקי אדום שנותרו', zh: '剩余红色装备', ja: '残りのレッド装備', ko: '남은 레드 장비', id: 'Bagian Merah Tersisa', vi: 'Các món Đỏ còn lại', th: 'ชิ้นสีแดงที่เหลือ' },
+  'phaseT.6': { en: 'Final Slots → Ascend to Red', es: 'Ranuras finales → Asciende a Rojo', pt: 'Slots finais → Ascenda a Vermelho', fr: 'Derniers emplacements → Ascension Rouge', de: 'Letzte Slots → zu Rot aufsteigen', it: 'Slot finali → Ascendi a Rosso', nl: 'Laatste slots → Ascend naar Rood', ru: 'Последние слоты → вознесение до Красного', pl: 'Ostatnie sloty → Wznieś do Czerwonego', tr: 'Son yuvalar → Kırmızıya yükselt', ar: 'الخانات الأخيرة → ارتقِ للأحمر', he: 'משבצות אחרונות → העלה לאדום', zh: '最后的槽位 → 飞升至红色', ja: '最後の枠 → 赤にアセンド', ko: '마지막 슬롯 → 레드로 승급', id: 'Slot terakhir → Naik ke Merah', vi: 'Ô cuối → Thăng lên Đỏ', th: 'ช่องสุดท้าย → อัสเซนด์เป็นแดง' },
+  'phaseT.7': { en: 'Push to End-Game', es: 'Empuje al End-Game', pt: 'Avanço para o End-Game', fr: 'Poussée vers l’End-Game', de: 'Schub zum Endgame', it: 'Spinta all’End-Game', nl: 'Push naar End-Game', ru: 'Рывок к энд-гейму', pl: 'Skok do End-Game', tr: 'End-Game’e İtiş', ar: 'الدفع نحو نهاية اللعبة', he: 'דחיפה לאנדגיים', zh: '冲刺终局', ja: 'エンドゲームへ', ko: '엔드게임으로', id: 'Dorongan ke End-Game', vi: 'Đẩy tới End-Game', th: 'ดันสู่ช่วงท้ายเกม' },
+  'phaseT.choose': { en: 'Choose Your Specialization', es: 'Elige tu Especialización', pt: 'Escolha sua Especialização', fr: 'Choisis ta Spécialisation', de: 'Wähle deine Spezialisierung', it: 'Scegli la tua Specializzazione', nl: 'Kies je Specialisatie', ru: 'Выберите специализацию', pl: 'Wybierz Specjalizację', tr: 'Uzmanlığını Seç', ar: 'اختر تخصصك', he: 'בחר את ההתמחות שלך', zh: '选择你的专精', ja: '特化を選択', ko: '특화를 선택', id: 'Pilih Spesialisasimu', vi: 'Chọn Chuyên môn hóa', th: 'เลือกการเชี่ยวชาญ' },
+  'phaseT.done': { en: 'Build Complete', es: 'Build Completado', pt: 'Build Completo', fr: 'Build Terminé', de: 'Build Abgeschlossen', it: 'Build Completato', nl: 'Build Voltooid', ru: 'Билд завершён', pl: 'Build Ukończony', tr: 'Build Tamamlandı', ar: 'اكتمل البناء', he: 'הביצוע הושלם', zh: '构筑完成', ja: 'ビルド完了', ko: '빌드 완료', id: 'Build Selesai', vi: 'Hoàn thành Build', th: 'บิลด์เสร็จสมบูรณ์' },
+  'phaseD.1': { en: 'Build the top-priority Lethality pieces for all 3 troops to Mythic L20', es: 'Lleva las piezas de Letalidad prioritarias de las 3 tropas a Mítico L20', pt: 'Leve as peças de Letalidade prioritárias das 3 tropas até Mítico L20', fr: 'Monte les pièces de Létalité prioritaires des 3 troupes à Mythique L20', de: 'Bring die wichtigsten Letalitäts-Teile aller 3 Truppen auf Mythisch L20', it: 'Porta i pezzi di Letalità prioritari delle 3 truppe a Mitico L20', nl: 'Breng de belangrijkste Letaliteitsstukken van alle 3 troepen naar Mythisch L20', ru: 'Доведите приоритетные предметы летальности всех 3 войск до Мифик L20', pl: 'Rozwiń priorytetowe części Śmiercionośności wszystkich 3 wojsk do Mityczny L20', tr: '3 birliğin öncelikli Ölümcüllük parçalarını Efsanevi L20’ye getir', ar: 'طوّر قطع الفتك ذات الأولوية للوحدات الثلاث إلى أسطوري L20', he: 'בנה את חלקי הקטלניות בעדיפות עליונה לכל 3 הסוגים עד מיתי L20', zh: '将3个兵种的高优先杀伤装备升至神话L20', ja: '3兵種の最優先の殺傷装備をミシックL20まで', ko: '3개 병종의 최우선 치명 장비를 미식 L20까지', id: 'Bawa gear Lethality prioritas 3 pasukan ke Mythic L20', vi: 'Nâng các món Sát thương ưu tiên của 3 binh chủng lên Thần thoại L20', th: 'อัปเกรดชิ้นความร้ายแรงสำคัญของทั้ง 3 เหล่าทัพเป็นมิธิก L20' },
+  'phaseD.2': { en: 'Ascend the remaining 7 slots to Red gear.\nEach piece needs: Mythic Lv.100 + Mastery Lv.10 + 2 Mythic Gears.', es: 'Asciende las 7 ranuras restantes a equipo Rojo.\nCada pieza necesita: Mítico Lv.100 + Maestría Lv.10 + 2 Engranajes Míticos.', pt: 'Ascenda os 7 slots restantes para equipamento Vermelho.\nCada peça precisa: Mítico Lv.100 + Maestria Lv.10 + 2 Engrenagens Míticas.', fr: 'Fais ascensionner les 7 emplacements restants en Rouge.\nChaque pièce requiert : Mythique Niv.100 + Maîtrise Niv.10 + 2 Engrenages Mythiques.', de: 'Lass die übrigen 7 Slots zu Rot aufsteigen.\nJedes Teil braucht: Mythisch Lv.100 + Meisterschaft Lv.10 + 2 Mythische Zahnräder.', it: 'Ascendi i 7 slot rimanenti a equipaggiamento Rosso.\nOgni pezzo richiede: Mitico Liv.100 + Maestria Liv.10 + 2 Ingranaggi Mitici.', nl: 'Ascend de overige 7 slots naar Rode uitrusting.\nElk stuk vereist: Mythisch Lv.100 + Meesterschap Lv.10 + 2 Mythische Tandwielen.', ru: 'Вознесите оставшиеся 7 слотов до Красного снаряжения.\nКаждому предмету нужно: Мифик ур.100 + Мастерство ур.10 + 2 мифические шестерни.', pl: 'Wznieś pozostałe 7 slotów do Czerwonego sprzętu.\nKażda część wymaga: Mityczny poz.100 + Mistrzostwo poz.10 + 2 Mityczne Koła.', tr: 'Kalan 7 yuvayı Kırmızı ekipmana yükselt.\nHer parça için: Efsanevi Sv.100 + Ustalık Sv.10 + 2 Efsanevi Dişli.', ar: 'ارتقِ بالخانات الـ7 المتبقية إلى عتاد أحمر.\nكل قطعة تحتاج: أسطوري مستوى 100 + إتقان مستوى 10 + 2 تروس أسطورية.', he: 'העלה את 7 המשבצות שנותרו לציוד אדום.\nכל פריט דורש: מיתי רמה 100 + מאסטרי רמה 10 + 2 גלגלי מיתוס.', zh: '将剩余7个槽位飞升为红色装备。\n每件需要：神话Lv.100 + 精通Lv.10 + 2神话齿轮。', ja: '残り7枠を赤装備にアセンド。\n各部位に必要：ミシックLv.100 + 熟練度Lv.10 + 神話ギア2個。', ko: '남은 7개 슬롯을 레드 장비로 승급.\n각 장비 필요: 미식 Lv.100 + 숙련 Lv.10 + 신화 기어 2개.', id: 'Naikkan 7 slot tersisa ke gear Merah.\nTiap bagian butuh: Mythic Lv.100 + Mastery Lv.10 + 2 Mythic Gears.', vi: 'Thăng 7 ô còn lại lên trang bị Đỏ.\nMỗi món cần: Thần thoại Lv.100 + Tinh thông Lv.10 + 2 Mythic Gears.', th: 'อัสเซนด์ 7 ช่องที่เหลือเป็นเกียร์สีแดง\nแต่ละชิ้นต้องการ: มิธิก Lv.100 + Mastery Lv.10 + Mythic Gears 2 ชิ้น' },
+  'phaseD.3': { en: 'Continue building the Phase 1 pieces to Mythic L39', es: 'Sigue subiendo las piezas de la Fase 1 a Mítico L39', pt: 'Continue subindo as peças da Fase 1 até Mítico L39', fr: 'Continue de monter les pièces de la Phase 1 à Mythique L39', de: 'Bau die Teile aus Phase 1 weiter auf Mythisch L39', it: 'Continua a portare i pezzi della Fase 1 a Mitico L39', nl: 'Bouw de stukken uit Fase 1 verder naar Mythisch L39', ru: 'Продолжайте развивать предметы Фазы 1 до Мифик L39', pl: 'Rozwijaj części z Fazy 1 do Mityczny L39', tr: 'Aşama 1 parçalarını Efsanevi L39’a getirmeye devam et', ar: 'واصل تطوير قطع المرحلة 1 إلى أسطوري L39', he: 'המשך לבנות את חלקי שלב 1 עד מיתי L39', zh: '继续将第1阶段装备升至神话L39', ja: 'フェーズ1の装備をミシックL39まで継続', ko: '1단계 장비를 미식 L39까지 계속', id: 'Lanjut naikkan gear Fase 1 ke Mythic L39', vi: 'Tiếp tục nâng các món Giai đoạn 1 lên Thần thoại L39', th: 'อัปเกรดชิ้นเฟส 1 ต่อเป็นมิธิก L39' },
+  'phaseD.4': { en: 'Push 3 of your Red pieces (from Phase 2 ascensions) to Red L19', es: 'Sube 3 de tus piezas Rojas (de las ascensiones de la Fase 2) a Rojo L19', pt: 'Suba 3 das suas peças Vermelhas (das ascensões da Fase 2) até Vermelho L19', fr: 'Monte 3 de tes pièces Rouges (des ascensions de la Phase 2) à Rouge L19', de: 'Bring 3 deiner Rot-Teile (aus Phase-2-Aufstiegen) auf Rot L19', it: 'Porta 3 dei tuoi pezzi Rossi (dalle ascensioni della Fase 2) a Rosso L19', nl: 'Breng 3 van je Rode stukken (uit Fase 2-ascensions) naar Rood L19', ru: 'Доведите 3 ваших красных предмета (из вознесений Фазы 2) до Красного L19', pl: 'Rozwiń 3 swoje Czerwone części (z wzniesień Fazy 2) do Czerwony L19', tr: 'Kırmızı parçalarından 3’ünü (Aşama 2 yükseltmelerinden) Kırmızı L19’a getir', ar: 'طوّر 3 من قطعك الحمراء (من ارتقاءات المرحلة 2) إلى أحمر L19', he: 'דחוף 3 מחלקי האדום שלך (מהעליות של שלב 2) לאדום L19', zh: '将3件红色装备（第2阶段飞升而来）升至红色L19', ja: 'レッド装備3つ（フェーズ2のアセンド分）を赤L19まで', ko: '레드 장비 3개(2단계 승급분)를 레드 L19까지', id: 'Naikkan 3 gear Merah (dari ascend Fase 2) ke Merah L19', vi: 'Nâng 3 món Đỏ (từ thăng cấp Giai đoạn 2) lên Đỏ L19', th: 'ดันชิ้นสีแดง 3 ชิ้น (จากการอัสเซนด์เฟส 2) เป็นแดง L19' },
+  'phaseD.5': { en: 'Push the other 4 Red pieces (Phase 2 ascensions) to Red L19-20', es: 'Sube las otras 4 piezas Rojas (ascensiones de la Fase 2) a Rojo L19-20', pt: 'Suba as outras 4 peças Vermelhas (ascensões da Fase 2) até Vermelho L19-20', fr: 'Monte les 4 autres pièces Rouges (ascensions de la Phase 2) à Rouge L19-20', de: 'Bring die anderen 4 Rot-Teile (Phase-2-Aufstiege) auf Rot L19-20', it: 'Porta gli altri 4 pezzi Rossi (ascensioni della Fase 2) a Rosso L19-20', nl: 'Breng de andere 4 Rode stukken (Fase 2-ascensions) naar Rood L19-20', ru: 'Доведите остальные 4 красных предмета (вознесения Фазы 2) до Красного L19-20', pl: 'Rozwiń pozostałe 4 Czerwone części (wzniesienia Fazy 2) do Czerwony L19-20', tr: 'Diğer 4 Kırmızı parçayı (Aşama 2 yükseltmeleri) Kırmızı L19-20’ye getir', ar: 'طوّر القطع الحمراء الأربع الأخرى (ارتقاءات المرحلة 2) إلى أحمر L19-20', he: 'דחוף את 4 חלקי האדום הנותרים (עליות שלב 2) לאדום L19-20', zh: '将另外4件红色装备（第2阶段飞升）升至红色L19-20', ja: '残り4つのレッド装備（フェーズ2アセンド）を赤L19-20まで', ko: '나머지 레드 장비 4개(2단계 승급)를 레드 L19-20까지', id: 'Naikkan 4 gear Merah lainnya (ascend Fase 2) ke Merah L19-20', vi: 'Nâng 4 món Đỏ còn lại (thăng cấp Giai đoạn 2) lên Đỏ L19-20', th: 'ดันชิ้นสีแดงอีก 4 ชิ้น (อัสเซนด์เฟส 2) เป็นแดง L19-20' },
+  'phaseD.6': { en: 'Ascend Archer & Cavalry Gloves to Red gear.\nEach piece needs: Mythic Lv.100 + Mastery Lv.10 + 2 Mythic Gears.', es: 'Asciende los Guantes de Arquero y Caballería a equipo Rojo.\nCada pieza necesita: Mítico Lv.100 + Maestría Lv.10 + 2 Engranajes Míticos.', pt: 'Ascenda as Luvas de Arqueiro e Cavalaria para Vermelho.\nCada peça precisa: Mítico Lv.100 + Maestria Lv.10 + 2 Engrenagens Míticas.', fr: 'Fais ascensionner les Gants d’Archer et de Cavalerie en Rouge.\nChaque pièce requiert : Mythique Niv.100 + Maîtrise Niv.10 + 2 Engrenages Mythiques.', de: 'Lass Bogenschützen- und Kavallerie-Handschuhe zu Rot aufsteigen.\nJedes Teil braucht: Mythisch Lv.100 + Meisterschaft Lv.10 + 2 Mythische Zahnräder.', it: 'Ascendi i Guanti di Arciere e Cavalleria a Rosso.\nOgni pezzo richiede: Mitico Liv.100 + Maestria Liv.10 + 2 Ingranaggi Mitici.', nl: 'Ascend de Handschoenen van Boogschutter en Cavalerie naar Rood.\nElk stuk vereist: Mythisch Lv.100 + Meesterschap Lv.10 + 2 Mythische Tandwielen.', ru: 'Вознесите перчатки Лучника и Кавалерии до Красного.\nКаждому предмету нужно: Мифик ур.100 + Мастерство ур.10 + 2 мифические шестерни.', pl: 'Wznieś Rękawice Łucznika i Kawalerii do Czerwonego.\nKażda część wymaga: Mityczny poz.100 + Mistrzostwo poz.10 + 2 Mityczne Koła.', tr: 'Okçu ve Süvari Eldivenlerini Kırmızıya yükselt.\nHer parça için: Efsanevi Sv.100 + Ustalık Sv.10 + 2 Efsanevi Dişli.', ar: 'ارتقِ بقفازات الرامي والفرسان إلى الأحمر.\nكل قطعة تحتاج: أسطوري مستوى 100 + إتقان مستوى 10 + 2 تروس أسطورية.', he: 'העלה את כפפות הקשת והפרשים לאדום.\nכל פריט דורש: מיתי רמה 100 + מאסטרי רמה 10 + 2 גלגלי מיתוס.', zh: '将弓兵和骑兵手套飞升为红色。\n每件需要：神话Lv.100 + 精通Lv.10 + 2神话齿轮。', ja: '弓兵と騎兵の手袋を赤にアセンド。\n各部位に必要：ミシックLv.100 + 熟練度Lv.10 + 神話ギア2個。', ko: '궁수·기병 장갑을 레드로 승급.\n각 장비 필요: 미식 Lv.100 + 숙련 Lv.10 + 신화 기어 2개.', id: 'Naikkan Sarung Tangan Pemanah & Kavaleri ke Merah.\nTiap bagian butuh: Mythic Lv.100 + Mastery Lv.10 + 2 Mythic Gears.', vi: 'Thăng Găng tay Cung thủ & Kỵ binh lên Đỏ.\nMỗi món cần: Thần thoại Lv.100 + Tinh thông Lv.10 + 2 Mythic Gears.', th: 'อัสเซนด์ถุงมือนักธนูและทหารม้าเป็นสีแดง\nแต่ละชิ้นต้องการ: มิธิก Lv.100 + Mastery Lv.10 + Mythic Gears 2 ชิ้น' },
+  'phaseD.7': { en: 'Push Infantry Chest (Red) to L79 and Infantry Gloves (Mythic) to L100', es: 'Sube la Pechera de Infantería (Rojo) a L79 y los Guantes de Infantería (Mítico) a L100', pt: 'Suba o Peitoral de Infantaria (Vermelho) até L79 e as Luvas de Infantaria (Mítico) até L100', fr: 'Monte le Plastron d’Infanterie (Rouge) à L79 et les Gants d’Infanterie (Mythique) à L100', de: 'Bring Infanterie-Brustpanzer (Rot) auf L79 und Infanterie-Handschuhe (Mythisch) auf L100', it: 'Porta la Corazza di Fanteria (Rosso) a L79 e i Guanti di Fanteria (Mitico) a L100', nl: 'Breng Infanterie-Borststuk (Rood) naar L79 en Infanterie-Handschoenen (Mythisch) naar L100', ru: 'Доведите нагрудник Пехоты (Красный) до L79 и перчатки Пехоты (Мифик) до L100', pl: 'Rozwiń Napierśnik Piechoty (Czerwony) do L79 i Rękawice Piechoty (Mityczny) do L100', tr: 'Piyade Göğüslüğünü (Kırmızı) L79’a ve Piyade Eldivenini (Efsanevi) L100’e getir', ar: 'طوّر درع صدر المشاة (أحمر) إلى L79 وقفازات المشاة (أسطوري) إلى L100', he: 'דחוף את שריון חזה החי״ר (אדום) ל-L79 ואת כפפות החי״ר (מיתי) ל-L100', zh: '将步兵胸甲（红色）升至L79，步兵手套（神话）升至L100', ja: '歩兵チェスト（赤）をL79、歩兵手袋（ミシック）をL100まで', ko: '보병 갑옷(레드)을 L79, 보병 장갑(미식)을 L100까지', id: 'Naikkan Dada Infanteri (Merah) ke L79 dan Sarung Tangan Infanteri (Mythic) ke L100', vi: 'Nâng Giáp ngực Bộ binh (Đỏ) lên L79 và Găng tay Bộ binh (Thần thoại) lên L100', th: 'ดันเกราะอกทหารราบ (แดง) เป็น L79 และถุงมือทหารราบ (มิธิก) เป็น L100' },
+  'phaseD.choose': { en: 'Base path complete! Pick your endgame route and the app will keep guiding you:\nRally Attack or Defense Garrison.', es: '¡Camino base completado! Elige tu ruta de end-game y la app seguirá guiándote:\nAtaque de Rally o Guarnición Defensiva.', pt: 'Caminho base completo! Escolha sua rota de end-game e o app continuará guiando você:\nAtaque de Rally ou Guarnição Defensiva.', fr: 'Parcours de base terminé ! Choisis ta route de fin de jeu et l’app continuera à te guider :\nAttaque de Ralliement ou Garnison Défensive.', de: 'Basispfad abgeschlossen! Wähle deine Endgame-Route und die App führt dich weiter:\nRally-Angriff oder Verteidigungsgarnison.', it: 'Percorso base completato! Scegli la tua rotta di end-game e l’app continuerà a guidarti:\nAttacco Rally o Guarnigione Difensiva.', nl: 'Basispad voltooid! Kies je endgame-route en de app blijft je begeleiden:\nRally-aanval of Verdedigingsgarnizoen.', ru: 'Базовый путь пройден! Выберите свой энд-гейм маршрут, и приложение продолжит вести вас:\nАтака (рейд) или Оборона (гарнизон).', pl: 'Ścieżka bazowa ukończona! Wybierz trasę end-game, a aplikacja poprowadzi cię dalej:\nAtak Rally lub Garnizon Obronny.', tr: 'Temel yol tamamlandı! Son oyun rotanı seç, uygulama seni yönlendirmeye devam etsin:\nRally Saldırısı veya Savunma Garnizonu.', ar: 'اكتمل المسار الأساسي! اختر طريق نهاية اللعبة وسيواصل التطبيق إرشادك:\nهجوم الحشد أو الحامية الدفاعية.', he: 'המסלול הבסיסי הושלם! בחר את מסלול האנדגיים והאפליקציה תמשיך להדריך אותך:\nמתקפת ראלי או חיל מצב הגנתי.', zh: '基础路径完成！选择你的终局路线，应用会继续引导你：\n集结进攻 或 防御驻军。', ja: '基本パス完了！エンドゲームのルートを選ぶとアプリが案内を続けます：\nラリー攻撃 または 防衛駐屯。', ko: '기본 경로 완료! 엔드게임 경로를 선택하면 앱이 계속 안내합니다:\n집결 공격 또는 방어 주둔.', id: 'Jalur dasar selesai! Pilih rute endgame-mu dan app akan terus memandu:\nSerangan Rally atau Garnisun Pertahanan.', vi: 'Hoàn thành lộ trình cơ bản! Chọn hướng cuối game và app sẽ tiếp tục hướng dẫn:\nTấn công Rally hoặc Đồn trú phòng thủ.', th: 'เส้นทางพื้นฐานเสร็จแล้ว! เลือกเส้นทางท้ายเกม แล้วแอปจะนำทางต่อ:\nโจมตีแบบ Rally หรือ กองรักษาการณ์ป้องกัน' },
+  'phaseD.done': { en: 'You’ve finished the full Red gear path. Outstanding work, Commander.', es: 'Has completado todo el camino del equipo Rojo. Excelente trabajo, Comandante.', pt: 'Você concluiu todo o caminho do equipamento Vermelho. Excelente trabalho, Comandante.', fr: 'Tu as terminé tout le parcours de l’équipement Rouge. Travail remarquable, Commandant.', de: 'Du hast den gesamten Rot-Ausrüstungspfad abgeschlossen. Hervorragende Arbeit, Kommandant.', it: 'Hai completato l’intero percorso dell’equipaggiamento Rosso. Lavoro eccellente, Comandante.', nl: 'Je hebt het volledige Rode uitrustingspad voltooid. Uitstekend werk, Commandant.', ru: 'Вы прошли весь путь красного снаряжения. Отличная работа, командир.', pl: 'Ukończyłeś całą ścieżkę Czerwonego sprzętu. Świetna robota, Dowódco.', tr: 'Tüm Kırmızı ekipman yolunu bitirdin. Mükemmel iş, Komutan.', ar: 'أكملت مسار العتاد الأحمر بالكامل. عمل رائع أيها القائد.', he: 'סיימת את כל מסלול הציוד האדום. עבודה מצוינת, מפקד.', zh: '你已完成全部红色装备路径。干得漂亮，指挥官。', ja: 'レッド装備の全パスを完了しました。見事です、指揮官。', ko: '레드 장비 전체 경로를 완료했습니다. 훌륭합니다, 지휘관님.', id: 'Kamu menyelesaikan seluruh jalur gear Merah. Kerja bagus, Komandan.', vi: 'Bạn đã hoàn thành toàn bộ lộ trình trang bị Đỏ. Tuyệt vời, Chỉ huy.', th: 'คุณทำเส้นทางเกียร์สีแดงครบทั้งหมดแล้ว ยอดเยี่ยมมาก ผู้บัญชาการ' },
+  'phaseD.spec': { en: '{label} specialization — push these pieces to their Red targets.', es: 'Especialización {label} — sube estas piezas a sus objetivos Rojos.', pt: 'Especialização {label} — suba estas peças até seus alvos Vermelhos.', fr: 'Spécialisation {label} — monte ces pièces à leurs objectifs Rouges.', de: 'Spezialisierung {label} — bring diese Teile auf ihre Rot-Ziele.', it: 'Specializzazione {label} — porta questi pezzi ai loro obiettivi Rossi.', nl: 'Specialisatie {label} — breng deze stukken naar hun Rode doelen.', ru: 'Специализация «{label}» — доведите эти предметы до их красных целей.', pl: 'Specjalizacja {label} — rozwiń te części do ich Czerwonych celów.', tr: '{label} uzmanlığı — bu parçaları Kırmızı hedeflerine getir.', ar: 'تخصص {label} — طوّر هذه القطع إلى أهدافها الحمراء.', he: 'התמחות {label} — דחוף את החלקים האלה ליעדי האדום שלהם.', zh: '{label} 专精 — 将这些装备提升到对应的红色目标。', ja: '{label} 特化 — これらの装備を赤の目標まで強化。', ko: '{label} 특화 — 이 장비들을 레드 목표치까지 올리세요.', id: 'Spesialisasi {label} — naikkan bagian ini ke target Merahnya.', vi: 'Chuyên môn hóa {label} — nâng các món này tới mục tiêu Đỏ.', th: 'การเชี่ยวชาญ {label} — ดันชิ้นเหล่านี้ไปยังเป้าหมายสีแดง' },
+  'alliance.join': { en: 'JOIN', es: 'ÚNETE A', pt: 'ENTRAR', fr: 'REJOINDRE', de: 'BEITRETEN', it: 'UNISCITI A', nl: 'WORD LID', ru: 'ВСТУПИТЬ', pl: 'DOŁĄCZ', tr: 'KATIL', ar: 'انضم إلى', he: 'הצטרף', zh: '加入', ja: '参加', ko: '가입', id: 'GABUNG', vi: 'THAM GIA', th: 'เข้าร่วม' },
+  'alliance.motto1': { en: 'WE LIVE TOGETHER', es: 'VIVIMOS JUNTOS', pt: 'VIVEMOS JUNTOS', fr: 'NOUS VIVONS ENSEMBLE', de: 'WIR LEBEN ZUSAMMEN', it: 'VIVIAMO INSIEME', nl: 'WE LEVEN SAMEN', ru: 'МЫ ЖИВЁМ ВМЕСТЕ', pl: 'ŻYJEMY RAZEM', tr: 'BİRLİKTE YAŞARIZ', ar: 'نعيش معًا', he: 'אנחנו חיים יחד', zh: '我们同生', ja: '共に生きる', ko: '함께 산다', id: 'KITA HIDUP BERSAMA', vi: 'CHÚNG TA SỐNG CÙNG NHAU', th: 'เราอยู่ร่วมกัน' },
+  'alliance.motto2': { en: 'WE GROW TOGETHER', es: 'CRECEMOS JUNTOS', pt: 'CRESCEMOS JUNTOS', fr: 'NOUS GRANDISSONS ENSEMBLE', de: 'WIR WACHSEN ZUSAMMEN', it: 'CRESCIAMO INSIEME', nl: 'WE GROEIEN SAMEN', ru: 'МЫ РАСТЁМ ВМЕСТЕ', pl: 'ROŚNIEMY RAZEM', tr: 'BİRLİKTE BÜYÜRÜZ', ar: 'ننمو معًا', he: 'אנחנו גדלים יחד', zh: '我们同长', ja: '共に成長する', ko: '함께 성장한다', id: 'KITA TUMBUH BERSAMA', vi: 'CHÚNG TA CÙNG LỚN MẠNH', th: 'เราเติบโตร่วมกัน' },
+  'alliance.motto3': { en: 'WE FIGHT TOGETHER', es: 'LUCHAMOS JUNTOS', pt: 'LUTAMOS JUNTOS', fr: 'NOUS COMBATTONS ENSEMBLE', de: 'WIR KÄMPFEN ZUSAMMEN', it: 'COMBATTIAMO INSIEME', nl: 'WE VECHTEN SAMEN', ru: 'МЫ СРАЖАЕМСЯ ВМЕСТЕ', pl: 'WALCZYMY RAZEM', tr: 'BİRLİKTE SAVAŞIRIZ', ar: 'نقاتل معًا', he: 'אנחנו נלחמים יחד', zh: '我们同战', ja: '共に戦う', ko: '함께 싸운다', id: 'KITA BERTARUNG BERSAMA', vi: 'CHÚNG TA CÙNG CHIẾN ĐẤU', th: 'เราสู้ร่วมกัน' },
 };
 
 const T = (key, lang = 'en', vars) => {
@@ -1852,6 +1875,22 @@ const HeroBoard = ({ troop, heroName, heroImage, gear, onEdit, t }) => {
   );
 };
 
+// Translate a phase's title/description (data lives in SHAKES_PATH / spec builder).
+const phaseTitleT = (phase, t) => {
+  if (!t || !phase) return phase ? phase.title : '';
+  if (phase.isChoose) return t('phaseT.choose');
+  if (phase.isStop) return t('phaseT.done');
+  if (phase.spec) return `${t('spec.' + phase.spec)} · ${t('label.phase')} ${phase.phase}`;
+  return t('phaseT.' + phase.phase);
+};
+const phaseDescT = (phase, t) => {
+  if (!t || !phase) return phase ? phase.desc : '';
+  if (phase.isChoose) return t('phaseD.choose');
+  if (phase.isStop) return t('phaseD.done');
+  if (phase.spec) return t('phaseD.spec', { label: t('spec.' + phase.spec) });
+  return t('phaseD.' + phase.phase);
+};
+
 // ═══════════════════════════════════════════════════════════════════
 //   PHASE OVERVIEW — clickable phases that expand with details
 // ═══════════════════════════════════════════════════════════════════
@@ -1995,12 +2034,12 @@ const PhaseOverview = ({ currentPhase, gear, path = SHAKES_PATH, t }) => {
                     fontFamily: 'Cinzel, serif', fontWeight: 900, fontSize: 11,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                   }}>{p.phase}</span>
-                  <span style={{ fontFamily: 'Cinzel, serif', fontWeight: 800, fontSize: 13, color: 'var(--kp-text)' }}>{p.title}</span>
+                  <span style={{ fontFamily: 'Cinzel, serif', fontWeight: 800, fontSize: 13, color: 'var(--kp-text)' }}>{phaseTitleT(p, tr)}</span>
                   {status === 'current' && <span style={{ marginLeft: 'auto', fontSize: 8, fontWeight: 800, color: '#fbbf24', letterSpacing: 0.5 }}>⚡ HERE</span>}
                   {status === 'done' && <span style={{ marginLeft: 'auto', display: 'inline-flex' }}><Check size={12} color="#86efac" /></span>}
                 </div>
                 <div style={{ fontSize: 11, color: '#c0a878', lineHeight: 1.5, whiteSpace: 'pre-line', marginBottom: lines.length ? 6 : 0 }}>
-                  {p.desc}
+                  {phaseDescT(p, tr)}
                 </div>
                 {lines.map((line, i) => (
                   <div key={i} style={{ fontSize: 10.5, color: '#d4c4a0', lineHeight: 1.5, marginBottom: 3 }}>
@@ -2057,7 +2096,7 @@ const PhaseOverview = ({ currentPhase, gear, path = SHAKES_PATH, t }) => {
                 fontFamily: 'Cinzel, serif', fontSize: 14, fontWeight: 800,
                 color: 'var(--kp-text)', letterSpacing: 0.4,
               }}>
-                {expandedPhase.title}
+                {phaseTitleT(expandedPhase, tr)}
               </div>
               <div style={{ fontSize: 9, color: 'var(--kp-text-dim)', letterSpacing: 0.4, fontWeight: 600 }}>
                 {expandedPhase.phase === currentPhase.phase
@@ -2073,7 +2112,7 @@ const PhaseOverview = ({ currentPhase, gear, path = SHAKES_PATH, t }) => {
             fontSize: 11.5, color: '#c0a878', lineHeight: 1.55, marginBottom: 9,
             whiteSpace: 'pre-line',
           }}>
-            {expandedPhase.desc}
+            {phaseDescT(expandedPhase, tr)}
           </div>
 
           {summarizePhaseActions(expandedPhase).map((line, i) => (
@@ -3364,7 +3403,7 @@ const ALLIANCE_SINCE = '2026-05-29'; // alliance start date — edit to your rea
 
 // Compact widget shown at the bottom of the main page.
 const AllianceWidget = ({ onJoin, t }) => {
-  const mottos = ['WE LIVE TOGETHER', 'WE GROW TOGETHER', 'WE FIGHT TOGETHER'];
+  const mottos = [t('alliance.motto1'), t('alliance.motto2'), t('alliance.motto3')];
   return (
     <div style={{
       marginTop: 18, borderRadius: 16, padding: '20px 18px',
@@ -3388,7 +3427,7 @@ const AllianceWidget = ({ onJoin, t }) => {
         fontSize: 16, letterSpacing: 1.5,
         boxShadow: '0 0 22px rgba(251,191,36,0.5), inset 0 1px 0 rgba(255,255,255,0.35)',
       }}>
-        <span style={{ fontSize: 16 }}>⚔️</span> JOIN xXx #1494
+        <span style={{ fontSize: 16 }}>⚔️</span> {t('alliance.join')} xXx #1494
       </button>
 
       <div style={{ marginTop: 16, display: 'inline-flex', flexDirection: 'column', gap: 6 }}>
@@ -3414,7 +3453,7 @@ const AllianceWidget = ({ onJoin, t }) => {
 };
 
 // Full landing page that opens when the JOIN button is tapped.
-const AllianceModal = ({ onClose }) => {
+const AllianceModal = ({ onClose, t }) => {
   return (
     <div style={{
       position: 'fixed', inset: 0, zIndex: 130,
@@ -3525,7 +3564,7 @@ const AllianceModal = ({ onClose }) => {
           padding: '14px 18px 18px', textAlign: 'center',
           fontSize: 10.5, color: '#c79a6a', letterSpacing: 1, lineHeight: 1.8,
         }}>
-          ⚔ WE LIVE TOGETHER&nbsp;&nbsp;⚔ WE GROW TOGETHER&nbsp;&nbsp;⚔ WE FIGHT TOGETHER
+          ⚔ {t('alliance.motto1')}&nbsp;&nbsp;⚔ {t('alliance.motto2')}&nbsp;&nbsp;⚔ {t('alliance.motto3')}
         </div>
       </div>
     </div>
@@ -4396,7 +4435,7 @@ export default function App() {
                   {phase.isStop ? t('phase.complete') : t('phase.current', { n: phase.phase })}
                 </div>
                 <div style={{ fontFamily: 'Cinzel, serif', fontSize: 17, fontWeight: 800, color: 'var(--kp-text)', letterSpacing: 0.4 }}>
-                  {phase.title}
+                  {phaseTitleT(phase, t)}
                 </div>
               </div>
               {!phase.isStop && !phase.isChoose && (
@@ -4411,7 +4450,7 @@ export default function App() {
               )}
             </div>
             <div style={{ fontSize: 12, color: '#c0a878', lineHeight: 1.5, whiteSpace: 'pre-line' }}>
-              {phase.desc}
+              {phaseDescT(phase, t)}
             </div>
             {phase.isChoose && (
               <div style={{ display: 'flex', gap: 8, marginTop: 12 }}>
@@ -4738,7 +4777,7 @@ export default function App() {
         <FeedbackModal onClose={() => setShowFeedback(false)} />
       )}
       {showAlliance && (
-        <AllianceModal onClose={() => setShowAlliance(false)} />
+        <AllianceModal onClose={() => setShowAlliance(false)} t={t} />
       )}
     </div>
   );
