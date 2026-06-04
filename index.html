@@ -5039,6 +5039,16 @@ const I18N = {
     ru: 'Пропустить — просто гайд',
     ar: 'تخطٍّ — استخدم الدليل فقط'
   },
+  'welcome.returning': {
+    en: "Already have an alliance? Tap Join, enter your code, and tick \u201cI lead\u201d to get your leader tools back.",
+    he: 'כבר יש לך ברית? לחץ "הצטרף", הזן את הקוד שלך וסמן "אני לידר" כדי לקבל בחזרה את כלי הניהול.',
+    es: '¿Ya tienes alianza? Toca Unirse, pon tu código y marca "Soy líder".',
+    pt: 'Já tem aliança? Toque em Entrar, insira seu código e marque "Sou líder".',
+    fr: 'Tu as déjà une alliance ? Touche Rejoindre, entre ton code et coche "Je dirige".',
+    de: 'Schon eine Allianz? Tippe Beitreten, gib deinen Code ein und hake "Ich leite" an.',
+    ru: 'Уже есть альянс? Нажмите Войти, введите код и отметьте "Я лидер".',
+    ar: 'لديك تحالف؟ اضغط انضمام، أدخل رمزك وحدّد "أنا القائد".'
+  },
   'welcome.skipHint': {
     en: "No code yet? Start solo — you can join your alliance later from the Alliance tab.",
     he: 'אין עדיין קוד? התחל לבד — תוכל להצטרף לברית מאוחר יותר מטאב הברית.',
@@ -10384,11 +10394,20 @@ const WelcomeGate = ({
     }
   }, /*#__PURE__*/React.createElement(Upload, {
     size: 16
-  }), " ", tr('setup.joinBtn')), /*#__PURE__*/React.createElement("button", {
+  }), " ", tr('setup.joinBtn')), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10.5,
+      color: 'var(--kp-text-faint)',
+      textAlign: 'center',
+      marginTop: 2,
+      lineHeight: 1.5,
+      padding: '0 4px'
+    }
+  }, tr('welcome.returning')), /*#__PURE__*/React.createElement("button", {
     onClick: onSkip,
     style: {
       width: '100%',
-      marginTop: 4,
+      marginTop: 8,
       padding: '9px',
       background: 'transparent',
       border: 'none',
@@ -13567,6 +13586,7 @@ if (__el) {
 </script>
 </body>
 </html>
+
 
 
 

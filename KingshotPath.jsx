@@ -720,6 +720,7 @@ const I18N = {
   'welcome.steps': { en: '1) Choose your alliance · 2) Enter your gear · 3) Follow your personal plan to full Red.', he: '1) בחר ברית · 2) הזן את הציוד שלך · 3) עקוב אחר התוכנית האישית עד Red מלא.', es: '1) Elige tu alianza · 2) Ingresa tu equipo · 3) Sigue tu plan personal.', pt: '1) Escolha sua aliança · 2) Insira seu equipamento · 3) Siga seu plano pessoal.', fr: '1) Choisis ton alliance · 2) Saisis ton équipement · 3) Suis ton plan personnel.', de: '1) Wähle deine Allianz · 2) Gib deine Ausrüstung ein · 3) Folge deinem Plan.', ru: '1) Выберите альянс · 2) Введите снаряжение · 3) Следуйте личному плану.', ar: '1) اختر تحالفك · 2) أدخل عتادك · 3) اتبع خطتك الشخصية.' },
   'welcome.chooseAlliance': { en: 'First, choose your alliance', he: 'קודם כל, בחר את הברית שלך', es: 'Primero, elige tu alianza', pt: 'Primeiro, escolha sua aliança', fr: 'D’abord, choisis ton alliance', de: 'Wähle zuerst deine Allianz', ru: 'Сначала выберите альянс', ar: 'أولًا، اختر تحالفك' },
   'welcome.skip': { en: 'Skip — just use the guide', he: 'דלג — רק להשתמש במדריך', es: 'Omitir — solo usar la guía', pt: 'Pular — só usar o guia', fr: 'Passer — utiliser juste le guide', de: 'Überspringen — nur den Guide nutzen', ru: 'Пропустить — просто гайд', ar: 'تخطٍّ — استخدم الدليل فقط' },
+  'welcome.returning': { en: "Already have an alliance? Tap Join, enter your code, and tick \u201cI lead\u201d to get your leader tools back.", he: 'כבר יש לך ברית? לחץ "הצטרף", הזן את הקוד שלך וסמן "אני לידר" כדי לקבל בחזרה את כלי הניהול.', es: '¿Ya tienes alianza? Toca Unirse, pon tu código y marca "Soy líder".', pt: 'Já tem aliança? Toque em Entrar, insira seu código e marque "Sou líder".', fr: 'Tu as déjà une alliance ? Touche Rejoindre, entre ton code et coche "Je dirige".', de: 'Schon eine Allianz? Tippe Beitreten, gib deinen Code ein und hake "Ich leite" an.', ru: 'Уже есть альянс? Нажмите Войти, введите код и отметьте "Я лидер".', ar: 'لديك تحالف؟ اضغط انضمام، أدخل رمزك وحدّد "أنا القائد".' },
   'welcome.skipHint': { en: "No code yet? Start solo — you can join your alliance later from the Alliance tab.", he: 'אין עדיין קוד? התחל לבד — תוכל להצטרף לברית מאוחר יותר מטאב הברית.', es: '¿Sin código? Empieza solo — únete a tu alianza luego.', pt: 'Sem código? Comece sozinho — entre na aliança depois.', fr: 'Pas de code ? Commence en solo — rejoins ton alliance plus tard.', de: 'Noch kein Code? Starte solo — tritt später bei.', ru: 'Нет кода? Начните соло — вступите в альянс позже.', ar: 'لا يوجد رمز؟ ابدأ منفردًا — انضم لاحقًا.' },
   'footer.howItWorks': { en: 'How it works', he: 'איך זה עובד', es: 'Cómo funciona', pt: 'Como funciona', fr: 'Comment ça marche', de: 'So funktioniert es', it: 'Come funziona', nl: 'Hoe het werkt', ru: 'Как это работает', pl: 'Jak to działa', tr: 'Nasıl çalışır', ar: 'كيف يعمل', zh: '使用说明', ja: '使い方', ko: '사용 방법', id: 'Cara kerja', vi: 'Cách hoạt động', th: 'วิธีใช้งาน' },
 };
@@ -3883,8 +3884,11 @@ const WelcomeGate = ({ t, invite, onCreate, onJoin, onSkip, onClose }) => {
             }}>
               <Upload size={16} /> {tr('setup.joinBtn')}
             </button>
+            <div style={{ fontSize: 10.5, color: 'var(--kp-text-faint)', textAlign: 'center', marginTop: 2, lineHeight: 1.5, padding: '0 4px' }}>
+              {tr('welcome.returning')}
+            </div>
             <button onClick={onSkip} style={{
-              width: '100%', marginTop: 4, padding: '9px', background: 'transparent', border: 'none',
+              width: '100%', marginTop: 8, padding: '9px', background: 'transparent', border: 'none',
               color: 'var(--kp-text-dim)', fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit',
               textDecoration: 'underline', textUnderlineOffset: 3,
             }}>
