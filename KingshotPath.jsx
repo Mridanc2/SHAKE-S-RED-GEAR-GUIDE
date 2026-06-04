@@ -15,7 +15,7 @@ import {
 const BRAND_TITLE = "GEAR COMMAND CENTER";
 const GUIDE_AUTHOR = 'Shakes';   // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2';  // built this app
-const APP_VERSION = 'v7.4';     // bump this on every new build so you can confirm the deploy is live
+const APP_VERSION = 'v7.5';     // bump this on every new build so you can confirm the deploy is live
 const TROOPS = ['infantry', 'archer', 'cavalry'];
 const TROOP_LABEL = { infantry: 'Infantry', archer: 'Archer', cavalry: 'Cavalry' };
 const TROOP_CODE = { infantry: 'I', archer: 'A', cavalry: 'C' };
@@ -658,6 +658,8 @@ const I18N = {
   'progress.goals': { en: '{done} / {total} gear goals done', es: '{done} / {total} objetivos hechos', pt: '{done} / {total} metas concluídas', fr: '{done} / {total} objectifs faits', de: '{done} / {total} Ziele erreicht', it: '{done} / {total} obiettivi fatti', nl: '{done} / {total} doelen klaar', ru: '{done} / {total} целей выполнено', pl: '{done} / {total} celów zrobionych', tr: '{done} / {total} hedef tamam', ar: '{done} / {total} أهداف منجزة', he: '{done} / {total} יעדי ציוד הושלמו', zh: '{done} / {total} 装备目标完成', ja: '{done} / {total} 装備目標達成', ko: '{done} / {total} 장비 목표 달성', id: '{done} / {total} target gear selesai', vi: '{done} / {total} mục tiêu hoàn thành', th: '{done} / {total} เป้าหมายอุปกรณ์สำเร็จ' },
   'progress.redPieces': { en: '{n}/12 Red', es: '{n}/12 Rojo', pt: '{n}/12 Vermelho', fr: '{n}/12 Rouge', de: '{n}/12 Rot', it: '{n}/12 Rosso', nl: '{n}/12 Rood', ru: '{n}/12 красных', pl: '{n}/12 Czerwony', tr: '{n}/12 Kırmızı', ar: '{n}/12 أحمر', he: '{n}/12 אדום', zh: '{n}/12 红装', ja: '{n}/12 レッド', ko: '{n}/12 레드', id: '{n}/12 Merah', vi: '{n}/12 Đỏ', th: '{n}/12 แดง' },
   'progress.journey': { en: 'Journey to Full Red', es: 'Camino al Rojo total', pt: 'Jornada ao Vermelho total', fr: 'Parcours vers le Rouge complet', de: 'Weg zu voll Rot', it: 'Percorso al Rosso completo', nl: 'Reis naar vol Rood', ru: 'Путь к полному красному', pl: 'Droga do pełnej czerwieni', tr: 'Tam Kırmızıya Yolculuk', ar: 'الطريق إلى الأحمر الكامل', he: 'הדרך לאדום מלא', zh: '通往全红之路', ja: 'フルレッドへの道', ko: '풀 레드까지의 여정', id: 'Perjalanan ke Full Merah', vi: 'Hành trình tới Full Đỏ', th: 'เส้นทางสู่แดงเต็ม' },
+  'progress.power': { en: 'Gear Power', he: 'עוצמת ציוד', es: 'Poder de equipo', pt: 'Poder do equipamento', fr: 'Puissance d’équipement', de: 'Ausrüstungsstärke', it: 'Potenza equipaggiamento', nl: 'Uitrustingskracht', ru: 'Сила снаряжения', pl: 'Moc sprzętu', tr: 'Ekipman gücü', ar: 'قوة العتاد', zh: '装备战力', ja: '装備パワー', ko: '장비 파워', id: 'Kekuatan gear', vi: 'Sức mạnh trang bị', th: 'พลังอุปกรณ์' },
+  'progress.powerHint': { en: 'Every upgrade you log raises this — and your spot on the alliance board.', he: 'כל שדרוג שתעדכן מעלה את זה — ואת המקום שלך בלוח הברית.', es: 'Cada mejora que registres sube esto — y tu lugar en el tablero.', pt: 'Cada melhoria que você registra aumenta isto — e seu lugar no quadro.', fr: 'Chaque amélioration enregistrée augmente ceci — et ta place au classement.', de: 'Jedes Upgrade erhöht das — und deinen Platz im Allianz-Board.', ru: 'Каждое улучшение поднимает это — и ваше место в рейтинге.', ar: 'كل ترقية تسجّلها ترفع هذا — ومكانك في اللوحة.', zh: '你记录的每次升级都会提升它——以及你在联盟榜上的位置。', ja: '記録した強化ごとに上がり、同盟ボードの順位も上がります。', ko: '업그레이드를 기록할 때마다 올라가고 연합 순위도 올라갑니다.', id: 'Setiap peningkatan yang kamu catat menaikkan ini — dan posisimu di papan.', vi: 'Mỗi nâng cấp bạn ghi lại sẽ tăng cái này — và vị trí của bạn trên bảng.', th: 'ทุกการอัปเกรดที่คุณบันทึกจะเพิ่มค่านี้ — และอันดับของคุณบนบอร์ด' },
   'progress.phaseNow': { en: 'Phase {n} progress', es: 'Progreso Fase {n}', pt: 'Progresso Fase {n}', fr: 'Progrès Phase {n}', de: 'Phase {n} Fortschritt', it: 'Progresso Fase {n}', nl: 'Fase {n} voortgang', ru: 'Прогресс фазы {n}', pl: 'Postęp Fazy {n}', tr: 'Aşama {n} ilerlemesi', ar: 'تقدم المرحلة {n}', he: 'התקדמות שלב {n}', zh: '第{n}阶段进度', ja: 'フェーズ{n}の進捗', ko: '{n}단계 진행도', id: 'Progres Fase {n}', vi: 'Tiến độ Giai đoạn {n}', th: 'ความคืบหน้าเฟส {n}' },
   'progress.toGo': { en: '{n} more to finish this phase', es: '{n} más para terminar esta fase', pt: 'mais {n} para concluir esta fase', fr: 'encore {n} pour finir cette phase', de: 'noch {n} bis Phasenende', it: 'altri {n} per finire la fase', nl: 'nog {n} om deze fase af te ronden', ru: 'ещё {n} до конца фазы', pl: 'jeszcze {n} do końca fazy', tr: 'bu aşamayı bitirmek için {n} daha', ar: '{n} أخرى لإنهاء المرحلة', he: 'עוד {n} לסיום השלב', zh: '再完成 {n} 个即可结束本阶段', ja: 'このフェーズ完了まであと{n}個', ko: '이 단계 완료까지 {n}개', id: '{n} lagi untuk selesaikan fase ini', vi: 'còn {n} để hoàn thành giai đoạn', th: 'อีก {n} เพื่อจบเฟสนี้' },
   'ach.title': { en: 'ACHIEVEMENTS', es: 'LOGROS', pt: 'CONQUISTAS', fr: 'SUCCÈS', de: 'ERFOLGE', it: 'OBIETTIVI', nl: 'PRESTATIES', ru: 'ДОСТИЖЕНИЯ', pl: 'OSIĄGNIĘCIA', tr: 'BAŞARIMLAR', ar: 'الإنجازات', he: 'הישגים', zh: '成就', ja: '実績', ko: '업적', id: 'PENCAPAIAN', vi: 'THÀNH TỰU', th: 'ความสำเร็จ' },
@@ -723,6 +725,17 @@ const I18N = {
   'welcome.returning': { en: "Already have an alliance? Tap Join, enter your code, and tick \u201cI lead\u201d to get your leader tools back.", he: 'כבר יש לך ברית? לחץ "הצטרף", הזן את הקוד שלך וסמן "אני לידר" כדי לקבל בחזרה את כלי הניהול.', es: '¿Ya tienes alianza? Toca Unirse, pon tu código y marca "Soy líder".', pt: 'Já tem aliança? Toque em Entrar, insira seu código e marque "Sou líder".', fr: 'Tu as déjà une alliance ? Touche Rejoindre, entre ton code et coche "Je dirige".', de: 'Schon eine Allianz? Tippe Beitreten, gib deinen Code ein und hake "Ich leite" an.', ru: 'Уже есть альянс? Нажмите Войти, введите код и отметьте "Я лидер".', ar: 'لديك تحالف؟ اضغط انضمام، أدخل رمزك وحدّد "أنا القائد".' },
   'welcome.skipHint': { en: "No code yet? Start solo — you can join your alliance later from the Alliance tab.", he: 'אין עדיין קוד? התחל לבד — תוכל להצטרף לברית מאוחר יותר מטאב הברית.', es: '¿Sin código? Empieza solo — únete a tu alianza luego.', pt: 'Sem código? Comece sozinho — entre na aliança depois.', fr: 'Pas de code ? Commence en solo — rejoins ton alliance plus tard.', de: 'Noch kein Code? Starte solo — tritt später bei.', ru: 'Нет кода? Начните соло — вступите в альянс позже.', ar: 'لا يوجد رمز؟ ابدأ منفردًا — انضم لاحقًا.' },
   'footer.howItWorks': { en: 'How it works', he: 'איך זה עובד', es: 'Cómo funciona', pt: 'Como funciona', fr: 'Comment ça marche', de: 'So funktioniert es', it: 'Come funziona', nl: 'Hoe het werkt', ru: 'Как это работает', pl: 'Jak to działa', tr: 'Nasıl çalışır', ar: 'كيف يعمل', zh: '使用说明', ja: '使い方', ko: '사용 방법', id: 'Cara kerja', vi: 'Cách hoạt động', th: 'วิธีใช้งาน' },
+  'sync.footerBtn': { en: 'Sync across devices', he: 'סנכרון בין מכשירים', es: 'Sincronizar entre dispositivos', pt: 'Sincronizar entre dispositivos', fr: 'Synchroniser entre appareils', de: 'Geräte synchronisieren', ru: 'Синхронизация устройств', ar: 'مزامنة بين الأجهزة', zh: '跨设备同步', ja: 'デバイス間で同期', ko: '기기 간 동기화', pt_BR: 'Sincronizar', it: 'Sincronizza dispositivi', nl: 'Synchroniseer apparaten', pl: 'Synchronizuj urządzenia', tr: 'Cihazlar arası eşitle', id: 'Sinkron antar perangkat', vi: 'Đồng bộ giữa thiết bị', th: 'ซิงค์ข้ามอุปกรณ์' },
+  'sync.title': { en: 'Sync across devices', he: 'סנכרון בין מכשירים', es: 'Sincronizar entre dispositivos', pt: 'Sincronizar entre dispositivos', fr: 'Synchroniser entre appareils', de: 'Geräte synchronisieren', ru: 'Синхронизация устройств', ar: 'مزامنة بين الأجهزة', zh: '跨设备同步', ja: 'デバイス間同期', ko: '기기 간 동기화', it: 'Sincronizza dispositivi', nl: 'Synchroniseer apparaten', pl: 'Synchronizuj urządzenia', tr: 'Cihazlar arası eşitle', id: 'Sinkron antar perangkat', vi: 'Đồng bộ giữa thiết bị', th: 'ซิงค์ข้ามอุปกรณ์' },
+  'sync.intro': { en: 'Your data is saved on this device. To open it on another device (phone ↔ PC), copy your sync code here and load it there.', he: 'הנתונים שלך נשמרים במכשיר הזה. כדי לפתוח אותם במכשיר אחר (טלפון ↔ מחשב), העתק את קוד הסנכרון וטען אותו שם.', es: 'Tus datos se guardan en este dispositivo. Para abrirlos en otro, copia tu código y cárgalo allí.', pt: 'Seus dados ficam neste dispositivo. Para abri-los em outro, copie seu código e carregue lá.', fr: 'Tes données sont sur cet appareil. Pour les ouvrir ailleurs, copie ton code et charge-le là-bas.', de: 'Deine Daten liegen auf diesem Gerät. Kopiere deinen Code und lade ihn auf einem anderen Gerät.', ru: 'Данные хранятся на этом устройстве. Скопируйте код и загрузите его на другом.', ar: 'بياناتك محفوظة على هذا الجهاز. انسخ رمزك وحمّله على جهاز آخر.' },
+  'sync.yourCode': { en: 'Your sync code', he: 'קוד הסנכרון שלך', es: 'Tu código de sync', pt: 'Seu código de sync', fr: 'Ton code de sync', de: 'Dein Sync-Code', ru: 'Ваш код синхронизации', ar: 'رمز المزامنة' },
+  'sync.loadLabel': { en: 'Load data from another device', he: 'טען נתונים ממכשיר אחר', es: 'Cargar datos de otro dispositivo', pt: 'Carregar dados de outro dispositivo', fr: 'Charger les données d’un autre appareil', de: 'Daten von anderem Gerät laden', ru: 'Загрузить данные с другого устройства', ar: 'تحميل البيانات من جهاز آخر' },
+  'sync.codePlaceholder': { en: 'Paste sync code…', he: 'הדבק קוד סנכרון…', es: 'Pega el código…', pt: 'Cole o código…', fr: 'Colle le code…', de: 'Code einfügen…', ru: 'Вставьте код…', ar: 'الصق الرمز…' },
+  'sync.loadBtn': { en: 'Load my data', he: 'טען את הנתונים שלי', es: 'Cargar mis datos', pt: 'Carregar meus dados', fr: 'Charger mes données', de: 'Daten laden', ru: 'Загрузить', ar: 'تحميل بياناتي' },
+  'sync.notFound': { en: 'No data found for that code. Check it and try again.', he: 'לא נמצאו נתונים לקוד הזה. בדוק ונסה שוב.', es: 'No se encontraron datos para ese código.', pt: 'Nenhum dado encontrado para esse código.', fr: 'Aucune donnée trouvée pour ce code.', de: 'Keine Daten für diesen Code gefunden.', ru: 'Данные по этому коду не найдены.', ar: 'لا توجد بيانات لهذا الرمز.' },
+  'sync.done': { en: 'Loaded! This device is now synced.', he: 'נטען! המכשיר הזה מסונכרן עכשיו.', es: '¡Cargado! Este dispositivo está sincronizado.', pt: 'Carregado! Este dispositivo está sincronizado.', fr: 'Chargé ! Cet appareil est synchronisé.', de: 'Geladen! Dieses Gerät ist jetzt synchron.', ru: 'Загружено! Устройство синхронизировано.', ar: 'تم التحميل! الجهاز متزامن الآن.' },
+  'sync.warn': { en: 'Loading replaces this device’s current data with the synced data. Edits sync last-write-wins, so update on one device at a time.', he: 'טעינה מחליפה את הנתונים הנוכחיים במכשיר בנתונים המסונכרנים. עדכונים נשמרים לפי "האחרון מנצח", אז עדכן במכשיר אחד בכל פעם.', es: 'Cargar reemplaza los datos actuales. Edita en un dispositivo a la vez.', pt: 'Carregar substitui os dados atuais. Edite em um dispositivo por vez.', fr: 'Le chargement remplace les données actuelles. Modifie un appareil à la fois.', de: 'Laden ersetzt die aktuellen Daten. Bearbeite jeweils ein Gerät.', ru: 'Загрузка заменит текущие данные. Редактируйте по одному устройству.', ar: 'التحميل يستبدل البيانات الحالية. عدّل جهازًا واحدًا في كل مرة.' },
+  'sync.close': { en: 'Close', he: 'סגור', es: 'Cerrar', pt: 'Fechar', fr: 'Fermer', de: 'Schließen', ru: 'Закрыть', ar: 'إغلاق', it: 'Chiudi', nl: 'Sluiten', pl: 'Zamknij', tr: 'Kapat', zh: '关闭', ja: '閉じる', ko: '닫기', id: 'Tutup', vi: 'Đóng', th: 'ปิด' },
 };
 
 const T = (key, lang = 'en', vars) => {
@@ -1404,6 +1417,20 @@ const gearStats = (gear) => {
   return { red, owned, troopRed, fullRedHeroes, maxMastery, mastered };
 };
 
+// Overall gear-strength score across all 12 pieces — rarity dominates, then
+// level, then mastery. Used to rank players who are tied on Red count so the
+// genuinely stronger player ranks higher even before anyone has Red gear.
+const gearScore = (gear) => {
+  if (!gear) return 0;
+  let s = 0;
+  TROOPS.forEach(tr => SLOTS.forEach(sl => {
+    const p = gear[`${tr}-${sl}`];
+    if (!p) return;
+    s += (RARITY_RANK[p.rarity] || 0) * 1000 + (p.level || 0) * 5 + (p.mastery || 0) * 25;
+  }));
+  return s;
+};
+
 const ACHIEVEMENTS = [
   { id: 'first_red', icon: '🩸', name: 'First Blood', check: (s) => s.red >= 1, prog: (s) => `${Math.min(s.red, 1)}/1`, desc: 'ach.d.red', dv: { n: 1 } },
   { id: 'geared', icon: '⚔️', name: 'Geared Up', check: (s) => s.red >= 3, prog: (s) => `${Math.min(s.red, 3)}/3`, desc: 'ach.d.red', dv: { n: 3 } },
@@ -1821,7 +1848,7 @@ const HeroSelector = ({ heroes, customImages, onPickTroop, t }) => {
 // ═══════════════════════════════════════════════════════════════════
 //   HERO BOARD — shows a troop's 4 pieces in a 2x2 layout
 // ═══════════════════════════════════════════════════════════════════
-const HeroBoard = ({ troop, heroName, heroImage, gear, onEdit, onBulkRarity, onSetRarity, t }) => {
+const HeroBoard = ({ troop, heroName, heroImage, gear, onEdit, onBulkRarity, onSetRarity, onSetLevel, t }) => {
   const tr = t || ((k) => k);
   const troopColor = TROOP_COLOR[troop];
   const hasGear = SLOTS.some(s => gear[gearKey(troop, s)]);
@@ -1901,6 +1928,28 @@ const HeroBoard = ({ troop, heroName, heroImage, gear, onEdit, onBulkRarity, onS
                   )}
                 </div>
               </div>
+              {piece && onSetLevel && (() => {
+                const cap = LEVEL_CAP[piece.rarity] || 100;
+                const atMax = piece.level >= cap;
+                const set = (lvl) => onSetLevel(troop, slot, Math.max(0, Math.min(cap, lvl)));
+                const btn = (label, onClick, disabled) => (
+                  <button onClick={onClick} disabled={disabled} style={{
+                    flex: 1, height: 22, borderRadius: 5, padding: 0,
+                    background: 'var(--kp-surface-2)', border: '1px solid rgba(201,169,97,0.3)',
+                    color: 'var(--kp-text-gold)', fontSize: 10, fontWeight: 800, fontFamily: 'inherit',
+                    cursor: disabled ? 'default' : 'pointer', opacity: disabled ? 0.4 : 1,
+                  }}>{label}</button>
+                );
+                return (
+                  <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
+                    {btn('−', () => set(piece.level - 1), piece.level <= 0)}
+                    {btn('+1', () => set(piece.level + 1), atMax)}
+                    {btn('+5', () => set(piece.level + 5), atMax)}
+                    {btn('+10', () => set(piece.level + 10), atMax)}
+                    {btn('Max', () => set(cap), atMax)}
+                  </div>
+                );
+              })()}
               {piece && onSetRarity && (
                 <div style={{ display: 'flex', gap: 4 }}>
                   {EDITABLE_RARITIES.map(r => {
@@ -2889,6 +2938,28 @@ const memberKey = (name) => {
   return k || null;
 };
 const codeKey = (code) => String(code || DEFAULT_ALLIANCE_CODE).trim().replace(/[.#$\[\]\/\s]+/g, '_').slice(0, 40) || 'default';
+
+// Device sync — store/restore a player's FULL state in the cloud, keyed by
+// their personal sync code (their playerId). Lets the same person load their
+// gear/heroes/resources on another device.
+const savePlayerCloud = async (id, blob) => {
+  if (!ALLIANCE_DB_URL || !id) return false;
+  try {
+    const r = await fetch(`${ALLIANCE_DB_URL}/players/${codeKey(id)}.json`, {
+      method: 'PUT', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(blob),
+    });
+    return r.ok;
+  } catch { return false; }
+};
+const loadPlayerCloud = async (id) => {
+  if (!ALLIANCE_DB_URL || !id) return null;
+  try {
+    const r = await fetch(`${ALLIANCE_DB_URL}/players/${codeKey(id)}.json`);
+    if (!r.ok) return null;
+    return await r.json();
+  } catch { return null; }
+};
 const shareMember = async (member, code) => {
   if (!ALLIANCE_DB_URL || !member || !member.key) return false;
   try {
@@ -3233,7 +3304,7 @@ const CommentsSection = ({ t }) => {
         padding: '12px 14px', borderRadius: 9,
         background: 'var(--kp-surface-3)',
         border: '1px solid rgba(201,169,97,0.18)',
-        minHeight: 70,
+        height: 104, overflow: 'hidden',
         display: 'flex', flexDirection: 'column', justifyContent: 'center',
       }}>
         <div style={{
@@ -3383,8 +3454,8 @@ const AllianceWidget = ({ onJoin, t }) => {
         xXx
       </div>
       <button onClick={onJoin} className="kp-card" style={{
-        display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 9,
-        width: '100%', maxWidth: 320, padding: '13px 20px', borderRadius: 99,
+        display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 9,
+        width: '100%', maxWidth: 320, margin: '0 auto', padding: '13px 20px', borderRadius: 99,
         background: 'linear-gradient(135deg, #fbbf24, #d97706)',
         border: 'none', cursor: 'pointer',
         color: '#1a1205', fontFamily: 'Cinzel, serif', fontWeight: 900,
@@ -3394,7 +3465,7 @@ const AllianceWidget = ({ onJoin, t }) => {
         <span style={{ fontSize: 16 }}>⚔️</span> {t('alliance.join')} xXx #1494
       </button>
 
-      <div style={{ marginTop: 16, display: 'inline-flex', flexDirection: 'column', gap: 6 }}>
+      <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
         {mottos.map((m, i) => (
           <div key={i} style={{
             display: 'flex', alignItems: 'center', gap: 9,
@@ -4150,7 +4221,9 @@ const AllianceRoster = ({ t, code, isAdmin }) => {
       if (hr) return hr; // anyone who asked for help floats to the top
       if (sortBy === 'recent') return (b.updatedAt || 0) - (a.updatedAt || 0);
       if (sortBy === 'name') return (a.name || '').localeCompare(b.name || '');
-      return (b.redCount || 0) - (a.redCount || 0) || (b.phase || 0) - (a.phase || 0);
+      return (b.redCount || 0) - (a.redCount || 0)
+        || gearScore(b.gear) - gearScore(a.gear)
+        || (b.phase || 0) - (a.phase || 0);
     });
 
   const gain = (m) => (m.weekRed != null ? Math.max(0, (m.redCount || 0) - m.weekRed) : 0);
@@ -4427,7 +4500,7 @@ const AllianceRoster = ({ t, code, isAdmin }) => {
   );
 };
 
-const Footer = ({ onFeedback, onHowItWorks, t }) => {
+const Footer = ({ onFeedback, onHowItWorks, onSync, t }) => {
   return (
     <div style={{
       marginTop: 18, padding: 14, borderRadius: 12,
@@ -4435,6 +4508,23 @@ const Footer = ({ onFeedback, onHowItWorks, t }) => {
       border: '1px solid rgba(201,169,97,0.22)',
       boxShadow: '0 4px 18px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)',
     }}>
+      {onSync && (
+        <button
+          onClick={onSync}
+          className="kp-card"
+          style={{
+            width: '100%',
+            padding: '10px 14px', borderRadius: 9, marginBottom: 8,
+            background: 'var(--kp-surface-2)',
+            border: '1px solid rgba(96,165,250,0.4)',
+            color: '#93c5fd',
+            fontSize: 12.5, fontWeight: 700, fontFamily: 'inherit',
+            cursor: 'pointer',
+            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 7,
+          }}>
+          🔗 {t('sync.footerBtn')}
+        </button>
+      )}
       {onHowItWorks && (
         <button
           onClick={onHowItWorks}
@@ -4548,6 +4638,55 @@ const migrateState = (s) => {
   return s;
 };
 
+// ═══════════════════════════════════════════════════════════════════
+//   DEVICE SYNC MODAL — show your sync code, or load data from another device
+// ═══════════════════════════════════════════════════════════════════
+const SyncModal = ({ code, onLoad, onClose, t }) => {
+  const tr = t || ((k) => k);
+  const [val, setVal] = useState('');
+  const [copied, setCopied] = useState(false);
+  const [status, setStatus] = useState(''); // '' | 'loading' | 'notfound' | 'done'
+  const doCopy = async () => { const ok = await copyToClipboard(code); if (ok) { setCopied(true); setTimeout(() => setCopied(false), 1500); } };
+  const doLoad = async () => {
+    const c = val.trim();
+    if (!c || status === 'loading') return;
+    setStatus('loading');
+    const ok = await onLoad(c);
+    setStatus(ok ? 'done' : 'notfound');
+  };
+  const input = { width: '100%', boxSizing: 'border-box', padding: '11px 12px', borderRadius: 8, background: 'var(--kp-surface-2)', border: '1px solid rgba(201,169,97,0.3)', color: 'var(--kp-text)', fontSize: 14, fontFamily: 'inherit', outline: 'none' };
+  return (
+    <div style={{ position: 'fixed', inset: 0, zIndex: 120, background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(6px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20 }} onClick={onClose}>
+      <div style={{ background: 'var(--kp-modal)', border: '1px solid rgba(201,169,97,0.4)', borderRadius: 14, padding: 18, maxWidth: 420, width: '100%' }} onClick={(e) => e.stopPropagation()}>
+        <div style={{ fontFamily: 'Cinzel, serif', fontSize: 16, fontWeight: 800, color: 'var(--kp-text-gold)', letterSpacing: 0.5, marginBottom: 6 }}>🔗 {tr('sync.title')}</div>
+        <div style={{ fontSize: 11.5, color: 'var(--kp-text-dim)', lineHeight: 1.5, marginBottom: 14 }}>{tr('sync.intro')}</div>
+
+        <label style={{ display: 'block', fontSize: 10.5, fontWeight: 700, color: 'var(--kp-text-dim)', letterSpacing: 0.4, marginBottom: 5 }}>{tr('sync.yourCode')}</label>
+        <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
+          <code style={{ flex: 1, minWidth: 0, padding: '11px 12px', borderRadius: 8, background: 'var(--kp-surface-2)', border: '1px solid rgba(201,169,97,0.3)', color: 'var(--kp-text-gold)', fontSize: 14, fontWeight: 700, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{code}</code>
+          <button onClick={doCopy} style={{ flexShrink: 0, padding: '0 14px', borderRadius: 8, background: copied ? 'rgba(34,197,94,0.2)' : 'linear-gradient(135deg,#c9a961,#8b6914)', border: 'none', color: copied ? '#86efac' : '#0f0d0a', fontFamily: 'Cinzel, serif', fontWeight: 800, fontSize: 12, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: 5 }}>
+            {copied ? <><Check size={13} /> {tr('roster.copied')}</> : <><Copy size={13} /> {tr('roster.copyCode')}</>}
+          </button>
+        </div>
+
+        <div style={{ height: 1, background: 'rgba(201,169,97,0.15)', margin: '0 0 14px' }} />
+
+        <label style={{ display: 'block', fontSize: 10.5, fontWeight: 700, color: 'var(--kp-text-dim)', letterSpacing: 0.4, marginBottom: 5 }}>{tr('sync.loadLabel')}</label>
+        <input style={input} value={val} onChange={(e) => { setVal(e.target.value); setStatus(''); }} placeholder={tr('sync.codePlaceholder')} />
+        <button onClick={doLoad} disabled={!val.trim() || status === 'loading'} style={{ width: '100%', marginTop: 10, padding: '11px', borderRadius: 9, background: 'linear-gradient(135deg,#22c55e,#15803d)', border: 'none', color: '#fff', fontFamily: 'Cinzel, serif', fontWeight: 800, fontSize: 13, cursor: 'pointer', opacity: (val.trim() && status !== 'loading') ? 1 : 0.5 }}>
+          {status === 'loading' ? '…' : tr('sync.loadBtn')}
+        </button>
+        {status === 'notfound' && <div style={{ marginTop: 9, fontSize: 11, color: '#fca5a5', textAlign: 'center' }}>⚠ {tr('sync.notFound')}</div>}
+        {status === 'done' && <div style={{ marginTop: 9, fontSize: 11, color: '#86efac', textAlign: 'center', fontWeight: 700 }}>✓ {tr('sync.done')}</div>}
+
+        <div style={{ fontSize: 9.5, color: 'var(--kp-text-faint)', lineHeight: 1.45, marginTop: 14 }}>{tr('sync.warn')}</div>
+
+        <button onClick={onClose} style={{ width: '100%', marginTop: 12, padding: '10px', borderRadius: 8, background: 'transparent', border: '1px solid rgba(201,169,97,0.3)', color: 'var(--kp-text-dim)', fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit' }}>{tr('sync.close')}</button>
+      </div>
+    </div>
+  );
+};
+
 export default function App() {
   const [state, setState] = useState(null);
   const [view, setView] = useState('path'); // 'path' | 'alliance' top-level tab
@@ -4563,6 +4702,7 @@ export default function App() {
   const [editingResources, setEditingResources] = useState(false);
   const [pickingTroopFor, setPickingTroopFor] = useState(null); // troop name when picker is open
   const [showFeedback, setShowFeedback] = useState(false);
+  const [showSync, setShowSync] = useState(false);
   const [showAlliance, setShowAlliance] = useState(false);
   const [showGateManual, setShowGateManual] = useState(false); // re-open the welcome/intro from the footer
   const [showGear, setShowGear] = useState(false);
@@ -4682,6 +4822,16 @@ export default function App() {
     const id = setTimeout(() => shareMember(m, state.allianceCode), 1200);
     return () => clearTimeout(id);
   }, [state?.shareAlliance, state?.playerName, state?.gear, state?.specialization, state?.heroes, state?.allianceCode, state?.helpRequested]);
+
+  // Device sync — back up the full state to the cloud (debounced) so it can be
+  // restored on another device via the sync code. Only once there's real data.
+  useEffect(() => {
+    if (!ALLIANCE_DB_URL || !state || !state.playerId) return;
+    const hasData = (state.gear && Object.keys(state.gear).length) || (state.playerName && state.playerName.trim());
+    if (!hasData) return;
+    const id = setTimeout(() => savePlayerCloud(state.playerId, state), 1500);
+    return () => clearTimeout(id);
+  }, [state]);
 
 
   const updatePiece = (troop, slot, newPiece) => {
@@ -4969,6 +5119,25 @@ export default function App() {
           );
         })()}
 
+        {/* Gear Power — live strength that rises with every level/rarity/mastery you log */}
+        {(() => {
+          const power = gearScore(state.gear);
+          const MAX = TROOPS.length * SLOTS.length * ((RARITY_RANK.red || 6) * 1000 + (LEVEL_CAP.red || 100) * 5 + MASTERY_MAX * 25);
+          const pct = Math.min(100, Math.round(power / MAX * 100));
+          return (
+            <div style={{ marginBottom: 14, borderRadius: 13, padding: '12px 15px', background: 'linear-gradient(135deg, rgba(96,165,250,0.12), var(--kp-panel))', border: '1px solid rgba(96,165,250,0.3)', boxShadow: '0 4px 18px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 7 }}>
+                <span style={{ fontFamily: 'Cinzel, serif', fontSize: 12.5, fontWeight: 800, color: '#93c5fd', letterSpacing: 0.5 }}>⚔ {t('progress.power')}</span>
+                <span style={{ fontFamily: 'Cinzel, serif', fontSize: 18, fontWeight: 900, color: '#bfdbfe' }}>{fmt(power)}</span>
+              </div>
+              <div style={{ height: 9, borderRadius: 99, background: 'rgba(0,0,0,0.45)', overflow: 'hidden', border: '1px solid rgba(96,165,250,0.18)' }}>
+                <div style={{ width: `${pct}%`, height: '100%', background: 'linear-gradient(90deg,#3b82f6,#a855f7,#fbbf24)', transition: 'width 0.5s ease' }} />
+              </div>
+              <div style={{ fontSize: 10, color: 'var(--kp-text-faint)', marginTop: 6, lineHeight: 1.4 }}>{t('progress.powerHint')}</div>
+            </div>
+          );
+        })()}
+
         {/* Resources */}
         <ResourcePills resources={state.resources} onEdit={() => setEditingResources(true)} t={t} />
 
@@ -5032,6 +5201,12 @@ export default function App() {
                   const gear = { ...prev.gear };
                   const k = gearKey(troop, slot);
                   if (gear[k]) gear[k] = { ...gear[k], rarity };
+                  return { ...prev, gear };
+                })}
+                onSetLevel={(troop, slot, level) => setState(prev => {
+                  const gear = { ...prev.gear };
+                  const k = gearKey(troop, slot);
+                  if (gear[k]) gear[k] = { ...gear[k], level };
                   return { ...prev, gear };
                 })}
               />
@@ -5480,6 +5655,7 @@ export default function App() {
         <Footer
           onFeedback={() => setShowFeedback(true)}
           onHowItWorks={() => setShowGateManual(true)}
+          onSync={() => setShowSync(true)}
           t={t}
         />
 
@@ -5547,6 +5723,22 @@ export default function App() {
       )}
       {showFeedback && (
         <FeedbackModal onClose={() => setShowFeedback(false)} />
+      )}
+      {showSync && (
+        <SyncModal
+          t={t}
+          code={state.playerId}
+          onClose={() => setShowSync(false)}
+          onLoad={async (c) => {
+            const data = await loadPlayerCloud(c);
+            if (!data || typeof data !== 'object' || Array.isArray(data)) return false;
+            const loaded = migrateState(data);
+            if (!loaded.playerId) loaded.playerId = c;
+            setState(loaded);
+            gearAutoOpened.current = true; // don't auto-toggle the gear board after a restore
+            return true;
+          }}
+        />
       )}
       {showAlliance && (
         <AllianceModal onClose={() => setShowAlliance(false)} t={t} />
