@@ -15,7 +15,7 @@ import {
 const BRAND_TITLE = "SHAKES' RED GEAR GUIDE";
 const GUIDE_AUTHOR = 'Shakes';   // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2';  // built this app
-const APP_VERSION = 'v5.2';     // bump this on every new build so you can confirm the deploy is live
+const APP_VERSION = 'v6.2';     // bump this on every new build so you can confirm the deploy is live
 const TROOPS = ['infantry', 'archer', 'cavalry'];
 const TROOP_LABEL = { infantry: 'Infantry', archer: 'Archer', cavalry: 'Cavalry' };
 const TROOP_CODE = { infantry: 'I', archer: 'A', cavalry: 'C' };
@@ -583,9 +583,18 @@ const I18N = {
   'setup.joinDesc': { en: 'Enter the alliance code your leader gave you.', es: 'Introduce el código que te dio tu líder.', pt: 'Insira o código que seu líder forneceu.', fr: 'Entre le code donné par ton chef.', de: 'Gib den Code deines Leiters ein.', it: 'Inserisci il codice del tuo leader.', nl: 'Voer de code van je leider in.', ru: 'Введите код от лидера.', pl: 'Wpisz kod od lidera.', tr: 'Liderinin verdiği kodu gir.', ar: 'أدخل الرمز الذي أعطاك إياه قائدك.', he: 'הזן את הקוד שהמנהיג נתן לך.', zh: '输入队长给你的联盟代码。', ja: 'リーダーから受け取ったコードを入力。', ko: '리더가 준 코드를 입력하세요.', id: 'Masukkan kode dari pemimpinmu.', vi: 'Nhập mã thủ lĩnh đã đưa.', th: 'กรอกรหัสที่ผู้นำให้มา' },
   'setup.codePlaceholder': { en: 'Alliance code', es: 'Código de alianza', pt: 'Código da aliança', fr: 'Code d’alliance', de: 'Allianz-Code', it: 'Codice alleanza', nl: 'Alliantiecode', ru: 'Код альянса', pl: 'Kod sojuszu', tr: 'İttifak kodu', ar: 'رمز التحالف', he: 'קוד הברית', zh: '联盟代码', ja: '同盟コード', ko: '연합 코드', id: 'Kode aliansi', vi: 'Mã liên minh', th: 'รหัสพันธมิตร' },
   'setup.joinGo': { en: 'Join alliance', es: 'Unirse a la alianza', pt: 'Entrar na aliança', fr: 'Rejoindre l’alliance', de: 'Allianz beitreten', it: 'Unisciti all’alleanza', nl: 'Lid worden', ru: 'Войти в альянс', pl: 'Dołącz do sojuszu', tr: 'İttifaka katıl', ar: 'انضم للتحالف', he: 'הצטרף לברית', zh: '加入联盟', ja: '同盟に参加', ko: '연합 참가', id: 'Gabung aliansi', vi: 'Tham gia liên minh', th: 'เข้าร่วมพันธมิตร' },
-  'setup.iLead': { en: 'I lead this alliance (admin — show me the roster)', es: 'Yo lidero esta alianza (admin — mostrar plantel)', pt: 'Eu lidero esta aliança (admin — mostrar elenco)', fr: 'Je dirige cette alliance (admin — voir l’effectif)', de: 'Ich leite diese Allianz (Admin — Kader zeigen)', it: 'Guido questa alleanza (admin — mostra roster)', nl: 'Ik leid deze alliantie (admin — toon rooster)', ru: 'Я лидер этого альянса (админ — показать состав)', pl: 'Dowodzę tym sojuszem (admin — pokaż skład)', tr: 'Bu ittifakı yönetiyorum (admin — kadroyu göster)', ar: 'أنا أقود هذا التحالف (مشرف — اعرض القائمة)', he: 'אני מנהיג את הברית הזו (אדמין — הצג מצבת)', zh: '我领导这个联盟（管理员 — 显示名册）', ja: 'この同盟のリーダー（管理者 — ロスター表示）', ko: '이 연합의 리더 (관리자 — 로스터 표시)', id: 'Saya memimpin aliansi ini (admin — tampilkan daftar)', vi: 'Tôi lãnh đạo liên minh này (admin — hiện danh sách)', th: 'ฉันนำพันธมิตรนี้ (แอดมิน — แสดงรายชื่อ)' },
+  'setup.iLead': { en: 'I lead / co-lead this alliance (unlock admin tools)', es: 'Lidero / co-lidero esta alianza (herramientas de admin)', pt: 'Lidero / co-lidero esta aliança (ferramentas de admin)', fr: 'Je dirige / co-dirige cette alliance (outils admin)', de: 'Ich leite / co-leite diese Allianz (Admin-Tools)', it: 'Guido / co-guido questa alleanza (strumenti admin)', nl: 'Ik leid / co-leid deze alliantie (admin-tools)', ru: 'Я лидер / со-лидер этого альянса (инструменты админа)', pl: 'Dowodzę / współdowodzę tym sojuszem (narzędzia admina)', tr: 'Bu ittifakı yönetiyorum / ortak yönetiyorum (admin araçları)', ar: 'أقود / أشارك في قيادة هذا التحالف (أدوات المشرف)', he: 'אני מנהיג / שותף להנהגת הברית (כלי אדמין)', zh: '我领导/共同领导这个联盟（解锁管理工具）', ja: 'この同盟のリーダー/共同リーダー（管理ツール）', ko: '이 연합의 리더/공동 리더 (관리 도구)', id: 'Saya memimpin / ikut memimpin aliansi ini (alat admin)', vi: 'Tôi lãnh đạo / đồng lãnh đạo liên minh này (công cụ admin)', th: 'ฉันนำ / ร่วมนำพันธมิตรนี้ (เครื่องมือแอดมิน)' },
   'btn.back': { en: 'Back', es: 'Atrás', pt: 'Voltar', fr: 'Retour', de: 'Zurück', it: 'Indietro', nl: 'Terug', ru: 'Назад', pl: 'Wstecz', tr: 'Geri', ar: 'رجوع', he: 'חזרה', zh: '返回', ja: '戻る', ko: '뒤로', id: 'Kembali', vi: 'Quay lại', th: 'ย้อนกลับ' },
   'roster.copyCode': { en: 'Copy', es: 'Copiar', pt: 'Copiar', fr: 'Copier', de: 'Kopieren', it: 'Copia', nl: 'Kopiëren', ru: 'Копир.', pl: 'Kopiuj', tr: 'Kopyala', ar: 'نسخ', he: 'העתק', zh: '复制', ja: 'コピー', ko: '복사', id: 'Salin', vi: 'Chép', th: 'คัดลอก' },
+  'roster.inviteLink': { en: 'Copy invite link', es: 'Copiar enlace de invitación', pt: 'Copiar link de convite', fr: 'Copier le lien d’invitation', de: 'Einladungslink kopieren', it: 'Copia link d’invito', nl: 'Uitnodigingslink kopiëren', ru: 'Скопировать ссылку-приглашение', pl: 'Kopiuj link zaproszenia', tr: 'Davet bağlantısını kopyala', ar: 'نسخ رابط الدعوة', he: 'העתק קישור הזמנה', zh: '复制邀请链接', ja: '招待リンクをコピー', ko: '초대 링크 복사', id: 'Salin tautan undangan', vi: 'Sao chép link mời', th: 'คัดลอกลิงก์เชิญ' },
+  'roster.remove': { en: 'Remove from alliance', es: 'Quitar de la alianza', pt: 'Remover da aliança', fr: 'Retirer de l’alliance', de: 'Aus Allianz entfernen', it: 'Rimuovi dall’alleanza', nl: 'Uit alliantie verwijderen', ru: 'Удалить из альянса', pl: 'Usuń z sojuszu', tr: 'İttifaktan çıkar', ar: 'إزالة من التحالف', he: 'הסר מהברית', zh: '移出联盟', ja: '同盟から削除', ko: '연합에서 제거', id: 'Keluarkan dari aliansi', vi: 'Xóa khỏi liên minh', th: 'นำออกจากพันธมิตร' },
+  'roster.removeConfirm': { en: 'Remove {name} from the alliance roster? They can re-join later with the invite link.', es: '¿Quitar a {name} del plantel? Puede volver con el enlace de invitación.', pt: 'Remover {name} do elenco? Pode voltar com o link de convite.', fr: 'Retirer {name} de l’effectif ? Il pourra revenir avec le lien d’invitation.', de: '{name} aus dem Kader entfernen? Kann später per Einladungslink zurückkehren.', it: 'Rimuovere {name} dal roster? Può rientrare col link d’invito.', nl: '{name} uit het rooster verwijderen? Kan later terugkomen via de uitnodigingslink.', ru: 'Удалить {name} из состава? Сможет вернуться по ссылке-приглашению.', pl: 'Usunąć {name} ze składu? Może wrócić przez link zaproszenia.', tr: '{name} kadrodan çıkarılsın mı? Davet bağlantısıyla geri katılabilir.', ar: 'إزالة {name} من القائمة؟ يمكنه العودة برابط الدعوة.', he: 'להסיר את {name} מהמצבת? אפשר לחזור עם קישור ההזמנה.', zh: '将 {name} 移出名册？之后可用邀请链接重新加入。', ja: '{name} をロスターから削除？招待リンクで再参加できます。', ko: '{name}을(를) 로스터에서 제거할까요? 초대 링크로 다시 참가할 수 있습니다.', id: 'Keluarkan {name} dari daftar? Bisa gabung lagi via tautan undangan.', vi: 'Xóa {name} khỏi danh sách? Có thể tham gia lại bằng link mời.', th: 'นำ {name} ออกจากรายชื่อ? เข้าร่วมใหม่ได้ด้วยลิงก์เชิญ' },
+  'setup.invited': { en: 'You\u2019ve been invited to join {code}. Tap Join.', es: 'Te han invitado a unirte a {code}. Toca Unirse.', pt: 'Você foi convidado para {code}. Toque em Entrar.', fr: 'Tu es invité à rejoindre {code}. Touche Rejoindre.', de: 'Du wurdest zu {code} eingeladen. Tippe auf Beitreten.', it: 'Sei stato invitato in {code}. Tocca Unisciti.', nl: 'Je bent uitgenodigd voor {code}. Tik op Deelnemen.', ru: 'Вас пригласили в {code}. Нажмите «Войти».', pl: 'Zaproszono Cię do {code}. Dotknij Dołącz.', tr: '{code} ittifakına davet edildin. Katıl’a dokun.', ar: 'تمت دعوتك للانضمام إلى {code}. انقر انضمام.', he: 'הוזמנת להצטרף ל-{code}. הקש הצטרף.', zh: '你被邀请加入 {code}。点按加入。', ja: '{code} に招待されました。参加をタップ。', ko: '{code}에 초대되었습니다. 참가를 누르세요.', id: 'Kamu diundang ke {code}. Ketuk Gabung.', vi: 'Bạn được mời vào {code}. Chạm Tham gia.', th: 'คุณได้รับเชิญเข้าร่วม {code} แตะเข้าร่วม' },
+  'setup.createWarn': { en: 'This starts a brand-new alliance. Only do this if you\u2019re the leader. If your alliance already exists, go Back and Join with its invite link instead.', es: 'Esto crea una alianza nueva. Hazlo solo si eres el líder. Si tu alianza ya existe, vuelve y Únete con su enlace.', pt: 'Isto cria uma aliança nova. Só faça se for o líder. Se sua aliança já existe, volte e Entre com o link dela.', fr: 'Ceci crée une toute nouvelle alliance. À ne faire que si tu es le chef. Si ton alliance existe déjà, reviens et Rejoins via son lien.', de: 'Dies erstellt eine ganz neue Allianz. Nur als Leiter tun. Existiert deine Allianz schon, geh zurück und tritt per Link bei.', it: 'Questo crea una nuova alleanza. Fallo solo se sei il leader. Se la tua alleanza esiste già, torna e Unisciti col suo link.', nl: 'Dit maakt een gloednieuwe alliantie. Doe dit alleen als leider. Bestaat je alliantie al, ga terug en sluit je aan via de link.', ru: 'Это создаёт новый альянс. Только если вы лидер. Если альянс уже есть — назад и войдите по ссылке.', pl: 'To tworzy nowy sojusz. Tylko jeśli jesteś liderem. Jeśli sojusz już istnieje, wróć i dołącz przez link.', tr: 'Bu yepyeni bir ittifak kurar. Sadece liderken yap. İttifakın varsa geri dön ve davet bağlantısıyla katıl.', ar: 'هذا ينشئ تحالفًا جديدًا. افعل ذلك فقط إن كنت القائد. إن كان تحالفك موجودًا، ارجع وانضم برابط الدعوة.', he: 'זה יוצר ברית חדשה לגמרי. עשה זאת רק אם אתה המנהיג. אם הברית כבר קיימת, חזור והצטרף עם קישור ההזמנה.', zh: '这会创建一个全新联盟。只有队长才该这么做。如果联盟已存在，请返回并用邀请链接加入。', ja: 'これは全く新しい同盟を作ります。リーダーのみ実行を。既に同盟があるなら戻って招待リンクで参加を。', ko: '완전히 새 연합을 만듭니다. 리더만 하세요. 연합이 이미 있으면 뒤로 가서 초대 링크로 참가하세요.', id: 'Ini membuat aliansi baru. Lakukan hanya jika kamu pemimpin. Jika aliansi sudah ada, kembali dan Gabung lewat tautannya.', vi: 'Việc này tạo một liên minh mới. Chỉ làm nếu bạn là thủ lĩnh. Nếu liên minh đã có, quay lại và Tham gia bằng link mời.', th: 'นี่จะสร้างพันธมิตรใหม่ทั้งหมด ทำเฉพาะถ้าคุณเป็นผู้นำ ถ้าพันธมิตรมีอยู่แล้ว ให้ย้อนกลับและเข้าร่วมด้วยลิงก์เชิญ' },
+  'create.doneTitle': { en: 'Alliance created!', es: '¡Alianza creada!', pt: 'Aliança criada!', fr: 'Alliance créée !', de: 'Allianz erstellt!', it: 'Alleanza creata!', nl: 'Alliantie aangemaakt!', ru: 'Альянс создан!', pl: 'Sojusz utworzony!', tr: 'İttifak kuruldu!', ar: 'تم إنشاء التحالف!', he: 'הברית נוצרה!', zh: '联盟已创建！', ja: '同盟を作成しました！', ko: '연합 생성 완료!', id: 'Aliansi dibuat!', vi: 'Đã tạo liên minh!', th: 'สร้างพันธมิตรแล้ว!' },
+  'create.doneDesc': { en: 'Share this invite link with your alliance so everyone joins the same one. (Post it in your Discord or in-game mail.)', es: 'Comparte este enlace con tu alianza para que todos entren a la misma. (En Discord o correo del juego.)', pt: 'Compartilhe este link com sua aliança para todos entrarem na mesma. (No Discord ou correio do jogo.)', fr: 'Partage ce lien avec ton alliance pour que tous rejoignent la même. (Sur Discord ou le courrier en jeu.)', de: 'Teile diesen Link mit deiner Allianz, damit alle derselben beitreten. (In Discord oder Spielpost.)', it: 'Condividi questo link con la tua alleanza così tutti entrano nella stessa. (Su Discord o posta di gioco.)', nl: 'Deel deze link met je alliantie zodat iedereen dezelfde joint. (In Discord of in-game post.)', ru: 'Поделитесь этой ссылкой с альянсом, чтобы все вошли в один. (В Discord или игровой почте.)', pl: 'Udostępnij ten link sojuszowi, aby wszyscy dołączyli do tego samego. (Na Discordzie lub poczcie w grze.)', tr: 'Bu bağlantıyı ittifakınla paylaş ki herkes aynısına katılsın. (Discord ya da oyun postası.)', ar: 'شارك رابط الدعوة مع تحالفك لينضم الجميع لنفس التحالف. (في Discord أو بريد اللعبة.)', he: 'שתף את קישור ההזמנה עם הברית כדי שכולם יצטרפו לאותה אחת. (בדיסקורד או בדואר המשחק.)', zh: '把这个邀请链接分享给联盟，让大家加入同一个。（发到 Discord 或游戏邮件。）', ja: 'この招待リンクを同盟で共有し、全員が同じ同盟に参加できるように。（Discordやゲーム内メールで。）', ko: '이 초대 링크를 연합에 공유해 모두 같은 곳에 참가하게 하세요. (디스코드나 게임 우편으로.)', id: 'Bagikan tautan undangan ini ke aliansi agar semua gabung yang sama. (Di Discord atau surat game.)', vi: 'Chia sẻ link mời này cho liên minh để mọi người vào cùng một. (Trên Discord hoặc thư trong game.)', th: 'แชร์ลิงก์เชิญนี้ให้พันธมิตรเพื่อให้ทุกคนเข้าอันเดียวกัน (โพสต์ใน Discord หรือเมลในเกม)' },
+  'create.dismiss': { en: 'Done', es: 'Listo', pt: 'Pronto', fr: 'OK', de: 'Fertig', it: 'Fatto', nl: 'Klaar', ru: 'Готово', pl: 'Gotowe', tr: 'Tamam', ar: 'تم', he: 'סיום', zh: '完成', ja: '完了', ko: '완료', id: 'Selesai', vi: 'Xong', th: 'เสร็จ' },
+  'reset.confirm': { en: 'Reset this account? This erases your gear, heroes, resources and alliance setup on this device, and removes you from the alliance roster. Your alt account and the rest of the alliance are not affected.', es: '¿Restablecer esta cuenta? Borra tu equipo, héroes, recursos y configuración de alianza en este dispositivo, y te quita del plantel. Tu cuenta alt y el resto de la alianza no se ven afectados.', pt: 'Redefinir esta conta? Apaga seu equipamento, heróis, recursos e configuração de aliança neste aparelho, e remove você do elenco. Sua conta alt e o resto da aliança não são afetados.', fr: 'Réinitialiser ce compte ? Cela efface ton équipement, héros, ressources et config d’alliance sur cet appareil, et te retire de l’effectif. Ton compte alt et le reste de l’alliance ne sont pas affectés.', de: 'Dieses Konto zurücksetzen? Löscht Ausrüstung, Helden, Ressourcen und Allianz-Setup auf diesem Gerät und entfernt dich aus dem Kader. Dein Zweitkonto und der Rest der Allianz bleiben unberührt.', it: 'Reimpostare questo account? Cancella equipaggiamento, eroi, risorse e configurazione alleanza su questo dispositivo, e ti rimuove dal roster. L’account alt e il resto dell’alleanza non sono toccati.', nl: 'Dit account resetten? Wist je uitrusting, helden, resources en alliantie-instellingen op dit apparaat, en verwijdert je uit het rooster. Je alt-account en de rest van de alliantie blijven ongemoeid.', ru: 'Сбросить этот аккаунт? Удаляет снаряжение, героев, ресурсы и настройку альянса на этом устройстве и убирает вас из состава. Альт-аккаунт и остальной альянс не затрагиваются.', pl: 'Zresetować to konto? Usuwa sprzęt, bohaterów, zasoby i konfigurację sojuszu na tym urządzeniu oraz usuwa Cię ze składu. Konto alt i reszta sojuszu pozostają nietknięte.', tr: 'Bu hesap sıfırlansın mı? Bu cihazdaki ekipman, kahraman, kaynak ve ittifak kurulumunu siler ve seni kadrodan çıkarır. Alt hesabın ve ittifakın geri kalanı etkilenmez.', ar: 'إعادة تعيين هذا الحساب؟ يمسح عتادك وأبطالك ومواردك وإعداد التحالف على هذا الجهاز، ويزيلك من القائمة. حسابك البديل وبقية التحالف لا يتأثران.', he: 'לאפס את החשבון הזה? זה מוחק את הציוד, הגיבורים, המשאבים והגדרת הברית במכשיר הזה, ומסיר אותך מהמצבת. החשבון המשני ושאר הברית אינם מושפעים.', zh: '重置此账号？将清除本设备上的装备、英雄、资源和联盟设置，并把你移出名册。你的小号和联盟其他人不受影响。', ja: 'このアカウントをリセット？この端末の装備・ヒーロー・資源・同盟設定を消去し、ロスターから外します。サブ垢と同盟の他のメンバーには影響しません。', ko: '이 계정을 초기화할까요? 이 기기의 장비·영웅·자원·연합 설정을 지우고 로스터에서 제거합니다. 부캐와 연합의 나머지는 영향받지 않습니다.', id: 'Reset akun ini? Menghapus gear, hero, sumber daya, dan pengaturan aliansi di perangkat ini, serta mengeluarkanmu dari daftar. Akun alt dan aliansi lainnya tidak terpengaruh.', vi: 'Đặt lại tài khoản này? Xóa trang bị, tướng, tài nguyên và thiết lập liên minh trên thiết bị này, và gỡ bạn khỏi danh sách. Tài khoản phụ và phần còn lại của liên minh không bị ảnh hưởng.', th: 'รีเซ็ตบัญชีนี้? จะลบอุปกรณ์ ฮีโร่ ทรัพยากร และการตั้งค่าพันธมิตรบนเครื่องนี้ และนำคุณออกจากรายชื่อ บัญชีรองและสมาชิกพันธมิตรที่เหลือไม่ได้รับผลกระทบ' },
   'roster.changeSetup': { en: 'Change alliance setup', es: 'Cambiar configuración', pt: 'Alterar configuração', fr: 'Modifier la configuration', de: 'Allianz-Setup ändern', it: 'Cambia configurazione', nl: 'Setup wijzigen', ru: 'Изменить настройку', pl: 'Zmień konfigurację', tr: 'Kurulumu değiştir', ar: 'تغيير الإعداد', he: 'שנה הגדרת ברית', zh: '更改联盟设置', ja: '同盟設定を変更', ko: '연합 설정 변경', id: 'Ubah pengaturan', vi: 'Đổi thiết lập', th: 'เปลี่ยนการตั้งค่า' },
   'roster.viewing': { en: 'Viewing alliance', es: 'Viendo alianza', pt: 'Vendo aliança', fr: 'Alliance affichée', de: 'Anzeige', it: 'Stai vedendo', nl: 'Bekijkt', ru: 'Просмотр', pl: 'Podgląd', tr: 'Görüntülenen', ar: 'العرض', he: 'צפייה בברית', zh: '查看联盟', ja: '表示中の同盟', ko: '보는 연합', id: 'Melihat aliansi', vi: 'Đang xem', th: 'กำลังดู' },
   'roster.memberShared': { en: 'Sharing to {code} ✓', es: 'Compartiendo con {code} ✓', pt: 'Compartilhando com {code} ✓', fr: 'Partagé avec {code} ✓', de: 'Geteilt mit {code} ✓', it: 'Condiviso con {code} ✓', nl: 'Gedeeld met {code} ✓', ru: 'Отправлено в {code} ✓', pl: 'Udostępniono do {code} ✓', tr: '{code} ile paylaşıldı ✓', ar: 'تمت المشاركة مع {code} ✓', he: 'משותף ל-{code} ✓', zh: '已分享到 {code} ✓', ja: '{code} に共有済み ✓', ko: '{code}에 공유됨 ✓', id: 'Dibagikan ke {code} ✓', vi: 'Đã chia sẻ tới {code} ✓', th: 'แชร์ไปยัง {code} ✓' },
@@ -641,6 +650,30 @@ const I18N = {
   'rarity.red': { en: 'Red', es: 'Rojo', pt: 'Vermelho', fr: 'Rouge', de: 'Rot', it: 'Rosso', nl: 'Rood', ru: 'Красный', pl: 'Czerwony', tr: 'Kırmızı', ar: 'أحمر', he: 'אדום', zh: '红色', ja: 'レッド', ko: '레드', id: 'Merah', vi: 'Đỏ', th: 'แดง' },
   'upload.btn': { en: 'Upload gear screenshots (3 heroes)', es: 'Sube capturas de equipo (3 héroes)', pt: 'Envie capturas de equipamento (3 heróis)', fr: 'Téléverse des captures d’équipement (3 héros)', de: 'Ausrüstungs-Screenshots hochladen (3 Helden)', it: 'Carica screenshot equipaggiamento (3 eroi)', nl: 'Upload uitrustingsscreenshots (3 helden)', ru: 'Загрузите скриншоты снаряжения (3 героя)', pl: 'Prześlij zrzuty sprzętu (3 bohaterów)', tr: 'Ekipman ekran görüntüsü yükle (3 kahraman)', ar: 'ارفع لقطات العتاد (3 أبطال)', he: 'העלה צילומי ציוד (3 גיבורים)', zh: '上传装备截图（3位英雄）', ja: '装備のスクショをアップ（3ヒーロー）', ko: '장비 스크린샷 업로드 (영웅 3명)', id: 'Unggah tangkapan gear (3 hero)', vi: 'Tải ảnh trang bị (3 tướng)', th: 'อัปโหลดภาพอุปกรณ์ (3 ฮีโร่)' },
   'upload.processing': { en: 'Processing...', es: 'Procesando...', pt: 'Processando...', fr: 'Traitement...', de: 'Verarbeitung...', it: 'Elaborazione...', nl: 'Verwerken...', ru: 'Обработка...', pl: 'Przetwarzanie...', tr: 'İşleniyor...', ar: 'جارٍ المعالجة...', he: 'מעבד...', zh: '处理中…', ja: '処理中…', ko: '처리 중…', id: 'Memproses...', vi: 'Đang xử lý...', th: 'กำลังประมวลผล...' },
+  'ach.title': { en: 'ACHIEVEMENTS', es: 'LOGROS', pt: 'CONQUISTAS', fr: 'SUCCÈS', de: 'ERFOLGE', it: 'OBIETTIVI', nl: 'PRESTATIES', ru: 'ДОСТИЖЕНИЯ', pl: 'OSIĄGNIĘCIA', tr: 'BAŞARIMLAR', ar: 'الإنجازات', he: 'הישגים', zh: '成就', ja: '実績', ko: '업적', id: 'PENCAPAIAN', vi: 'THÀNH TỰU', th: 'ความสำเร็จ' },
+  'ach.tapHint': { en: 'Tap a badge to see how to earn it', es: 'Toca una insignia para ver cómo lograrla', pt: 'Toque numa medalha para ver como conquistar', fr: 'Touche un badge pour voir comment l’obtenir', de: 'Tippe ein Abzeichen an, um zu sehen, wie man es bekommt', it: 'Tocca un distintivo per vedere come ottenerlo', nl: 'Tik op een badge om te zien hoe je hem verdient', ru: 'Нажмите значок, чтобы узнать, как его получить', pl: 'Dotknij odznaki, aby zobaczyć, jak ją zdobyć', tr: 'Nasıl kazanılacağını görmek için bir rozete dokun', ar: 'انقر على شارة لمعرفة كيفية الحصول عليها', he: 'הקש על תג כדי לראות איך משיגים אותו', zh: '点按徽章查看如何获得', ja: 'バッジをタップして獲得方法を確認', ko: '배지를 눌러 획득 방법 확인', id: 'Ketuk lencana untuk lihat cara mendapatkannya', vi: 'Chạm huy hiệu để xem cách đạt được', th: 'แตะตราเพื่อดูวิธีปลดล็อก' },
+  'ach.earned': { en: 'Earned', es: 'Logrado', pt: 'Conquistado', fr: 'Obtenu', de: 'Erhalten', it: 'Ottenuto', nl: 'Verdiend', ru: 'Получено', pl: 'Zdobyto', tr: 'Kazanıldı', ar: 'تم الحصول', he: 'הושג', zh: '已获得', ja: '獲得済み', ko: '획득함', id: 'Diraih', vi: 'Đã đạt', th: 'ได้รับแล้ว' },
+  'ach.d.red': { en: 'Get {n} gear piece(s) to Red rarity', es: 'Consigue {n} pieza(s) en rareza Roja', pt: 'Leve {n} peça(s) à raridade Vermelha', fr: 'Passe {n} pièce(s) en rareté Rouge', de: 'Bringe {n} Teil(e) auf rote Seltenheit', it: 'Porta {n} pezzo/i alla rarità Rossa', nl: 'Breng {n} stuk(s) naar Rood', ru: 'Доведите {n} предмет(ов) до красного', pl: 'Zdobądź {n} część(i) w czerwonej jakości', tr: '{n} parçayı Kırmızı nadirliğe getir', ar: 'اجعل {n} قطعة بندرة حمراء', he: 'הבא {n} פריטים לדרגת אדום', zh: '将 {n} 件装备提升到红色品质', ja: '装備を{n}個レッドにする', ko: '장비 {n}개를 레드 등급으로', id: 'Bawa {n} gear ke kelangkaan Merah', vi: 'Đưa {n} món lên độ hiếm Đỏ', th: 'อัปเกรดอุปกรณ์ {n} ชิ้นเป็นระดับแดง' },
+  'ach.d.hero': { en: 'Get all 4 pieces of one hero to Red', es: 'Lleva las 4 piezas de un héroe a Rojo', pt: 'Leve as 4 peças de um herói ao Vermelho', fr: 'Passe les 4 pièces d’un héros en Rouge', de: 'Bringe alle 4 Teile eines Helden auf Rot', it: 'Porta tutti i 4 pezzi di un eroe al Rosso', nl: 'Breng alle 4 stukken van één held naar Rood', ru: 'Доведите все 4 предмета одного героя до красного', pl: 'Zdobądź wszystkie 4 części jednego bohatera w czerwieni', tr: 'Bir kahramanın 4 parçasını da Kırmızı yap', ar: 'اجعل قطع بطل واحد الأربع حمراء', he: 'הבא את כל 4 הפריטים של גיבור אחד לאדום', zh: '让一名英雄的全部 4 件装备变红', ja: '1人のヒーローの装備4個すべてをレッドに', ko: '한 영웅의 장비 4개를 모두 레드로', id: 'Bawa keempat gear satu hero ke Merah', vi: 'Đưa cả 4 món của một tướng lên Đỏ', th: 'อัปเกรดอุปกรณ์ครบ 4 ชิ้นของฮีโร่หนึ่งคนเป็นแดง' },
+  'ach.d.triple': { en: 'Get all 3 heroes fully Red (12 pieces)', es: 'Lleva los 3 héroes a Rojo total (12 piezas)', pt: 'Deixe os 3 heróis totalmente Vermelhos (12 peças)', fr: 'Passe les 3 héros entièrement en Rouge (12 pièces)', de: 'Bringe alle 3 Helden komplett auf Rot (12 Teile)', it: 'Porta tutti e 3 gli eroi al Rosso completo (12 pezzi)', nl: 'Breng alle 3 helden volledig naar Rood (12 stuks)', ru: 'Доведите всех 3 героев до полного красного (12 предметов)', pl: 'Zdobądź wszystkich 3 bohaterów w pełni czerwonych (12 części)', tr: '3 kahramanı da tam Kırmızı yap (12 parça)', ar: 'اجعل الأبطال الثلاثة حمراء بالكامل (12 قطعة)', he: 'הבא את כל 3 הגיבורים לאדום מלא (12 פריטים)', zh: '让 3 名英雄全部满红（12 件）', ja: '3人のヒーロー全員を完全レッドに（12個）', ko: '영웅 3명 모두 풀 레드로 (12개)', id: 'Bawa ketiga hero ke Merah penuh (12 gear)', vi: 'Đưa cả 3 tướng lên Đỏ hoàn toàn (12 món)', th: 'อัปเกรดฮีโร่ทั้ง 3 เป็นแดงเต็ม (12 ชิ้น)' },
+  'ach.d.phase': { en: 'Reach Phase 7 on the gear path', es: 'Llega a la Fase 7 del camino', pt: 'Chegue à Fase 7 do caminho', fr: 'Atteins la Phase 7 du parcours', de: 'Erreiche Phase 7 des Pfads', it: 'Raggiungi la Fase 7 del percorso', nl: 'Bereik Fase 7 van het pad', ru: 'Достигните фазы 7 пути', pl: 'Osiągnij Fazę 7 ścieżki', tr: 'Yolda 7. Aşamaya ulaş', ar: 'بلوغ المرحلة 7 من المسار', he: 'הגע לשלב 7 במסלול', zh: '到达装备路径第7阶段', ja: '装備パスのフェーズ7に到達', ko: '기어 경로 7단계 도달', id: 'Capai Fase 7 di jalur', vi: 'Đạt Giai đoạn 7 của lộ trình', th: 'ไปถึงเฟส 7 ของเส้นทาง' },
+  'ach.d.spec': { en: 'Choose an endgame specialization', es: 'Elige una especialización final', pt: 'Escolha uma especialização final', fr: 'Choisis une spécialisation de fin de jeu', de: 'Wähle eine Endgame-Spezialisierung', it: 'Scegli una specializzazione endgame', nl: 'Kies een eindspel-specialisatie', ru: 'Выберите финальную специализацию', pl: 'Wybierz specjalizację endgame', tr: 'Bir endgame uzmanlığı seç', ar: 'اختر تخصص نهاية اللعبة', he: 'בחר התמחות אנדגיים', zh: '选择终局专精', ja: 'エンドゲーム専門を選ぶ', ko: '엔드게임 특화 선택', id: 'Pilih spesialisasi endgame', vi: 'Chọn chuyên môn cuối game', th: 'เลือกความเชี่ยวชาญปลายเกม' },
+  'ach.d.mastery': { en: 'Get any gear piece to Mastery 20', es: 'Lleva una pieza a Maestría 20', pt: 'Leve uma peça à Maestria 20', fr: 'Amène une pièce à Maîtrise 20', de: 'Bringe ein Teil auf Meisterschaft 20', it: 'Porta un pezzo a Maestria 20', nl: 'Breng een stuk naar Meesterschap 20', ru: 'Доведите предмет до мастерства 20', pl: 'Zdobądź mistrzostwo 20 na części', tr: 'Bir parçayı Ustalık 20 yap', ar: 'اجعل قطعة بإتقان 20', he: 'הבא פריט לשליטה 20', zh: '将任意装备提升到精通20', ja: '装備をマスタリー20にする', ko: '장비를 숙련도 20으로', id: 'Bawa satu gear ke Mastery 20', vi: 'Đưa một món lên Thuần thục 20', th: 'อัปเกรดอุปกรณ์ใดก็ได้เป็น Mastery 20' },
+  'goal.title': { en: 'ALLIANCE GOAL', es: 'OBJETIVO DE ALIANZA', pt: 'META DA ALIANÇA', fr: 'OBJECTIF D’ALLIANCE', de: 'ALLIANZ-ZIEL', it: 'OBIETTIVO ALLEANZA', nl: 'ALLIANTIEDOEL', ru: 'ЦЕЛЬ АЛЬЯНСА', pl: 'CEL SOJUSZU', tr: 'İTTİFAK HEDEFİ', ar: 'هدف التحالف', he: 'יעד הברית', zh: '联盟目标', ja: '同盟目標', ko: '연합 목표', id: 'TARGET ALIANSI', vi: 'MỤC TIÊU LIÊN MINH', th: 'เป้าหมายพันธมิตร' },
+  'goal.setTitle': { en: 'Set alliance goal', es: 'Definir objetivo', pt: 'Definir meta', fr: 'Définir l’objectif', de: 'Ziel festlegen', it: 'Imposta obiettivo', nl: 'Doel instellen', ru: 'Задать цель', pl: 'Ustaw cel', tr: 'Hedef belirle', ar: 'حدد الهدف', he: 'הגדר יעד', zh: '设定目标', ja: '目標を設定', ko: '목표 설정', id: 'Atur target', vi: 'Đặt mục tiêu', th: 'ตั้งเป้าหมาย' },
+  'goal.placeholder': { en: 'e.g. Everyone to Phase 5 before KvK', es: 'ej. Todos a Fase 5 antes de KvK', pt: 'ex. Todos na Fase 5 antes do KvK', fr: 'ex. Tous en Phase 5 avant KvK', de: 'z.B. Alle bis Phase 5 vor KvK', it: 'es. Tutti alla Fase 5 prima del KvK', nl: 'bijv. Iedereen naar Fase 5 voor KvK', ru: 'напр. Все к фазе 5 до KvK', pl: 'np. Wszyscy do Fazy 5 przed KvK', tr: 'ör. KvK öncesi herkes Faz 5', ar: 'مثال: الجميع للمرحلة 5 قبل KvK', he: 'לדוגמה: כולם לשלב 5 לפני KvK', zh: '例如：KvK 前全员到第5阶段', ja: '例：KvK前に全員フェーズ5', ko: '예: KvK 전 모두 5단계', id: 'mis. Semua ke Fase 5 sebelum KvK', vi: 'vd. Mọi người đạt GĐ 5 trước KvK', th: 'เช่น ทุกคนถึงเฟส 5 ก่อน KvK' },
+  'goal.target': { en: 'Target phase', es: 'Fase objetivo', pt: 'Fase alvo', fr: 'Phase cible', de: 'Zielphase', it: 'Fase obiettivo', nl: 'Doelfase', ru: 'Целевая фаза', pl: 'Faza docelowa', tr: 'Hedef aşama', ar: 'المرحلة الهدف', he: 'שלב יעד', zh: '目标阶段', ja: '目標フェーズ', ko: '목표 단계', id: 'Fase target', vi: 'GĐ mục tiêu', th: 'เฟสเป้าหมาย' },
+  'goal.deadline': { en: 'Deadline', es: 'Fecha límite', pt: 'Prazo', fr: 'Échéance', de: 'Frist', it: 'Scadenza', nl: 'Deadline', ru: 'Срок', pl: 'Termin', tr: 'Son tarih', ar: 'الموعد النهائي', he: 'תאריך יעד', zh: '截止日期', ja: '期限', ko: '마감일', id: 'Tenggat', vi: 'Hạn chót', th: 'กำหนดเส้นตาย' },
+  'goal.save': { en: 'Set goal', es: 'Guardar', pt: 'Salvar meta', fr: 'Définir', de: 'Speichern', it: 'Imposta', nl: 'Opslaan', ru: 'Сохранить', pl: 'Zapisz', tr: 'Belirle', ar: 'حفظ', he: 'שמור יעד', zh: '设定', ja: '設定', ko: '설정', id: 'Simpan', vi: 'Đặt', th: 'ตั้ง' },
+  'goal.edit': { en: 'Edit', es: 'Editar', pt: 'Editar', fr: 'Modifier', de: 'Bearbeiten', it: 'Modifica', nl: 'Bewerken', ru: 'Изм.', pl: 'Edytuj', tr: 'Düzenle', ar: 'تعديل', he: 'ערוך', zh: '编辑', ja: '編集', ko: '편집', id: 'Edit', vi: 'Sửa', th: 'แก้ไข' },
+  'goal.clear': { en: 'Clear', es: 'Borrar', pt: 'Limpar', fr: 'Effacer', de: 'Löschen', it: 'Cancella', nl: 'Wissen', ru: 'Удалить', pl: 'Usuń', tr: 'Temizle', ar: 'مسح', he: 'נקה', zh: '清除', ja: '削除', ko: '삭제', id: 'Hapus', vi: 'Xóa', th: 'ล้าง' },
+  'goal.daysLeft': { en: '{n} days left', es: 'Quedan {n} días', pt: 'Faltam {n} dias', fr: '{n} jours restants', de: 'Noch {n} Tage', it: '{n} giorni rimasti', nl: 'Nog {n} dagen', ru: 'Осталось {n} дн.', pl: 'Zostało {n} dni', tr: '{n} gün kaldı', ar: 'بقي {n} يوم', he: 'נותרו {n} ימים', zh: '剩 {n} 天', ja: '残り{n}日', ko: '{n}일 남음', id: '{n} hari lagi', vi: 'Còn {n} ngày', th: 'เหลือ {n} วัน' },
+  'goal.dayLeft': { en: '1 day left', es: 'Queda 1 día', pt: 'Falta 1 dia', fr: '1 jour restant', de: 'Noch 1 Tag', it: '1 giorno rimasto', nl: 'Nog 1 dag', ru: 'Остался 1 день', pl: 'Został 1 dzień', tr: '1 gün kaldı', ar: 'بقي يوم واحد', he: 'נותר יום אחד', zh: '剩 1 天', ja: '残り1日', ko: '1일 남음', id: '1 hari lagi', vi: 'Còn 1 ngày', th: 'เหลือ 1 วัน' },
+  'goal.endsToday': { en: 'Ends today!', es: '¡Termina hoy!', pt: 'Termina hoje!', fr: 'Se termine aujourd’hui !', de: 'Endet heute!', it: 'Finisce oggi!', nl: 'Eindigt vandaag!', ru: 'Заканчивается сегодня!', pl: 'Kończy się dziś!', tr: 'Bugün bitiyor!', ar: 'ينتهي اليوم!', he: 'מסתיים היום!', zh: '今天结束！', ja: '今日まで！', ko: '오늘 마감!', id: 'Berakhir hari ini!', vi: 'Kết thúc hôm nay!', th: 'สิ้นสุดวันนี้!' },
+  'goal.ended': { en: 'Ended', es: 'Terminado', pt: 'Encerrado', fr: 'Terminé', de: 'Beendet', it: 'Concluso', nl: 'Beëindigd', ru: 'Завершено', pl: 'Zakończono', tr: 'Bitti', ar: 'انتهى', he: 'הסתיים', zh: '已结束', ja: '終了', ko: '종료됨', id: 'Berakhir', vi: 'Đã kết thúc', th: 'สิ้นสุดแล้ว' },
+  'goal.progress': { en: '{met}/{total} at P{phase}+', es: '{met}/{total} en P{phase}+', pt: '{met}/{total} na P{phase}+', fr: '{met}/{total} en P{phase}+', de: '{met}/{total} bei P{phase}+', it: '{met}/{total} a P{phase}+', nl: '{met}/{total} op P{phase}+', ru: '{met}/{total} на P{phase}+', pl: '{met}/{total} na P{phase}+', tr: '{met}/{total} P{phase}+', ar: '{met}/{total} في P{phase}+', he: '{met}/{total} ב-P{phase}+', zh: '{met}/{total} 达 P{phase}+', ja: '{met}/{total} がP{phase}+', ko: '{met}/{total} P{phase}+', id: '{met}/{total} di P{phase}+', vi: '{met}/{total} ở P{phase}+', th: '{met}/{total} ที่ P{phase}+' },
+  'recap.week': { en: 'This week: +{total} Red across the alliance', es: 'Esta semana: +{total} Rojo en la alianza', pt: 'Esta semana: +{total} Vermelho na aliança', fr: 'Cette semaine : +{total} Rouge dans l’alliance', de: 'Diese Woche: +{total} Rot in der Allianz', it: 'Questa settimana: +{total} Rosso nell’alleanza', nl: 'Deze week: +{total} Rood in de alliantie', ru: 'За неделю: +{total} красных в альянсе', pl: 'W tym tygodniu: +{total} Czerwony w sojuszu', tr: 'Bu hafta: ittifakta +{total} Kırmızı', ar: 'هذا الأسبوع: +{total} أحمر في التحالف', he: 'השבוע: +{total} אדום בברית', zh: '本周：联盟 +{total} 红装', ja: '今週：同盟全体で +{total} レッド', ko: '이번 주: 연합 +{total} 레드', id: 'Minggu ini: +{total} Merah di aliansi', vi: 'Tuần này: +{total} Đỏ toàn liên minh', th: 'สัปดาห์นี้: +{total} แดงทั้งพันธมิตร' },
+  'recap.top': { en: 'top mover {name} (+{g})', es: 'destacado {name} (+{g})', pt: 'destaque {name} (+{g})', fr: 'meilleur {name} (+{g})', de: 'Top {name} (+{g})', it: 'migliore {name} (+{g})', nl: 'topper {name} (+{g})', ru: 'лидер {name} (+{g})', pl: 'lider {name} (+{g})', tr: 'lider {name} (+{g})', ar: 'الأبرز {name} (+{g})', he: 'המוביל {name} (+{g})', zh: '最佳 {name} (+{g})', ja: 'トップ {name} (+{g})', ko: '최고 {name} (+{g})', id: 'teratas {name} (+{g})', vi: 'dẫn đầu {name} (+{g})', th: 'ผู้นำ {name} (+{g})' },
   'scan.optional': { en: 'Scan gear from screenshots (optional)', es: 'Escanear equipo desde capturas (opcional)', pt: 'Escanear equipamento de capturas (opcional)', fr: 'Scanner l’équipement depuis des captures (optionnel)', de: 'Ausrüstung aus Screenshots scannen (optional)', it: 'Scansiona equipaggiamento da screenshot (opzionale)', nl: 'Uitrusting scannen vanaf screenshots (optioneel)', ru: 'Сканировать снаряжение со скриншотов (необязательно)', pl: 'Skanuj sprzęt ze zrzutów (opcjonalnie)', tr: 'Ekipmanı ekran görüntüsünden tara (isteğe bağlı)', ar: 'مسح العتاد من لقطات الشاشة (اختياري)', he: 'סרוק ציוד מצילומי מסך (אופציונלי)', zh: '从截图扫描装备（可选）', ja: 'スクショから装備をスキャン（任意）', ko: '스크린샷에서 장비 스캔 (선택)', id: 'Pindai gear dari tangkapan layar (opsional)', vi: 'Quét trang bị từ ảnh chụp (tùy chọn)', th: 'สแกนอุปกรณ์จากภาพหน้าจอ (ไม่บังคับ)' },
   'scan.notRecommended': { en: 'Not the recommended way. A scan reads gear levels well, but often misreads rarity and hero names — entering gear by tapping the slots is more reliable. Use a scan as a quick start, then double-check.', es: 'No es el método recomendado. El escaneo lee bien los niveles, pero suele equivocarse en rareza y héroes — tocar las ranuras es más fiable. Úsalo como inicio rápido y revisa.', pt: 'Não é o método recomendado. O scan lê bem os níveis, mas costuma errar raridade e heróis — tocar nos slots é mais confiável. Use como início rápido e confira.', fr: 'Pas la méthode recommandée. Le scan lit bien les niveaux mais se trompe souvent sur la rareté et les héros — toucher les cases est plus fiable. Utilise-le comme point de départ, puis vérifie.', de: 'Nicht die empfohlene Methode. Ein Scan liest Stufen gut, verwechselt aber oft Seltenheit und Helden — Felder antippen ist zuverlässiger. Als Schnellstart nutzen, dann prüfen.', it: 'Non è il metodo consigliato. La scansione legge bene i livelli, ma spesso sbaglia rarità ed eroi — toccare gli slot è più affidabile. Usala come avvio rapido e verifica.', nl: 'Niet de aanbevolen manier. Een scan leest niveaus goed, maar verwart vaak zeldzaamheid en helden — vakjes aantikken is betrouwbaarder. Gebruik als snelle start en controleer.', ru: 'Не рекомендуемый способ. Скан хорошо читает уровни, но часто ошибается в редкости и героях — вводить по слотам надёжнее. Используйте как быстрый старт и проверьте.', pl: 'To nie zalecana metoda. Skan dobrze czyta poziomy, ale często myli rzadkość i bohaterów — dotykanie slotów jest pewniejsze. Użyj na szybki start i sprawdź.', tr: 'Önerilen yöntem değil. Tarama seviyeleri iyi okur ama nadirlik ve kahramanları sık karıştırır — yuvalara dokunmak daha güvenilir. Hızlı başlangıç için kullan, sonra kontrol et.', ar: 'ليست الطريقة المُوصى بها. المسح يقرأ المستويات جيدًا لكنه يخطئ غالبًا في الندرة والأبطال — إدخال العتاد بالنقر أكثر موثوقية. استخدمه كبداية سريعة ثم تحقق.', he: 'לא הדרך המומלצת. הסריקה קוראת רמות היטב, אך לרוב טועה בנדירות ובגיבורים — הזנה ידנית בלחיצה על המשבצות אמינה יותר. השתמש לזינוק מהיר ואז בדוק.', zh: '不是推荐方式。扫描能读出等级，但常误判稀有度和英雄——点击槽位输入更可靠。可作快速起步，之后核对。', ja: '推奨ではありません。スキャンはレベルはよく読みますが、レアリティやヒーローを誤認しがち — 枠をタップして入力する方が確実です。手早い出発点として使い、後で確認を。', ko: '권장 방법은 아닙니다. 스캔은 레벨은 잘 읽지만 등급·영웅을 자주 잘못 읽습니다 — 슬롯을 눌러 입력하는 편이 더 정확합니다. 빠른 시작용으로 쓰고 확인하세요.', id: 'Bukan cara yang disarankan. Pindai membaca level dengan baik, tapi sering salah pada kelangkaan dan hero — mengetuk slot lebih andal. Pakai untuk awal cepat lalu periksa.', vi: 'Không phải cách khuyến nghị. Quét đọc tốt cấp độ nhưng thường nhầm độ hiếm và tướng — chạm ô để nhập đáng tin hơn. Dùng để khởi đầu nhanh rồi kiểm tra lại.', th: 'ไม่ใช่วิธีที่แนะนำ การสแกนอ่านเลเวลได้ดี แต่มักอ่านความหายากและฮีโร่ผิด — แตะช่องเพื่อกรอกเองแม่นกว่า ใช้เป็นจุดเริ่มเร็วๆ แล้วตรวจสอบ' },
   'visits.label': { en: 'visits', es: 'visitas', pt: 'visitas', fr: 'visites', de: 'Besuche', it: 'visite', nl: 'bezoeken', ru: 'посещений', pl: 'odwiedzin', tr: 'ziyaret', ar: 'زيارة', he: 'ביקורים', zh: '次访问', ja: '訪問', ko: '방문', id: 'kunjungan', vi: 'lượt xem', th: 'การเข้าชม' },
@@ -1578,6 +1611,83 @@ const ImageUploader = ({ onFilesChosen, disabled, t }) => {
 // ═══════════════════════════════════════════════════════════════════
 //   PIECE EDITOR — manual entry/correction
 // ═══════════════════════════════════════════════════════════════════
+const gearStats = (gear) => {
+  let red = 0, owned = 0, maxMastery = 0, mastered = 0;
+  const troopRed = { infantry: 0, cavalry: 0, archer: 0 };
+  TROOPS.forEach(tr => SLOTS.forEach(sl => {
+    const p = gear[`${tr}-${sl}`];
+    if (p) {
+      owned++;
+      if (p.rarity === 'red') { red++; troopRed[tr]++; }
+      if ((p.mastery || 0) >= 20) mastered++;
+      maxMastery = Math.max(maxMastery, p.mastery || 0);
+    }
+  }));
+  const fullRedHeroes = TROOPS.filter(tr => troopRed[tr] === 4).length;
+  return { red, owned, troopRed, fullRedHeroes, maxMastery, mastered };
+};
+
+const ACHIEVEMENTS = [
+  { id: 'first_red', icon: '🩸', name: 'First Blood', check: (s) => s.red >= 1, prog: (s) => `${Math.min(s.red, 1)}/1`, desc: 'ach.d.red', dv: { n: 1 } },
+  { id: 'geared', icon: '⚔️', name: 'Geared Up', check: (s) => s.red >= 3, prog: (s) => `${Math.min(s.red, 3)}/3`, desc: 'ach.d.red', dv: { n: 3 } },
+  { id: 'half', icon: '🛡️', name: 'Half Red', check: (s) => s.red >= 6, prog: (s) => `${Math.min(s.red, 6)}/6`, desc: 'ach.d.red', dv: { n: 6 } },
+  { id: 'hero', icon: '🎖️', name: 'Hero Forged', check: (s) => s.fullRedHeroes >= 1, prog: (s) => `${Math.min(s.fullRedHeroes, 1)}/1`, desc: 'ach.d.hero' },
+  { id: 'phase7', icon: '📜', name: 'Path Walker', check: (s) => s.phase >= 7, prog: (s) => `P${s.phase}/P7`, desc: 'ach.d.phase' },
+  { id: 'spec', icon: '⭐', name: 'Specialized', check: (s) => !!s.spec, prog: () => '', desc: 'ach.d.spec' },
+  { id: 'mastery', icon: '💎', name: 'Master Smith', check: (s) => s.maxMastery >= 20, prog: (s) => `${s.maxMastery}/20`, desc: 'ach.d.mastery' },
+  { id: 'full_red', icon: '👑', name: 'Full Red', check: (s) => s.red >= 12, prog: (s) => `${s.red}/12`, desc: 'ach.d.red', dv: { n: 12 } },
+  { id: 'triple', icon: '🏆', name: 'Triple Threat', check: (s) => s.fullRedHeroes >= 3, prog: (s) => `${s.fullRedHeroes}/3`, desc: 'ach.d.triple' },
+];
+
+const Achievements = ({ gear, phase, spec, t }) => {
+  const tr = t || ((k) => k);
+  const [sel, setSel] = useState(null);
+  const stats = { ...gearStats(gear), phase: phase?.num || phase?.phase || 0, spec };
+  const earned = ACHIEVEMENTS.filter(a => a.check(stats));
+  const active = ACHIEVEMENTS.find(a => a.id === sel);
+  return (
+    <div style={{ marginTop: 16, borderRadius: 13, padding: 14, background: 'var(--kp-panel)', border: '1px solid rgba(201,169,97,0.25)', boxShadow: '0 4px 18px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 11 }}>
+        <span style={{ fontSize: 15 }}>🏅</span>
+        <span style={{ flex: 1, fontFamily: 'Cinzel, serif', fontSize: 13, fontWeight: 800, color: 'var(--kp-text-gold)', letterSpacing: 1 }}>{tr('ach.title')}</span>
+        <span style={{ fontSize: 11, fontWeight: 800, color: 'var(--kp-text-dim)', fontFamily: 'Cinzel, serif' }}>{earned.length}/{ACHIEVEMENTS.length}</span>
+      </div>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 7 }}>
+        {ACHIEVEMENTS.map(a => {
+          const got = a.check(stats);
+          const isSel = sel === a.id;
+          return (
+            <button key={a.id} onClick={() => setSel(isSel ? null : a.id)} className="kp-card" style={{
+              padding: '9px 6px', borderRadius: 9, textAlign: 'center', cursor: 'pointer', fontFamily: 'inherit',
+              background: got ? 'linear-gradient(135deg, rgba(201,169,97,0.22), rgba(139,105,20,0.12))' : 'var(--kp-surface-3)',
+              border: isSel ? '1.5px solid var(--kp-text-gold)' : got ? '1px solid rgba(201,169,97,0.5)' : '1px solid rgba(201,169,97,0.1)',
+              opacity: got ? 1 : 0.6,
+            }}>
+              <div style={{ fontSize: 22, marginBottom: 3, filter: got ? 'none' : 'grayscale(1)' }}>{a.icon}</div>
+              <div style={{ fontSize: 9.5, fontWeight: 800, color: got ? 'var(--kp-text-gold)' : 'var(--kp-text-faint)', fontFamily: 'Cinzel, serif', lineHeight: 1.1, letterSpacing: 0.2 }}>{a.name}</div>
+              {!got && a.prog(stats) && <div style={{ fontSize: 8.5, color: 'var(--kp-text-fainter)', marginTop: 2 }}>{a.prog(stats)}</div>}
+            </button>
+          );
+        })}
+      </div>
+      <div style={{ marginTop: 10, padding: '9px 12px', borderRadius: 9, background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(201,169,97,0.12)', fontSize: 11, lineHeight: 1.45 }}>
+        {active ? (
+          <span>
+            <span style={{ marginRight: 6 }}>{active.icon}</span>
+            <span style={{ fontWeight: 800, color: 'var(--kp-text-gold)', fontFamily: 'Cinzel, serif' }}>{active.name}</span>
+            <span style={{ color: 'var(--kp-text-dim)' }}> — {tr(active.desc, active.dv)}</span>
+            {active.check(stats)
+              ? <span style={{ color: '#86efac', fontWeight: 700 }}> ✓ {tr('ach.earned')}</span>
+              : active.prog(stats) ? <span style={{ color: 'var(--kp-text-faint)' }}> ({active.prog(stats)})</span> : null}
+          </span>
+        ) : (
+          <span style={{ color: 'var(--kp-text-faint)' }}>👆 {tr('ach.tapHint')}</span>
+        )}
+      </div>
+    </div>
+  );
+};
+
 const PieceEditor = ({ piece, troop, slot, onSave, onClose }) => {
   const [rarity, setRarity] = useState(piece?.rarity || 'mythic');
   const [level, setLevel] = useState(piece?.level ?? 0);
@@ -3217,6 +3327,19 @@ const fetchAllAlliances = async () => {
     })).sort((a, b) => b.members.length - a.members.length);
   } catch { return []; }
 };
+// Alliance goal (one per alliance)
+const fetchGoal = async (code) => {
+  if (!ALLIANCE_DB_URL) return null;
+  try { const r = await fetch(`${ALLIANCE_DB_URL}/alliances/${codeKey(code)}/goal.json`); if (!r.ok) return null; return await r.json(); } catch { return null; }
+};
+const saveGoal = async (code, goal) => {
+  if (!ALLIANCE_DB_URL) return;
+  try { await fetch(`${ALLIANCE_DB_URL}/alliances/${codeKey(code)}/goal.json`, { method: 'PUT', body: JSON.stringify(goal) }); } catch {}
+};
+const clearGoal = async (code) => {
+  if (!ALLIANCE_DB_URL) return;
+  try { await fetch(`${ALLIANCE_DB_URL}/alliances/${codeKey(code)}/goal.json`, { method: 'DELETE' }); } catch {}
+};
 // Build the shareable summary of a player's progress from their state + active path.
 const buildMemberSummary = (state, activePath) => {
   if (!state.playerId || !String(state.playerName || '').trim()) return null;
@@ -4017,10 +4140,10 @@ const genAllianceCode = (name) => {
   return `${base}-${Math.random().toString(36).slice(2, 7)}`;
 };
 
-const AllianceSetup = ({ onCreate, onJoin, t }) => {
+const AllianceSetup = ({ onCreate, onJoin, t, invite }) => {
   const tr = t || ((k) => k);
-  const [mode, setMode] = useState(null); // null | 'create' | 'join'
-  const [val, setVal] = useState('');
+  const [mode, setMode] = useState(invite ? 'join' : null); // null | 'create' | 'join'
+  const [val, setVal] = useState(invite || '');
   const [asLeader, setAsLeader] = useState(false);
   const card = { borderRadius: 12, padding: 16, background: 'var(--kp-panel)', border: '1px solid rgba(201,169,97,0.25)', boxShadow: '0 4px 18px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)' };
   const input = { width: '100%', boxSizing: 'border-box', padding: '10px 12px', borderRadius: 8, background: 'var(--kp-surface-2)', border: '1px solid rgba(201,169,97,0.3)', color: 'var(--kp-text)', fontSize: 14, fontFamily: 'inherit', outline: 'none', marginBottom: 10 };
@@ -4049,6 +4172,7 @@ const AllianceSetup = ({ onCreate, onJoin, t }) => {
       {mode === 'create' && (
         <div>
           <div style={{ fontSize: 11, color: 'var(--kp-text-dim)', marginBottom: 8, lineHeight: 1.5 }}>{tr('setup.createDesc')}</div>
+          <div style={{ fontSize: 10.5, color: '#fbbf24', marginBottom: 9, lineHeight: 1.5, padding: '8px 10px', borderRadius: 8, background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.3)' }}>⚠ {tr('setup.createWarn')}</div>
           <input style={input} value={val} onChange={(e) => setVal(e.target.value)} placeholder={tr('setup.namePlaceholder')} />
           <button disabled={!val.trim()} onClick={() => onCreate(genAllianceCode(val))} style={{ ...btn('linear-gradient(135deg,#c9a961,#8b6914)'), color: '#0f0d0a', opacity: val.trim() ? 1 : 0.5 }}>
             {tr('setup.createGo')}
@@ -4059,9 +4183,15 @@ const AllianceSetup = ({ onCreate, onJoin, t }) => {
 
       {mode === 'join' && (
         <div>
-          <div style={{ fontSize: 11, color: 'var(--kp-text-dim)', marginBottom: 8, lineHeight: 1.5 }}>{tr('setup.joinDesc')}</div>
+          {invite
+            ? <div style={{ fontSize: 11.5, color: '#86efac', marginBottom: 8, lineHeight: 1.5, fontWeight: 600 }}>✉️ {tr('setup.invited', { code: invite })}</div>
+            : <div style={{ fontSize: 11, color: 'var(--kp-text-dim)', marginBottom: 8, lineHeight: 1.5 }}>{tr('setup.joinDesc')}</div>}
           <input style={input} value={val} onChange={(e) => setVal(e.target.value)} placeholder={tr('setup.codePlaceholder')} />
-          <button disabled={!val.trim()} onClick={() => onJoin(val.trim())} style={{ ...btn('linear-gradient(135deg,#22c55e,#15803d)'), opacity: val.trim() ? 1 : 0.5 }}>
+          <label style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 11, cursor: 'pointer', fontSize: 11.5, color: 'var(--kp-text-dim)', lineHeight: 1.4 }}>
+            <input type="checkbox" checked={asLeader} onChange={(e) => setAsLeader(e.target.checked)} style={{ width: 16, height: 16, flexShrink: 0, accentColor: '#c9a961' }} />
+            {tr('setup.iLead')}
+          </label>
+          <button disabled={!val.trim()} onClick={() => onJoin(val.trim(), asLeader)} style={{ ...btn('linear-gradient(135deg,#22c55e,#15803d)'), opacity: val.trim() ? 1 : 0.5 }}>
             {tr('setup.joinGo')}
           </button>
           <button onClick={() => setMode(null)} style={{ width: '100%', marginTop: 8, padding: '6px', background: 'transparent', border: 'none', color: 'var(--kp-text-faint)', fontSize: 11, cursor: 'pointer', fontFamily: 'inherit' }}>← {tr('btn.back') || 'Back'}</button>
@@ -4117,6 +4247,89 @@ const SuperAdminView = ({ t }) => {
           ))}
         </div>
       )}
+    </div>
+  );
+};
+
+const AllianceGoal = ({ t, code, isAdmin }) => {
+  const tr = t || ((k) => k);
+  const [goal, setGoalState] = useState(undefined); // undefined=loading, null=none
+  const [members, setMembers] = useState([]);
+  const [editing, setEditing] = useState(false);
+  const [text, setText] = useState('');
+  const [targetPhase, setTargetPhase] = useState(5);
+  const [deadline, setDeadline] = useState('');
+
+  const load = async () => {
+    const [g, m] = await Promise.all([fetchGoal(code), fetchRoster(code)]);
+    setGoalState(g || null); setMembers(m || []);
+    if (g) { setText(g.text || ''); setTargetPhase(g.targetPhase || 5); setDeadline(g.deadline || ''); }
+  };
+  useEffect(() => { load(); }, [code]);
+
+  if (!ALLIANCE_DB_URL || goal === undefined) return null;
+  if (!goal && !isAdmin && !editing) return null; // members see nothing until a goal exists
+
+  const save = async () => {
+    const g = { text: text.trim().slice(0, 80), targetPhase: Number(targetPhase) || 0, deadline, setAt: Date.now() };
+    await saveGoal(code, g); setGoalState(g); setEditing(false);
+  };
+  const remove = async () => { await clearGoal(code); setGoalState(null); setEditing(false); };
+
+  const card = { marginTop: 14, borderRadius: 13, padding: 14, background: 'var(--kp-panel)', border: '1px solid rgba(103,232,249,0.3)', boxShadow: '0 4px 18px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)' };
+  const inp = { width: '100%', boxSizing: 'border-box', padding: '8px 11px', borderRadius: 8, background: 'var(--kp-surface-2)', border: '1px solid rgba(201,169,97,0.3)', color: 'var(--kp-text)', fontSize: 13, fontFamily: 'inherit', outline: 'none', marginBottom: 9 };
+
+  // Editor (admin setting/editing a goal, or no goal yet)
+  if (editing || (!goal && isAdmin)) {
+    return (
+      <div style={card}>
+        <div style={{ fontFamily: 'Cinzel, serif', fontSize: 12, fontWeight: 800, color: '#67e8f9', letterSpacing: 0.8, marginBottom: 10 }}>🎯 {tr('goal.setTitle')}</div>
+        <input style={inp} value={text} onChange={(e) => setText(e.target.value)} placeholder={tr('goal.placeholder')} />
+        <div style={{ display: 'flex', gap: 9 }}>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: 9.5, color: 'var(--kp-text-faint)', fontWeight: 700, marginBottom: 4 }}>{tr('goal.target')}</div>
+            <select value={targetPhase} onChange={(e) => setTargetPhase(e.target.value)} style={{ ...inp, marginBottom: 0 }}>
+              {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].map(n => <option key={n} value={n}>{`P${n}`}</option>)}
+            </select>
+          </div>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: 9.5, color: 'var(--kp-text-faint)', fontWeight: 700, marginBottom: 4 }}>{tr('goal.deadline')}</div>
+            <input type="date" value={deadline} onChange={(e) => setDeadline(e.target.value)} style={{ ...inp, marginBottom: 0 }} />
+          </div>
+        </div>
+        <div style={{ display: 'flex', gap: 8, marginTop: 11 }}>
+          <button disabled={!text.trim()} onClick={save} style={{ flex: 1, padding: '9px', borderRadius: 8, background: 'linear-gradient(135deg,#22d3ee,#0e7490)', border: 'none', color: '#04222a', fontFamily: 'Cinzel, serif', fontWeight: 800, fontSize: 12, cursor: 'pointer', opacity: text.trim() ? 1 : 0.5 }}>{tr('goal.save')}</button>
+          {goal && <button onClick={() => setEditing(false)} style={{ padding: '9px 14px', borderRadius: 8, background: 'var(--kp-surface-2)', border: '1px solid rgba(201,169,97,0.3)', color: 'var(--kp-text-dim)', fontSize: 12, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit' }}>{tr('btn.back') || 'Cancel'}</button>}
+          {goal && <button onClick={remove} style={{ padding: '9px 14px', borderRadius: 8, background: 'transparent', border: '1px solid rgba(239,68,68,0.4)', color: '#fca5a5', fontSize: 12, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit' }}>{tr('goal.clear')}</button>}
+        </div>
+      </div>
+    );
+  }
+
+  // Display
+  const total = members.length;
+  const met = members.filter(m => m.isStop || (m.phase || 0) >= (goal.targetPhase || 0)).length;
+  const pct = total ? Math.round(met / total * 100) : 0;
+  const daysLeft = goal.deadline ? Math.ceil((new Date(goal.deadline).getTime() - Date.now()) / 86400000) : null;
+  const dl = daysLeft === null ? '' : daysLeft > 1 ? tr('goal.daysLeft', { n: daysLeft }) : daysLeft === 1 ? tr('goal.dayLeft') : daysLeft === 0 ? tr('goal.endsToday') : tr('goal.ended');
+  return (
+    <div style={card}>
+      <div style={{ display: 'flex', alignItems: 'flex-start', gap: 8, marginBottom: 9 }}>
+        <span style={{ fontSize: 15 }}>🎯</span>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ fontFamily: 'Cinzel, serif', fontSize: 10, fontWeight: 800, color: '#67e8f9', letterSpacing: 0.8 }}>{tr('goal.title')}</div>
+          <div style={{ fontSize: 13.5, fontWeight: 700, color: 'var(--kp-text)', lineHeight: 1.3, marginTop: 2 }}>{goal.text}</div>
+        </div>
+        {isAdmin && <button onClick={() => setEditing(true)} style={{ flexShrink: 0, padding: '3px 8px', borderRadius: 6, background: 'var(--kp-surface-2)', border: '1px solid rgba(201,169,97,0.3)', color: 'var(--kp-text-gold)', fontSize: 10, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit' }}>{tr('goal.edit')}</button>}
+      </div>
+      {dl && <div style={{ display: 'inline-block', fontSize: 10.5, fontWeight: 800, color: daysLeft < 0 ? 'var(--kp-text-faint)' : daysLeft <= 2 ? '#fca5a5' : '#67e8f9', background: 'rgba(103,232,249,0.1)', border: '1px solid rgba(103,232,249,0.3)', borderRadius: 99, padding: '2px 10px', marginBottom: 9 }}>⏳ {dl}</div>}
+      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 10.5, color: 'var(--kp-text-dim)', fontWeight: 700, marginBottom: 4 }}>
+        <span>{tr('goal.progress', { met, total, phase: goal.targetPhase })}</span>
+        <span style={{ color: '#67e8f9' }}>{pct}%</span>
+      </div>
+      <div style={{ height: 8, borderRadius: 99, background: 'rgba(0,0,0,0.4)', overflow: 'hidden' }}>
+        <div style={{ width: `${pct}%`, height: '100%', background: 'linear-gradient(90deg,#22d3ee,#67e8f9)', transition: 'width 0.4s' }} />
+      </div>
     </div>
   );
 };
@@ -4187,6 +4400,10 @@ const AllianceRoster = ({ t, code, isAdmin }) => {
       return (b.redCount || 0) - (a.redCount || 0) || (b.phase || 0) - (a.phase || 0);
     });
 
+  const gain = (m) => (m.weekRed != null ? Math.max(0, (m.redCount || 0) - m.weekRed) : 0);
+  const totalGain = list.reduce((s, m) => s + gain(m), 0);
+  const topMover = list.filter(m => gain(m) > 0).sort((a, b) => gain(b) - gain(a))[0];
+
   const copyPlan = async (m) => {
     const rec = computeNextActions(m.gear || {}, {}, buildActivePath(m.spec));
     const acts = (rec.actions || []).slice(0, 8).map(a => {
@@ -4239,6 +4456,13 @@ const AllianceRoster = ({ t, code, isAdmin }) => {
             ))}
           </div>
 
+          {totalGain > 0 && (
+            <div style={{ marginBottom: 10, padding: '9px 12px', borderRadius: 9, background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.3)', fontSize: 11.5, color: '#86efac', lineHeight: 1.4 }}>
+              📈 <span style={{ fontWeight: 800 }}>{tr('recap.week', { total: totalGain })}</span>
+              {topMover && <span> · {tr('recap.top', { name: topMover.name, g: gain(topMover) })}</span>}
+            </div>
+          )}
+
           <div style={{ display: 'flex', gap: 6, marginBottom: 10, flexWrap: 'wrap', alignItems: 'center' }}>
             {[['all', tr('roster.fAll')], ['offense', tr('spec.offense')], ['defense', tr('spec.defense')], ['stale', tr('roster.fStale', { n: stats.stale })]].map(([id, label]) => (
               <button key={id} onClick={() => setSpecFilter(id)} style={{
@@ -4276,6 +4500,7 @@ const AllianceRoster = ({ t, code, isAdmin }) => {
             const pct = Math.round(((m.redCount || 0) / 12) * 100);
             const isOpen = openKey === m.key;
             const stale = daysOld(m.updatedAt) > STALE_DAYS;
+            const g = gain(m);
             const myTags = notes[m.key]?.tags || [];
             return (
               <div key={m.key || i} style={{
@@ -4308,7 +4533,7 @@ const AllianceRoster = ({ t, code, isAdmin }) => {
                     </div>
                   </div>
                   <div style={{ textAlign: 'right', flexShrink: 0 }}>
-                    <div style={{ fontSize: 12, fontWeight: 800, color: '#fca5a5', fontFamily: 'Cinzel, serif' }}>{m.redCount || 0}/12</div>
+                    <div style={{ fontSize: 12, fontWeight: 800, color: '#fca5a5', fontFamily: 'Cinzel, serif' }}>{m.redCount || 0}/12{g > 0 && <span style={{ fontSize: 9.5, color: '#86efac', marginLeft: 4 }}>▲{g}</span>}</div>
                     <div style={{ width: 56, height: 4, borderRadius: 99, background: 'rgba(0,0,0,0.4)', marginTop: 3, overflow: 'hidden' }}>
                       <div style={{ width: `${pct}%`, height: '100%', background: 'linear-gradient(90deg,#ef4444,#fbbf24)' }} />
                     </div>
@@ -4415,6 +4640,17 @@ const AllianceRoster = ({ t, code, isAdmin }) => {
                         onEdit={() => {}}
                       />
                     ))}
+                    {isAdmin && (
+                      <button onClick={async () => {
+                        const ok = (typeof window !== 'undefined' && window.confirm) ? window.confirm(tr('roster.removeConfirm', { name: m.name })) : true;
+                        if (!ok) return;
+                        await removeMember(m.key, code);
+                        setOpenKey(null);
+                        load();
+                      }} style={{ width: '100%', padding: '9px', borderRadius: 8, background: 'transparent', border: '1px solid rgba(239,68,68,0.45)', color: '#fca5a5', fontSize: 11.5, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
+                        <Trash2 size={13} /> {tr('roster.remove')}
+                      </button>
+                    )}
                   </div>
                 )}
               </div>
@@ -4479,6 +4715,7 @@ const defaultState = () => ({
   specialization: null, // 'offense' | 'defense' | null (chosen at Phase 8)
   playerName: '',       // in-game name, used for the shared alliance roster
   playerId: 'p_' + Math.random().toString(36).slice(2, 11), // stable roster key (per account)
+  weekSnap: null,       // { red, ts } — Red count at the start of the current week (for weekly movers)
   shareAlliance: false, // opt-in to sync progress to the alliance roster
   allianceCode: DEFAULT_ALLIANCE_CODE, // which alliance's roster this player belongs to
   allianceSetup: false, // has the player done the alliance onboarding?
@@ -4516,6 +4753,7 @@ const migrateState = (s) => {
   if (s.playerName === undefined) s.playerName = '';
   if (s.shareAlliance === undefined) s.shareAlliance = false;
   if (!s.playerId) s.playerId = 'p_' + Math.random().toString(36).slice(2, 11);
+  if (s.weekSnap === undefined) s.weekSnap = null;
   if (!s.allianceCode) s.allianceCode = DEFAULT_ALLIANCE_CODE;
   if (s.allianceSetup === undefined) s.allianceSetup = false;
   if (s.isAdmin === undefined) s.isAdmin = false;
@@ -4537,8 +4775,9 @@ export default function App() {
   const [otherAccount, setOtherAccount] = useState(null);     // the inactive account's saved data
   const [viewCode, setViewCode] = useState('');               // admin: which alliance roster to view ('' = own)
   const [codeCopied, setCodeCopied] = useState(false);
-  // Alliance membership is global (same for your main & alt) — not per-account.
-  const [alliance, setAlliance] = useState({ code: DEFAULT_ALLIANCE_CODE, setup: false, isAdmin: false });
+  const [inviteCopied, setInviteCopied] = useState(false);
+  const [justCreated, setJustCreated] = useState(false);
+  const [invite] = useState(() => { try { return new URLSearchParams(window.location.search).get('a') || ''; } catch { return ''; } });
   const [editingPiece, setEditingPiece] = useState(null); // { troop, slot, piece }
   const [editingResources, setEditingResources] = useState(false);
   const [lastUploadSummary, setLastUploadSummary] = useState(null); // {heroesApplied, piecesApplied}
@@ -4649,22 +4888,23 @@ export default function App() {
     else window.storage.delete(API_KEY_STORAGE).catch(() => {});
   }, [apiKey]);
 
-  // Load + persist global alliance settings (shared across both accounts)
-  useEffect(() => {
-    try { const raw = localStorage.getItem('kp_alliance'); if (raw) setAlliance(a => ({ ...a, ...JSON.parse(raw) })); } catch {}
-  }, []);
-  useEffect(() => {
-    try { localStorage.setItem('kp_alliance', JSON.stringify(alliance)); } catch {}
-  }, [alliance]);
 
   // Push progress to the shared alliance roster (debounced; only when opted in)
   useEffect(() => {
     if (!ALLIANCE_DB_URL || !state || !state.shareAlliance || !state.playerId) return;
     const m = buildMemberSummary(state, buildActivePath(state.specialization));
     if (!m) return;
-    const id = setTimeout(() => shareMember(m, alliance.code), 1200);
+    // Weekly snapshot: capture the Red count at the start of each 7-day window
+    const red = m.redCount || 0;
+    let snap = state.weekSnap;
+    if (!snap || Date.now() - snap.ts >= 7 * 86400000) {
+      snap = { red, ts: Date.now() };
+      setState(p => ({ ...p, weekSnap: snap }));
+    }
+    m.weekRed = snap.red;
+    const id = setTimeout(() => shareMember(m, state.allianceCode), 1200);
     return () => clearTimeout(id);
-  }, [state?.shareAlliance, state?.playerName, state?.gear, state?.specialization, state?.heroes, alliance.code]);
+  }, [state?.shareAlliance, state?.playerName, state?.gear, state?.specialization, state?.heroes, state?.allianceCode]);
 
   const handleUpload = async (files) => {
     setParsing(true);
@@ -4852,8 +5092,11 @@ export default function App() {
   };
 
   const resetAll = () => {
-    if (typeof window !== 'undefined' && window.confirm) {
-      // Some artifact environments block confirm, but try anyway
+    const ok = (typeof window !== 'undefined' && window.confirm) ? window.confirm(t('reset.confirm')) : true;
+    if (!ok) return;
+    // Remove our shared roster entry first, so a reset doesn't leave a stale duplicate behind.
+    if (ALLIANCE_DB_URL && state?.shareAlliance && state?.playerId) {
+      try { removeMember(state.playerId, state.allianceCode); } catch {}
     }
     setState(defaultState());
   };
@@ -5516,6 +5759,9 @@ export default function App() {
           </div>
         )}
 
+        {/* Achievements / milestones */}
+        <Achievements gear={state.gear} phase={phase} spec={state.specialization} t={t} />
+
         {/* Endgame specialization — only relevant once the base path (P1–7) is done */}
         {(phase.isChoose || phase.isStop || phase.spec || state.specialization) && (
           <SpecializationTabs active={state.specialization} onChoose={setSpecialization} t={t} />
@@ -5532,16 +5778,31 @@ export default function App() {
 
         {view === 'alliance' && ALLIANCE_DB_URL && (
         <>
-        {!alliance.setup ? (
+        {!state.allianceSetup ? (
           <AllianceSetup
             t={t}
-            onCreate={(code) => { setAlliance({ code, setup: true, isAdmin: true }); setState(p => ({ ...p, shareAlliance: true })); setViewCode(''); }}
-            onJoin={(code) => { const sup = code === SUPER_ADMIN_CODE; setAlliance({ code, setup: true, isAdmin: sup }); if (!sup) setState(p => ({ ...p, shareAlliance: true })); }}
+            invite={invite}
+            onCreate={(code) => { setState(p => ({ ...p, allianceCode: code, allianceSetup: true, isAdmin: true, shareAlliance: true })); setViewCode(''); setJustCreated(true); }}
+            onJoin={(code, asLeader) => { const sup = code === SUPER_ADMIN_CODE; setState(p => ({ ...p, allianceCode: code, allianceSetup: true, isAdmin: sup || !!asLeader, ...(sup ? {} : { shareAlliance: true }) })); }}
           />
-        ) : alliance.code === SUPER_ADMIN_CODE ? (
+        ) : state.allianceCode === SUPER_ADMIN_CODE ? (
           <SuperAdminView t={t} />
         ) : (
         <>
+          {justCreated && state.isAdmin && (
+            <div style={{ marginBottom: 12, borderRadius: 13, padding: 14, background: 'linear-gradient(135deg, rgba(34,197,94,0.18), rgba(21,128,61,0.1))', border: '1px solid rgba(34,197,94,0.5)' }}>
+              <div style={{ fontFamily: 'Cinzel, serif', fontSize: 13, fontWeight: 800, color: '#86efac', marginBottom: 4 }}>✅ {t('create.doneTitle')}</div>
+              <div style={{ fontSize: 11.5, color: 'var(--kp-text-dim)', lineHeight: 1.5, marginBottom: 10 }}>{t('create.doneDesc')}</div>
+              <button onClick={async () => {
+                const link = window.location.origin + window.location.pathname + '?a=' + encodeURIComponent(state.allianceCode);
+                const ok = await copyToClipboard(link);
+                if (ok) { setInviteCopied(true); setTimeout(() => setInviteCopied(false), 1800); }
+              }} style={{ width: '100%', padding: '10px', borderRadius: 9, background: inviteCopied ? 'rgba(34,197,94,0.25)' : 'linear-gradient(135deg,#22c55e,#15803d)', border: 'none', color: '#fff', fontFamily: 'Cinzel, serif', fontWeight: 800, fontSize: 13, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 7 }}>
+                {inviteCopied ? <><Check size={15} /> {t('roster.copied')}</> : <>🔗 {t('roster.inviteLink')}</>}
+              </button>
+              <button onClick={() => setJustCreated(false)} style={{ width: '100%', marginTop: 7, background: 'transparent', border: 'none', color: 'var(--kp-text-faint)', fontSize: 10.5, cursor: 'pointer', fontFamily: 'inherit' }}>{t('create.dismiss')}</button>
+            </div>
+          )}
           {/* Share box — everyone, so they appear in the roster */}
           <div style={{
             marginTop: 18, borderRadius: 13, padding: 14,
@@ -5572,38 +5833,51 @@ export default function App() {
             )}
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 10, paddingTop: 10, borderTop: '1px solid rgba(201,169,97,0.12)' }}>
               <span style={{ fontSize: 10, color: 'var(--kp-text-faint)', fontWeight: 700 }}>{t('roster.code')}:</span>
-              <code style={{ flex: 1, fontSize: 12, color: 'var(--kp-text-gold)', fontWeight: 700, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{alliance.code}</code>
-              <button onClick={async () => { const ok = await copyToClipboard(alliance.code); if (ok) { setCodeCopied(true); setTimeout(() => setCodeCopied(false), 1500); } }} style={{ padding: '4px 10px', borderRadius: 7, background: codeCopied ? 'rgba(34,197,94,0.18)' : 'var(--kp-surface-2)', border: codeCopied ? '1px solid rgba(34,197,94,0.5)' : '1px solid rgba(201,169,97,0.3)', color: codeCopied ? '#86efac' : 'var(--kp-text-gold)', fontSize: 10, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+              <code style={{ flex: 1, fontSize: 12, color: 'var(--kp-text-gold)', fontWeight: 700, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{state.allianceCode}</code>
+              <button onClick={async () => { const ok = await copyToClipboard(state.allianceCode); if (ok) { setCodeCopied(true); setTimeout(() => setCodeCopied(false), 1500); } }} style={{ padding: '4px 10px', borderRadius: 7, background: codeCopied ? 'rgba(34,197,94,0.18)' : 'var(--kp-surface-2)', border: codeCopied ? '1px solid rgba(34,197,94,0.5)' : '1px solid rgba(201,169,97,0.3)', color: codeCopied ? '#86efac' : 'var(--kp-text-gold)', fontSize: 10, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', display: 'inline-flex', alignItems: 'center', gap: 4 }}>
                 {codeCopied ? <><Check size={11} /> {t('roster.copied')}</> : <><Copy size={11} /> {t('roster.copyCode')}</>}
               </button>
             </div>
-            <button onClick={() => setAlliance(a => ({ ...a, setup: false }))} style={{ marginTop: 8, background: 'transparent', border: 'none', color: 'var(--kp-text-faint)', fontSize: 10, cursor: 'pointer', fontFamily: 'inherit' }}>
+            <button onClick={async () => {
+              const link = window.location.origin + window.location.pathname + '?a=' + encodeURIComponent(state.allianceCode);
+              const ok = await copyToClipboard(link);
+              if (ok) { setInviteCopied(true); setTimeout(() => setInviteCopied(false), 1800); }
+            }} style={{ width: '100%', marginTop: 8, padding: '8px', borderRadius: 8, background: inviteCopied ? 'rgba(34,197,94,0.18)' : 'var(--kp-surface-2)', border: inviteCopied ? '1px solid rgba(34,197,94,0.5)' : '1px solid rgba(201,169,97,0.3)', color: inviteCopied ? '#86efac' : 'var(--kp-text-gold)', fontSize: 11, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
+              {inviteCopied ? <><Check size={13} /> {t('roster.copied')}</> : <>🔗 {t('roster.inviteLink')}</>}
+            </button>
+            <button onClick={async () => {
+              if (ALLIANCE_DB_URL && state.shareAlliance && state.playerId) { try { await removeMember(state.playerId, state.allianceCode); } catch {} }
+              setState(p => ({ ...p, allianceSetup: false }));
+              setJustCreated(false);
+            }} style={{ width: '100%', marginTop: 8, padding: '8px', borderRadius: 8, background: 'var(--kp-surface-2)', border: '1px solid rgba(239,68,68,0.3)', color: '#fca5a5', fontSize: 11, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
               ⚙ {t('roster.changeSetup')}
             </button>
           </div>
 
-          {alliance.isAdmin ? (
+          <AllianceGoal t={t} code={state.allianceCode} isAdmin={state.isAdmin} />
+
+          {state.isAdmin ? (
             <>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 12 }}>
                 <span style={{ fontSize: 10, color: 'var(--kp-text-faint)', fontWeight: 700, flexShrink: 0 }}>{t('roster.viewing')}:</span>
                 <input
                   value={viewCode}
                   onChange={(e) => setViewCode(e.target.value.slice(0, 40))}
-                  placeholder={alliance.code}
+                  placeholder={state.allianceCode}
                   style={{ flex: 1, minWidth: 0, padding: '6px 10px', borderRadius: 7, background: 'var(--kp-surface-2)', border: '1px solid rgba(201,169,97,0.2)', color: 'var(--kp-text)', fontSize: 12, fontFamily: 'inherit', outline: 'none' }}
                 />
                 {viewCode.trim() && (
                   <button onClick={() => setViewCode('')} style={{ padding: '5px 9px', borderRadius: 7, background: 'var(--kp-surface-2)', border: '1px solid rgba(201,169,97,0.2)', color: 'var(--kp-text-faint)', fontSize: 10, cursor: 'pointer', fontFamily: 'inherit' }}>↺</button>
                 )}
               </div>
-              <AllianceRoster t={t} code={viewCode.trim() || alliance.code} isAdmin={true} />
+              <AllianceRoster t={t} code={viewCode.trim() || state.allianceCode} isAdmin={true} />
             </>
           ) : (
             <>
               <div style={{ marginTop: 12, marginBottom: 2, padding: '8px 12px', borderRadius: 9, background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.3)', fontSize: 11, color: '#86efac', textAlign: 'center', fontWeight: 600 }}>
-                {t('roster.memberShared', { code: alliance.code })}
+                {t('roster.memberShared', { code: state.allianceCode })}
               </div>
-              <AllianceRoster t={t} code={alliance.code} isAdmin={false} />
+              <AllianceRoster t={t} code={state.allianceCode} isAdmin={false} />
             </>
           )}
         </>
