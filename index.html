@@ -56,7 +56,7 @@ import { Upload, Check, X, AlertTriangle, ChevronRight, ChevronDown, Star, Hamme
 const BRAND_TITLE = "SHAKES' RED GEAR GUIDE";
 const GUIDE_AUTHOR = 'Shakes'; // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2'; // built this app
-const APP_VERSION = 'v6.2'; // bump this on every new build so you can confirm the deploy is live
+const APP_VERSION = 'v7.3'; // bump this on every new build so you can confirm the deploy is live
 const TROOPS = ['infantry', 'archer', 'cavalry'];
 const TROOP_LABEL = {
   infantry: 'Infantry',
@@ -1679,6 +1679,66 @@ const I18N = {
     vi: 'Mọi liên minh',
     th: 'พันธมิตรทั้งหมด'
   },
+  'god.deleteConfirm': {
+    en: 'Delete alliance {code} and all {n} member(s)? This cannot be undone.',
+    es: '¿Eliminar la alianza {code} y sus {n} miembro(s)? No se puede deshacer.',
+    pt: 'Excluir a aliança {code} e seus {n} membro(s)? Isto não pode ser desfeito.',
+    fr: 'Supprimer l’alliance {code} et ses {n} membre(s) ? Irréversible.',
+    de: 'Allianz {code} und alle {n} Mitglied(er) löschen? Nicht umkehrbar.',
+    it: 'Eliminare l’alleanza {code} e i suoi {n} membri? Irreversibile.',
+    nl: 'Alliantie {code} en alle {n} lid(leden) verwijderen? Onomkeerbaar.',
+    ru: 'Удалить альянс {code} и всех ({n}) участников? Необратимо.',
+    pl: 'Usunąć sojusz {code} i wszystkich {n} członków? Nieodwracalne.',
+    tr: '{code} ittifakını ve {n} üyesini sil? Geri alınamaz.',
+    ar: 'حذف التحالف {code} وكل أعضائه ({n})؟ لا يمكن التراجع.',
+    he: 'למחוק את הברית {code} ואת כל {n} החברים? פעולה בלתי הפיכה.',
+    zh: '删除联盟 {code} 及其全部 {n} 名成员？此操作不可撤销。',
+    ja: '同盟 {code} と全{n}名を削除しますか？取り消せません。',
+    ko: '연합 {code}와 멤버 {n}명을 삭제할까요? 되돌릴 수 없습니다.',
+    id: 'Hapus aliansi {code} dan semua {n} anggota? Tidak bisa dibatalkan.',
+    vi: 'Xóa liên minh {code} và tất cả {n} thành viên? Không thể hoàn tác.',
+    th: 'ลบพันธมิตร {code} และสมาชิกทั้ง {n} คน? ย้อนกลับไม่ได้'
+  },
+  'god.confirmDel': {
+    en: 'Confirm delete?',
+    es: '¿Confirmar?',
+    pt: 'Confirmar?',
+    fr: 'Confirmer ?',
+    de: 'Bestätigen?',
+    it: 'Confermare?',
+    nl: 'Bevestigen?',
+    ru: 'Удалить?',
+    pl: 'Usunąć?',
+    tr: 'Sil?',
+    ar: 'تأكيد الحذف؟',
+    he: 'לאשר מחיקה?',
+    zh: '确认删除？',
+    ja: '削除確認？',
+    ko: '삭제 확인?',
+    id: 'Konfirmasi?',
+    vi: 'Xác nhận?',
+    th: 'ยืนยันลบ?'
+  },
+  'god.delFail': {
+    en: 'Delete failed — your database rules may not allow deletes.',
+    es: 'Error al eliminar — tus reglas de base de datos quizá no permiten borrar.',
+    pt: 'Falha ao excluir — as regras do banco podem não permitir.',
+    fr: 'Échec de suppression — tes règles de base de données l’interdisent peut-être.',
+    de: 'Löschen fehlgeschlagen — deine DB-Regeln erlauben evtl. kein Löschen.',
+    it: 'Eliminazione fallita — le regole del DB potrebbero non permetterlo.',
+    nl: 'Verwijderen mislukt — je databaseregels staan dit mogelijk niet toe.',
+    ru: 'Не удалось удалить — правила базы могут это запрещать.',
+    pl: 'Usuwanie nie powiodło się — reguły bazy mogą tego zabraniać.',
+    tr: 'Silme başarısız — veritabanı kuralların izin vermiyor olabilir.',
+    ar: 'فشل الحذف — قد لا تسمح قواعد قاعدة البيانات بذلك.',
+    he: 'המחיקה נכשלה — ייתכן שכללי מסד הנתונים אינם מאפשרים מחיקה.',
+    zh: '删除失败——你的数据库规则可能不允许删除。',
+    ja: '削除失敗 — DBルールが削除を許可していない可能性。',
+    ko: '삭제 실패 — 데이터베이스 규칙이 삭제를 막을 수 있습니다.',
+    id: 'Gagal hapus — aturan database mungkin tak mengizinkan.',
+    vi: 'Xóa thất bại — quy tắc cơ sở dữ liệu có thể không cho phép.',
+    th: 'ลบไม่สำเร็จ — กฎฐานข้อมูลอาจไม่อนุญาตให้ลบ'
+  },
   'roster.membersN': {
     en: '{n} members',
     es: '{n} miembros',
@@ -2498,6 +2558,46 @@ const I18N = {
     id: 'Keluarkan dari aliansi',
     vi: 'Xóa khỏi liên minh',
     th: 'นำออกจากพันธมิตร'
+  },
+  'roster.confirmRemove': {
+    en: 'Tap again to remove {name}',
+    es: 'Toca otra vez para quitar a {name}',
+    pt: 'Toque de novo para remover {name}',
+    fr: 'Touche encore pour retirer {name}',
+    de: 'Erneut tippen, um {name} zu entfernen',
+    it: 'Tocca ancora per rimuovere {name}',
+    nl: 'Tik nogmaals om {name} te verwijderen',
+    ru: 'Нажмите ещё раз, чтобы удалить {name}',
+    pl: 'Dotknij ponownie, by usunąć {name}',
+    tr: '{name} çıkarmak için tekrar dokun',
+    ar: 'انقر مرة أخرى لإزالة {name}',
+    he: 'הקש שוב להסרת {name}',
+    zh: '再次点按以移除 {name}',
+    ja: 'もう一度タップで {name} を削除',
+    ko: '다시 누르면 {name} 제거',
+    id: 'Ketuk lagi untuk keluarkan {name}',
+    vi: 'Chạm lần nữa để xóa {name}',
+    th: 'แตะอีกครั้งเพื่อนำ {name} ออก'
+  },
+  'reset.tapAgain': {
+    en: 'Tap again to reset',
+    es: 'Toca otra vez para borrar',
+    pt: 'Toque de novo para redefinir',
+    fr: 'Touche encore pour réinitialiser',
+    de: 'Erneut tippen zum Zurücksetzen',
+    it: 'Tocca ancora per reimpostare',
+    nl: 'Tik nogmaals om te resetten',
+    ru: 'Нажмите ещё раз для сброса',
+    pl: 'Dotknij ponownie, by zresetować',
+    tr: 'Sıfırlamak için tekrar dokun',
+    ar: 'انقر مرة أخرى لإعادة التعيين',
+    he: 'הקש שוב לאיפוס',
+    zh: '再次点按以重置',
+    ja: 'もう一度タップでリセット',
+    ko: '다시 누르면 초기화',
+    id: 'Ketuk lagi untuk reset',
+    vi: 'Chạm lần nữa để đặt lại',
+    th: 'แตะอีกครั้งเพื่อรีเซ็ต'
   },
   'roster.removeConfirm': {
     en: 'Remove {name} from the alliance roster? They can re-join later with the invite link.',
@@ -3738,6 +3838,106 @@ const I18N = {
     id: 'Memproses...',
     vi: 'Đang xử lý...',
     th: 'กำลังประมวลผล...'
+  },
+  'progress.goals': {
+    en: '{done} / {total} gear goals done',
+    es: '{done} / {total} objetivos hechos',
+    pt: '{done} / {total} metas concluídas',
+    fr: '{done} / {total} objectifs faits',
+    de: '{done} / {total} Ziele erreicht',
+    it: '{done} / {total} obiettivi fatti',
+    nl: '{done} / {total} doelen klaar',
+    ru: '{done} / {total} целей выполнено',
+    pl: '{done} / {total} celów zrobionych',
+    tr: '{done} / {total} hedef tamam',
+    ar: '{done} / {total} أهداف منجزة',
+    he: '{done} / {total} יעדי ציוד הושלמו',
+    zh: '{done} / {total} 装备目标完成',
+    ja: '{done} / {total} 装備目標達成',
+    ko: '{done} / {total} 장비 목표 달성',
+    id: '{done} / {total} target gear selesai',
+    vi: '{done} / {total} mục tiêu hoàn thành',
+    th: '{done} / {total} เป้าหมายอุปกรณ์สำเร็จ'
+  },
+  'progress.redPieces': {
+    en: '{n}/12 Red',
+    es: '{n}/12 Rojo',
+    pt: '{n}/12 Vermelho',
+    fr: '{n}/12 Rouge',
+    de: '{n}/12 Rot',
+    it: '{n}/12 Rosso',
+    nl: '{n}/12 Rood',
+    ru: '{n}/12 красных',
+    pl: '{n}/12 Czerwony',
+    tr: '{n}/12 Kırmızı',
+    ar: '{n}/12 أحمر',
+    he: '{n}/12 אדום',
+    zh: '{n}/12 红装',
+    ja: '{n}/12 レッド',
+    ko: '{n}/12 레드',
+    id: '{n}/12 Merah',
+    vi: '{n}/12 Đỏ',
+    th: '{n}/12 แดง'
+  },
+  'progress.journey': {
+    en: 'Journey to Full Red',
+    es: 'Camino al Rojo total',
+    pt: 'Jornada ao Vermelho total',
+    fr: 'Parcours vers le Rouge complet',
+    de: 'Weg zu voll Rot',
+    it: 'Percorso al Rosso completo',
+    nl: 'Reis naar vol Rood',
+    ru: 'Путь к полному красному',
+    pl: 'Droga do pełnej czerwieni',
+    tr: 'Tam Kırmızıya Yolculuk',
+    ar: 'الطريق إلى الأحمر الكامل',
+    he: 'הדרך לאדום מלא',
+    zh: '通往全红之路',
+    ja: 'フルレッドへの道',
+    ko: '풀 레드까지의 여정',
+    id: 'Perjalanan ke Full Merah',
+    vi: 'Hành trình tới Full Đỏ',
+    th: 'เส้นทางสู่แดงเต็ม'
+  },
+  'progress.phaseNow': {
+    en: 'Phase {n} progress',
+    es: 'Progreso Fase {n}',
+    pt: 'Progresso Fase {n}',
+    fr: 'Progrès Phase {n}',
+    de: 'Phase {n} Fortschritt',
+    it: 'Progresso Fase {n}',
+    nl: 'Fase {n} voortgang',
+    ru: 'Прогресс фазы {n}',
+    pl: 'Postęp Fazy {n}',
+    tr: 'Aşama {n} ilerlemesi',
+    ar: 'تقدم المرحلة {n}',
+    he: 'התקדמות שלב {n}',
+    zh: '第{n}阶段进度',
+    ja: 'フェーズ{n}の進捗',
+    ko: '{n}단계 진행도',
+    id: 'Progres Fase {n}',
+    vi: 'Tiến độ Giai đoạn {n}',
+    th: 'ความคืบหน้าเฟส {n}'
+  },
+  'progress.toGo': {
+    en: '{n} more to finish this phase',
+    es: '{n} más para terminar esta fase',
+    pt: 'mais {n} para concluir esta fase',
+    fr: 'encore {n} pour finir cette phase',
+    de: 'noch {n} bis Phasenende',
+    it: 'altri {n} per finire la fase',
+    nl: 'nog {n} om deze fase af te ronden',
+    ru: 'ещё {n} до конца фазы',
+    pl: 'jeszcze {n} do końca fazy',
+    tr: 'bu aşamayı bitirmek için {n} daha',
+    ar: '{n} أخرى لإنهاء المرحلة',
+    he: 'עוד {n} לסיום השלב',
+    zh: '再完成 {n} 个即可结束本阶段',
+    ja: 'このフェーズ完了まであと{n}個',
+    ko: '이 단계 완료까지 {n}개',
+    id: '{n} lagi untuk selesaikan fase ini',
+    vi: 'còn {n} để hoàn thành giai đoạn',
+    th: 'อีก {n} เพื่อจบเฟสนี้'
   },
   'ach.title': {
     en: 'ACHIEVEMENTS',
@@ -5113,6 +5313,35 @@ const identifyCurrentPhase = (gear, path = SHAKES_PATH) => {
   return path[path.length - 1];
 };
 
+// Overall + per-phase completion, counting every individual gear goal as one step.
+const pathProgress = (gear, path = SHAKES_PATH) => {
+  const phases = path.filter(p => p.actions && p.actions.length);
+  let total = 0,
+    done = 0;
+  const per = {};
+  phases.forEach(p => {
+    let pd = 0;
+    p.actions.forEach(a => {
+      total++;
+      if (meetsTarget(gear[`${a.troop}-${a.slot}`], a)) {
+        done++;
+        pd++;
+      }
+    });
+    per[p.phase] = {
+      done: pd,
+      total: p.actions.length,
+      pct: p.actions.length ? Math.round(pd / p.actions.length * 100) : 0
+    };
+  });
+  return {
+    total,
+    done,
+    pct: total ? Math.round(done / total * 100) : 0,
+    per
+  };
+};
+
 // For a single action, what's the user's progress?
 // Returns: { done: bool, piece, action, gap: { type, fromLevel, toLevel, ... } }
 const analyzeAction = (action, gear) => {
@@ -6187,9 +6416,10 @@ const Achievements = ({
 }) => {
   const tr = t || (k => k);
   const [sel, setSel] = useState(null);
+  const phaseNum = phase?.isStop || phase?.isChoose ? 99 : phase?.num || phase?.phase || 0;
   const stats = {
     ...gearStats(gear),
-    phase: phase?.num || phase?.phase || 0,
+    phase: phaseNum,
     spec
   };
   const earned = ACHIEVEMENTS.filter(a => a.check(stats));
@@ -7070,16 +7300,53 @@ const phaseDescT = (phase, t) => {
 // ═══════════════════════════════════════════════════════════════════
 //   PHASE OVERVIEW — clickable phases that expand with details
 // ═══════════════════════════════════════════════════════════════════
-// Summarize a phase's actions in plain English
-const summarizePhaseActions = phase => {
-  if (!phase.actions || phase.actions.length === 0) return [];
+// Per-piece status vs. a target action, given the player's current gear.
+const pieceStatus = (a, gear) => {
+  const p = gear ? gear[`${a.troop}-${a.slot}`] : null;
+  if (a.type === 'ascend') {
+    if (p && p.rarity === 'red') return {
+      done: true,
+      text: '✓ Red'
+    };
+    if (!p) return {
+      done: false,
+      text: 'build → Mythic L100 + Mastery 10'
+    };
+    const lvl = p.level || 0,
+      mast = p.mastery || 0;
+    const needs = [];
+    if (p.rarity !== 'mythic' && p.rarity !== 'red') needs.push('→ Mythic');
+    if (lvl < 100) needs.push(`L${lvl}→100`);
+    if (mast < 10) needs.push(`Mastery ${mast}→10`);
+    return {
+      done: false,
+      text: needs.length ? needs.join(', ') : 'ready to ascend ✦'
+    };
+  }
+  if (meetsTarget(p, a)) return {
+    done: true,
+    text: '✓'
+  };
+  if (!p) return {
+    done: false,
+    text: `build → ${RARITY_LABEL[a.rarity]} L${a.level}`
+  };
+  return {
+    done: false,
+    text: `${RARITY_LABEL[p.rarity] || p.rarity} L${p.level || 0} → L${a.level}`
+  };
+};
 
-  // Group actions by type
+// Summarize a phase's actions in plain English (with per-piece progress when gear is given)
+const summarizePhaseActions = (phase, gear) => {
+  if (!phase.actions || phase.actions.length === 0) return [];
   const levelActions = phase.actions.filter(a => a.type === 'level');
   const ascendActions = phase.actions.filter(a => a.type === 'ascend');
   const lines = [];
-
-  // Group level actions by their target (rarity + level)
+  const mk = a => ({
+    label: `${TROOP_LABEL[a.troop]} ${SLOT_LABEL[a.slot]}`,
+    ...pieceStatus(a, gear)
+  });
   const levelGroups = {};
   levelActions.forEach(a => {
     const key = `${a.rarity}-${a.level}`;
@@ -7088,7 +7355,7 @@ const summarizePhaseActions = phase => {
       level: a.level,
       pieces: []
     };
-    levelGroups[key].pieces.push(`${TROOP_LABEL[a.troop]} ${SLOT_LABEL[a.slot]}`);
+    levelGroups[key].pieces.push(mk(a));
   });
   Object.values(levelGroups).forEach(g => {
     lines.push({
@@ -7101,7 +7368,7 @@ const summarizePhaseActions = phase => {
     lines.push({
       kind: 'ascend',
       summary: 'Then ascend these pieces to Red gear',
-      pieces: ascendActions.map(a => `${TROOP_LABEL[a.troop]} ${SLOT_LABEL[a.slot]}`)
+      pieces: ascendActions.map(mk)
     });
   }
   return lines;
@@ -7113,9 +7380,18 @@ const PhaseOverview = ({
   t
 }) => {
   const tr = t || ((k, v) => k);
-  const [openPhase, setOpenPhase] = useState(null); // phase number when expanded
+  const [openPhase, setOpenPhase] = useState(currentPhase?.phase ?? null); // current phase open by default
   const [showFull, setShowFull] = useState(false);
   const phases = path.filter(p => !p.isStop && !p.isChoose);
+  const prog = pathProgress(gear, path);
+  const curP = prog.per[currentPhase.phase];
+
+  // Keep the current phase's breakdown open by default, and re-open it when you advance a phase.
+  useEffect(() => {
+    if (currentPhase && currentPhase.phase && !currentPhase.isStop && !currentPhase.isChoose) {
+      setOpenPhase(currentPhase.phase);
+    }
+  }, [currentPhase?.phase]);
   const togglePhase = num => {
     setOpenPhase(prev => prev === num ? null : num);
   };
@@ -7196,7 +7472,59 @@ const PhaseOverview = ({
         letterSpacing: 0.3
       }
     }, "P", p.phase));
-  })), /*#__PURE__*/React.createElement("button", {
+  })), curP && !currentPhase.isStop && /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 10,
+      padding: '8px 11px',
+      borderRadius: 9,
+      background: 'rgba(251,191,36,0.07)',
+      border: '1px solid rgba(251,191,36,0.25)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'baseline',
+      marginBottom: 4
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 10.5,
+      fontWeight: 700,
+      color: '#fbbf24'
+    }
+  }, tr('progress.phaseNow', {
+    n: currentPhase.phase
+  })), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 10.5,
+      fontWeight: 800,
+      color: '#fbbf24',
+      fontFamily: 'Cinzel, serif'
+    }
+  }, curP.done, "/", curP.total)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: 6,
+      borderRadius: 99,
+      background: 'rgba(0,0,0,0.4)',
+      overflow: 'hidden'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: `${curP.pct}%`,
+      height: '100%',
+      background: 'linear-gradient(90deg,#fbbf24,#f59e0b)',
+      transition: 'width 0.5s ease'
+    }
+  })), curP.total - curP.done > 0 && /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 9.5,
+      color: 'var(--kp-text-dim)',
+      marginTop: 5
+    }
+  }, tr('progress.toGo', {
+    n: curP.total - curP.done
+  }))), /*#__PURE__*/React.createElement("button", {
     onClick: () => setShowFull(s => !s),
     className: "kp-card",
     style: {
@@ -7230,7 +7558,7 @@ const PhaseOverview = ({
     }
   }, path.map(p => {
     const status = p.phase === currentPhase.phase ? 'current' : currentPhase.phase > p.phase || currentPhase.isStop ? 'done' : 'locked';
-    const lines = summarizePhaseActions(p);
+    const lines = summarizePhaseActions(p, gear);
     return /*#__PURE__*/React.createElement("div", {
       key: p.phase,
       style: {
@@ -7305,7 +7633,7 @@ const PhaseOverview = ({
         color: line.kind === 'ascend' ? '#fca5a5' : '#fbbf24',
         fontWeight: 700
       }
-    }, line.kind === 'ascend' ? '⚔ ' : '⬆ ', line.summary, ":", ' '), line.pieces.join(' · '))));
+    }, line.kind === 'ascend' ? '⚔ ' : '⬆ ', line.summary, ":", ' '), line.pieces.map(x => x.label).join(' · '))));
   })), expandedPhase && /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 10,
@@ -7381,7 +7709,7 @@ const PhaseOverview = ({
       marginBottom: 9,
       whiteSpace: 'pre-line'
     }
-  }, phaseDescT(expandedPhase, tr)), summarizePhaseActions(expandedPhase).map((line, i) => /*#__PURE__*/React.createElement("div", {
+  }, phaseDescT(expandedPhase, tr)), summarizePhaseActions(expandedPhase, gear).map((line, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       padding: '7px 9px',
@@ -7396,15 +7724,46 @@ const PhaseOverview = ({
       fontWeight: 800,
       color: line.kind === 'ascend' ? '#fca5a5' : '#fbbf24',
       letterSpacing: 0.4,
-      marginBottom: 4
+      marginBottom: 6
     }
   }, line.kind === 'ascend' ? '⚔ ' : '⬆ ', line.summary), /*#__PURE__*/React.createElement("div", {
     style: {
-      fontSize: 11,
-      color: '#d4c4a0',
-      lineHeight: 1.45
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 4
     }
-  }, line.pieces.join(' · '))))));
+  }, line.pieces.map((x, k) => /*#__PURE__*/React.createElement("div", {
+    key: k,
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 6,
+      fontSize: 11,
+      lineHeight: 1.3
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 5,
+      height: 5,
+      borderRadius: 99,
+      flexShrink: 0,
+      background: x.done ? '#22c55e' : '#fbbf24'
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: x.done ? 'var(--kp-text-faint)' : '#d4c4a0',
+      fontWeight: 600,
+      textDecoration: x.done ? 'line-through' : 'none'
+    }
+  }, x.label), /*#__PURE__*/React.createElement("span", {
+    style: {
+      marginLeft: 'auto',
+      fontSize: 10,
+      fontWeight: 700,
+      color: x.done ? '#86efac' : 'var(--kp-text-dim)',
+      whiteSpace: 'nowrap'
+    }
+  }, x.text))))))));
 };
 // ═══════════════════════════════════════════════════════════════════
 // ─── Position of each slot in the in-game gear grid ───
@@ -7604,6 +7963,21 @@ const StepCard = ({
     rarity: tr('rarity.' + action.rarity),
     level: action.level
   });
+
+  // What this piece still needs to reach the target — the context that matters.
+  let needText = '';
+  if (isAscend) {
+    if (!piece) needText = 'Build → Mythic L100 · Mastery 10 · then Ascend';else if (piece.rarity === 'red') needText = '✓ Red';else {
+      const parts = [];
+      if (piece.rarity !== 'mythic') parts.push('→ Mythic');
+      if ((piece.level || 0) < 100) parts.push(`Lv ${piece.level || 0}→100`);
+      if ((piece.mastery || 0) < 10) parts.push(`Mastery ${piece.mastery || 0}→10`);
+      parts.push('then Ascend to Red');
+      needText = parts.join(' · ');
+    }
+  } else {
+    needText = piece ? `Lv ${piece.level || 0} → ${action.level}` : `Build → ${RARITY_LABEL[action.rarity]} L${action.level}`;
+  }
   const canToggle = inGameSteps.length > 0;
   return /*#__PURE__*/React.createElement("div", {
     className: `kp-card${canAfford ? ' kp-ready' : ''}`,
@@ -7651,7 +8025,7 @@ const StepCard = ({
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      fontSize: 9,
+      fontSize: 9.5,
       color: troopColor,
       fontWeight: 800,
       letterSpacing: 0.5,
@@ -7665,18 +8039,27 @@ const StepCard = ({
       fontFamily: 'Cinzel, serif',
       letterSpacing: 0.3
     }
-  }, title), piece && /*#__PURE__*/React.createElement("div", {
+  }, title), /*#__PURE__*/React.createElement("div", {
     style: {
-      fontSize: 10,
-      color: 'var(--kp-text-dim)',
-      marginTop: 2
+      fontSize: 10.5,
+      marginTop: 3,
+      lineHeight: 1.4
+    }
+  }, piece && /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: 'var(--kp-text-dim)'
     }
   }, t ? t('ui.now') : 'Now:', " ", /*#__PURE__*/React.createElement("span", {
     style: {
-      color: RARITY_THEME[piece.rarity]?.edge,
+      color: RARITY_THEME[piece.rarity]?.edge || 'var(--kp-text)',
       fontWeight: 700
     }
-  }, RARITY_LABEL[piece.rarity], " L", piece.level), piece.mastery ? ` · Mastery Lv.${piece.mastery}` : '')), canAfford && /*#__PURE__*/React.createElement("div", {
+  }, RARITY_LABEL[piece.rarity], " L", piece.level, piece.mastery ? `, M${piece.mastery}` : '')), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#fbbf24',
+      fontWeight: 700
+    }
+  }, piece ? ' → ' : '', needText))), canAfford && /*#__PURE__*/React.createElement("div", {
     style: {
       padding: '4px 9px',
       borderRadius: 6,
@@ -8816,6 +9199,18 @@ const clearGoal = async code => {
       method: 'DELETE'
     });
   } catch {}
+};
+// Super-admin: delete an entire alliance node (key is the raw DB key from fetchAllAlliances)
+const deleteAlliance = async key => {
+  if (!ALLIANCE_DB_URL) return false;
+  try {
+    const r = await fetch(`${ALLIANCE_DB_URL}/alliances/${key}.json`, {
+      method: 'DELETE'
+    });
+    return r.ok;
+  } catch {
+    return false;
+  }
 };
 // Build the shareable summary of a player's progress from their state + active path.
 const buildMemberSummary = (state, activePath) => {
@@ -10316,6 +10711,19 @@ const SuperAdminView = ({
   const tr = t || (k => k);
   const [alliances, setAlliances] = useState(null);
   const [selected, setSelected] = useState(null);
+  const [confirmDel, setConfirmDel] = useState(null);
+  const [delErr, setDelErr] = useState('');
+  const doDelete = async key => {
+    const ok = await deleteAlliance(key);
+    if (ok) {
+      setConfirmDel(null);
+      setDelErr('');
+      if (selected === key) setSelected(null);
+      load();
+    } else {
+      setDelErr(key);
+    }
+  };
   const [refreshing, setRefreshing] = useState(false);
   const load = async () => {
     setRefreshing(true);
@@ -10417,21 +10825,16 @@ const SuperAdminView = ({
       flexDirection: 'column',
       gap: 6
     }
-  }, alliances.map(a => /*#__PURE__*/React.createElement("button", {
+  }, alliances.map(a => /*#__PURE__*/React.createElement("div", {
     key: a.code,
-    onClick: () => setSelected(a.code),
-    className: "kp-card",
     style: {
       display: 'flex',
       alignItems: 'center',
-      gap: 10,
-      padding: '11px 12px',
+      gap: 6,
+      padding: '8px 10px',
       borderRadius: 9,
       background: 'var(--kp-surface-3)',
-      border: '1px solid rgba(201,169,97,0.14)',
-      cursor: 'pointer',
-      fontFamily: 'inherit',
-      textAlign: 'left'
+      border: '1px solid rgba(201,169,97,0.14)'
     }
   }, /*#__PURE__*/React.createElement(Sword, {
     size: 15,
@@ -10439,7 +10842,23 @@ const SuperAdminView = ({
     style: {
       flexShrink: 0
     }
-  }), /*#__PURE__*/React.createElement("div", {
+  }), /*#__PURE__*/React.createElement("button", {
+    onClick: () => setSelected(a.code),
+    className: "kp-card",
+    style: {
+      flex: 1,
+      minWidth: 0,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 8,
+      background: 'transparent',
+      border: 'none',
+      cursor: 'pointer',
+      fontFamily: 'inherit',
+      textAlign: 'left',
+      padding: '3px 0'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       flex: 1,
       minWidth: 0
@@ -10463,7 +10882,46 @@ const SuperAdminView = ({
   }))), /*#__PURE__*/React.createElement(ChevronRight, {
     size: 15,
     color: "var(--kp-text-faint)"
-  })))));
+  })), confirmDel === a.code ? /*#__PURE__*/React.createElement("button", {
+    onClick: () => doDelete(a.code),
+    style: {
+      flexShrink: 0,
+      padding: '7px 11px',
+      borderRadius: 7,
+      background: 'linear-gradient(135deg,#ef4444,#b91c1c)',
+      border: 'none',
+      color: '#fff',
+      fontSize: 10,
+      fontWeight: 800,
+      cursor: 'pointer',
+      fontFamily: 'inherit'
+    }
+  }, tr('god.confirmDel')) : /*#__PURE__*/React.createElement("button", {
+    onClick: () => {
+      setConfirmDel(a.code);
+      setDelErr('');
+    },
+    title: "Delete alliance",
+    style: {
+      flexShrink: 0,
+      padding: '7px',
+      borderRadius: 7,
+      background: 'transparent',
+      border: '1px solid rgba(239,68,68,0.4)',
+      color: '#fca5a5',
+      cursor: 'pointer',
+      display: 'flex',
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement(Trash2, {
+    size: 14
+  })))), delErr && /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10.5,
+      color: '#fca5a5',
+      marginTop: 4
+    }
+  }, "\u26A0 ", tr('god.delFail'))));
 };
 const AllianceGoal = ({
   t,
@@ -10760,6 +11218,7 @@ const AllianceRoster = ({
   const [search, setSearch] = useState('');
   const [notes, setNotes] = useState({}); // { key: { note, tags } } — private to this leader's device
   const [copied, setCopied] = useState(null);
+  const [confirmRemove, setConfirmRemove] = useState(null);
   useEffect(() => {
     try {
       const raw = localStorage.getItem('kp_leader_notes');
@@ -11350,16 +11809,35 @@ const AllianceRoster = ({
       heroImage: null,
       gear: m.gear || {},
       onEdit: () => {}
-    })), isAdmin && /*#__PURE__*/React.createElement("button", {
+    })), isAdmin && (confirmRemove === m.key ? /*#__PURE__*/React.createElement("button", {
       onClick: async () => {
-        const ok = typeof window !== 'undefined' && window.confirm ? window.confirm(tr('roster.removeConfirm', {
-          name: m.name
-        })) : true;
-        if (!ok) return;
         await removeMember(m.key, code);
+        setConfirmRemove(null);
         setOpenKey(null);
         load();
       },
+      style: {
+        width: '100%',
+        padding: '9px',
+        borderRadius: 8,
+        background: 'linear-gradient(135deg,#ef4444,#b91c1c)',
+        border: 'none',
+        color: '#fff',
+        fontSize: 11.5,
+        fontWeight: 800,
+        cursor: 'pointer',
+        fontFamily: 'inherit',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 6
+      }
+    }, /*#__PURE__*/React.createElement(Trash2, {
+      size: 13
+    }), " ", tr('roster.confirmRemove', {
+      name: m.name
+    })) : /*#__PURE__*/React.createElement("button", {
+      onClick: () => setConfirmRemove(m.key),
       style: {
         width: '100%',
         padding: '9px',
@@ -11378,7 +11856,7 @@ const AllianceRoster = ({
       }
     }, /*#__PURE__*/React.createElement(Trash2, {
       size: 13
-    }), " ", tr('roster.remove'))));
+    }), " ", tr('roster.remove')))));
   })));
 };
 const Footer = ({
@@ -11530,6 +12008,7 @@ export default function App() {
   const [codeCopied, setCodeCopied] = useState(false);
   const [inviteCopied, setInviteCopied] = useState(false);
   const [justCreated, setJustCreated] = useState(false);
+  const [resetConfirm, setResetConfirm] = useState(false);
   const [invite] = useState(() => {
     try {
       return new URLSearchParams(window.location.search).get('a') || '';
@@ -11874,9 +12353,6 @@ export default function App() {
     });
   };
   const resetAll = () => {
-    const ok = typeof window !== 'undefined' && window.confirm ? window.confirm(t('reset.confirm')) : true;
-    if (!ok) return;
-    // Remove our shared roster entry first, so a reset doesn't leave a stale duplicate behind.
     if (ALLIANCE_DB_URL && state?.shareAlliance && state?.playerId) {
       try {
         removeMember(state.playerId, state.allianceCode);
@@ -12299,7 +12775,79 @@ export default function App() {
       lineHeight: 1.4,
       textAlign: 'center'
     }
-  }, t('upload.help')))), /*#__PURE__*/React.createElement(ResourcePills, {
+  }, t('upload.help')))), (() => {
+    const jp = pathProgress(state.gear, SHAKES_PATH);
+    const red = gearStats(state.gear).red;
+    return /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginBottom: 14,
+        borderRadius: 13,
+        padding: '13px 15px',
+        background: 'linear-gradient(135deg, rgba(201,169,97,0.14), var(--kp-panel))',
+        border: '1px solid rgba(201,169,97,0.3)',
+        boxShadow: '0 4px 18px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'baseline',
+        marginBottom: 7
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: 'Cinzel, serif',
+        fontSize: 12.5,
+        fontWeight: 800,
+        color: 'var(--kp-text-gold)',
+        letterSpacing: 0.5
+      }
+    }, "\uD83D\uDEE1\uFE0F ", t('progress.journey')), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: 'Cinzel, serif',
+        fontSize: 19,
+        fontWeight: 900,
+        color: '#fbbf24'
+      }
+    }, jp.pct, "%")), /*#__PURE__*/React.createElement("div", {
+      style: {
+        height: 11,
+        borderRadius: 99,
+        background: 'rgba(0,0,0,0.45)',
+        overflow: 'hidden',
+        border: '1px solid rgba(201,169,97,0.18)'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        width: `${jp.pct}%`,
+        height: '100%',
+        background: 'linear-gradient(90deg,#ef4444,#fbbf24,#22c55e)',
+        transition: 'width 0.6s ease'
+      }
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        marginTop: 6,
+        fontSize: 10.5,
+        fontWeight: 600
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: 'var(--kp-text-faint)'
+      }
+    }, t('progress.goals', {
+      done: jp.done,
+      total: jp.total
+    })), /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: red >= 12 ? '#86efac' : '#fca5a5',
+        fontWeight: 800
+      }
+    }, "\uD83D\uDD34 ", t('progress.redPieces', {
+      n: red
+    }))));
+  })(), /*#__PURE__*/React.createElement(ResourcePills, {
     resources: state.resources,
     onEdit: () => setEditingResources(true),
     t: t
@@ -13188,7 +13736,9 @@ export default function App() {
       cursor: 'pointer',
       fontFamily: 'inherit'
     }
-  }, "\u21BA")), /*#__PURE__*/React.createElement(AllianceRoster, {
+  }, "\u21BA")), viewCode.trim() === SUPER_ADMIN_CODE ? /*#__PURE__*/React.createElement(SuperAdminView, {
+    t: t
+  }) : /*#__PURE__*/React.createElement(AllianceRoster, {
     t: t,
     code: viewCode.trim() || state.allianceCode,
     isAdmin: true
@@ -13223,13 +13773,21 @@ export default function App() {
       marginTop: 14
     }
   }, /*#__PURE__*/React.createElement("button", {
-    onClick: resetAll,
+    onClick: () => {
+      if (resetConfirm) {
+        resetAll();
+        setResetConfirm(false);
+      } else {
+        setResetConfirm(true);
+        setTimeout(() => setResetConfirm(false), 4000);
+      }
+    },
     style: {
       padding: '7px 14px',
       borderRadius: 7,
-      background: 'transparent',
-      border: '1px solid rgba(201,169,97,0.2)',
-      color: 'var(--kp-text-faint)',
+      background: resetConfirm ? 'rgba(239,68,68,0.15)' : 'transparent',
+      border: resetConfirm ? '1px solid rgba(239,68,68,0.5)' : '1px solid rgba(201,169,97,0.2)',
+      color: resetConfirm ? '#fca5a5' : 'var(--kp-text-faint)',
       fontSize: 11,
       fontWeight: 600,
       cursor: 'pointer',
@@ -13239,7 +13797,7 @@ export default function App() {
     }
   }, /*#__PURE__*/React.createElement(RotateCcw, {
     size: 12
-  }), " Reset all data"))), editingPiece && /*#__PURE__*/React.createElement(PieceEditor, {
+  }), " ", resetConfirm ? t('reset.tapAgain') : t('btn.reset')))), editingPiece && /*#__PURE__*/React.createElement(PieceEditor, {
     piece: editingPiece.piece,
     troop: editingPiece.troop,
     slot: editingPiece.slot,

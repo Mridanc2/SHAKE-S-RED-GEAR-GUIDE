@@ -15,7 +15,7 @@ import {
 const BRAND_TITLE = "SHAKES' RED GEAR GUIDE";
 const GUIDE_AUTHOR = 'Shakes';   // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2';  // built this app
-const APP_VERSION = 'v6.2';     // bump this on every new build so you can confirm the deploy is live
+const APP_VERSION = 'v7.3';     // bump this on every new build so you can confirm the deploy is live
 const TROOPS = ['infantry', 'archer', 'cavalry'];
 const TROOP_LABEL = { infantry: 'Infantry', archer: 'Archer', cavalry: 'Cavalry' };
 const TROOP_CODE = { infantry: 'I', archer: 'A', cavalry: 'C' };
@@ -547,6 +547,9 @@ const I18N = {
   'roster.title': { en: 'ALLIANCE ROSTER', es: 'PLANTEL DE LA ALIANZA', pt: 'ELENCO DA ALIANÇA', fr: 'EFFECTIF DE L’ALLIANCE', de: 'ALLIANZ-KADER', it: 'ROSTER DELL’ALLEANZA', nl: 'ALLIANTIE-ROOSTER', ru: 'СОСТАВ АЛЬЯНСА', pl: 'SKŁAD SOJUSZU', tr: 'İTTİFAK KADROSU', ar: 'قائمة التحالف', he: 'מצבת הברית', zh: '联盟名册', ja: '同盟ロスター', ko: '연합 로스터', id: 'DAFTAR ALIANSI', vi: 'DANH SÁCH LIÊN MINH', th: 'รายชื่อพันธมิตร' },
   'roster.godView': { en: 'GOD VIEW · ALL ALLIANCES', es: 'VISTA TOTAL · TODAS LAS ALIANZAS', pt: 'VISÃO TOTAL · TODAS AS ALIANÇAS', fr: 'VUE GLOBALE · TOUTES LES ALLIANCES', de: 'GOTT-ANSICHT · ALLE ALLIANZEN', it: 'VISTA TOTALE · TUTTE LE ALLEANZE', nl: 'GOD-VIEW · ALLE ALLIANTIES', ru: 'ОБЗОР · ВСЕ АЛЬЯНСЫ', pl: 'WIDOK BOGA · WSZYSTKIE SOJUSZE', tr: 'TANRI GÖRÜNÜMÜ · TÜM İTTİFAKLAR', ar: 'العرض الشامل · كل التحالفات', he: 'תצוגת על · כל הבריתות', zh: '上帝视角 · 所有联盟', ja: 'ゴッドビュー · 全同盟', ko: '갓 뷰 · 모든 연합', id: 'GOD VIEW · SEMUA ALIANSI', vi: 'TOÀN CẢNH · MỌI LIÊN MINH', th: 'มุมมองสูงสุด · ทุกพันธมิตร' },
   'roster.allAlliances': { en: 'All alliances', es: 'Todas las alianzas', pt: 'Todas as alianças', fr: 'Toutes les alliances', de: 'Alle Allianzen', it: 'Tutte le alleanze', nl: 'Alle allianties', ru: 'Все альянсы', pl: 'Wszystkie sojusze', tr: 'Tüm ittifaklar', ar: 'كل التحالفات', he: 'כל הבריתות', zh: '所有联盟', ja: '全同盟', ko: '모든 연합', id: 'Semua aliansi', vi: 'Mọi liên minh', th: 'พันธมิตรทั้งหมด' },
+  'god.deleteConfirm': { en: 'Delete alliance {code} and all {n} member(s)? This cannot be undone.', es: '¿Eliminar la alianza {code} y sus {n} miembro(s)? No se puede deshacer.', pt: 'Excluir a aliança {code} e seus {n} membro(s)? Isto não pode ser desfeito.', fr: 'Supprimer l’alliance {code} et ses {n} membre(s) ? Irréversible.', de: 'Allianz {code} und alle {n} Mitglied(er) löschen? Nicht umkehrbar.', it: 'Eliminare l’alleanza {code} e i suoi {n} membri? Irreversibile.', nl: 'Alliantie {code} en alle {n} lid(leden) verwijderen? Onomkeerbaar.', ru: 'Удалить альянс {code} и всех ({n}) участников? Необратимо.', pl: 'Usunąć sojusz {code} i wszystkich {n} członków? Nieodwracalne.', tr: '{code} ittifakını ve {n} üyesini sil? Geri alınamaz.', ar: 'حذف التحالف {code} وكل أعضائه ({n})؟ لا يمكن التراجع.', he: 'למחוק את הברית {code} ואת כל {n} החברים? פעולה בלתי הפיכה.', zh: '删除联盟 {code} 及其全部 {n} 名成员？此操作不可撤销。', ja: '同盟 {code} と全{n}名を削除しますか？取り消せません。', ko: '연합 {code}와 멤버 {n}명을 삭제할까요? 되돌릴 수 없습니다.', id: 'Hapus aliansi {code} dan semua {n} anggota? Tidak bisa dibatalkan.', vi: 'Xóa liên minh {code} và tất cả {n} thành viên? Không thể hoàn tác.', th: 'ลบพันธมิตร {code} และสมาชิกทั้ง {n} คน? ย้อนกลับไม่ได้' },
+  'god.confirmDel': { en: 'Confirm delete?', es: '¿Confirmar?', pt: 'Confirmar?', fr: 'Confirmer ?', de: 'Bestätigen?', it: 'Confermare?', nl: 'Bevestigen?', ru: 'Удалить?', pl: 'Usunąć?', tr: 'Sil?', ar: 'تأكيد الحذف؟', he: 'לאשר מחיקה?', zh: '确认删除？', ja: '削除確認？', ko: '삭제 확인?', id: 'Konfirmasi?', vi: 'Xác nhận?', th: 'ยืนยันลบ?' },
+  'god.delFail': { en: 'Delete failed — your database rules may not allow deletes.', es: 'Error al eliminar — tus reglas de base de datos quizá no permiten borrar.', pt: 'Falha ao excluir — as regras do banco podem não permitir.', fr: 'Échec de suppression — tes règles de base de données l’interdisent peut-être.', de: 'Löschen fehlgeschlagen — deine DB-Regeln erlauben evtl. kein Löschen.', it: 'Eliminazione fallita — le regole del DB potrebbero non permetterlo.', nl: 'Verwijderen mislukt — je databaseregels staan dit mogelijk niet toe.', ru: 'Не удалось удалить — правила базы могут это запрещать.', pl: 'Usuwanie nie powiodło się — reguły bazy mogą tego zabraniać.', tr: 'Silme başarısız — veritabanı kuralların izin vermiyor olabilir.', ar: 'فشل الحذف — قد لا تسمح قواعد قاعدة البيانات بذلك.', he: 'המחיקה נכשלה — ייתכן שכללי מסד הנתונים אינם מאפשרים מחיקה.', zh: '删除失败——你的数据库规则可能不允许删除。', ja: '削除失敗 — DBルールが削除を許可していない可能性。', ko: '삭제 실패 — 데이터베이스 규칙이 삭제를 막을 수 있습니다.', id: 'Gagal hapus — aturan database mungkin tak mengizinkan.', vi: 'Xóa thất bại — quy tắc cơ sở dữ liệu có thể không cho phép.', th: 'ลบไม่สำเร็จ — กฎฐานข้อมูลอาจไม่อนุญาตให้ลบ' },
   'roster.membersN': { en: '{n} members', es: '{n} miembros', pt: '{n} membros', fr: '{n} membres', de: '{n} Mitglieder', it: '{n} membri', nl: '{n} leden', ru: 'участников: {n}', pl: '{n} członków', tr: '{n} üye', ar: '{n} عضو', he: '{n} חברים', zh: '{n} 名成员', ja: '{n} 名', ko: '{n}명', id: '{n} anggota', vi: '{n} thành viên', th: '{n} สมาชิก' },
   'roster.refresh': { en: 'Refresh', es: 'Actualizar', pt: 'Atualizar', fr: 'Actualiser', de: 'Aktualisieren', it: 'Aggiorna', nl: 'Vernieuwen', ru: 'Обновить', pl: 'Odśwież', tr: 'Yenile', ar: 'تحديث', he: 'רענן', zh: '刷新', ja: '更新', ko: '새로고침', id: 'Segarkan', vi: 'Làm mới', th: 'รีเฟรช' },
   'roster.loading': { en: 'Loading roster…', es: 'Cargando plantel…', pt: 'Carregando elenco…', fr: 'Chargement…', de: 'Lädt…', it: 'Caricamento…', nl: 'Laden…', ru: 'Загрузка…', pl: 'Ładowanie…', tr: 'Yükleniyor…', ar: 'جارٍ التحميل…', he: 'טוען…', zh: '加载中…', ja: '読み込み中…', ko: '불러오는 중…', id: 'Memuat…', vi: 'Đang tải…', th: 'กำลังโหลด…' },
@@ -588,6 +591,8 @@ const I18N = {
   'roster.copyCode': { en: 'Copy', es: 'Copiar', pt: 'Copiar', fr: 'Copier', de: 'Kopieren', it: 'Copia', nl: 'Kopiëren', ru: 'Копир.', pl: 'Kopiuj', tr: 'Kopyala', ar: 'نسخ', he: 'העתק', zh: '复制', ja: 'コピー', ko: '복사', id: 'Salin', vi: 'Chép', th: 'คัดลอก' },
   'roster.inviteLink': { en: 'Copy invite link', es: 'Copiar enlace de invitación', pt: 'Copiar link de convite', fr: 'Copier le lien d’invitation', de: 'Einladungslink kopieren', it: 'Copia link d’invito', nl: 'Uitnodigingslink kopiëren', ru: 'Скопировать ссылку-приглашение', pl: 'Kopiuj link zaproszenia', tr: 'Davet bağlantısını kopyala', ar: 'نسخ رابط الدعوة', he: 'העתק קישור הזמנה', zh: '复制邀请链接', ja: '招待リンクをコピー', ko: '초대 링크 복사', id: 'Salin tautan undangan', vi: 'Sao chép link mời', th: 'คัดลอกลิงก์เชิญ' },
   'roster.remove': { en: 'Remove from alliance', es: 'Quitar de la alianza', pt: 'Remover da aliança', fr: 'Retirer de l’alliance', de: 'Aus Allianz entfernen', it: 'Rimuovi dall’alleanza', nl: 'Uit alliantie verwijderen', ru: 'Удалить из альянса', pl: 'Usuń z sojuszu', tr: 'İttifaktan çıkar', ar: 'إزالة من التحالف', he: 'הסר מהברית', zh: '移出联盟', ja: '同盟から削除', ko: '연합에서 제거', id: 'Keluarkan dari aliansi', vi: 'Xóa khỏi liên minh', th: 'นำออกจากพันธมิตร' },
+  'roster.confirmRemove': { en: 'Tap again to remove {name}', es: 'Toca otra vez para quitar a {name}', pt: 'Toque de novo para remover {name}', fr: 'Touche encore pour retirer {name}', de: 'Erneut tippen, um {name} zu entfernen', it: 'Tocca ancora per rimuovere {name}', nl: 'Tik nogmaals om {name} te verwijderen', ru: 'Нажмите ещё раз, чтобы удалить {name}', pl: 'Dotknij ponownie, by usunąć {name}', tr: '{name} çıkarmak için tekrar dokun', ar: 'انقر مرة أخرى لإزالة {name}', he: 'הקש שוב להסרת {name}', zh: '再次点按以移除 {name}', ja: 'もう一度タップで {name} を削除', ko: '다시 누르면 {name} 제거', id: 'Ketuk lagi untuk keluarkan {name}', vi: 'Chạm lần nữa để xóa {name}', th: 'แตะอีกครั้งเพื่อนำ {name} ออก' },
+  'reset.tapAgain': { en: 'Tap again to reset', es: 'Toca otra vez para borrar', pt: 'Toque de novo para redefinir', fr: 'Touche encore pour réinitialiser', de: 'Erneut tippen zum Zurücksetzen', it: 'Tocca ancora per reimpostare', nl: 'Tik nogmaals om te resetten', ru: 'Нажмите ещё раз для сброса', pl: 'Dotknij ponownie, by zresetować', tr: 'Sıfırlamak için tekrar dokun', ar: 'انقر مرة أخرى لإعادة التعيين', he: 'הקש שוב לאיפוס', zh: '再次点按以重置', ja: 'もう一度タップでリセット', ko: '다시 누르면 초기화', id: 'Ketuk lagi untuk reset', vi: 'Chạm lần nữa để đặt lại', th: 'แตะอีกครั้งเพื่อรีเซ็ต' },
   'roster.removeConfirm': { en: 'Remove {name} from the alliance roster? They can re-join later with the invite link.', es: '¿Quitar a {name} del plantel? Puede volver con el enlace de invitación.', pt: 'Remover {name} do elenco? Pode voltar com o link de convite.', fr: 'Retirer {name} de l’effectif ? Il pourra revenir avec le lien d’invitation.', de: '{name} aus dem Kader entfernen? Kann später per Einladungslink zurückkehren.', it: 'Rimuovere {name} dal roster? Può rientrare col link d’invito.', nl: '{name} uit het rooster verwijderen? Kan later terugkomen via de uitnodigingslink.', ru: 'Удалить {name} из состава? Сможет вернуться по ссылке-приглашению.', pl: 'Usunąć {name} ze składu? Może wrócić przez link zaproszenia.', tr: '{name} kadrodan çıkarılsın mı? Davet bağlantısıyla geri katılabilir.', ar: 'إزالة {name} من القائمة؟ يمكنه العودة برابط الدعوة.', he: 'להסיר את {name} מהמצבת? אפשר לחזור עם קישור ההזמנה.', zh: '将 {name} 移出名册？之后可用邀请链接重新加入。', ja: '{name} をロスターから削除？招待リンクで再参加できます。', ko: '{name}을(를) 로스터에서 제거할까요? 초대 링크로 다시 참가할 수 있습니다.', id: 'Keluarkan {name} dari daftar? Bisa gabung lagi via tautan undangan.', vi: 'Xóa {name} khỏi danh sách? Có thể tham gia lại bằng link mời.', th: 'นำ {name} ออกจากรายชื่อ? เข้าร่วมใหม่ได้ด้วยลิงก์เชิญ' },
   'setup.invited': { en: 'You\u2019ve been invited to join {code}. Tap Join.', es: 'Te han invitado a unirte a {code}. Toca Unirse.', pt: 'Você foi convidado para {code}. Toque em Entrar.', fr: 'Tu es invité à rejoindre {code}. Touche Rejoindre.', de: 'Du wurdest zu {code} eingeladen. Tippe auf Beitreten.', it: 'Sei stato invitato in {code}. Tocca Unisciti.', nl: 'Je bent uitgenodigd voor {code}. Tik op Deelnemen.', ru: 'Вас пригласили в {code}. Нажмите «Войти».', pl: 'Zaproszono Cię do {code}. Dotknij Dołącz.', tr: '{code} ittifakına davet edildin. Katıl’a dokun.', ar: 'تمت دعوتك للانضمام إلى {code}. انقر انضمام.', he: 'הוזמנת להצטרף ל-{code}. הקש הצטרף.', zh: '你被邀请加入 {code}。点按加入。', ja: '{code} に招待されました。参加をタップ。', ko: '{code}에 초대되었습니다. 참가를 누르세요.', id: 'Kamu diundang ke {code}. Ketuk Gabung.', vi: 'Bạn được mời vào {code}. Chạm Tham gia.', th: 'คุณได้รับเชิญเข้าร่วม {code} แตะเข้าร่วม' },
   'setup.createWarn': { en: 'This starts a brand-new alliance. Only do this if you\u2019re the leader. If your alliance already exists, go Back and Join with its invite link instead.', es: 'Esto crea una alianza nueva. Hazlo solo si eres el líder. Si tu alianza ya existe, vuelve y Únete con su enlace.', pt: 'Isto cria uma aliança nova. Só faça se for o líder. Se sua aliança já existe, volte e Entre com o link dela.', fr: 'Ceci crée une toute nouvelle alliance. À ne faire que si tu es le chef. Si ton alliance existe déjà, reviens et Rejoins via son lien.', de: 'Dies erstellt eine ganz neue Allianz. Nur als Leiter tun. Existiert deine Allianz schon, geh zurück und tritt per Link bei.', it: 'Questo crea una nuova alleanza. Fallo solo se sei il leader. Se la tua alleanza esiste già, torna e Unisciti col suo link.', nl: 'Dit maakt een gloednieuwe alliantie. Doe dit alleen als leider. Bestaat je alliantie al, ga terug en sluit je aan via de link.', ru: 'Это создаёт новый альянс. Только если вы лидер. Если альянс уже есть — назад и войдите по ссылке.', pl: 'To tworzy nowy sojusz. Tylko jeśli jesteś liderem. Jeśli sojusz już istnieje, wróć i dołącz przez link.', tr: 'Bu yepyeni bir ittifak kurar. Sadece liderken yap. İttifakın varsa geri dön ve davet bağlantısıyla katıl.', ar: 'هذا ينشئ تحالفًا جديدًا. افعل ذلك فقط إن كنت القائد. إن كان تحالفك موجودًا، ارجع وانضم برابط الدعوة.', he: 'זה יוצר ברית חדשה לגמרי. עשה זאת רק אם אתה המנהיג. אם הברית כבר קיימת, חזור והצטרף עם קישור ההזמנה.', zh: '这会创建一个全新联盟。只有队长才该这么做。如果联盟已存在，请返回并用邀请链接加入。', ja: 'これは全く新しい同盟を作ります。リーダーのみ実行を。既に同盟があるなら戻って招待リンクで参加を。', ko: '완전히 새 연합을 만듭니다. 리더만 하세요. 연합이 이미 있으면 뒤로 가서 초대 링크로 참가하세요.', id: 'Ini membuat aliansi baru. Lakukan hanya jika kamu pemimpin. Jika aliansi sudah ada, kembali dan Gabung lewat tautannya.', vi: 'Việc này tạo một liên minh mới. Chỉ làm nếu bạn là thủ lĩnh. Nếu liên minh đã có, quay lại và Tham gia bằng link mời.', th: 'นี่จะสร้างพันธมิตรใหม่ทั้งหมด ทำเฉพาะถ้าคุณเป็นผู้นำ ถ้าพันธมิตรมีอยู่แล้ว ให้ย้อนกลับและเข้าร่วมด้วยลิงก์เชิญ' },
@@ -650,6 +655,11 @@ const I18N = {
   'rarity.red': { en: 'Red', es: 'Rojo', pt: 'Vermelho', fr: 'Rouge', de: 'Rot', it: 'Rosso', nl: 'Rood', ru: 'Красный', pl: 'Czerwony', tr: 'Kırmızı', ar: 'أحمر', he: 'אדום', zh: '红色', ja: 'レッド', ko: '레드', id: 'Merah', vi: 'Đỏ', th: 'แดง' },
   'upload.btn': { en: 'Upload gear screenshots (3 heroes)', es: 'Sube capturas de equipo (3 héroes)', pt: 'Envie capturas de equipamento (3 heróis)', fr: 'Téléverse des captures d’équipement (3 héros)', de: 'Ausrüstungs-Screenshots hochladen (3 Helden)', it: 'Carica screenshot equipaggiamento (3 eroi)', nl: 'Upload uitrustingsscreenshots (3 helden)', ru: 'Загрузите скриншоты снаряжения (3 героя)', pl: 'Prześlij zrzuty sprzętu (3 bohaterów)', tr: 'Ekipman ekran görüntüsü yükle (3 kahraman)', ar: 'ارفع لقطات العتاد (3 أبطال)', he: 'העלה צילומי ציוד (3 גיבורים)', zh: '上传装备截图（3位英雄）', ja: '装備のスクショをアップ（3ヒーロー）', ko: '장비 스크린샷 업로드 (영웅 3명)', id: 'Unggah tangkapan gear (3 hero)', vi: 'Tải ảnh trang bị (3 tướng)', th: 'อัปโหลดภาพอุปกรณ์ (3 ฮีโร่)' },
   'upload.processing': { en: 'Processing...', es: 'Procesando...', pt: 'Processando...', fr: 'Traitement...', de: 'Verarbeitung...', it: 'Elaborazione...', nl: 'Verwerken...', ru: 'Обработка...', pl: 'Przetwarzanie...', tr: 'İşleniyor...', ar: 'جارٍ المعالجة...', he: 'מעבד...', zh: '处理中…', ja: '処理中…', ko: '처리 중…', id: 'Memproses...', vi: 'Đang xử lý...', th: 'กำลังประมวลผล...' },
+  'progress.goals': { en: '{done} / {total} gear goals done', es: '{done} / {total} objetivos hechos', pt: '{done} / {total} metas concluídas', fr: '{done} / {total} objectifs faits', de: '{done} / {total} Ziele erreicht', it: '{done} / {total} obiettivi fatti', nl: '{done} / {total} doelen klaar', ru: '{done} / {total} целей выполнено', pl: '{done} / {total} celów zrobionych', tr: '{done} / {total} hedef tamam', ar: '{done} / {total} أهداف منجزة', he: '{done} / {total} יעדי ציוד הושלמו', zh: '{done} / {total} 装备目标完成', ja: '{done} / {total} 装備目標達成', ko: '{done} / {total} 장비 목표 달성', id: '{done} / {total} target gear selesai', vi: '{done} / {total} mục tiêu hoàn thành', th: '{done} / {total} เป้าหมายอุปกรณ์สำเร็จ' },
+  'progress.redPieces': { en: '{n}/12 Red', es: '{n}/12 Rojo', pt: '{n}/12 Vermelho', fr: '{n}/12 Rouge', de: '{n}/12 Rot', it: '{n}/12 Rosso', nl: '{n}/12 Rood', ru: '{n}/12 красных', pl: '{n}/12 Czerwony', tr: '{n}/12 Kırmızı', ar: '{n}/12 أحمر', he: '{n}/12 אדום', zh: '{n}/12 红装', ja: '{n}/12 レッド', ko: '{n}/12 레드', id: '{n}/12 Merah', vi: '{n}/12 Đỏ', th: '{n}/12 แดง' },
+  'progress.journey': { en: 'Journey to Full Red', es: 'Camino al Rojo total', pt: 'Jornada ao Vermelho total', fr: 'Parcours vers le Rouge complet', de: 'Weg zu voll Rot', it: 'Percorso al Rosso completo', nl: 'Reis naar vol Rood', ru: 'Путь к полному красному', pl: 'Droga do pełnej czerwieni', tr: 'Tam Kırmızıya Yolculuk', ar: 'الطريق إلى الأحمر الكامل', he: 'הדרך לאדום מלא', zh: '通往全红之路', ja: 'フルレッドへの道', ko: '풀 레드까지의 여정', id: 'Perjalanan ke Full Merah', vi: 'Hành trình tới Full Đỏ', th: 'เส้นทางสู่แดงเต็ม' },
+  'progress.phaseNow': { en: 'Phase {n} progress', es: 'Progreso Fase {n}', pt: 'Progresso Fase {n}', fr: 'Progrès Phase {n}', de: 'Phase {n} Fortschritt', it: 'Progresso Fase {n}', nl: 'Fase {n} voortgang', ru: 'Прогресс фазы {n}', pl: 'Postęp Fazy {n}', tr: 'Aşama {n} ilerlemesi', ar: 'تقدم المرحلة {n}', he: 'התקדמות שלב {n}', zh: '第{n}阶段进度', ja: 'フェーズ{n}の進捗', ko: '{n}단계 진행도', id: 'Progres Fase {n}', vi: 'Tiến độ Giai đoạn {n}', th: 'ความคืบหน้าเฟส {n}' },
+  'progress.toGo': { en: '{n} more to finish this phase', es: '{n} más para terminar esta fase', pt: 'mais {n} para concluir esta fase', fr: 'encore {n} pour finir cette phase', de: 'noch {n} bis Phasenende', it: 'altri {n} per finire la fase', nl: 'nog {n} om deze fase af te ronden', ru: 'ещё {n} до конца фазы', pl: 'jeszcze {n} do końca fazy', tr: 'bu aşamayı bitirmek için {n} daha', ar: '{n} أخرى لإنهاء المرحلة', he: 'עוד {n} לסיום השלב', zh: '再完成 {n} 个即可结束本阶段', ja: 'このフェーズ完了まであと{n}個', ko: '이 단계 완료까지 {n}개', id: '{n} lagi untuk selesaikan fase ini', vi: 'còn {n} để hoàn thành giai đoạn', th: 'อีก {n} เพื่อจบเฟสนี้' },
   'ach.title': { en: 'ACHIEVEMENTS', es: 'LOGROS', pt: 'CONQUISTAS', fr: 'SUCCÈS', de: 'ERFOLGE', it: 'OBIETTIVI', nl: 'PRESTATIES', ru: 'ДОСТИЖЕНИЯ', pl: 'OSIĄGNIĘCIA', tr: 'BAŞARIMLAR', ar: 'الإنجازات', he: 'הישגים', zh: '成就', ja: '実績', ko: '업적', id: 'PENCAPAIAN', vi: 'THÀNH TỰU', th: 'ความสำเร็จ' },
   'ach.tapHint': { en: 'Tap a badge to see how to earn it', es: 'Toca una insignia para ver cómo lograrla', pt: 'Toque numa medalha para ver como conquistar', fr: 'Touche un badge pour voir comment l’obtenir', de: 'Tippe ein Abzeichen an, um zu sehen, wie man es bekommt', it: 'Tocca un distintivo per vedere come ottenerlo', nl: 'Tik op een badge om te zien hoe je hem verdient', ru: 'Нажмите значок, чтобы узнать, как его получить', pl: 'Dotknij odznaki, aby zobaczyć, jak ją zdobyć', tr: 'Nasıl kazanılacağını görmek için bir rozete dokun', ar: 'انقر على شارة لمعرفة كيفية الحصول عليها', he: 'הקש על תג כדי לראות איך משיגים אותו', zh: '点按徽章查看如何获得', ja: 'バッジをタップして獲得方法を確認', ko: '배지를 눌러 획득 방법 확인', id: 'Ketuk lencana untuk lihat cara mendapatkannya', vi: 'Chạm huy hiệu để xem cách đạt được', th: 'แตะตราเพื่อดูวิธีปลดล็อก' },
   'ach.earned': { en: 'Earned', es: 'Logrado', pt: 'Conquistado', fr: 'Obtenu', de: 'Erhalten', it: 'Ottenuto', nl: 'Verdiend', ru: 'Получено', pl: 'Zdobyto', tr: 'Kazanıldı', ar: 'تم الحصول', he: 'הושג', zh: '已获得', ja: '獲得済み', ko: '획득함', id: 'Diraih', vi: 'Đã đạt', th: 'ได้รับแล้ว' },
@@ -966,6 +976,19 @@ const identifyCurrentPhase = (gear, path = SHAKES_PATH) => {
     if (!allDone) return phase;
   }
   return path[path.length - 1];
+};
+
+// Overall + per-phase completion, counting every individual gear goal as one step.
+const pathProgress = (gear, path = SHAKES_PATH) => {
+  const phases = path.filter(p => p.actions && p.actions.length);
+  let total = 0, done = 0;
+  const per = {};
+  phases.forEach(p => {
+    let pd = 0;
+    p.actions.forEach(a => { total++; if (meetsTarget(gear[`${a.troop}-${a.slot}`], a)) { done++; pd++; } });
+    per[p.phase] = { done: pd, total: p.actions.length, pct: p.actions.length ? Math.round(pd / p.actions.length * 100) : 0 };
+  });
+  return { total, done, pct: total ? Math.round(done / total * 100) : 0, per };
 };
 
 // For a single action, what's the user's progress?
@@ -1642,7 +1665,8 @@ const ACHIEVEMENTS = [
 const Achievements = ({ gear, phase, spec, t }) => {
   const tr = t || ((k) => k);
   const [sel, setSel] = useState(null);
-  const stats = { ...gearStats(gear), phase: phase?.num || phase?.phase || 0, spec };
+  const phaseNum = (phase?.isStop || phase?.isChoose) ? 99 : (phase?.num || phase?.phase || 0);
+  const stats = { ...gearStats(gear), phase: phaseNum, spec };
   const earned = ACHIEVEMENTS.filter(a => a.check(stats));
   const active = ACHIEVEMENTS.find(a => a.id === sel);
   return (
@@ -2168,48 +2192,63 @@ const phaseDescT = (phase, t) => {
 // ═══════════════════════════════════════════════════════════════════
 //   PHASE OVERVIEW — clickable phases that expand with details
 // ═══════════════════════════════════════════════════════════════════
-// Summarize a phase's actions in plain English
-const summarizePhaseActions = (phase) => {
+// Per-piece status vs. a target action, given the player's current gear.
+const pieceStatus = (a, gear) => {
+  const p = gear ? gear[`${a.troop}-${a.slot}`] : null;
+  if (a.type === 'ascend') {
+    if (p && p.rarity === 'red') return { done: true, text: '✓ Red' };
+    if (!p) return { done: false, text: 'build → Mythic L100 + Mastery 10' };
+    const lvl = p.level || 0, mast = p.mastery || 0;
+    const needs = [];
+    if (p.rarity !== 'mythic' && p.rarity !== 'red') needs.push('→ Mythic');
+    if (lvl < 100) needs.push(`L${lvl}→100`);
+    if (mast < 10) needs.push(`Mastery ${mast}→10`);
+    return { done: false, text: needs.length ? needs.join(', ') : 'ready to ascend ✦' };
+  }
+  if (meetsTarget(p, a)) return { done: true, text: '✓' };
+  if (!p) return { done: false, text: `build → ${RARITY_LABEL[a.rarity]} L${a.level}` };
+  return { done: false, text: `${RARITY_LABEL[p.rarity] || p.rarity} L${p.level || 0} → L${a.level}` };
+};
+
+// Summarize a phase's actions in plain English (with per-piece progress when gear is given)
+const summarizePhaseActions = (phase, gear) => {
   if (!phase.actions || phase.actions.length === 0) return [];
 
-  // Group actions by type
   const levelActions = phase.actions.filter(a => a.type === 'level');
   const ascendActions = phase.actions.filter(a => a.type === 'ascend');
 
   const lines = [];
+  const mk = (a) => ({ label: `${TROOP_LABEL[a.troop]} ${SLOT_LABEL[a.slot]}`, ...pieceStatus(a, gear) });
 
-  // Group level actions by their target (rarity + level)
   const levelGroups = {};
   levelActions.forEach(a => {
     const key = `${a.rarity}-${a.level}`;
     if (!levelGroups[key]) levelGroups[key] = { rarity: a.rarity, level: a.level, pieces: [] };
-    levelGroups[key].pieces.push(`${TROOP_LABEL[a.troop]} ${SLOT_LABEL[a.slot]}`);
+    levelGroups[key].pieces.push(mk(a));
   });
-
   Object.values(levelGroups).forEach(g => {
-    lines.push({
-      kind: 'level',
-      summary: `Bring these to ${RARITY_LABEL[g.rarity]} Lv.${g.level}`,
-      pieces: g.pieces,
-    });
+    lines.push({ kind: 'level', summary: `Bring these to ${RARITY_LABEL[g.rarity]} Lv.${g.level}`, pieces: g.pieces });
   });
-
   if (ascendActions.length > 0) {
-    lines.push({
-      kind: 'ascend',
-      summary: 'Then ascend these pieces to Red gear',
-      pieces: ascendActions.map(a => `${TROOP_LABEL[a.troop]} ${SLOT_LABEL[a.slot]}`),
-    });
+    lines.push({ kind: 'ascend', summary: 'Then ascend these pieces to Red gear', pieces: ascendActions.map(mk) });
   }
-
   return lines;
 };
 
 const PhaseOverview = ({ currentPhase, gear, path = SHAKES_PATH, t }) => {
   const tr = t || ((k, v) => k);
-  const [openPhase, setOpenPhase] = useState(null); // phase number when expanded
+  const [openPhase, setOpenPhase] = useState(currentPhase?.phase ?? null); // current phase open by default
   const [showFull, setShowFull] = useState(false);
   const phases = path.filter(p => !p.isStop && !p.isChoose);
+  const prog = pathProgress(gear, path);
+  const curP = prog.per[currentPhase.phase];
+
+  // Keep the current phase's breakdown open by default, and re-open it when you advance a phase.
+  useEffect(() => {
+    if (currentPhase && currentPhase.phase && !currentPhase.isStop && !currentPhase.isChoose) {
+      setOpenPhase(currentPhase.phase);
+    }
+  }, [currentPhase?.phase]);
 
   const togglePhase = (num) => {
     setOpenPhase(prev => prev === num ? null : num);
@@ -2277,6 +2316,24 @@ const PhaseOverview = ({ currentPhase, gear, path = SHAKES_PATH, t }) => {
         })}
       </div>
 
+      {/* Current phase breakdown — progress WITHIN the phase, so each piece is a visible win */}
+      {curP && !currentPhase.isStop && (
+        <div style={{ marginTop: 10, padding: '8px 11px', borderRadius: 9, background: 'rgba(251,191,36,0.07)', border: '1px solid rgba(251,191,36,0.25)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
+            <span style={{ fontSize: 10.5, fontWeight: 700, color: '#fbbf24' }}>{tr('progress.phaseNow', { n: currentPhase.phase })}</span>
+            <span style={{ fontSize: 10.5, fontWeight: 800, color: '#fbbf24', fontFamily: 'Cinzel, serif' }}>{curP.done}/{curP.total}</span>
+          </div>
+          <div style={{ height: 6, borderRadius: 99, background: 'rgba(0,0,0,0.4)', overflow: 'hidden' }}>
+            <div style={{ width: `${curP.pct}%`, height: '100%', background: 'linear-gradient(90deg,#fbbf24,#f59e0b)', transition: 'width 0.5s ease' }} />
+          </div>
+          {curP.total - curP.done > 0 && (
+            <div style={{ fontSize: 9.5, color: 'var(--kp-text-dim)', marginTop: 5 }}>
+              {tr('progress.toGo', { n: curP.total - curP.done })}
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Full plan drawer — the whole roadmap at a glance */}
       <button onClick={() => setShowFull(s => !s)} className="kp-card" style={{
         width: '100%', marginTop: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
@@ -2292,7 +2349,7 @@ const PhaseOverview = ({ currentPhase, gear, path = SHAKES_PATH, t }) => {
           {path.map(p => {
             const status = p.phase === currentPhase.phase ? 'current'
               : (currentPhase.phase > p.phase || currentPhase.isStop) ? 'done' : 'locked';
-            const lines = summarizePhaseActions(p);
+            const lines = summarizePhaseActions(p, gear);
             return (
               <div key={p.phase} style={{
                 padding: '10px 11px', borderRadius: 9,
@@ -2320,7 +2377,7 @@ const PhaseOverview = ({ currentPhase, gear, path = SHAKES_PATH, t }) => {
                     <span style={{ color: line.kind === 'ascend' ? '#fca5a5' : '#fbbf24', fontWeight: 700 }}>
                       {line.kind === 'ascend' ? '⚔ ' : '⬆ '}{line.summary}:{' '}
                     </span>
-                    {line.pieces.join(' · ')}
+                    {line.pieces.map(x => x.label).join(' · ')}
                   </div>
                 ))}
               </div>
@@ -2389,7 +2446,7 @@ const PhaseOverview = ({ currentPhase, gear, path = SHAKES_PATH, t }) => {
             {phaseDescT(expandedPhase, tr)}
           </div>
 
-          {summarizePhaseActions(expandedPhase).map((line, i) => (
+          {summarizePhaseActions(expandedPhase, gear).map((line, i) => (
             <div key={i} style={{
               padding: '7px 9px', borderRadius: 7,
               background: line.kind === 'ascend'
@@ -2403,12 +2460,18 @@ const PhaseOverview = ({ currentPhase, gear, path = SHAKES_PATH, t }) => {
               <div style={{
                 fontSize: 10, fontWeight: 800,
                 color: line.kind === 'ascend' ? '#fca5a5' : '#fbbf24',
-                letterSpacing: 0.4, marginBottom: 4,
+                letterSpacing: 0.4, marginBottom: 6,
               }}>
                 {line.kind === 'ascend' ? '⚔ ' : '⬆ '}{line.summary}
               </div>
-              <div style={{ fontSize: 11, color: '#d4c4a0', lineHeight: 1.45 }}>
-                {line.pieces.join(' · ')}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                {line.pieces.map((x, k) => (
+                  <div key={k} style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, lineHeight: 1.3 }}>
+                    <span style={{ width: 5, height: 5, borderRadius: 99, flexShrink: 0, background: x.done ? '#22c55e' : '#fbbf24' }} />
+                    <span style={{ color: x.done ? 'var(--kp-text-faint)' : '#d4c4a0', fontWeight: 600, textDecoration: x.done ? 'line-through' : 'none' }}>{x.label}</span>
+                    <span style={{ marginLeft: 'auto', fontSize: 10, fontWeight: 700, color: x.done ? '#86efac' : 'var(--kp-text-dim)', whiteSpace: 'nowrap' }}>{x.text}</span>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
@@ -2551,6 +2614,23 @@ const StepCard = ({ analyzed, stepNumber, hero, resources, onMarkDone, t }) => {
     ? tr('action.ascend', { slot: slotName })
     : tr('action.upgrade', { slot: slotName, rarity: tr('rarity.' + action.rarity), level: action.level });
 
+  // What this piece still needs to reach the target — the context that matters.
+  let needText = '';
+  if (isAscend) {
+    if (!piece) needText = 'Build → Mythic L100 · Mastery 10 · then Ascend';
+    else if (piece.rarity === 'red') needText = '✓ Red';
+    else {
+      const parts = [];
+      if (piece.rarity !== 'mythic') parts.push('→ Mythic');
+      if ((piece.level || 0) < 100) parts.push(`Lv ${piece.level || 0}→100`);
+      if ((piece.mastery || 0) < 10) parts.push(`Mastery ${piece.mastery || 0}→10`);
+      parts.push('then Ascend to Red');
+      needText = parts.join(' · ');
+    }
+  } else {
+    needText = piece ? `Lv ${piece.level || 0} → ${action.level}` : `Build → ${RARITY_LABEL[action.rarity]} L${action.level}`;
+  }
+
   const canToggle = inGameSteps.length > 0;
   return (
     <div
@@ -2584,7 +2664,7 @@ const StepCard = ({ analyzed, stepNumber, hero, resources, onMarkDone, t }) => {
         </div>
         <GearArt troop={action.troop} slot={action.slot} rarity={isAscend ? 'red' : action.rarity} size={42} />
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontSize: 9, color: troopColor, fontWeight: 800, letterSpacing: 0.5, marginBottom: 1 }}>
+          <div style={{ fontSize: 9.5, color: troopColor, fontWeight: 800, letterSpacing: 0.5, marginBottom: 1 }}>
             {troopName.toUpperCase()}{hero ? ` · ${hero}` : ''}
           </div>
           <div style={{
@@ -2593,14 +2673,14 @@ const StepCard = ({ analyzed, stepNumber, hero, resources, onMarkDone, t }) => {
           }}>
             {title}
           </div>
-          {piece && (
-            <div style={{ fontSize: 10, color: 'var(--kp-text-dim)', marginTop: 2 }}>
-              {t ? t('ui.now') : 'Now:'} <span style={{ color: RARITY_THEME[piece.rarity]?.edge, fontWeight: 700 }}>
-                {RARITY_LABEL[piece.rarity]} L{piece.level}
+          <div style={{ fontSize: 10.5, marginTop: 3, lineHeight: 1.4 }}>
+            {piece && (
+              <span style={{ color: 'var(--kp-text-dim)' }}>
+                {t ? t('ui.now') : 'Now:'} <span style={{ color: RARITY_THEME[piece.rarity]?.edge || 'var(--kp-text)', fontWeight: 700 }}>{RARITY_LABEL[piece.rarity]} L{piece.level}{piece.mastery ? `, M${piece.mastery}` : ''}</span>
               </span>
-              {piece.mastery ? ` · Mastery Lv.${piece.mastery}` : ''}
-            </div>
-          )}
+            )}
+            <span style={{ color: '#fbbf24', fontWeight: 700 }}>{piece ? ' → ' : ''}{needText}</span>
+          </div>
         </div>
         {canAfford && (
           <div style={{
@@ -3339,6 +3419,11 @@ const saveGoal = async (code, goal) => {
 const clearGoal = async (code) => {
   if (!ALLIANCE_DB_URL) return;
   try { await fetch(`${ALLIANCE_DB_URL}/alliances/${codeKey(code)}/goal.json`, { method: 'DELETE' }); } catch {}
+};
+// Super-admin: delete an entire alliance node (key is the raw DB key from fetchAllAlliances)
+const deleteAlliance = async (key) => {
+  if (!ALLIANCE_DB_URL) return false;
+  try { const r = await fetch(`${ALLIANCE_DB_URL}/alliances/${key}.json`, { method: 'DELETE' }); return r.ok; } catch { return false; }
 };
 // Build the shareable summary of a player's progress from their state + active path.
 const buildMemberSummary = (state, activePath) => {
@@ -4205,6 +4290,13 @@ const SuperAdminView = ({ t }) => {
   const tr = t || ((k) => k);
   const [alliances, setAlliances] = useState(null);
   const [selected, setSelected] = useState(null);
+  const [confirmDel, setConfirmDel] = useState(null);
+  const [delErr, setDelErr] = useState('');
+  const doDelete = async (key) => {
+    const ok = await deleteAlliance(key);
+    if (ok) { setConfirmDel(null); setDelErr(''); if (selected === key) setSelected(null); load(); }
+    else { setDelErr(key); }
+  };
   const [refreshing, setRefreshing] = useState(false);
   const load = async () => { setRefreshing(true); setAlliances(await fetchAllAlliances()); setRefreshing(false); };
   useEffect(() => { load(); }, []);
@@ -4236,15 +4328,27 @@ const SuperAdminView = ({ t }) => {
       ) : (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
           {alliances.map((a) => (
-            <button key={a.code} onClick={() => setSelected(a.code)} className="kp-card" style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '11px 12px', borderRadius: 9, background: 'var(--kp-surface-3)', border: '1px solid rgba(201,169,97,0.14)', cursor: 'pointer', fontFamily: 'inherit', textAlign: 'left' }}>
+            <div key={a.code} style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 10px', borderRadius: 9, background: 'var(--kp-surface-3)', border: '1px solid rgba(201,169,97,0.14)' }}>
               <Sword size={15} color="#c9a961" style={{ flexShrink: 0 }} />
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontWeight: 800, fontSize: 13, color: 'var(--kp-text)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{a.code}</div>
-                <div style={{ fontSize: 10, color: 'var(--kp-text-faint)' }}>{tr('roster.membersN', { n: a.members.length })}</div>
-              </div>
-              <ChevronRight size={15} color="var(--kp-text-faint)" />
-            </button>
+              <button onClick={() => setSelected(a.code)} className="kp-card" style={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'center', gap: 8, background: 'transparent', border: 'none', cursor: 'pointer', fontFamily: 'inherit', textAlign: 'left', padding: '3px 0' }}>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontWeight: 800, fontSize: 13, color: 'var(--kp-text)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{a.code}</div>
+                  <div style={{ fontSize: 10, color: 'var(--kp-text-faint)' }}>{tr('roster.membersN', { n: a.members.length })}</div>
+                </div>
+                <ChevronRight size={15} color="var(--kp-text-faint)" />
+              </button>
+              {confirmDel === a.code ? (
+                <button onClick={() => doDelete(a.code)} style={{ flexShrink: 0, padding: '7px 11px', borderRadius: 7, background: 'linear-gradient(135deg,#ef4444,#b91c1c)', border: 'none', color: '#fff', fontSize: 10, fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit' }}>
+                  {tr('god.confirmDel')}
+                </button>
+              ) : (
+                <button onClick={() => { setConfirmDel(a.code); setDelErr(''); }} title="Delete alliance" style={{ flexShrink: 0, padding: '7px', borderRadius: 7, background: 'transparent', border: '1px solid rgba(239,68,68,0.4)', color: '#fca5a5', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+                  <Trash2 size={14} />
+                </button>
+              )}
+            </div>
           ))}
+          {delErr && <div style={{ fontSize: 10.5, color: '#fca5a5', marginTop: 4 }}>⚠ {tr('god.delFail')}</div>}
         </div>
       )}
     </div>
@@ -4344,6 +4448,7 @@ const AllianceRoster = ({ t, code, isAdmin }) => {
   const [search, setSearch] = useState('');
   const [notes, setNotes] = useState({}); // { key: { note, tags } } — private to this leader's device
   const [copied, setCopied] = useState(null);
+  const [confirmRemove, setConfirmRemove] = useState(null);
 
   useEffect(() => {
     try { const raw = localStorage.getItem('kp_leader_notes'); if (raw) setNotes(JSON.parse(raw)); } catch {}
@@ -4641,15 +4746,15 @@ const AllianceRoster = ({ t, code, isAdmin }) => {
                       />
                     ))}
                     {isAdmin && (
-                      <button onClick={async () => {
-                        const ok = (typeof window !== 'undefined' && window.confirm) ? window.confirm(tr('roster.removeConfirm', { name: m.name })) : true;
-                        if (!ok) return;
-                        await removeMember(m.key, code);
-                        setOpenKey(null);
-                        load();
-                      }} style={{ width: '100%', padding: '9px', borderRadius: 8, background: 'transparent', border: '1px solid rgba(239,68,68,0.45)', color: '#fca5a5', fontSize: 11.5, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
-                        <Trash2 size={13} /> {tr('roster.remove')}
-                      </button>
+                      confirmRemove === m.key ? (
+                        <button onClick={async () => { await removeMember(m.key, code); setConfirmRemove(null); setOpenKey(null); load(); }} style={{ width: '100%', padding: '9px', borderRadius: 8, background: 'linear-gradient(135deg,#ef4444,#b91c1c)', border: 'none', color: '#fff', fontSize: 11.5, fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
+                          <Trash2 size={13} /> {tr('roster.confirmRemove', { name: m.name })}
+                        </button>
+                      ) : (
+                        <button onClick={() => setConfirmRemove(m.key)} style={{ width: '100%', padding: '9px', borderRadius: 8, background: 'transparent', border: '1px solid rgba(239,68,68,0.45)', color: '#fca5a5', fontSize: 11.5, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
+                          <Trash2 size={13} /> {tr('roster.remove')}
+                        </button>
+                      )
                     )}
                   </div>
                 )}
@@ -4777,6 +4882,7 @@ export default function App() {
   const [codeCopied, setCodeCopied] = useState(false);
   const [inviteCopied, setInviteCopied] = useState(false);
   const [justCreated, setJustCreated] = useState(false);
+  const [resetConfirm, setResetConfirm] = useState(false);
   const [invite] = useState(() => { try { return new URLSearchParams(window.location.search).get('a') || ''; } catch { return ''; } });
   const [editingPiece, setEditingPiece] = useState(null); // { troop, slot, piece }
   const [editingResources, setEditingResources] = useState(false);
@@ -5092,9 +5198,6 @@ export default function App() {
   };
 
   const resetAll = () => {
-    const ok = (typeof window !== 'undefined' && window.confirm) ? window.confirm(t('reset.confirm')) : true;
-    if (!ok) return;
-    // Remove our shared roster entry first, so a reset doesn't leave a stale duplicate behind.
     if (ALLIANCE_DB_URL && state?.shareAlliance && state?.playerId) {
       try { removeMember(state.playerId, state.allianceCode); } catch {}
     }
@@ -5399,6 +5502,27 @@ export default function App() {
         </div>
         </>
         )}
+
+        {/* Journey to Full Red — prominent overall progress */}
+        {(() => {
+          const jp = pathProgress(state.gear, SHAKES_PATH);
+          const red = gearStats(state.gear).red;
+          return (
+            <div style={{ marginBottom: 14, borderRadius: 13, padding: '13px 15px', background: 'linear-gradient(135deg, rgba(201,169,97,0.14), var(--kp-panel))', border: '1px solid rgba(201,169,97,0.3)', boxShadow: '0 4px 18px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 7 }}>
+                <span style={{ fontFamily: 'Cinzel, serif', fontSize: 12.5, fontWeight: 800, color: 'var(--kp-text-gold)', letterSpacing: 0.5 }}>🛡️ {t('progress.journey')}</span>
+                <span style={{ fontFamily: 'Cinzel, serif', fontSize: 19, fontWeight: 900, color: '#fbbf24' }}>{jp.pct}%</span>
+              </div>
+              <div style={{ height: 11, borderRadius: 99, background: 'rgba(0,0,0,0.45)', overflow: 'hidden', border: '1px solid rgba(201,169,97,0.18)' }}>
+                <div style={{ width: `${jp.pct}%`, height: '100%', background: 'linear-gradient(90deg,#ef4444,#fbbf24,#22c55e)', transition: 'width 0.6s ease' }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 6, fontSize: 10.5, fontWeight: 600 }}>
+                <span style={{ color: 'var(--kp-text-faint)' }}>{t('progress.goals', { done: jp.done, total: jp.total })}</span>
+                <span style={{ color: red >= 12 ? '#86efac' : '#fca5a5', fontWeight: 800 }}>🔴 {t('progress.redPieces', { n: red })}</span>
+              </div>
+            </div>
+          );
+        })()}
 
         {/* Resources */}
         <ResourcePills resources={state.resources} onEdit={() => setEditingResources(true)} t={t} />
@@ -5870,7 +5994,9 @@ export default function App() {
                   <button onClick={() => setViewCode('')} style={{ padding: '5px 9px', borderRadius: 7, background: 'var(--kp-surface-2)', border: '1px solid rgba(201,169,97,0.2)', color: 'var(--kp-text-faint)', fontSize: 10, cursor: 'pointer', fontFamily: 'inherit' }}>↺</button>
                 )}
               </div>
-              <AllianceRoster t={t} code={viewCode.trim() || state.allianceCode} isAdmin={true} />
+              {viewCode.trim() === SUPER_ADMIN_CODE
+                ? <SuperAdminView t={t} />
+                : <AllianceRoster t={t} code={viewCode.trim() || state.allianceCode} isAdmin={true} />}
             </>
           ) : (
             <>
@@ -5896,15 +6022,15 @@ export default function App() {
 
         {/* Reset */}
         <div style={{ textAlign: 'center', marginTop: 14 }}>
-          <button onClick={resetAll} style={{
+          <button onClick={() => { if (resetConfirm) { resetAll(); setResetConfirm(false); } else { setResetConfirm(true); setTimeout(() => setResetConfirm(false), 4000); } }} style={{
             padding: '7px 14px', borderRadius: 7,
-            background: 'transparent',
-            border: '1px solid rgba(201,169,97,0.2)',
-            color: 'var(--kp-text-faint)', fontSize: 11, fontWeight: 600,
+            background: resetConfirm ? 'rgba(239,68,68,0.15)' : 'transparent',
+            border: resetConfirm ? '1px solid rgba(239,68,68,0.5)' : '1px solid rgba(201,169,97,0.2)',
+            color: resetConfirm ? '#fca5a5' : 'var(--kp-text-faint)', fontSize: 11, fontWeight: 600,
             cursor: 'pointer',
             display: 'inline-flex', alignItems: 'center', gap: 5,
           }}>
-            <RotateCcw size={12} /> Reset all data
+            <RotateCcw size={12} /> {resetConfirm ? t('reset.tapAgain') : t('btn.reset')}
           </button>
         </div>
       </div>
