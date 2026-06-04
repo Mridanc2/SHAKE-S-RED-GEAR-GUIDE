@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Shake's Red Gear Guide — xXx #1494</title>
-<meta name="description" content="Kingshot Red Gear progression advisor for xXx Commanders (Kingdom 1494). Shake's full path, costs, and endgame specializations." />
+<title>Gear Command Center · Kingshot Red Gear</title>
+<meta name="description" content="Gear Command Center — track your Kingshot Red Gear progression and run your alliance gear board. Strategy by Shakes." />
 <meta name="theme-color" content="#05080f" />
 <link rel="manifest" href="manifest.webmanifest" />
 <meta name="mobile-web-app-capable" content="yes" />
@@ -53,7 +53,7 @@ import { Upload, Check, X, AlertTriangle, ChevronRight, ChevronDown, Star, Hamme
 
 // ── Troops, slots, rarities ──
 // Fixed brand wordmark — same in every language (it's the guide's name).
-const BRAND_TITLE = "SHAKES' RED GEAR GUIDE";
+const BRAND_TITLE = "GEAR COMMAND CENTER";
 const GUIDE_AUTHOR = 'Shakes'; // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2'; // built this app
 const APP_VERSION = 'v7.4'; // bump this on every new build so you can confirm the deploy is live
@@ -165,7 +165,7 @@ const SLOT_CODE = {
 };
 const RARITIES = ['grey', 'green', 'blue', 'purple', 'mythic', 'red'];
 // Only these are selectable in the gear editor — the alliance is past early game.
-const EDITABLE_RARITIES = ['purple', 'mythic', 'red'];
+const EDITABLE_RARITIES = ['blue', 'purple', 'mythic', 'red'];
 
 // Gemini's model gets silently updated by Google, so its wording for gear tier
 // and troop type drifts over time (e.g. it may call gold gear "legendary" or
@@ -273,7 +273,7 @@ const normalizeHeroName = (name, troop) => {
 const RARITY_LABEL = {
   grey: 'Grey',
   green: 'Green',
-  blue: 'Blue',
+  blue: 'Rare',
   purple: 'Epic',
   mythic: 'Mythic',
   red: 'Red'
@@ -459,7 +459,7 @@ const TRANSLATIONS = {
     'slot.boots': 'Boots',
     'rarity.grey': 'Grey',
     'rarity.green': 'Green',
-    'rarity.blue': 'Blue',
+    'rarity.blue': 'Rare',
     'rarity.purple': 'Epic',
     'rarity.mythic': 'Mythic',
     'rarity.red': 'Red',
@@ -509,7 +509,7 @@ const TRANSLATIONS = {
     'slot.boots': 'Botas',
     'rarity.grey': 'Gris',
     'rarity.green': 'Verde',
-    'rarity.blue': 'Azul',
+    'rarity.blue': 'Raro',
     'rarity.purple': 'Épico',
     'rarity.mythic': 'Mítico',
     'rarity.red': 'Rojo',
@@ -555,7 +555,7 @@ const TRANSLATIONS = {
     'slot.boots': 'Botas',
     'rarity.grey': 'Cinza',
     'rarity.green': 'Verde',
-    'rarity.blue': 'Azul',
+    'rarity.blue': 'Raro',
     'rarity.purple': 'Épico',
     'rarity.mythic': 'Mítico',
     'rarity.red': 'Vermelho',
@@ -601,7 +601,7 @@ const TRANSLATIONS = {
     'slot.boots': 'Bottes',
     'rarity.grey': 'Gris',
     'rarity.green': 'Vert',
-    'rarity.blue': 'Bleu',
+    'rarity.blue': 'Rare',
     'rarity.purple': 'Épique',
     'rarity.mythic': 'Mythique',
     'rarity.red': 'Rouge',
@@ -797,7 +797,7 @@ const TRANSLATIONS = {
     'slot.boots': 'מגפיים',
     'rarity.grey': 'אפור',
     'rarity.green': 'ירוק',
-    'rarity.blue': 'כחול',
+    'rarity.blue': 'נדיר',
     'rarity.purple': 'אפי',
     'rarity.mythic': 'מיתי',
     'rarity.red': 'אדום',
@@ -1400,24 +1400,24 @@ const I18N = {
     th: 'เสร็จแล้ว'
   },
   'app.credit': {
-    en: 'Guide by {guide} · App by {app}',
-    es: 'Guía de {guide} · App de {app}',
-    pt: 'Guia de {guide} · App de {app}',
-    fr: 'Guide par {guide} · App par {app}',
-    de: 'Guide von {guide} · App von {app}',
-    it: 'Guida di {guide} · App di {app}',
-    nl: 'Gids van {guide} · App van {app}',
-    ru: 'Гайд: {guide} · Приложение: {app}',
-    pl: 'Poradnik: {guide} · Aplikacja: {app}',
-    tr: 'Rehber: {guide} · Uygulama: {app}',
-    ar: 'دليل {guide} · تطبيق {app}',
-    he: 'מדריך מאת {guide} · אפליקציה מאת {app}',
-    zh: '攻略 {guide} · 应用 {app}',
-    ja: 'ガイド: {guide} · アプリ: {app}',
-    ko: '가이드: {guide} · 앱: {app}',
-    id: 'Panduan oleh {guide} · App oleh {app}',
-    vi: 'Hướng dẫn bởi {guide} · App bởi {app}',
-    th: 'ไกด์โดย {guide} · แอปโดย {app}'
+    en: 'Strategy by {guide} · App by {app}',
+    es: 'Estrategia de {guide} · App de {app}',
+    pt: 'Estratégia de {guide} · App de {app}',
+    fr: 'Stratégie par {guide} · App par {app}',
+    de: 'Strategie von {guide} · App von {app}',
+    it: 'Strategia di {guide} · App di {app}',
+    nl: 'Strategie van {guide} · App van {app}',
+    ru: 'Стратегия: {guide} · Приложение: {app}',
+    pl: 'Strategia: {guide} · Aplikacja: {app}',
+    tr: 'Strateji: {guide} · Uygulama: {app}',
+    ar: 'استراتيجية {guide} · تطبيق {app}',
+    he: 'אסטרטגיה מאת {guide} · אפליקציה מאת {app}',
+    zh: '策略 {guide} · 应用 {app}',
+    ja: '戦略: {guide} · アプリ: {app}',
+    ko: '전략: {guide} · 앱: {app}',
+    id: 'Strategi oleh {guide} · App oleh {app}',
+    vi: 'Chiến lược bởi {guide} · App bởi {app}',
+    th: 'กลยุทธ์โดย {guide} · แอปโดย {app}'
   },
   'api.ready': {
     en: 'API connected · auto-OCR ready',
@@ -3720,24 +3720,24 @@ const I18N = {
     th: 'เขียว'
   },
   'rarity.blue': {
-    en: 'Blue',
-    es: 'Azul',
-    pt: 'Azul',
-    fr: 'Bleu',
-    de: 'Blau',
-    it: 'Blu',
-    nl: 'Blauw',
-    ru: 'Синий',
-    pl: 'Niebieski',
-    tr: 'Mavi',
-    ar: 'أزرق',
-    he: 'כחול',
-    zh: '蓝色',
-    ja: 'ブルー',
-    ko: '파랑',
-    id: 'Biru',
-    vi: 'Xanh dương',
-    th: 'น้ำเงิน'
+    en: 'Rare',
+    es: 'Raro',
+    pt: 'Raro',
+    fr: 'Rare',
+    de: 'Selten',
+    it: 'Raro',
+    nl: 'Zeldzaam',
+    ru: 'Редкое',
+    pl: 'Rzadkie',
+    tr: 'Nadir',
+    ar: 'نادر',
+    he: 'נדיר',
+    zh: '稀有',
+    ja: 'レア',
+    ko: '레어',
+    id: 'Langka',
+    vi: 'Hiếm',
+    th: 'หายาก'
   },
   'rarity.purple': {
     en: 'Epic',
@@ -4998,6 +4998,76 @@ const I18N = {
     de: '🆘 {n} bitten um Hilfe',
     ru: '🆘 {n} просят помощи',
     ar: '🆘 {n} طلبوا المساعدة'
+  },
+  'welcome.what': {
+    en: "Shake's Red Gear path, plus a transparent gear board for your whole alliance — everyone can see and compare progress.",
+    he: 'מסלול הציוד האדום של Shake, ועוד לוח ציוד שקוף לכל הברית — כולם רואים ומשווים התקדמות.',
+    es: 'La ruta de equipo rojo de Shake, más un tablero de equipo transparente para toda tu alianza.',
+    pt: 'O caminho do equipamento vermelho do Shake, mais um quadro transparente para toda a aliança.',
+    fr: 'Le parcours d’équipement rouge de Shake, plus un tableau transparent pour toute l’alliance.',
+    de: 'Shakes Rot-Ausrüstungspfad, plus ein transparentes Ausrüstungsboard für die ganze Allianz.',
+    ru: 'Путь к красному снаряжению от Shake и прозрачная доска снаряжения для всего альянса.',
+    ar: 'مسار العتاد الأحمر من Shake، مع لوحة عتاد شفافة لتحالفك كله.'
+  },
+  'welcome.steps': {
+    en: '1) Choose your alliance · 2) Enter your gear · 3) Follow your personal plan to full Red.',
+    he: '1) בחר ברית · 2) הזן את הציוד שלך · 3) עקוב אחר התוכנית האישית עד Red מלא.',
+    es: '1) Elige tu alianza · 2) Ingresa tu equipo · 3) Sigue tu plan personal.',
+    pt: '1) Escolha sua aliança · 2) Insira seu equipamento · 3) Siga seu plano pessoal.',
+    fr: '1) Choisis ton alliance · 2) Saisis ton équipement · 3) Suis ton plan personnel.',
+    de: '1) Wähle deine Allianz · 2) Gib deine Ausrüstung ein · 3) Folge deinem Plan.',
+    ru: '1) Выберите альянс · 2) Введите снаряжение · 3) Следуйте личному плану.',
+    ar: '1) اختر تحالفك · 2) أدخل عتادك · 3) اتبع خطتك الشخصية.'
+  },
+  'welcome.chooseAlliance': {
+    en: 'First, choose your alliance',
+    he: 'קודם כל, בחר את הברית שלך',
+    es: 'Primero, elige tu alianza',
+    pt: 'Primeiro, escolha sua aliança',
+    fr: 'D’abord, choisis ton alliance',
+    de: 'Wähle zuerst deine Allianz',
+    ru: 'Сначала выберите альянс',
+    ar: 'أولًا، اختر تحالفك'
+  },
+  'welcome.skip': {
+    en: 'Skip — just use the guide',
+    he: 'דלג — רק להשתמש במדריך',
+    es: 'Omitir — solo usar la guía',
+    pt: 'Pular — só usar o guia',
+    fr: 'Passer — utiliser juste le guide',
+    de: 'Überspringen — nur den Guide nutzen',
+    ru: 'Пропустить — просто гайд',
+    ar: 'تخطٍّ — استخدم الدليل فقط'
+  },
+  'welcome.skipHint': {
+    en: "No code yet? Start solo — you can join your alliance later from the Alliance tab.",
+    he: 'אין עדיין קוד? התחל לבד — תוכל להצטרף לברית מאוחר יותר מטאב הברית.',
+    es: '¿Sin código? Empieza solo — únete a tu alianza luego.',
+    pt: 'Sem código? Comece sozinho — entre na aliança depois.',
+    fr: 'Pas de code ? Commence en solo — rejoins ton alliance plus tard.',
+    de: 'Noch kein Code? Starte solo — tritt später bei.',
+    ru: 'Нет кода? Начните соло — вступите в альянс позже.',
+    ar: 'لا يوجد رمز؟ ابدأ منفردًا — انضم لاحقًا.'
+  },
+  'footer.howItWorks': {
+    en: 'How it works',
+    he: 'איך זה עובד',
+    es: 'Cómo funciona',
+    pt: 'Como funciona',
+    fr: 'Comment ça marche',
+    de: 'So funktioniert es',
+    it: 'Come funziona',
+    nl: 'Hoe het werkt',
+    ru: 'Как это работает',
+    pl: 'Jak to działa',
+    tr: 'Nasıl çalışır',
+    ar: 'كيف يعمل',
+    zh: '使用说明',
+    ja: '使い方',
+    ko: '사용 방법',
+    id: 'Cara kerja',
+    vi: 'Cách hoạt động',
+    th: 'วิธีใช้งาน'
   }
 };
 const T = (key, lang = 'en', vars) => {
@@ -5875,22 +5945,58 @@ const GearArt = ({
   troop,
   slot,
   rarity = 'mythic',
-  size = 56
+  size = 56,
+  empty = false
 }) => {
   const theme = RARITY_THEME[rarity] || RARITY_THEME.grey;
+
+  // EMPTY SLOT: show a faded, desaturated "ghost" of the real gear piece
+  // instead of a generic icon — nicer and consistent with filled slots.
+  if (empty) {
+    const ghost = troop && GEAR_IMAGES[troop]?.[slot]?.mythic;
+    return /*#__PURE__*/React.createElement("div", {
+      style: {
+        width: size,
+        height: size,
+        position: 'relative',
+        flexShrink: 0,
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }
+    }, ghost ? /*#__PURE__*/React.createElement("img", {
+      src: ghost,
+      alt: `${slot}`,
+      style: {
+        width: '100%',
+        height: '100%',
+        objectFit: 'contain',
+        filter: 'grayscale(1) brightness(1.5) opacity(0.28)'
+      }
+    }) : /*#__PURE__*/React.createElement("svg", {
+      width: size * 0.62,
+      height: size * 0.62,
+      viewBox: "0 0 100 100",
+      style: {
+        color: 'var(--kp-text-faint)',
+        opacity: 0.4
+      }
+    }, SLOT_SVG[slot]('currentColor')));
+  }
 
   // Red rarity has dedicated full-tile artwork (gold piece on the in-game red
   // card). The image already includes the red background, so render it
   // edge-to-edge rather than the transparent-piece-on-tile treatment.
   const redTile = rarity === 'red' ? RED_GEAR_IMAGES[slot] : null;
 
-  // Other rarities: reuse the transparent Mythic piece on a colored tile.
-  const realImage = troop && (GEAR_IMAGES[troop]?.[slot]?.[rarity] || (rarity === 'red' ? GEAR_IMAGES[troop]?.[slot]?.mythic : null));
+  // Every other rarity reuses the same gear-piece art (the game uses one
+  // silhouette per slot; only the tile colour changes). So fall back to mythic.
+  const realImage = troop && (GEAR_IMAGES[troop]?.[slot]?.[rarity] || GEAR_IMAGES[troop]?.[slot]?.mythic);
 
-  // Filled rarity tile: solid colored background + matching border, with the
-  // piece centered on top — matches the in-game gear card look. The frame
-  // color is what distinguishes Mythic (amber) from Red, etc.
-  const tileBg = `radial-gradient(circle at 50% 32%, ${theme.glow}3a 0%, ${theme.bg} 50%, ${theme.bg}f2 100%)`;
+  // Full rarity tile: a solid colour gradient that covers the whole square
+  // (like the in-game Red card), with the piece centred on top. The tile colour
+  // is what distinguishes Rare (blue) / Epic (purple) / Mythic (amber).
+  const tileBg = `linear-gradient(150deg, ${theme.edge} 0%, ${theme.bg} 58%, #0c0a08 100%)`;
   if (redTile) {
     return /*#__PURE__*/React.createElement("div", {
       style: {
@@ -5928,8 +6034,7 @@ const GearArt = ({
         flexShrink: 0,
         borderRadius: '24%',
         background: tileBg,
-        border: `1.5px solid ${theme.edge}`,
-        boxShadow: `0 0 6px ${theme.edge}66, inset 0 1px 3px ${theme.glow}40`,
+        boxShadow: `0 0 7px ${theme.edge}88, inset 0 1px 4px rgba(255,255,255,0.12)`,
         overflow: 'hidden'
       }
     }, /*#__PURE__*/React.createElement("img", {
@@ -6901,7 +7006,7 @@ const HeroBoard = ({
       fontWeight: 700,
       letterSpacing: 0.3
     }
-  }, tr('gear.markAll')), [['red', '#ef4444'], ['mythic', '#fbbf24'], ['purple', '#c084fc']].map(([r, c]) => /*#__PURE__*/React.createElement("button", {
+  }, tr('gear.markAll')), [['red', '#ef4444'], ['mythic', '#fbbf24'], ['purple', '#c084fc'], ['blue', '#60a5fa']].map(([r, c]) => /*#__PURE__*/React.createElement("button", {
     key: r,
     onClick: () => onBulkRarity(troop, r),
     className: "kp-card",
@@ -6950,7 +7055,8 @@ const HeroBoard = ({
       troop: troop,
       slot: slot,
       rarity: piece?.rarity || 'grey',
-      size: 40
+      size: 40,
+      empty: !piece
     }), /*#__PURE__*/React.createElement("div", {
       style: {
         flex: 1,
@@ -7012,7 +7118,12 @@ const HeroBoard = ({
           color: active ? '#0f0d0a' : col,
           letterSpacing: 0.3
         }
-      }, tr('rarity.' + r).slice(0, 1).toUpperCase());
+      }, {
+        blue: 'Ra',
+        purple: 'Ep',
+        mythic: 'My',
+        red: 'Rd'
+      }[r] || tr('rarity.' + r).slice(0, 1).toUpperCase());
     })));
   })));
 };
@@ -10082,6 +10193,351 @@ const AllianceSetup = ({
     }
   }, "\u2190 ", tr('btn.back') || 'Back')));
 };
+
+// ═══════════════════════════════════════════════════════════════════
+//   WELCOME GATE — first-run screen. Explains the app and makes the
+//   player establish their alliance (enter xXx / join by code / create).
+// ═══════════════════════════════════════════════════════════════════
+const WelcomeGate = ({
+  t,
+  invite,
+  onCreate,
+  onJoin,
+  onSkip,
+  onClose
+}) => {
+  const tr = t || (k => k);
+  const [mode, setMode] = useState(invite ? 'join' : null); // null | 'create' | 'join'
+  const [val, setVal] = useState(invite || '');
+  const [asLeader, setAsLeader] = useState(false);
+  const input = {
+    width: '100%',
+    boxSizing: 'border-box',
+    padding: '11px 12px',
+    borderRadius: 8,
+    background: 'var(--kp-surface-2)',
+    border: '1px solid rgba(201,169,97,0.3)',
+    color: 'var(--kp-text)',
+    fontSize: 15,
+    fontFamily: 'inherit',
+    outline: 'none',
+    marginBottom: 10
+  };
+  const back = () => {
+    setMode(null);
+    setVal('');
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'fixed',
+      inset: 0,
+      zIndex: 200,
+      overflowY: 'auto',
+      background: 'radial-gradient(circle at 50% 0%, #1a1410 0%, #05080f 70%)',
+      display: 'flex',
+      alignItems: 'flex-start',
+      justifyContent: 'center',
+      padding: '28px 18px 40px'
+    }
+  }, onClose && /*#__PURE__*/React.createElement("button", {
+    onClick: onClose,
+    "aria-label": "Close",
+    style: {
+      position: 'fixed',
+      top: 14,
+      right: 14,
+      zIndex: 201,
+      width: 34,
+      height: 34,
+      borderRadius: '50%',
+      background: 'rgba(0,0,0,0.4)',
+      border: '1px solid rgba(201,169,97,0.3)',
+      color: 'var(--kp-text-gold)',
+      cursor: 'pointer',
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }
+  }, /*#__PURE__*/React.createElement(X, {
+    size: 17
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: '100%',
+      maxWidth: 420
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      textAlign: 'center',
+      marginBottom: 18
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: 'Cinzel, serif',
+      fontSize: 24,
+      fontWeight: 900,
+      color: '#ef4444',
+      letterSpacing: 1.4,
+      textShadow: '0 0 16px rgba(239,68,68,0.5)'
+    }
+  }, BRAND_TITLE), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10.5,
+      color: 'var(--kp-text-dim)',
+      letterSpacing: 0.6,
+      marginTop: 5
+    }
+  }, tr('brand.subtitle'))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      borderRadius: 12,
+      padding: 14,
+      marginBottom: 16,
+      background: 'var(--kp-panel)',
+      border: '1px solid rgba(201,169,97,0.22)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12.5,
+      color: 'var(--kp-text)',
+      lineHeight: 1.6,
+      marginBottom: 8
+    }
+  }, tr('welcome.what')), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      color: 'var(--kp-text-dim)',
+      lineHeight: 1.6
+    }
+  }, tr('welcome.steps'))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: 'Cinzel, serif',
+      fontSize: 13,
+      fontWeight: 800,
+      color: 'var(--kp-text-gold)',
+      letterSpacing: 0.5,
+      marginBottom: 10,
+      textAlign: 'center'
+    }
+  }, tr('welcome.chooseAlliance')), invite && mode === 'join' && /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11.5,
+      color: '#86efac',
+      marginBottom: 10,
+      lineHeight: 1.5,
+      fontWeight: 600,
+      textAlign: 'center'
+    }
+  }, "\u2709\uFE0F ", tr('setup.invited', {
+    code: invite
+  })), mode === null && /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 9
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => {
+      setMode('create');
+      setVal('');
+    },
+    className: "kp-card",
+    style: {
+      width: '100%',
+      padding: '13px',
+      borderRadius: 10,
+      background: 'linear-gradient(135deg,#e8c878,#8b6914)',
+      border: 'none',
+      color: '#0f0d0a',
+      fontFamily: 'Cinzel, serif',
+      fontWeight: 800,
+      fontSize: 14,
+      letterSpacing: 0.3,
+      cursor: 'pointer',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 8,
+      boxShadow: '0 0 16px rgba(201,169,97,0.25)'
+    }
+  }, /*#__PURE__*/React.createElement(Crown, {
+    size: 17
+  }), " ", tr('setup.createBtn')), /*#__PURE__*/React.createElement("button", {
+    onClick: () => {
+      setMode('join');
+      setVal('');
+    },
+    className: "kp-card",
+    style: {
+      width: '100%',
+      padding: '11px',
+      borderRadius: 10,
+      background: 'var(--kp-surface-2)',
+      border: '1px solid rgba(201,169,97,0.35)',
+      color: 'var(--kp-text-gold)',
+      fontFamily: 'Cinzel, serif',
+      fontWeight: 800,
+      fontSize: 13,
+      cursor: 'pointer',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement(Upload, {
+    size: 16
+  }), " ", tr('setup.joinBtn')), /*#__PURE__*/React.createElement("button", {
+    onClick: onSkip,
+    style: {
+      width: '100%',
+      marginTop: 4,
+      padding: '9px',
+      background: 'transparent',
+      border: 'none',
+      color: 'var(--kp-text-dim)',
+      fontSize: 12,
+      fontWeight: 600,
+      cursor: 'pointer',
+      fontFamily: 'inherit',
+      textDecoration: 'underline',
+      textUnderlineOffset: 3
+    }
+  }, tr('welcome.skip')), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10,
+      color: 'var(--kp-text-faint)',
+      textAlign: 'center',
+      marginTop: 2,
+      lineHeight: 1.45
+    }
+  }, tr('welcome.skipHint'))), mode === 'create' && /*#__PURE__*/React.createElement("div", {
+    style: {
+      borderRadius: 12,
+      padding: 14,
+      background: 'var(--kp-panel)',
+      border: '1px solid rgba(201,169,97,0.25)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: 'var(--kp-text-dim)',
+      marginBottom: 8,
+      lineHeight: 1.5
+    }
+  }, tr('setup.createDesc')), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10.5,
+      color: '#fbbf24',
+      marginBottom: 9,
+      lineHeight: 1.5,
+      padding: '8px 10px',
+      borderRadius: 8,
+      background: 'rgba(251,191,36,0.08)',
+      border: '1px solid rgba(251,191,36,0.3)'
+    }
+  }, "\u26A0 ", tr('setup.createWarn')), /*#__PURE__*/React.createElement("input", {
+    style: input,
+    value: val,
+    onChange: e => setVal(e.target.value),
+    placeholder: tr('setup.namePlaceholder')
+  }), /*#__PURE__*/React.createElement("button", {
+    disabled: !val.trim(),
+    onClick: () => onCreate(genAllianceCode(val)),
+    style: {
+      width: '100%',
+      padding: '12px',
+      borderRadius: 9,
+      background: 'linear-gradient(135deg,#c9a961,#8b6914)',
+      border: 'none',
+      color: '#0f0d0a',
+      fontFamily: 'Cinzel, serif',
+      fontWeight: 800,
+      fontSize: 13,
+      cursor: 'pointer',
+      opacity: val.trim() ? 1 : 0.5
+    }
+  }, tr('setup.createGo')), /*#__PURE__*/React.createElement("button", {
+    onClick: back,
+    style: {
+      width: '100%',
+      marginTop: 8,
+      padding: '6px',
+      background: 'transparent',
+      border: 'none',
+      color: 'var(--kp-text-faint)',
+      fontSize: 11,
+      cursor: 'pointer',
+      fontFamily: 'inherit'
+    }
+  }, "\u2190 ", tr('btn.back') || 'Back')), mode === 'join' && /*#__PURE__*/React.createElement("div", {
+    style: {
+      borderRadius: 12,
+      padding: 14,
+      background: 'var(--kp-panel)',
+      border: '1px solid rgba(201,169,97,0.25)'
+    }
+  }, !invite && /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: 'var(--kp-text-dim)',
+      marginBottom: 8,
+      lineHeight: 1.5
+    }
+  }, tr('setup.joinDesc')), /*#__PURE__*/React.createElement("input", {
+    style: input,
+    value: val,
+    onChange: e => setVal(e.target.value),
+    placeholder: tr('setup.codePlaceholder')
+  }), /*#__PURE__*/React.createElement("label", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 8,
+      marginBottom: 11,
+      cursor: 'pointer',
+      fontSize: 11.5,
+      color: 'var(--kp-text-dim)',
+      lineHeight: 1.4
+    }
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "checkbox",
+    checked: asLeader,
+    onChange: e => setAsLeader(e.target.checked),
+    style: {
+      width: 16,
+      height: 16,
+      flexShrink: 0,
+      accentColor: '#c9a961'
+    }
+  }), tr('setup.iLead')), /*#__PURE__*/React.createElement("button", {
+    disabled: !val.trim(),
+    onClick: () => onJoin(val.trim(), asLeader),
+    style: {
+      width: '100%',
+      padding: '12px',
+      borderRadius: 9,
+      background: 'linear-gradient(135deg,#e8c878,#8b6914)',
+      border: 'none',
+      color: '#0f0d0a',
+      fontFamily: 'Cinzel, serif',
+      fontWeight: 800,
+      fontSize: 13,
+      cursor: 'pointer',
+      opacity: val.trim() ? 1 : 0.5
+    }
+  }, tr('setup.joinGo')), /*#__PURE__*/React.createElement("button", {
+    onClick: back,
+    style: {
+      width: '100%',
+      marginTop: 8,
+      padding: '6px',
+      background: 'transparent',
+      border: 'none',
+      color: 'var(--kp-text-faint)',
+      fontSize: 11,
+      cursor: 'pointer',
+      fontFamily: 'inherit'
+    }
+  }, "\u2190 ", tr('btn.back') || 'Back'))));
+};
 const SuperAdminView = ({
   t
 }) => {
@@ -11273,6 +11729,7 @@ const AllianceRoster = ({
 };
 const Footer = ({
   onFeedback,
+  onHowItWorks,
   t
 }) => {
   return /*#__PURE__*/React.createElement("div", {
@@ -11284,7 +11741,27 @@ const Footer = ({
       border: '1px solid rgba(201,169,97,0.22)',
       boxShadow: '0 4px 18px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)'
     }
-  }, /*#__PURE__*/React.createElement("button", {
+  }, onHowItWorks && /*#__PURE__*/React.createElement("button", {
+    onClick: onHowItWorks,
+    className: "kp-card",
+    style: {
+      width: '100%',
+      padding: '10px 14px',
+      borderRadius: 9,
+      marginBottom: 8,
+      background: 'var(--kp-surface-2)',
+      border: '1px solid rgba(201,169,97,0.3)',
+      color: 'var(--kp-text-gold)',
+      fontSize: 12.5,
+      fontWeight: 700,
+      fontFamily: 'inherit',
+      cursor: 'pointer',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 7
+    }
+  }, "\u2139\uFE0F ", t('footer.howItWorks')), /*#__PURE__*/React.createElement("button", {
     onClick: onFeedback,
     className: "kp-card",
     style: {
@@ -11353,6 +11830,8 @@ const defaultState = () => ({
   // { red, ts } — Red count at the start of the current week (for weekly movers)
   shareAlliance: false,
   // opt-in to sync progress to the alliance roster
+  gateSeen: false,
+  // dismissed the first-run welcome gate (may still be solo)
   helpRequested: false,
   // player raised a hand for leaders to review their gear
   helpRequestedAt: null,
@@ -11400,6 +11879,7 @@ const migrateState = s => {
   if (s.specialization === undefined) s.specialization = null;
   if (s.playerName === undefined) s.playerName = '';
   if (s.shareAlliance === undefined) s.shareAlliance = false;
+  if (s.gateSeen === undefined) s.gateSeen = false;
   if (s.helpRequested === undefined) s.helpRequested = false;
   if (s.helpRequestedAt === undefined) s.helpRequestedAt = null;
   if (!s.playerId) s.playerId = 'p_' + Math.random().toString(36).slice(2, 11);
@@ -11431,7 +11911,17 @@ export default function App() {
   const [pickingTroopFor, setPickingTroopFor] = useState(null); // troop name when picker is open
   const [showFeedback, setShowFeedback] = useState(false);
   const [showAlliance, setShowAlliance] = useState(false);
+  const [showGateManual, setShowGateManual] = useState(false); // re-open the welcome/intro from the footer
   const [showGear, setShowGear] = useState(false);
+  const gearAutoOpened = useRef(false);
+  // First-time users (no gear entered yet) get the gear board open by default,
+  // so the very first action — entering your gear — is obvious.
+  useEffect(() => {
+    if (!gearAutoOpened.current && state && Object.keys(state.gear || {}).length === 0) {
+      setShowGear(true);
+      gearAutoOpened.current = true;
+    }
+  }, [state]);
   // App is dark-only — the gold-on-dark theme is the identity.
   const theme = 'dark';
   const [language, setLanguage] = useState(() => {
@@ -11827,7 +12317,25 @@ export default function App() {
   }, t('app.credit', {
     guide: GUIDE_AUTHOR,
     app: APP_AUTHOR
-  }))), (() => {
+  })), /*#__PURE__*/React.createElement("button", {
+    onClick: () => setShowGateManual(true),
+    className: "kp-card",
+    style: {
+      marginTop: 10,
+      padding: '5px 13px',
+      borderRadius: 99,
+      background: 'rgba(201,169,97,0.1)',
+      border: '1px solid rgba(201,169,97,0.35)',
+      color: 'var(--kp-text-gold)',
+      fontSize: 11,
+      fontWeight: 700,
+      fontFamily: 'inherit',
+      cursor: 'pointer',
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 5
+    }
+  }, "\u2139\uFE0F ", t('footer.howItWorks'))), (() => {
     const activeTab = view === 'alliance' ? 'alliance' : activeAccount;
     const tabs = [{
       id: 'main',
@@ -12908,6 +13416,7 @@ export default function App() {
     isAdmin: false
   })))), /*#__PURE__*/React.createElement(Footer, {
     onFeedback: () => setShowFeedback(true),
+    onHowItWorks: () => setShowGateManual(true),
     t: t
   }), /*#__PURE__*/React.createElement(VisitCounter, {
     visits: visits,
@@ -12969,6 +13478,52 @@ export default function App() {
       setPickingTroopFor(null);
     },
     onClose: () => setPickingTroopFor(null)
+  }), (!state.allianceSetup && !state.gateSeen || showGateManual) && ALLIANCE_DB_URL && /*#__PURE__*/React.createElement(WelcomeGate, {
+    t: t,
+    invite: invite,
+    onClose: () => {
+      setShowGateManual(false);
+      setState(p => ({
+        ...p,
+        gateSeen: true
+      }));
+    },
+    onSkip: () => {
+      setShowGateManual(false);
+      setState(p => ({
+        ...p,
+        gateSeen: true
+      }));
+    },
+    onCreate: code => {
+      setShowGateManual(false);
+      setState(p => ({
+        ...p,
+        allianceCode: code,
+        allianceSetup: true,
+        gateSeen: true,
+        isAdmin: true,
+        shareAlliance: true
+      }));
+      setViewCode('');
+      setJustCreated(true);
+      setView('alliance');
+    },
+    onJoin: (code, asLeader) => {
+      setShowGateManual(false);
+      const sup = code === SUPER_ADMIN_CODE;
+      setState(p => ({
+        ...p,
+        allianceCode: code,
+        allianceSetup: true,
+        gateSeen: true,
+        isAdmin: sup || !!asLeader,
+        ...(sup ? {} : {
+          shareAlliance: true
+        })
+      }));
+      if (sup) setView('alliance');
+    }
   }), showFeedback && /*#__PURE__*/React.createElement(FeedbackModal, {
     onClose: () => setShowFeedback(false)
   }), showAlliance && /*#__PURE__*/React.createElement(AllianceModal, {
@@ -13012,6 +13567,16 @@ if (__el) {
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
 
 
 

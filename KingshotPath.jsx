@@ -12,7 +12,7 @@ import {
 
 // ── Troops, slots, rarities ──
 // Fixed brand wordmark — same in every language (it's the guide's name).
-const BRAND_TITLE = "SHAKES' RED GEAR GUIDE";
+const BRAND_TITLE = "GEAR COMMAND CENTER";
 const GUIDE_AUTHOR = 'Shakes';   // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2';  // built this app
 const APP_VERSION = 'v7.4';     // bump this on every new build so you can confirm the deploy is live
@@ -104,7 +104,7 @@ const SLOT_CODE = { helmet: 'H', chest: 'C', gloves: 'G', boots: 'B' };
 
 const RARITIES = ['grey', 'green', 'blue', 'purple', 'mythic', 'red'];
 // Only these are selectable in the gear editor — the alliance is past early game.
-const EDITABLE_RARITIES = ['purple', 'mythic', 'red'];
+const EDITABLE_RARITIES = ['blue', 'purple', 'mythic', 'red'];
 
 // Gemini's model gets silently updated by Google, so its wording for gear tier
 // and troop type drifts over time (e.g. it may call gold gear "legendary" or
@@ -158,7 +158,7 @@ const normalizeHeroName = (name, troop) => {
   if (best && bestD <= Math.max(2, Math.floor(best.length / 2))) return best; // close enough → snap
   return String(name).trim(); // otherwise keep what was read
 };
-const RARITY_LABEL = { grey: 'Grey', green: 'Green', blue: 'Blue', purple: 'Epic', mythic: 'Mythic', red: 'Red' };
+const RARITY_LABEL = { grey: 'Grey', green: 'Green', blue: 'Rare', purple: 'Epic', mythic: 'Mythic', red: 'Red' };
 const RARITY_RANK = { grey: 1, green: 2, blue: 3, purple: 4, mythic: 5, red: 6 };
 // Lowest rarity whose enhancement cap can reach this level (grey20/green40/blue60/purple80/mythic100/red100).
 const minRarityForLevel = (level) => {
@@ -224,7 +224,7 @@ const TRANSLATIONS = {
     'visits.label': 'visits',
     'troop.infantry': 'Infantry', 'troop.archer': 'Archer', 'troop.cavalry': 'Cavalry',
     'slot.helmet': 'Helmet', 'slot.chest': 'Chest', 'slot.gloves': 'Gloves', 'slot.boots': 'Boots',
-    'rarity.grey': 'Grey', 'rarity.green': 'Green', 'rarity.blue': 'Blue',
+    'rarity.grey': 'Grey', 'rarity.green': 'Green', 'rarity.blue': 'Rare',
     'rarity.purple': 'Epic', 'rarity.mythic': 'Mythic', 'rarity.red': 'Red',
     'section.progress': "SHAKES' PATH — YOUR PROGRESS",
     'section.heroes': 'YOUR 3 MARCH HEROES',
@@ -265,7 +265,7 @@ const TRANSLATIONS = {
     'visits.label': 'visitas',
     'troop.infantry': 'Infantería', 'troop.archer': 'Arquero', 'troop.cavalry': 'Caballería',
     'slot.helmet': 'Casco', 'slot.chest': 'Pecho', 'slot.gloves': 'Guantes', 'slot.boots': 'Botas',
-    'rarity.grey': 'Gris', 'rarity.green': 'Verde', 'rarity.blue': 'Azul',
+    'rarity.grey': 'Gris', 'rarity.green': 'Verde', 'rarity.blue': 'Raro',
     'rarity.purple': 'Épico', 'rarity.mythic': 'Mítico', 'rarity.red': 'Rojo',
     'section.progress': 'CAMINO DE SHAKES — TU PROGRESO',
     'section.heroes': 'TUS 3 HÉROES DE MARCHA',
@@ -295,7 +295,7 @@ const TRANSLATIONS = {
     'visits.label': 'visitas',
     'troop.infantry': 'Infantaria', 'troop.archer': 'Arqueiro', 'troop.cavalry': 'Cavalaria',
     'slot.helmet': 'Capacete', 'slot.chest': 'Peitoral', 'slot.gloves': 'Luvas', 'slot.boots': 'Botas',
-    'rarity.grey': 'Cinza', 'rarity.green': 'Verde', 'rarity.blue': 'Azul',
+    'rarity.grey': 'Cinza', 'rarity.green': 'Verde', 'rarity.blue': 'Raro',
     'rarity.purple': 'Épico', 'rarity.mythic': 'Mítico', 'rarity.red': 'Vermelho',
     'section.progress': 'CAMINHO DO SHAKES — SEU PROGRESSO',
     'section.heroes': 'SEUS 3 HERÓIS DE MARCHA',
@@ -325,7 +325,7 @@ const TRANSLATIONS = {
     'visits.label': 'visites',
     'troop.infantry': 'Infanterie', 'troop.archer': 'Archer', 'troop.cavalry': 'Cavalerie',
     'slot.helmet': 'Casque', 'slot.chest': 'Torse', 'slot.gloves': 'Gants', 'slot.boots': 'Bottes',
-    'rarity.grey': 'Gris', 'rarity.green': 'Vert', 'rarity.blue': 'Bleu',
+    'rarity.grey': 'Gris', 'rarity.green': 'Vert', 'rarity.blue': 'Rare',
     'rarity.purple': 'Épique', 'rarity.mythic': 'Mythique', 'rarity.red': 'Rouge',
     'section.progress': 'CHEMIN DE SHAKES — VOTRE PROGRESSION',
     'section.heroes': 'VOS 3 HÉROS DE MARCHE',
@@ -432,7 +432,7 @@ const TRANSLATIONS = {
     'visits.label': 'כניסות',
     'troop.infantry': 'חי״ר', 'troop.archer': 'קשתים', 'troop.cavalry': 'פרשים',
     'slot.helmet': 'קסדה', 'slot.chest': 'חזה', 'slot.gloves': 'כפפות', 'slot.boots': 'מגפיים',
-    'rarity.grey': 'אפור', 'rarity.green': 'ירוק', 'rarity.blue': 'כחול',
+    'rarity.grey': 'אפור', 'rarity.green': 'ירוק', 'rarity.blue': 'נדיר',
     'rarity.purple': 'אפי', 'rarity.mythic': 'מיתי', 'rarity.red': 'אדום',
     'section.progress': 'המסלול של SHAKES — ההתקדמות שלך',
     'section.heroes': '3 הגיבורים שלך',
@@ -533,7 +533,7 @@ const I18N = {
   'section.gearDetails': { en: 'My gear details', es: 'Detalles de mi equipo', pt: 'Detalhes do meu equipamento', fr: 'Détails de mon équipement', de: 'Meine Ausrüstung', it: 'Dettagli equipaggiamento', nl: 'Mijn uitrusting', ru: 'Моё снаряжение', pl: 'Moje wyposażenie', tr: 'Ekipman detaylarım', ar: 'تفاصيل عتادي', he: 'פרטי הציוד שלי', zh: '我的装备详情', ja: '装備の詳細', ko: '내 장비 상세', id: 'Detail perlengkapan saya', vi: 'Chi tiết trang bị', th: 'รายละเอียดอุปกรณ์' },
   'ui.howTo': { en: 'How to', es: 'Cómo', pt: 'Como', fr: 'Comment', de: 'Anleitung', it: 'Come', nl: 'Hoe', ru: 'Как', pl: 'Jak', tr: 'Nasıl', ar: 'كيف', he: 'איך', zh: '步骤', ja: '手順', ko: '방법', id: 'Cara', vi: 'Cách', th: 'วิธี' },
   'btn.done': { en: 'I did this', es: 'Hecho', pt: 'Feito', fr: 'C’est fait', de: 'Erledigt', it: 'Fatto', nl: 'Gedaan', ru: 'Готово', pl: 'Zrobione', tr: 'Yaptım', ar: 'تم', he: 'עשיתי', zh: '已完成', ja: '完了', ko: '완료', id: 'Selesai', vi: 'Đã xong', th: 'เสร็จแล้ว' },
-  'app.credit': { en: 'Guide by {guide} · App by {app}', es: 'Guía de {guide} · App de {app}', pt: 'Guia de {guide} · App de {app}', fr: 'Guide par {guide} · App par {app}', de: 'Guide von {guide} · App von {app}', it: 'Guida di {guide} · App di {app}', nl: 'Gids van {guide} · App van {app}', ru: 'Гайд: {guide} · Приложение: {app}', pl: 'Poradnik: {guide} · Aplikacja: {app}', tr: 'Rehber: {guide} · Uygulama: {app}', ar: 'دليل {guide} · تطبيق {app}', he: 'מדריך מאת {guide} · אפליקציה מאת {app}', zh: '攻略 {guide} · 应用 {app}', ja: 'ガイド: {guide} · アプリ: {app}', ko: '가이드: {guide} · 앱: {app}', id: 'Panduan oleh {guide} · App oleh {app}', vi: 'Hướng dẫn bởi {guide} · App bởi {app}', th: 'ไกด์โดย {guide} · แอปโดย {app}' },
+  'app.credit': { en: 'Strategy by {guide} · App by {app}', es: 'Estrategia de {guide} · App de {app}', pt: 'Estratégia de {guide} · App de {app}', fr: 'Stratégie par {guide} · App par {app}', de: 'Strategie von {guide} · App von {app}', it: 'Strategia di {guide} · App di {app}', nl: 'Strategie van {guide} · App van {app}', ru: 'Стратегия: {guide} · Приложение: {app}', pl: 'Strategia: {guide} · Aplikacja: {app}', tr: 'Strateji: {guide} · Uygulama: {app}', ar: 'استراتيجية {guide} · تطبيق {app}', he: 'אסטרטגיה מאת {guide} · אפליקציה מאת {app}', zh: '策略 {guide} · 应用 {app}', ja: '戦略: {guide} · アプリ: {app}', ko: '전략: {guide} · 앱: {app}', id: 'Strategi oleh {guide} · App oleh {app}', vi: 'Chiến lược bởi {guide} · App bởi {app}', th: 'กลยุทธ์โดย {guide} · แอปโดย {app}' },
   'api.ready': { en: 'API connected · auto-OCR ready', es: 'API conectada · OCR automático listo', pt: 'API conectada · OCR automático pronto', fr: 'API connectée · OCR auto prêt', de: 'API verbunden · Auto-OCR bereit', it: 'API connessa · OCR automatico pronto', nl: 'API verbonden · auto-OCR gereed', ru: 'API подключён · авто-OCR готов', pl: 'API połączone · auto-OCR gotowy', tr: 'API bağlı · oto-OCR hazır', ar: 'API متصل · OCR تلقائي جاهز', he: 'API מחובר · OCR אוטומטי מוכן', zh: 'API 已连接 · 自动 OCR 就绪', ja: 'API 接続済み · 自動OCR対応', ko: 'API 연결됨 · 자동 OCR 준비', id: 'API tersambung · auto-OCR siap', vi: 'API đã kết nối · auto-OCR sẵn sàng', th: 'เชื่อมต่อ API · พร้อม OCR อัตโนมัติ' },
   'upload.help': { en: 'Upload one screenshot per troop hero (showing all 4 gear pieces). Resources are entered manually below. Or tap any slot below to enter gear manually.', es: 'Sube una captura por héroe (mostrando las 4 piezas). Los recursos se ingresan manualmente abajo. O toca cualquier ranura para añadir equipo manualmente.', pt: 'Envie uma captura por herói (mostrando as 4 peças). Os recursos são inseridos manualmente abaixo. Ou toque em qualquer slot para inserir manualmente.', fr: 'Téléverse une capture par héros (avec les 4 pièces). Les ressources se saisissent manuellement ci-dessous. Ou touche une case pour saisir l’équipement manuellement.', de: 'Lade pro Held einen Screenshot hoch (alle 4 Teile sichtbar). Ressourcen werden unten manuell eingegeben. Oder tippe ein Feld an, um Ausrüstung manuell einzugeben.', it: 'Carica uno screenshot per eroe (con tutti i 4 pezzi). Le risorse si inseriscono manualmente sotto. Oppure tocca uno slot per inserire l’equipaggiamento a mano.', nl: 'Upload één screenshot per held (alle 4 stukken zichtbaar). Bronnen voer je hieronder handmatig in. Of tik op een vak om uitrusting handmatig in te voeren.', ru: 'Загрузите по одному скриншоту на героя (видны все 4 предмета). Ресурсы вводятся вручную ниже. Или нажмите слот, чтобы ввести снаряжение вручную.', pl: 'Prześlij jeden zrzut na bohatera (wszystkie 4 części). Zasoby wpisujesz ręcznie poniżej. Albo dotknij slotu, aby dodać sprzęt ręcznie.', tr: 'Her kahraman için bir ekran görüntüsü yükle (4 parça da görünsün). Kaynaklar aşağıdan elle girilir. Ya da bir yuvaya dokunup ekipmanı elle gir.', ar: 'ارفع لقطة لكل بطل (تظهر القطع الأربع). تُدخل الموارد يدويًا بالأسفل. أو اضغط أي خانة لإدخال العتاد يدويًا.', he: 'העלה צילום מסך אחד לכל גיבור (כל 4 הפריטים נראים). המשאבים מוזנים ידנית למטה. או הקש על משבצת כדי להזין ציוד ידנית.', zh: '每个英雄上传一张截图（显示全部4件装备）。资源在下方手动输入。或点击任意槽位手动输入装备。', ja: 'ヒーローごとに1枚のスクショをアップ（4部位すべて表示）。リソースは下で手動入力。または枠をタップして手動入力。', ko: '영웅마다 스크린샷 1장 업로드(4부위 모두 표시). 자원은 아래에서 직접 입력. 또는 슬롯을 눌러 직접 입력.', id: 'Unggah satu tangkapan per hero (semua 4 gear terlihat). Sumber daya diisi manual di bawah. Atau ketuk slot untuk isi manual.', vi: 'Tải một ảnh chụp mỗi tướng (hiện đủ 4 món). Tài nguyên nhập tay bên dưới. Hoặc chạm ô bất kỳ để nhập thủ công.', th: 'อัปโหลดภาพหน้าจอหนึ่งภาพต่อฮีโร่ (เห็นครบ 4 ชิ้น) ทรัพยากรกรอกเองด้านล่าง หรือแตะช่องใดก็ได้เพื่อกรอกเอง' },
   'phase.fullPlan': { en: 'Shakes’ full plan', es: 'Plan completo de Shakes', pt: 'Plano completo do Shakes', fr: 'Le plan complet de Shakes', de: 'Shakes kompletter Plan', it: 'Piano completo di Shakes', nl: 'Shakes’ volledige plan', ru: 'Полный план Shakes', pl: 'Pełny plan Shakes’a', tr: 'Shakes’in tam planı', ar: 'خطة Shakes الكاملة', he: 'התוכנית המלאה של Shakes', zh: 'Shakes 的完整计划', ja: 'Shakes の完全プラン', ko: 'Shakes의 전체 계획', id: 'Rencana lengkap Shakes', vi: 'Kế hoạch đầy đủ của Shakes', th: 'แผนเต็มของ Shakes' },
@@ -649,7 +649,7 @@ const I18N = {
   'res.mythicGears': { en: 'Mythic Gears', es: 'Engranajes Míticos', pt: 'Engrenagens Míticas', fr: 'Engrenages Mythiques', de: 'Mythische Zahnräder', it: 'Ingranaggi Mitici', nl: 'Mythische Tandwielen', ru: 'Мифические шестерни', pl: 'Mityczne koła', tr: 'Efsanevi Dişli', ar: 'تروس أسطورية', he: 'גלגלי מיתוס', zh: '神话齿轮', ja: '神話ギア', ko: '신화 기어', id: 'Mythic Gears', vi: 'Mythic Gears', th: 'Mythic Gears' },
   'rarity.grey': { en: 'Grey', es: 'Gris', pt: 'Cinza', fr: 'Gris', de: 'Grau', it: 'Grigio', nl: 'Grijs', ru: 'Серый', pl: 'Szary', tr: 'Gri', ar: 'رمادي', he: 'אפור', zh: '灰色', ja: 'グレー', ko: '회색', id: 'Abu-abu', vi: 'Xám', th: 'เทา' },
   'rarity.green': { en: 'Green', es: 'Verde', pt: 'Verde', fr: 'Vert', de: 'Grün', it: 'Verde', nl: 'Groen', ru: 'Зелёный', pl: 'Zielony', tr: 'Yeşil', ar: 'أخضر', he: 'ירוק', zh: '绿色', ja: 'グリーン', ko: '초록', id: 'Hijau', vi: 'Xanh lá', th: 'เขียว' },
-  'rarity.blue': { en: 'Blue', es: 'Azul', pt: 'Azul', fr: 'Bleu', de: 'Blau', it: 'Blu', nl: 'Blauw', ru: 'Синий', pl: 'Niebieski', tr: 'Mavi', ar: 'أزرق', he: 'כחול', zh: '蓝色', ja: 'ブルー', ko: '파랑', id: 'Biru', vi: 'Xanh dương', th: 'น้ำเงิน' },
+  'rarity.blue': { en: 'Rare', es: 'Raro', pt: 'Raro', fr: 'Rare', de: 'Selten', it: 'Raro', nl: 'Zeldzaam', ru: 'Редкое', pl: 'Rzadkie', tr: 'Nadir', ar: 'نادر', he: 'נדיר', zh: '稀有', ja: 'レア', ko: '레어', id: 'Langka', vi: 'Hiếm', th: 'หายาก' },
   'rarity.purple': { en: 'Epic', es: 'Épico', pt: 'Épico', fr: 'Épique', de: 'Episch', it: 'Epico', nl: 'Episch', ru: 'Эпический', pl: 'Epicki', tr: 'Epik', ar: 'ملحمي', he: 'אפי', zh: '史诗', ja: 'エピック', ko: '에픽', id: 'Epik', vi: 'Sử thi', th: 'เอปิก' },
   'rarity.mythic': { en: 'Mythic', es: 'Mítico', pt: 'Mítico', fr: 'Mythique', de: 'Mythisch', it: 'Mitico', nl: 'Mythisch', ru: 'Мифический', pl: 'Mityczny', tr: 'Efsanevi', ar: 'أسطوري', he: 'מיתי', zh: '神话', ja: 'ミシック', ko: '미식', id: 'Mitos', vi: 'Thần thoại', th: 'มิธิก' },
   'rarity.red': { en: 'Red', es: 'Rojo', pt: 'Vermelho', fr: 'Rouge', de: 'Rot', it: 'Rosso', nl: 'Rood', ru: 'Красный', pl: 'Czerwony', tr: 'Kırmızı', ar: 'أحمر', he: 'אדום', zh: '红色', ja: 'レッド', ko: '레드', id: 'Merah', vi: 'Đỏ', th: 'แดง' },
@@ -716,6 +716,12 @@ const I18N = {
   'help.hint': { en: 'Leaders will review your gear and suggest how to build and improve.', he: 'הלידרים יבדקו את הציוד שלך ויציעו איך לבנות ולשפר.', es: 'Los líderes revisarán tu equipo y sugerirán cómo mejorar.', pt: 'Os líderes vão analisar seu equipamento e sugerir melhorias.', fr: 'Les chefs examineront ton équipement et te conseilleront.', de: 'Anführer prüfen deine Ausrüstung und geben Tipps.', ru: 'Лидеры посмотрят ваше снаряжение и подскажут, как улучшить.', ar: 'سيراجع القادة عتادك ويقترحون كيفية التحسين.' },
   'help.needsBadge': { en: 'NEEDS HELP', he: 'צריך עזרה', es: 'NECESITA AYUDA', pt: 'PRECISA DE AJUDA', fr: 'AIDE DEMANDÉE', de: 'BRAUCHT HILFE', ru: 'НУЖНА ПОМОЩЬ', ar: 'يحتاج مساعدة' },
   'help.count': { en: '🆘 {n} asked for help', he: '🆘 {n} ביקשו עזרה', es: '🆘 {n} pidieron ayuda', pt: '🆘 {n} pediram ajuda', fr: '🆘 {n} ont demandé de l’aide', de: '🆘 {n} bitten um Hilfe', ru: '🆘 {n} просят помощи', ar: '🆘 {n} طلبوا المساعدة' },
+  'welcome.what': { en: "Shake's Red Gear path, plus a transparent gear board for your whole alliance — everyone can see and compare progress.", he: 'מסלול הציוד האדום של Shake, ועוד לוח ציוד שקוף לכל הברית — כולם רואים ומשווים התקדמות.', es: 'La ruta de equipo rojo de Shake, más un tablero de equipo transparente para toda tu alianza.', pt: 'O caminho do equipamento vermelho do Shake, mais um quadro transparente para toda a aliança.', fr: 'Le parcours d’équipement rouge de Shake, plus un tableau transparent pour toute l’alliance.', de: 'Shakes Rot-Ausrüstungspfad, plus ein transparentes Ausrüstungsboard für die ganze Allianz.', ru: 'Путь к красному снаряжению от Shake и прозрачная доска снаряжения для всего альянса.', ar: 'مسار العتاد الأحمر من Shake، مع لوحة عتاد شفافة لتحالفك كله.' },
+  'welcome.steps': { en: '1) Choose your alliance · 2) Enter your gear · 3) Follow your personal plan to full Red.', he: '1) בחר ברית · 2) הזן את הציוד שלך · 3) עקוב אחר התוכנית האישית עד Red מלא.', es: '1) Elige tu alianza · 2) Ingresa tu equipo · 3) Sigue tu plan personal.', pt: '1) Escolha sua aliança · 2) Insira seu equipamento · 3) Siga seu plano pessoal.', fr: '1) Choisis ton alliance · 2) Saisis ton équipement · 3) Suis ton plan personnel.', de: '1) Wähle deine Allianz · 2) Gib deine Ausrüstung ein · 3) Folge deinem Plan.', ru: '1) Выберите альянс · 2) Введите снаряжение · 3) Следуйте личному плану.', ar: '1) اختر تحالفك · 2) أدخل عتادك · 3) اتبع خطتك الشخصية.' },
+  'welcome.chooseAlliance': { en: 'First, choose your alliance', he: 'קודם כל, בחר את הברית שלך', es: 'Primero, elige tu alianza', pt: 'Primeiro, escolha sua aliança', fr: 'D’abord, choisis ton alliance', de: 'Wähle zuerst deine Allianz', ru: 'Сначала выберите альянс', ar: 'أولًا، اختر تحالفك' },
+  'welcome.skip': { en: 'Skip — just use the guide', he: 'דלג — רק להשתמש במדריך', es: 'Omitir — solo usar la guía', pt: 'Pular — só usar o guia', fr: 'Passer — utiliser juste le guide', de: 'Überspringen — nur den Guide nutzen', ru: 'Пропустить — просто гайд', ar: 'تخطٍّ — استخدم الدليل فقط' },
+  'welcome.skipHint': { en: "No code yet? Start solo — you can join your alliance later from the Alliance tab.", he: 'אין עדיין קוד? התחל לבד — תוכל להצטרף לברית מאוחר יותר מטאב הברית.', es: '¿Sin código? Empieza solo — únete a tu alianza luego.', pt: 'Sem código? Comece sozinho — entre na aliança depois.', fr: 'Pas de code ? Commence en solo — rejoins ton alliance plus tard.', de: 'Noch kein Code? Starte solo — tritt später bei.', ru: 'Нет кода? Начните соло — вступите в альянс позже.', ar: 'لا يوجد رمز؟ ابدأ منفردًا — انضم لاحقًا.' },
+  'footer.howItWorks': { en: 'How it works', he: 'איך זה עובד', es: 'Cómo funciona', pt: 'Como funciona', fr: 'Comment ça marche', de: 'So funktioniert es', it: 'Come funziona', nl: 'Hoe het werkt', ru: 'Как это работает', pl: 'Jak to działa', tr: 'Nasıl çalışır', ar: 'كيف يعمل', zh: '使用说明', ja: '使い方', ko: '사용 방법', id: 'Cara kerja', vi: 'Cách hoạt động', th: 'วิธีใช้งาน' },
 };
 
 const T = (key, lang = 'en', vars) => {
@@ -1227,24 +1233,52 @@ const RED_GEAR_IMAGES = {
   boots: 'data:image/webp;base64,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',
 };
 
-const GearArt = ({ troop, slot, rarity = 'mythic', size = 56 }) => {
+const GearArt = ({ troop, slot, rarity = 'mythic', size = 56, empty = false }) => {
   const theme = RARITY_THEME[rarity] || RARITY_THEME.grey;
+
+  // EMPTY SLOT: show a faded, desaturated "ghost" of the real gear piece
+  // instead of a generic icon — nicer and consistent with filled slots.
+  if (empty) {
+    const ghost = troop && GEAR_IMAGES[troop]?.[slot]?.mythic;
+    return (
+      <div style={{
+        width: size, height: size, position: 'relative', flexShrink: 0,
+        display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+      }}>
+        {ghost ? (
+          <img
+            src={ghost}
+            alt={`${slot}`}
+            style={{
+              width: '100%', height: '100%', objectFit: 'contain',
+              filter: 'grayscale(1) brightness(1.5) opacity(0.28)',
+            }}
+          />
+        ) : (
+          <svg width={size * 0.62} height={size * 0.62} viewBox="0 0 100 100" style={{ color: 'var(--kp-text-faint)', opacity: 0.4 }}>
+            {SLOT_SVG[slot]('currentColor')}
+          </svg>
+        )}
+      </div>
+    );
+  }
 
   // Red rarity has dedicated full-tile artwork (gold piece on the in-game red
   // card). The image already includes the red background, so render it
   // edge-to-edge rather than the transparent-piece-on-tile treatment.
   const redTile = rarity === 'red' ? RED_GEAR_IMAGES[slot] : null;
 
-  // Other rarities: reuse the transparent Mythic piece on a colored tile.
+  // Every other rarity reuses the same gear-piece art (the game uses one
+  // silhouette per slot; only the tile colour changes). So fall back to mythic.
   const realImage = troop && (
     GEAR_IMAGES[troop]?.[slot]?.[rarity] ||
-    (rarity === 'red' ? GEAR_IMAGES[troop]?.[slot]?.mythic : null)
+    GEAR_IMAGES[troop]?.[slot]?.mythic
   );
 
-  // Filled rarity tile: solid colored background + matching border, with the
-  // piece centered on top — matches the in-game gear card look. The frame
-  // color is what distinguishes Mythic (amber) from Red, etc.
-  const tileBg = `radial-gradient(circle at 50% 32%, ${theme.glow}3a 0%, ${theme.bg} 50%, ${theme.bg}f2 100%)`;
+  // Full rarity tile: a solid colour gradient that covers the whole square
+  // (like the in-game Red card), with the piece centred on top. The tile colour
+  // is what distinguishes Rare (blue) / Epic (purple) / Mythic (amber).
+  const tileBg = `linear-gradient(150deg, ${theme.edge} 0%, ${theme.bg} 58%, #0c0a08 100%)`;
 
   if (redTile) {
     return (
@@ -1273,8 +1307,7 @@ const GearArt = ({ troop, slot, rarity = 'mythic', size = 56 }) => {
         flexShrink: 0,
         borderRadius: '24%',
         background: tileBg,
-        border: `1.5px solid ${theme.edge}`,
-        boxShadow: `0 0 6px ${theme.edge}66, inset 0 1px 3px ${theme.glow}40`,
+        boxShadow: `0 0 7px ${theme.edge}88, inset 0 1px 4px rgba(255,255,255,0.12)`,
         overflow: 'hidden',
       }}>
         <img
@@ -1818,7 +1851,7 @@ const HeroBoard = ({ troop, heroName, heroImage, gear, onEdit, onBulkRarity, onS
           <span style={{ fontSize: 9.5, color: 'var(--kp-text-faint)', fontWeight: 700, letterSpacing: 0.3 }}>
             {tr('gear.markAll')}
           </span>
-          {[['red', '#ef4444'], ['mythic', '#fbbf24'], ['purple', '#c084fc']].map(([r, c]) => (
+          {[['red', '#ef4444'], ['mythic', '#fbbf24'], ['purple', '#c084fc'], ['blue', '#60a5fa']].map(([r, c]) => (
             <button key={r} onClick={() => onBulkRarity(troop, r)} className="kp-card" style={{
               padding: '4px 11px', borderRadius: 99, fontSize: 11, fontWeight: 700,
               background: `${c}1f`, border: `1px solid ${c}66`, color: c,
@@ -1846,7 +1879,7 @@ const HeroBoard = ({ troop, heroName, heroImage, gear, onEdit, onBulkRarity, onS
               <div onClick={() => onEdit(troop, slot)} style={{
                 display: 'flex', alignItems: 'center', gap: 9, cursor: 'pointer', minHeight: 48,
               }}>
-                <GearArt troop={troop} slot={slot} rarity={piece?.rarity || 'grey'} size={40} />
+                <GearArt troop={troop} slot={slot} rarity={piece?.rarity || 'grey'} size={40} empty={!piece} />
                 <div style={{ flex: 1, minWidth: 0, textAlign: 'left' }}>
                   <div style={{ fontSize: 9, fontWeight: 700, color: 'var(--kp-text-dim)', letterSpacing: 0.5 }}>
                     {tr('slot.' + slot).toUpperCase()}
@@ -1881,7 +1914,7 @@ const HeroBoard = ({ troop, heroName, heroImage, gear, onEdit, onBulkRarity, onS
                         fontSize: 8.5, fontWeight: 800, fontFamily: 'inherit',
                         color: active ? '#0f0d0a' : col, letterSpacing: 0.3,
                       }}>
-                        {tr('rarity.' + r).slice(0, 1).toUpperCase()}
+                        {({ blue: 'Ra', purple: 'Ep', mythic: 'My', red: 'Rd' }[r]) || tr('rarity.' + r).slice(0, 1).toUpperCase()}
                       </button>
                     );
                   })}
@@ -3773,6 +3806,127 @@ const AllianceSetup = ({ onCreate, onJoin, t, invite }) => {
   );
 };
 
+// ═══════════════════════════════════════════════════════════════════
+//   WELCOME GATE — first-run screen. Explains the app and makes the
+//   player establish their alliance (enter xXx / join by code / create).
+// ═══════════════════════════════════════════════════════════════════
+const WelcomeGate = ({ t, invite, onCreate, onJoin, onSkip, onClose }) => {
+  const tr = t || ((k) => k);
+  const [mode, setMode] = useState(invite ? 'join' : null); // null | 'create' | 'join'
+  const [val, setVal] = useState(invite || '');
+  const [asLeader, setAsLeader] = useState(false);
+  const input = { width: '100%', boxSizing: 'border-box', padding: '11px 12px', borderRadius: 8, background: 'var(--kp-surface-2)', border: '1px solid rgba(201,169,97,0.3)', color: 'var(--kp-text)', fontSize: 15, fontFamily: 'inherit', outline: 'none', marginBottom: 10 };
+  const back = () => { setMode(null); setVal(''); };
+
+  return (
+    <div style={{
+      position: 'fixed', inset: 0, zIndex: 200, overflowY: 'auto',
+      background: 'radial-gradient(circle at 50% 0%, #1a1410 0%, #05080f 70%)',
+      display: 'flex', alignItems: 'flex-start', justifyContent: 'center',
+      padding: '28px 18px 40px',
+    }}>
+      {onClose && (
+        <button onClick={onClose} aria-label="Close" style={{
+          position: 'fixed', top: 14, right: 14, zIndex: 201,
+          width: 34, height: 34, borderRadius: '50%',
+          background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(201,169,97,0.3)',
+          color: 'var(--kp-text-gold)', cursor: 'pointer',
+          display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+        }}>
+          <X size={17} />
+        </button>
+      )}
+      <div style={{ width: '100%', maxWidth: 420 }}>
+        {/* Brand */}
+        <div style={{ textAlign: 'center', marginBottom: 18 }}>
+          <div style={{ fontFamily: 'Cinzel, serif', fontSize: 24, fontWeight: 900, color: '#ef4444', letterSpacing: 1.4, textShadow: '0 0 16px rgba(239,68,68,0.5)' }}>
+            {BRAND_TITLE}
+          </div>
+          <div style={{ fontSize: 10.5, color: 'var(--kp-text-dim)', letterSpacing: 0.6, marginTop: 5 }}>
+            {tr('brand.subtitle')}
+          </div>
+        </div>
+
+        {/* What this is */}
+        <div style={{ borderRadius: 12, padding: 14, marginBottom: 16, background: 'var(--kp-panel)', border: '1px solid rgba(201,169,97,0.22)' }}>
+          <div style={{ fontSize: 12.5, color: 'var(--kp-text)', lineHeight: 1.6, marginBottom: 8 }}>{tr('welcome.what')}</div>
+          <div style={{ fontSize: 12, color: 'var(--kp-text-dim)', lineHeight: 1.6 }}>{tr('welcome.steps')}</div>
+        </div>
+
+        {/* Step 1 label */}
+        <div style={{ fontFamily: 'Cinzel, serif', fontSize: 13, fontWeight: 800, color: 'var(--kp-text-gold)', letterSpacing: 0.5, marginBottom: 10, textAlign: 'center' }}>
+          {tr('welcome.chooseAlliance')}
+        </div>
+
+        {invite && mode === 'join' && (
+          <div style={{ fontSize: 11.5, color: '#86efac', marginBottom: 10, lineHeight: 1.5, fontWeight: 600, textAlign: 'center' }}>
+            ✉️ {tr('setup.invited', { code: invite })}
+          </div>
+        )}
+
+        {mode === null && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
+            <button onClick={() => { setMode('create'); setVal(''); }} className="kp-card" style={{
+              width: '100%', padding: '13px', borderRadius: 10,
+              background: 'linear-gradient(135deg,#e8c878,#8b6914)', border: 'none', color: '#0f0d0a',
+              fontFamily: 'Cinzel, serif', fontWeight: 800, fontSize: 14, letterSpacing: 0.3, cursor: 'pointer',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+              boxShadow: '0 0 16px rgba(201,169,97,0.25)',
+            }}>
+              <Crown size={17} /> {tr('setup.createBtn')}
+            </button>
+            <button onClick={() => { setMode('join'); setVal(''); }} className="kp-card" style={{
+              width: '100%', padding: '11px', borderRadius: 10, background: 'var(--kp-surface-2)',
+              border: '1px solid rgba(201,169,97,0.35)', color: 'var(--kp-text-gold)',
+              fontFamily: 'Cinzel, serif', fontWeight: 800, fontSize: 13, cursor: 'pointer',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+            }}>
+              <Upload size={16} /> {tr('setup.joinBtn')}
+            </button>
+            <button onClick={onSkip} style={{
+              width: '100%', marginTop: 4, padding: '9px', background: 'transparent', border: 'none',
+              color: 'var(--kp-text-dim)', fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit',
+              textDecoration: 'underline', textUnderlineOffset: 3,
+            }}>
+              {tr('welcome.skip')}
+            </button>
+            <div style={{ fontSize: 10, color: 'var(--kp-text-faint)', textAlign: 'center', marginTop: 2, lineHeight: 1.45 }}>
+              {tr('welcome.skipHint')}
+            </div>
+          </div>
+        )}
+
+        {mode === 'create' && (
+          <div style={{ borderRadius: 12, padding: 14, background: 'var(--kp-panel)', border: '1px solid rgba(201,169,97,0.25)' }}>
+            <div style={{ fontSize: 11, color: 'var(--kp-text-dim)', marginBottom: 8, lineHeight: 1.5 }}>{tr('setup.createDesc')}</div>
+            <div style={{ fontSize: 10.5, color: '#fbbf24', marginBottom: 9, lineHeight: 1.5, padding: '8px 10px', borderRadius: 8, background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.3)' }}>⚠ {tr('setup.createWarn')}</div>
+            <input style={input} value={val} onChange={(e) => setVal(e.target.value)} placeholder={tr('setup.namePlaceholder')} />
+            <button disabled={!val.trim()} onClick={() => onCreate(genAllianceCode(val))} style={{ width: '100%', padding: '12px', borderRadius: 9, background: 'linear-gradient(135deg,#c9a961,#8b6914)', border: 'none', color: '#0f0d0a', fontFamily: 'Cinzel, serif', fontWeight: 800, fontSize: 13, cursor: 'pointer', opacity: val.trim() ? 1 : 0.5 }}>
+              {tr('setup.createGo')}
+            </button>
+            <button onClick={back} style={{ width: '100%', marginTop: 8, padding: '6px', background: 'transparent', border: 'none', color: 'var(--kp-text-faint)', fontSize: 11, cursor: 'pointer', fontFamily: 'inherit' }}>← {tr('btn.back') || 'Back'}</button>
+          </div>
+        )}
+
+        {mode === 'join' && (
+          <div style={{ borderRadius: 12, padding: 14, background: 'var(--kp-panel)', border: '1px solid rgba(201,169,97,0.25)' }}>
+            {!invite && <div style={{ fontSize: 11, color: 'var(--kp-text-dim)', marginBottom: 8, lineHeight: 1.5 }}>{tr('setup.joinDesc')}</div>}
+            <input style={input} value={val} onChange={(e) => setVal(e.target.value)} placeholder={tr('setup.codePlaceholder')} />
+            <label style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 11, cursor: 'pointer', fontSize: 11.5, color: 'var(--kp-text-dim)', lineHeight: 1.4 }}>
+              <input type="checkbox" checked={asLeader} onChange={(e) => setAsLeader(e.target.checked)} style={{ width: 16, height: 16, flexShrink: 0, accentColor: '#c9a961' }} />
+              {tr('setup.iLead')}
+            </label>
+            <button disabled={!val.trim()} onClick={() => onJoin(val.trim(), asLeader)} style={{ width: '100%', padding: '12px', borderRadius: 9, background: 'linear-gradient(135deg,#e8c878,#8b6914)', border: 'none', color: '#0f0d0a', fontFamily: 'Cinzel, serif', fontWeight: 800, fontSize: 13, cursor: 'pointer', opacity: val.trim() ? 1 : 0.5 }}>
+              {tr('setup.joinGo')}
+            </button>
+            <button onClick={back} style={{ width: '100%', marginTop: 8, padding: '6px', background: 'transparent', border: 'none', color: 'var(--kp-text-faint)', fontSize: 11, cursor: 'pointer', fontFamily: 'inherit' }}>← {tr('btn.back') || 'Back'}</button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
 const SuperAdminView = ({ t }) => {
   const tr = t || ((k) => k);
   const [alliances, setAlliances] = useState(null);
@@ -4269,7 +4423,7 @@ const AllianceRoster = ({ t, code, isAdmin }) => {
   );
 };
 
-const Footer = ({ onFeedback, t }) => {
+const Footer = ({ onFeedback, onHowItWorks, t }) => {
   return (
     <div style={{
       marginTop: 18, padding: 14, borderRadius: 12,
@@ -4277,6 +4431,23 @@ const Footer = ({ onFeedback, t }) => {
       border: '1px solid rgba(201,169,97,0.22)',
       boxShadow: '0 4px 18px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)',
     }}>
+      {onHowItWorks && (
+        <button
+          onClick={onHowItWorks}
+          className="kp-card"
+          style={{
+            width: '100%',
+            padding: '10px 14px', borderRadius: 9, marginBottom: 8,
+            background: 'var(--kp-surface-2)',
+            border: '1px solid rgba(201,169,97,0.3)',
+            color: 'var(--kp-text-gold)',
+            fontSize: 12.5, fontWeight: 700, fontFamily: 'inherit',
+            cursor: 'pointer',
+            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 7,
+          }}>
+          ℹ️ {t('footer.howItWorks')}
+        </button>
+      )}
       <button
         onClick={onFeedback}
         className="kp-card"
@@ -4324,6 +4495,7 @@ const defaultState = () => ({
   playerId: 'p_' + Math.random().toString(36).slice(2, 11), // stable roster key (per account)
   weekSnap: null,       // { red, ts } — Red count at the start of the current week (for weekly movers)
   shareAlliance: false, // opt-in to sync progress to the alliance roster
+  gateSeen: false, // dismissed the first-run welcome gate (may still be solo)
   helpRequested: false, // player raised a hand for leaders to review their gear
   helpRequestedAt: null, // when the help flag was raised
   allianceCode: DEFAULT_ALLIANCE_CODE, // which alliance's roster this player belongs to
@@ -4361,6 +4533,7 @@ const migrateState = (s) => {
   if (s.specialization === undefined) s.specialization = null;
   if (s.playerName === undefined) s.playerName = '';
   if (s.shareAlliance === undefined) s.shareAlliance = false;
+  if (s.gateSeen === undefined) s.gateSeen = false;
   if (s.helpRequested === undefined) s.helpRequested = false;
   if (s.helpRequestedAt === undefined) s.helpRequestedAt = null;
   if (!s.playerId) s.playerId = 'p_' + Math.random().toString(36).slice(2, 11);
@@ -4387,7 +4560,17 @@ export default function App() {
   const [pickingTroopFor, setPickingTroopFor] = useState(null); // troop name when picker is open
   const [showFeedback, setShowFeedback] = useState(false);
   const [showAlliance, setShowAlliance] = useState(false);
+  const [showGateManual, setShowGateManual] = useState(false); // re-open the welcome/intro from the footer
   const [showGear, setShowGear] = useState(false);
+  const gearAutoOpened = useRef(false);
+  // First-time users (no gear entered yet) get the gear board open by default,
+  // so the very first action — entering your gear — is obvious.
+  useEffect(() => {
+    if (!gearAutoOpened.current && state && Object.keys(state.gear || {}).length === 0) {
+      setShowGear(true);
+      gearAutoOpened.current = true;
+    }
+  }, [state]);
   // App is dark-only — the gold-on-dark theme is the identity.
   const theme = 'dark';
   const [language, setLanguage] = useState(() => {
@@ -4719,6 +4902,14 @@ export default function App() {
           <div style={{ fontSize: 10, color: '#c79a6a', letterSpacing: 0.5, marginTop: 3 }}>
             {t('app.credit', { guide: GUIDE_AUTHOR, app: APP_AUTHOR })}
           </div>
+          <button onClick={() => setShowGateManual(true)} className="kp-card" style={{
+            marginTop: 10, padding: '5px 13px', borderRadius: 99,
+            background: 'rgba(201,169,97,0.1)', border: '1px solid rgba(201,169,97,0.35)',
+            color: 'var(--kp-text-gold)', fontSize: 11, fontWeight: 700, fontFamily: 'inherit',
+            cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: 5,
+          }}>
+            ℹ️ {t('footer.howItWorks')}
+          </button>
         </div>
 
         {(() => {
@@ -5284,6 +5475,7 @@ export default function App() {
         {/* Footer — feedback + credits */}
         <Footer
           onFeedback={() => setShowFeedback(true)}
+          onHowItWorks={() => setShowGateManual(true)}
           t={t}
         />
 
@@ -5337,6 +5529,16 @@ export default function App() {
             setPickingTroopFor(null);
           }}
           onClose={() => setPickingTroopFor(null)}
+        />
+      )}
+      {(((!state.allianceSetup && !state.gateSeen)) || showGateManual) && ALLIANCE_DB_URL && (
+        <WelcomeGate
+          t={t}
+          invite={invite}
+          onClose={() => { setShowGateManual(false); setState(p => ({ ...p, gateSeen: true })); }}
+          onSkip={() => { setShowGateManual(false); setState(p => ({ ...p, gateSeen: true })); }}
+          onCreate={(code) => { setShowGateManual(false); setState(p => ({ ...p, allianceCode: code, allianceSetup: true, gateSeen: true, isAdmin: true, shareAlliance: true })); setViewCode(''); setJustCreated(true); setView('alliance'); }}
+          onJoin={(code, asLeader) => { setShowGateManual(false); const sup = code === SUPER_ADMIN_CODE; setState(p => ({ ...p, allianceCode: code, allianceSetup: true, gateSeen: true, isAdmin: sup || !!asLeader, ...(sup ? {} : { shareAlliance: true }) })); if (sup) setView('alliance'); }}
         />
       )}
       {showFeedback && (
