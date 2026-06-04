@@ -56,7 +56,7 @@ import { Upload, Check, X, AlertTriangle, ChevronRight, ChevronDown, Star, Hamme
 const BRAND_TITLE = "SHAKES' RED GEAR GUIDE";
 const GUIDE_AUTHOR = 'Shakes'; // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2'; // built this app
-const APP_VERSION = 'v7.3'; // bump this on every new build so you can confirm the deploy is live
+const APP_VERSION = 'v7.4'; // bump this on every new build so you can confirm the deploy is live
 const TROOPS = ['infantry', 'archer', 'cavalry'];
 const TROOP_LABEL = {
   infantry: 'Infantry',
@@ -150,7 +150,7 @@ const GEAR_IMAGES = {
     }
   }
 };
-const SLOTS = ['helmet', 'chest', 'gloves', 'boots'];
+const SLOTS = ['helmet', 'gloves', 'chest', 'boots'];
 const SLOT_LABEL = {
   helmet: 'Helmet',
   chest: 'Chest',
@@ -4938,6 +4938,66 @@ const I18N = {
     id: 'KITA BERTARUNG BERSAMA',
     vi: 'CHÚNG TA CÙNG CHIẾN ĐẤU',
     th: 'เราสู้ร่วมกัน'
+  },
+  'help.request': {
+    en: '🆘 Ask leaders for help',
+    he: '🆘 בקש עזרה מהלידרים',
+    es: '🆘 Pedir ayuda a los líderes',
+    pt: '🆘 Pedir ajuda aos líderes',
+    fr: '🆘 Demander de l’aide aux chefs',
+    de: '🆘 Anführer um Hilfe bitten',
+    ru: '🆘 Попросить помощи у лидеров',
+    ar: '🆘 اطلب المساعدة من القادة'
+  },
+  'help.requested': {
+    en: '🆘 Help requested — leaders notified',
+    he: '🆘 בקשת העזרה נשלחה — הלידרים יראו',
+    es: '🆘 Ayuda solicitada — líderes avisados',
+    pt: '🆘 Ajuda solicitada — líderes avisados',
+    fr: '🆘 Aide demandée — chefs prévenus',
+    de: '🆘 Hilfe angefordert — Anführer informiert',
+    ru: '🆘 Запрошена помощь — лидеры уведомлены',
+    ar: '🆘 تم طلب المساعدة — أُبلغ القادة'
+  },
+  'help.cancel': {
+    en: 'Cancel request',
+    he: 'בטל בקשה',
+    es: 'Cancelar solicitud',
+    pt: 'Cancelar pedido',
+    fr: 'Annuler la demande',
+    de: 'Anfrage abbrechen',
+    ru: 'Отменить запрос',
+    ar: 'إلغاء الطلب'
+  },
+  'help.hint': {
+    en: 'Leaders will review your gear and suggest how to build and improve.',
+    he: 'הלידרים יבדקו את הציוד שלך ויציעו איך לבנות ולשפר.',
+    es: 'Los líderes revisarán tu equipo y sugerirán cómo mejorar.',
+    pt: 'Os líderes vão analisar seu equipamento e sugerir melhorias.',
+    fr: 'Les chefs examineront ton équipement et te conseilleront.',
+    de: 'Anführer prüfen deine Ausrüstung und geben Tipps.',
+    ru: 'Лидеры посмотрят ваше снаряжение и подскажут, как улучшить.',
+    ar: 'سيراجع القادة عتادك ويقترحون كيفية التحسين.'
+  },
+  'help.needsBadge': {
+    en: 'NEEDS HELP',
+    he: 'צריך עזרה',
+    es: 'NECESITA AYUDA',
+    pt: 'PRECISA DE AJUDA',
+    fr: 'AIDE DEMANDÉE',
+    de: 'BRAUCHT HILFE',
+    ru: 'НУЖНА ПОМОЩЬ',
+    ar: 'يحتاج مساعدة'
+  },
+  'help.count': {
+    en: '🆘 {n} asked for help',
+    he: '🆘 {n} ביקשו עזרה',
+    es: '🆘 {n} pidieron ayuda',
+    pt: '🆘 {n} pediram ajuda',
+    fr: '🆘 {n} ont demandé de l’aide',
+    de: '🆘 {n} bitten um Hilfe',
+    ru: '🆘 {n} просят помощи',
+    ar: '🆘 {n} طلبوا المساعدة'
   }
 };
 const T = (key, lang = 'en', vars) => {
@@ -5530,328 +5590,6 @@ const extractJson = text => {
   return s.slice(start, end + 1);
 };
 
-// ── Gemini structured response schema — forces valid JSON ──
-const GEAR_PIECE_SCHEMA = {
-  type: 'object',
-  properties: {
-    rarity: {
-      type: 'string',
-      enum: ['grey', 'green', 'blue', 'purple', 'mythic', 'red']
-    },
-    level: {
-      type: 'integer'
-    },
-    mastery: {
-      type: 'integer'
-    }
-  }
-};
-const RESPONSE_SCHEMA = {
-  type: 'object',
-  properties: {
-    heroes: {
-      type: 'array',
-      items: {
-        type: 'object',
-        properties: {
-          name: {
-            type: 'string'
-          },
-          troop: {
-            type: 'string',
-            enum: ['infantry', 'archer', 'cavalry']
-          },
-          gear: {
-            type: 'object',
-            properties: {
-              helmet: GEAR_PIECE_SCHEMA,
-              chest: GEAR_PIECE_SCHEMA,
-              gloves: GEAR_PIECE_SCHEMA,
-              boots: GEAR_PIECE_SCHEMA
-            }
-          }
-        }
-      }
-    },
-    resources: {
-      type: 'object',
-      properties: {
-        xp: {
-          type: 'integer'
-        },
-        hammers: {
-          type: 'integer'
-        },
-        mythicGears: {
-          type: 'integer'
-        }
-      }
-    }
-  }
-};
-const parseImagesViaGemini = async (imageBlobs, apiKey, onStatus) => {
-  const status = msg => {
-    console.log('[KingshotPath]', msg);
-    onStatus?.(msg);
-  };
-  if (!apiKey) {
-    const e = new Error('AUTH: No API key configured');
-    e.code = 'AUTH';
-    throw e;
-  }
-
-  // Convert each blob to base64
-  const toBase64 = blob => new Promise((res, rej) => {
-    const r = new FileReader();
-    r.onload = () => res(r.result.split(',')[1]);
-    r.onerror = () => rej(new Error('Read failed'));
-    r.readAsDataURL(blob);
-  });
-  const base64Images = await Promise.all(imageBlobs.map(toBase64));
-  const mimeTypes = imageBlobs.map(b => b.type || 'image/png');
-  const prompt = `Analyze these screenshots from the mobile game Kingshot. There are up to 3 hero gear panels (each showing one hero with their 4 equipped gear pieces).
-
-For each HERO GEAR PANEL, extract:
-- Hero name (shown at the top of the screen — examples: Petra, Amadeus, Marlin, Zoe, Howard, Hilde, Helga, Alcar, Yang, Vivian, Triton, Sophia, Thrud, Long Fei, Margot, Rosa)
-- Troop type: 'infantry', 'archer', or 'cavalry'. Infer from the small icon next to the gear (shield = infantry, crosshair/arrow = archer, star/compass = cavalry). Known mappings: Zoe/Amadeus/Howard/Helga/Alcar/Long Fei/Triton = infantry; Marlin/Rosa/Vivian/Yang = archer; Hilde/Petra/Margot/Thrud/Sophia = cavalry.
-- For each of the 4 gear slots (top-left=HELMET, top-right=GLOVES, bottom-left=CHEST, bottom-right=BOOTS):
-  - RARITY — read it from the thick OUTER BORDER colour of each gear icon. Look only at that border ring, NOT the picture inside the icon and NOT the tiny corner badges or number bubbles. For an equipped, geared hero the border is almost always GOLD/orange (= "mythic") or bright RED/crimson (= "red", the top tier). The lower tiers, by border colour, are: grey, green, blue, purple ("purple" = Epic). Decide ONLY by the border ring: gold border → "mythic"; red border → "red". Then sanity-check with the enhancement "+XX" number: +XX above 80 ⇒ only mythic or red; above 60 ⇒ Epic or higher; above 40 ⇒ blue or higher; above 20 ⇒ green or higher. A piece at +65 or +75 can never be grey/green/blue — pick at least the rarity its level allows.
-  - Enhancement Level: the +XX number in the corner of the gear icon (range 0-100 for Mythic, and 1-100 for Red — Red's counter restarts at 1 right after ascending)
-  - Mastery Level: the "Lv.X" label at the bottom (range 0-20)
-
-IMPORTANT: Include EVERY hero gear panel visible in the images. Never return an empty list if at least one panel is shown — when unsure about a detail, still include the panel with your best guess.
-
-Return STRICT JSON in exactly this format (no markdown fences, no extra commentary):
-{
-  "heroes": [
-    {
-      "name": "Petra",
-      "troop": "cavalry",
-      "gear": {
-        "helmet": { "rarity": "red", "level": 30, "mastery": 12 },
-        "chest":  { "rarity": "red", "level": 19, "mastery": 10 },
-        "gloves": { "rarity": "mythic", "level": 100, "mastery": 7 },
-        "boots":  { "rarity": "red", "level": 1,  "mastery": 10 }
-      }
-    }
-  ]
-}
-If you can't determine a number, return null for that field. Output JSON only.`;
-
-  // List of models to try in order. Free tier models have rate/availability limits;
-  // if the main one is overloaded we fall back to lite or 2.0.
-  // 2.5-pro is no longer free on most keys (returns 429 no-quota), so we don't
-  // waste a call on it. Flash reads names/slots/levels well; rarity is confirmed
-  // with the one-tap chips + the deterministic floors in sanitizeRarity().
-  const MODELS_TO_TRY = ['gemini-2.5-flash', 'gemini-2.5-flash-lite'];
-  const MAX_RETRIES_PER_MODEL = 2;
-  const buildEndpoint = model => `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`;
-  const body = {
-    contents: [{
-      parts: [...base64Images.map((data, i) => ({
-        inline_data: {
-          mime_type: mimeTypes[i],
-          data
-        }
-      })), {
-        text: prompt
-      }]
-    }],
-    generationConfig: {
-      temperature: 0,
-      maxOutputTokens: 8192,
-      responseMimeType: 'application/json',
-      // Give the model a little room to reason about border colours, but cap it so
-      // the JSON (a few hundred tokens) is never truncated by thinking.
-      thinkingConfig: {
-        thinkingBudget: 2048
-      }
-    }
-  };
-  let lastError = null;
-  let response = null;
-  let modelUsed = null;
-  const skipReasons = [];
-  outer: for (const model of MODELS_TO_TRY) {
-    for (let attempt = 1; attempt <= MAX_RETRIES_PER_MODEL; attempt++) {
-      if (attempt === 1 && model === MODELS_TO_TRY[0]) {
-        status(`Analyzing images with Gemini ${model}...`);
-      } else {
-        status(`Retrying with ${model} (attempt ${attempt})...`);
-      }
-      try {
-        response = await fetch(buildEndpoint(model), {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(body)
-        });
-      } catch (networkErr) {
-        lastError = {
-          code: 'NETWORK',
-          message: networkErr.message || 'cannot reach Gemini'
-        };
-        await new Promise(r => setTimeout(r, 1500));
-        continue;
-      }
-
-      // 503 / 502 / 504 → retry or move to next model
-      if (response.status === 503 || response.status === 502 || response.status === 504) {
-        lastError = {
-          code: 'OVERLOADED',
-          status: response.status
-        };
-        if (attempt < MAX_RETRIES_PER_MODEL) {
-          status(`${model} overloaded. Waiting ${attempt * 2}s before retry...`);
-          await new Promise(r => setTimeout(r, attempt * 2000));
-          continue;
-        }
-        status(`${model} is overloaded, trying alternative...`);
-        break;
-      }
-      if (response.status === 429) {
-        let why = 'rate limit';
-        try {
-          const tx = await response.text();
-          if (/RESOURCE_EXHAUSTED|quota|exceeded/i.test(tx)) why = 'no free quota / daily cap';
-        } catch {}
-        lastError = {
-          code: 'RATE',
-          status: 429,
-          why
-        };
-        skipReasons.push(`${model}: ${why} (429)`);
-        status(`${model}: ${why} (429), trying next model...`);
-        break;
-      }
-
-      // Permission / bad request (e.g. model not enabled for this key) → try next model.
-      if (response.status === 400 || response.status === 401 || response.status === 403) {
-        let why = `error ${response.status}`;
-        try {
-          const tx = await response.text();
-          if (/PERMISSION_DENIED|not have access|not enabled|consumer/i.test(tx)) why = 'not available on this key';else if (/API_KEY_INVALID|API key not valid/i.test(tx)) why = 'API key issue';
-        } catch {}
-        lastError = {
-          code: 'ACCESS',
-          status: response.status,
-          why
-        };
-        skipReasons.push(`${model}: ${why} (${response.status})`);
-        status(`${model}: ${why} (${response.status}), trying next model...`);
-        break;
-      }
-
-      // Model retired/unavailable (404) or transient server error (5xx):
-      // don't abort the whole chain — try the next model in the list.
-      if (response.status === 404 || response.status >= 500) {
-        let why = `${response.status}`;
-        try {
-          const tx = await response.text();
-          if (/not found|not supported|is not found/i.test(tx)) why = 'not available on this key';
-        } catch {}
-        lastError = {
-          code: 'HTTP',
-          status: response.status,
-          why
-        };
-        skipReasons.push(`${model}: unavailable (${response.status})`);
-        status(`${model} unavailable (${why}), trying alternative...`);
-        break;
-      }
-      modelUsed = model;
-      break outer;
-    }
-  }
-  if (!response) {
-    if (lastError?.code === 'NETWORK') {
-      const e = new Error('NETWORK: ' + lastError.message);
-      e.code = 'NETWORK';
-      throw e;
-    }
-    const e = new Error('Gemini is overloaded across all models. Wait a few minutes and try again.');
-    e.code = 'OVERLOADED';
-    throw e;
-  }
-  console.log(`[KingshotPath] Response from ${modelUsed}: status ${response.status}`);
-  if (response.status === 400) {
-    const err = await response.text();
-    if (err.includes('API_KEY_INVALID') || err.includes('API key not valid')) {
-      const e = new Error('AUTH: API key is invalid');
-      e.code = 'AUTH';
-      throw e;
-    }
-    const e = new Error(`Gemini 400: ${err.slice(0, 200)}`);
-    e.code = 'API_ERROR';
-    throw e;
-  }
-  if (response.status === 401 || response.status === 403) {
-    const e = new Error('AUTH: API key missing or invalid');
-    e.code = 'AUTH';
-    throw e;
-  }
-  if (response.status === 429) {
-    const e = new Error('RATE: Too many requests — wait a minute (free tier is 15 req/min)');
-    e.code = 'RATE';
-    throw e;
-  }
-  if (!response.ok) {
-    const err = await response.text();
-    const e = new Error(`Gemini ${response.status}: ${err.slice(0, 200)}`);
-    e.code = 'API_ERROR';
-    throw e;
-  }
-  const data = await response.json();
-  const text = (data.candidates?.[0]?.content?.parts || []).map(p => p.text || '').join('').trim();
-  if (!text) {
-    // Sometimes Gemini blocks the response or hits token cap
-    const finishReason = data.candidates?.[0]?.finishReason;
-    const blockReason = data.promptFeedback?.blockReason;
-    const reason = blockReason ? `blocked (${blockReason})` : finishReason ? `stopped: ${finishReason}` : 'empty';
-    const e = new Error(`Gemini returned no text (${reason}). Try smaller/clearer screenshots.`);
-    e.code = 'API_ERROR';
-    throw e;
-  }
-
-  // Truncated mid-output (rare now that thinking is disabled) → actionable message
-  if (data.candidates?.[0]?.finishReason === 'MAX_TOKENS') {
-    const e = new Error('Gemini ran out of room reading your screenshots. Try one hero at a time, or crop tighter to just the gear panel.');
-    e.code = 'API_ERROR';
-    throw e;
-  }
-
-  // Try direct parse first (with schema, Gemini should return clean JSON)
-  try {
-    {
-      const __p = JSON.parse(text);
-      __p.__model = modelUsed;
-      __p.__skipped = skipReasons;
-      return __p;
-    }
-  } catch {}
-
-  // Fallback: extract JSON from a possibly wrapped response
-  const cleaned = extractJson(text);
-  if (cleaned) {
-    try {
-      {
-        const __p = JSON.parse(cleaned);
-        __p.__model = modelUsed;
-        __p.__skipped = skipReasons;
-        return __p;
-      }
-    } catch {}
-  }
-
-  // Final fallback: show the user the start of the response so they can see what came back
-  const preview = text.slice(0, 180).replace(/\n/g, ' ');
-  const e = new Error(`Couldn't parse Gemini response as JSON. Response started with: "${preview}..."`);
-  e.code = 'PARSE_ERROR';
-  e.rawResponse = text;
-  throw e;
-};
-
 // ═══════════════════════════════════════════════════════════════════
 //   GEAR ART (SVG) — fantasy-style icons for each slot
 // ═══════════════════════════════════════════════════════════════════
@@ -6122,6 +5860,17 @@ const SLOT_SVG = {
     opacity: "0.5"
   }))
 };
+
+// ═══════════════════════════════════════════════════════════════════
+//   RED GEAR TILES — real in-game art (gold piece on the red card),
+//   one per slot, shared across all troops. Used for 'red' rarity.
+// ═══════════════════════════════════════════════════════════════════
+const RED_GEAR_IMAGES = {
+  helmet: 'data:image/webp;base64,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',
+  gloves: 'data:image/webp;base64,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',
+  chest: 'data:image/webp;base64,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',
+  boots: 'data:image/webp;base64,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'
+};
 const GearArt = ({
   troop,
   slot,
@@ -6129,15 +5878,44 @@ const GearArt = ({
   size = 56
 }) => {
   const theme = RARITY_THEME[rarity] || RARITY_THEME.grey;
-  // Try to use real gear image first.
-  // Red gear shares the exact same piece artwork as Mythic — only the frame
-  // recolors (handled by RARITY_THEME above). So fall back red -> mythic.
+
+  // Red rarity has dedicated full-tile artwork (gold piece on the in-game red
+  // card). The image already includes the red background, so render it
+  // edge-to-edge rather than the transparent-piece-on-tile treatment.
+  const redTile = rarity === 'red' ? RED_GEAR_IMAGES[slot] : null;
+
+  // Other rarities: reuse the transparent Mythic piece on a colored tile.
   const realImage = troop && (GEAR_IMAGES[troop]?.[slot]?.[rarity] || (rarity === 'red' ? GEAR_IMAGES[troop]?.[slot]?.mythic : null));
 
   // Filled rarity tile: solid colored background + matching border, with the
   // piece centered on top — matches the in-game gear card look. The frame
   // color is what distinguishes Mythic (amber) from Red, etc.
   const tileBg = `radial-gradient(circle at 50% 32%, ${theme.glow}3a 0%, ${theme.bg} 50%, ${theme.bg}f2 100%)`;
+  if (redTile) {
+    return /*#__PURE__*/React.createElement("div", {
+      style: {
+        width: size,
+        height: size,
+        position: 'relative',
+        display: 'inline-flex',
+        flexShrink: 0,
+        borderRadius: '24%',
+        overflow: 'hidden',
+        boxShadow: `0 0 7px ${theme.edge}88`
+      }
+    }, /*#__PURE__*/React.createElement("img", {
+      src: redTile,
+      alt: `red ${slot}`,
+      style: {
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        display: 'block'
+      }
+    }), /*#__PURE__*/React.createElement("div", {
+      className: "kp-sheen"
+    }));
+  }
   if (realImage) {
     return /*#__PURE__*/React.createElement("div", {
       style: {
@@ -6158,9 +5936,11 @@ const GearArt = ({
       src: realImage,
       alt: `${rarity} ${slot}`,
       style: {
-        width: '84%',
-        height: '84%',
+        width: '100%',
+        height: '100%',
         objectFit: 'contain',
+        transform: 'scale(1.08)',
+        // absorb the ~8% padding baked into the piece so it fills the tile
         position: 'relative',
         zIndex: 1,
         filter: `drop-shadow(0 1px 2px rgba(0,0,0,0.55))`
@@ -6244,57 +6024,6 @@ const formatActionLabel = action => {
     slotLabel,
     target: `${RARITY_LABEL[action.rarity]} L${action.level}`
   };
-};
-
-// ═══════════════════════════════════════════════════════════════════
-//   IMAGE UPLOADER
-// ═══════════════════════════════════════════════════════════════════
-const ImageUploader = ({
-  onFilesChosen,
-  disabled,
-  t
-}) => {
-  const tr = t || (k => k);
-  const inputRef = useRef(null);
-  const handleChange = e => {
-    const files = Array.from(e.target.files || []);
-    if (files.length === 0) return;
-    onFilesChosen(files);
-    e.target.value = ''; // allow re-upload of same files
-  };
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("input", {
-    ref: inputRef,
-    type: "file",
-    accept: "image/*",
-    multiple: true,
-    onChange: handleChange,
-    style: {
-      display: 'none'
-    },
-    disabled: disabled
-  }), /*#__PURE__*/React.createElement("button", {
-    onClick: () => inputRef.current?.click(),
-    disabled: disabled,
-    style: {
-      width: '100%',
-      padding: '14px 18px',
-      borderRadius: 11,
-      background: disabled ? 'rgba(201,169,97,0.15)' : 'linear-gradient(135deg, rgba(34,197,94,0.18), rgba(34,197,94,0.06))',
-      border: disabled ? '1px dashed rgba(201,169,97,0.2)' : '2px dashed rgba(34,197,94,0.55)',
-      color: disabled ? 'var(--kp-text-faint)' : '#86efac',
-      fontSize: 14,
-      fontWeight: 700,
-      fontFamily: 'inherit',
-      cursor: disabled ? 'not-allowed' : 'pointer',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: 9,
-      letterSpacing: 0.3
-    }
-  }, /*#__PURE__*/React.createElement(Upload, {
-    size: 18
-  }), disabled ? tr('upload.processing') : tr('upload.btn')));
 };
 
 // ═══════════════════════════════════════════════════════════════════
@@ -6566,8 +6295,7 @@ const PieceEditor = ({
       alignItems: 'center',
       justifyContent: 'center',
       padding: 20
-    },
-    onClick: onClose
+    }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       background: 'var(--kp-modal)',
@@ -6653,10 +6381,15 @@ const PieceEditor = ({
     }
   }, "ENHANCEMENT LEVEL (0 \u2013 ", cap, ")"), /*#__PURE__*/React.createElement("input", {
     type: "number",
+    inputMode: "numeric",
     value: level,
     min: 0,
     max: cap,
-    onChange: e => setLevel(Math.max(0, Math.min(cap, parseInt(e.target.value) || 0))),
+    onFocus: e => e.target.select(),
+    onChange: e => {
+      const v = e.target.value;
+      setLevel(v === '' ? '' : Math.max(0, Math.min(cap, parseInt(v) || 0)));
+    },
     style: {
       width: '100%',
       padding: '10px 12px',
@@ -6680,10 +6413,15 @@ const PieceEditor = ({
     }
   }, "MASTERY LEVEL (0 \u2013 ", MASTERY_MAX, ")"), /*#__PURE__*/React.createElement("input", {
     type: "number",
+    inputMode: "numeric",
     value: mastery,
     min: 0,
     max: MASTERY_MAX,
-    onChange: e => setMastery(Math.max(0, Math.min(MASTERY_MAX, parseInt(e.target.value) || 0))),
+    onFocus: e => e.target.select(),
+    onChange: e => {
+      const v = e.target.value;
+      setMastery(v === '' ? '' : Math.max(0, Math.min(MASTERY_MAX, parseInt(v) || 0)));
+    },
     style: {
       width: '100%',
       padding: '10px 12px',
@@ -6704,8 +6442,8 @@ const PieceEditor = ({
   }, /*#__PURE__*/React.createElement("button", {
     onClick: () => onSave({
       rarity,
-      level,
-      mastery
+      level: level === '' ? 0 : level,
+      mastery: mastery === '' ? 0 : mastery
     }),
     style: {
       flex: 1,
@@ -8714,369 +8452,6 @@ const ResourceEditor = ({
 };
 
 // ═══════════════════════════════════════════════════════════════════
-//   API SETUP — guides the user through getting a free Gemini API key
-// ═══════════════════════════════════════════════════════════════════
-const ApiSetupModal = ({
-  initialKey,
-  onSave,
-  onClose,
-  errorMode
-}) => {
-  const [key, setKey] = useState(initialKey || '');
-  const [testing, setTesting] = useState(false);
-  const [testResult, setTestResult] = useState(null); // 'ok' | { error }
-
-  const testKey = async () => {
-    const k = (key || '').replace(/\s+/g, ''); // strip any spaces/newlines from paste
-    if (!k) return;
-    setTesting(true);
-    setTestResult(null);
-    try {
-      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(k)}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          contents: [{
-            parts: [{
-              text: 'ping'
-            }]
-          }],
-          generationConfig: {
-            maxOutputTokens: 5,
-            thinkingConfig: {
-              thinkingBudget: 0
-            }
-          }
-        })
-      });
-      if (res.ok) {
-        setTestResult('ok');
-      } else if (res.status === 400 || res.status === 401 || res.status === 403) {
-        const txt = await res.text();
-        if (txt.includes('API_KEY_INVALID') || txt.includes('API key not valid')) {
-          setTestResult({
-            error: 'Google rejected this key. Copy the whole key with no extra characters (it starts with "AIza"). If you just created it, wait 1–2 minutes — new keys take a moment to activate. The key must come from aistudio.google.com/apikey.'
-          });
-        } else if (txt.includes('SERVICE_DISABLED') || txt.includes('has not been used') || txt.includes('disabled')) {
-          setTestResult({
-            error: 'The Generative Language API isn’t enabled for this key’s project. Create the key at aistudio.google.com/apikey (it enables the API automatically).'
-          });
-        } else if (txt.includes('referer') || txt.includes('referrer') || txt.includes('API_KEY_HTTP_REFERRER_BLOCKED')) {
-          setTestResult({
-            error: 'This key is restricted to certain websites. Remove the restriction in Google Cloud, or make a new unrestricted key at aistudio.google.com/apikey.'
-          });
-        } else {
-          setTestResult({
-            error: `API returned ${res.status}: ${txt.slice(0, 120)}`
-          });
-        }
-      } else if (res.status === 429) {
-        setTestResult({
-          error: 'Rate limited. Wait a minute and try again.'
-        });
-      } else {
-        setTestResult({
-          error: `API returned ${res.status}`
-        });
-      }
-    } catch (e) {
-      setTestResult({
-        error: e.message || 'Network error'
-      });
-    }
-    setTesting(false);
-  };
-  return /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: 'fixed',
-      inset: 0,
-      zIndex: 100,
-      background: 'rgba(0,0,0,0.78)',
-      backdropFilter: 'blur(8px)',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: 16,
-      overflowY: 'auto'
-    },
-    onClick: onClose
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      background: 'var(--kp-modal)',
-      border: '1px solid rgba(201,169,97,0.4)',
-      borderRadius: 14,
-      padding: 18,
-      maxWidth: 480,
-      width: '100%',
-      maxHeight: '92vh',
-      overflowY: 'auto'
-    },
-    onClick: e => e.stopPropagation()
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: 9,
-      marginBottom: 14
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      width: 36,
-      height: 36,
-      borderRadius: '50%',
-      background: errorMode ? 'rgba(239,68,68,0.18)' : 'rgba(34,197,94,0.18)',
-      border: `1px solid ${errorMode ? '#ef4444' : '#22c55e'}`,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
-    }
-  }, errorMode ? /*#__PURE__*/React.createElement(AlertTriangle, {
-    size: 18,
-    color: "#ef4444"
-  }) : /*#__PURE__*/React.createElement(Sparkles, {
-    size: 18,
-    color: "#22c55e"
-  })), /*#__PURE__*/React.createElement("div", {
-    style: {
-      flex: 1
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: 'Cinzel, serif',
-      fontSize: 17,
-      color: 'var(--kp-text)',
-      fontWeight: 800,
-      letterSpacing: 0.4
-    }
-  }, errorMode ? 'API Key Needed' : 'Free AI Vision Setup'), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontSize: 11,
-      color: 'var(--kp-text-dim)',
-      marginTop: 2
-    }
-  }, "Using Google Gemini (free tier \u2014 no credit card needed)"))), errorMode && /*#__PURE__*/React.createElement("div", {
-    style: {
-      padding: '9px 11px',
-      marginBottom: 14,
-      borderRadius: 8,
-      background: 'rgba(239,68,68,0.08)',
-      border: '1px solid rgba(239,68,68,0.3)',
-      fontSize: 12,
-      color: '#fca5a5',
-      lineHeight: 1.5
-    }
-  }, "Photo OCR needs a Gemini API key. It's free and takes 90 seconds to set up."), /*#__PURE__*/React.createElement("div", {
-    style: {
-      padding: '9px 11px',
-      marginBottom: 12,
-      borderRadius: 8,
-      background: 'rgba(34,197,94,0.07)',
-      border: '1px solid rgba(34,197,94,0.3)',
-      fontSize: 12,
-      color: '#86efac',
-      lineHeight: 1.5
-    }
-  }, "\u2713 ", /*#__PURE__*/React.createElement("b", null, "100% free."), " Google's free tier gives 15 requests/minute and 1,500/day. More than enough for personal gear tracking. No credit card required."), /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginBottom: 14
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontSize: 10,
-      color: 'var(--kp-text-gold)',
-      fontWeight: 700,
-      letterSpacing: 0.6,
-      marginBottom: 8
-    }
-  }, "STEP-BY-STEP SETUP"), [{
-    num: 1,
-    title: 'Open Google AI Studio',
-    body: /*#__PURE__*/React.createElement(React.Fragment, null, "Go to ", /*#__PURE__*/React.createElement("a", {
-      href: "https://aistudio.google.com/apikey",
-      target: "_blank",
-      rel: "noopener noreferrer",
-      style: {
-        color: '#fbbf24',
-        textDecoration: 'underline',
-        wordBreak: 'break-all'
-      }
-    }, "aistudio.google.com/apikey"), " in a new tab.")
-  }, {
-    num: 2,
-    title: 'Sign in with Google',
-    body: 'Use any Google account (Gmail). No special signup needed.'
-  }, {
-    num: 3,
-    title: 'Create API key',
-    body: /*#__PURE__*/React.createElement(React.Fragment, null, "Click ", /*#__PURE__*/React.createElement("b", null, "Create API key"), " (top-right). Choose a project (or create one). Copy the key \u2014 it starts with ", /*#__PURE__*/React.createElement("code", {
-      style: {
-        background: 'var(--kp-surface-2)',
-        padding: '1px 5px',
-        borderRadius: 3,
-        fontSize: 10
-      }
-    }, "AIza"), ".")
-  }, {
-    num: 4,
-    title: 'Paste it here',
-    body: 'Stored only in this browser. Sent only directly to Google\'s API.'
-  }].map(step => /*#__PURE__*/React.createElement("div", {
-    key: step.num,
-    style: {
-      display: 'flex',
-      gap: 10,
-      marginBottom: 9,
-      padding: '8px 10px',
-      borderRadius: 8,
-      background: 'rgba(201,169,97,0.05)',
-      border: '1px solid rgba(201,169,97,0.15)'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      width: 22,
-      height: 22,
-      borderRadius: '50%',
-      background: 'linear-gradient(135deg, #c9a961, #8b6914)',
-      color: '#0f0d0a',
-      fontWeight: 900,
-      fontSize: 11,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      flexShrink: 0,
-      fontFamily: 'Cinzel, serif'
-    }
-  }, step.num), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontSize: 12,
-      lineHeight: 1.5,
-      color: '#c0a878'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontWeight: 700,
-      color: 'var(--kp-text)',
-      marginBottom: 3
-    }
-  }, step.title), step.body)))), /*#__PURE__*/React.createElement("label", {
-    style: {
-      display: 'block',
-      fontSize: 11,
-      fontWeight: 700,
-      color: 'var(--kp-text-dim)',
-      marginBottom: 5,
-      letterSpacing: 0.4
-    }
-  }, "PASTE YOUR GEMINI API KEY"), /*#__PURE__*/React.createElement("input", {
-    type: "password",
-    value: key,
-    onChange: e => {
-      setKey(e.target.value.replace(/\s+/g, ''));
-      setTestResult(null);
-    },
-    placeholder: "AIza...",
-    style: {
-      width: '100%',
-      padding: '10px 12px',
-      marginBottom: 8,
-      background: 'var(--kp-surface-2)',
-      border: testResult === 'ok' ? '1px solid #22c55e' : '1px solid rgba(201,169,97,0.3)',
-      borderRadius: 8,
-      color: 'var(--kp-text)',
-      fontSize: 13,
-      fontFamily: 'monospace',
-      outline: 'none',
-      letterSpacing: 0.4
-    }
-  }), testResult === 'ok' && /*#__PURE__*/React.createElement("div", {
-    style: {
-      padding: '6px 10px',
-      marginBottom: 8,
-      borderRadius: 6,
-      background: 'rgba(34,197,94,0.12)',
-      border: '1px solid rgba(34,197,94,0.45)',
-      fontSize: 11,
-      color: '#86efac',
-      display: 'flex',
-      alignItems: 'center',
-      gap: 5
-    }
-  }, /*#__PURE__*/React.createElement(Check, {
-    size: 12
-  }), " Key works! Click Save to use it."), testResult?.error && /*#__PURE__*/React.createElement("div", {
-    style: {
-      padding: '6px 10px',
-      marginBottom: 8,
-      borderRadius: 6,
-      background: 'rgba(239,68,68,0.12)',
-      border: '1px solid rgba(239,68,68,0.4)',
-      fontSize: 11,
-      color: '#fca5a5'
-    }
-  }, "\u26A0 ", testResult.error), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      gap: 8,
-      marginTop: 12
-    }
-  }, /*#__PURE__*/React.createElement("button", {
-    onClick: testKey,
-    disabled: !key.trim() || testing,
-    style: {
-      padding: '10px 14px',
-      borderRadius: 8,
-      background: 'transparent',
-      color: testing ? 'var(--kp-text-faint)' : '#86efac',
-      border: '1px solid rgba(34,197,94,0.45)',
-      fontFamily: 'inherit',
-      fontSize: 12,
-      fontWeight: 700,
-      cursor: key.trim() && !testing ? 'pointer' : 'not-allowed',
-      opacity: key.trim() && !testing ? 1 : 0.5
-    }
-  }, testing ? 'Testing...' : 'Test connection'), /*#__PURE__*/React.createElement("button", {
-    onClick: () => onSave(key.replace(/\s+/g, '')),
-    disabled: !key.trim(),
-    style: {
-      flex: 1,
-      padding: '10px 14px',
-      borderRadius: 8,
-      background: key.trim() ? 'linear-gradient(135deg, #c9a961, #8b6914)' : 'rgba(201,169,97,0.1)',
-      color: key.trim() ? '#0f0d0a' : 'var(--kp-text-fainter)',
-      border: 'none',
-      fontFamily: 'Cinzel, serif',
-      fontSize: 13,
-      fontWeight: 800,
-      letterSpacing: 0.4,
-      cursor: key.trim() ? 'pointer' : 'not-allowed',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: 6
-    }
-  }, /*#__PURE__*/React.createElement(Check, {
-    size: 14
-  }), " Save & use this key")), /*#__PURE__*/React.createElement("button", {
-    onClick: onClose,
-    style: {
-      width: '100%',
-      marginTop: 9,
-      padding: '8px 14px',
-      borderRadius: 7,
-      background: 'transparent',
-      color: 'var(--kp-text-faint)',
-      border: '1px solid rgba(201,169,97,0.15)',
-      fontFamily: 'inherit',
-      fontSize: 11,
-      fontWeight: 600,
-      cursor: 'pointer'
-    }
-  }, "Close (I'll enter gear manually instead)")));
-};
-
-// ═══════════════════════════════════════════════════════════════════
 //   FEEDBACK MODAL — send feedback via mailto / copy-to-clipboard
 // ═══════════════════════════════════════════════════════════════════
 const DISCORD_URL = 'https://discord.gg/Rdep4J2x';
@@ -9237,6 +8612,8 @@ const buildMemberSummary = (state, activePath) => {
     heroes: state.heroes || {},
     gear: state.gear || {},
     resources: state.resources || {},
+    helpRequested: !!state.helpRequested,
+    helpRequestedAt: state.helpRequested ? state.helpRequestedAt || Date.now() : null,
     updatedAt: Date.now()
   };
 };
@@ -11279,11 +10656,14 @@ const AllianceRoster = ({
     avgPhase: list.length ? (list.reduce((s, m) => s + (m.phase || 0), 0) / list.length).toFixed(1) : '0',
     offense: list.filter(m => m.spec === 'offense').length,
     defense: list.filter(m => m.spec === 'defense').length,
-    stale: list.filter(m => daysOld(m.updatedAt) > STALE_DAYS).length
+    stale: list.filter(m => daysOld(m.updatedAt) > STALE_DAYS).length,
+    needHelp: list.filter(m => m.helpRequested).length
   };
 
   // Filter + sort for display
   const shown = list.filter(m => specFilter === 'all' ? true : specFilter === 'stale' ? daysOld(m.updatedAt) > STALE_DAYS : m.spec === specFilter).filter(m => !search.trim() || (m.name || '').toLowerCase().includes(search.trim().toLowerCase())).sort((a, b) => {
+    const hr = (b.helpRequested ? 1 : 0) - (a.helpRequested ? 1 : 0);
+    if (hr) return hr; // anyone who asked for help floats to the top
     if (sortBy === 'recent') return (b.updatedAt || 0) - (a.updatedAt || 0);
     if (sortBy === 'name') return (a.name || '').localeCompare(b.name || '');
     return (b.redCount || 0) - (a.redCount || 0) || (b.phase || 0) - (a.phase || 0);
@@ -11469,6 +10849,24 @@ const AllianceRoster = ({
       fontFamily: 'inherit',
       outline: 'none'
     }
+  })), stats.needHelp > 0 && /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 7,
+      padding: '8px 11px',
+      marginBottom: 10,
+      borderRadius: 9,
+      background: 'rgba(239,68,68,0.12)',
+      border: '1px solid rgba(239,68,68,0.45)',
+      color: '#fca5a5',
+      fontSize: 11.5,
+      fontWeight: 800,
+      letterSpacing: 0.3
+    }
+  }, tr('help.count', {
+    n: stats.needHelp
   })), members === null ? /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 11,
@@ -11547,7 +10945,21 @@ const AllianceRoster = ({
         overflow: 'hidden',
         textOverflow: 'ellipsis'
       }
-    }, m.name || '—'), stale && /*#__PURE__*/React.createElement("span", {
+    }, m.name || '—'), m.helpRequested && /*#__PURE__*/React.createElement("span", {
+      title: "Asked for help",
+      style: {
+        fontSize: 8.5,
+        fontWeight: 800,
+        color: '#fff',
+        background: 'linear-gradient(135deg,#ef4444,#991b1b)',
+        border: '1px solid rgba(239,68,68,0.6)',
+        borderRadius: 99,
+        padding: '1px 6px',
+        whiteSpace: 'nowrap',
+        flexShrink: 0,
+        letterSpacing: 0.3
+      }
+    }, "\uD83C\uDD98 ", tr('help.needsBadge')), stale && /*#__PURE__*/React.createElement("span", {
       title: "Inactive",
       style: {
         fontSize: 9,
@@ -11941,6 +11353,10 @@ const defaultState = () => ({
   // { red, ts } — Red count at the start of the current week (for weekly movers)
   shareAlliance: false,
   // opt-in to sync progress to the alliance roster
+  helpRequested: false,
+  // player raised a hand for leaders to review their gear
+  helpRequestedAt: null,
+  // when the help flag was raised
   allianceCode: DEFAULT_ALLIANCE_CODE,
   // which alliance's roster this player belongs to
   allianceSetup: false,
@@ -11984,6 +11400,8 @@ const migrateState = s => {
   if (s.specialization === undefined) s.specialization = null;
   if (s.playerName === undefined) s.playerName = '';
   if (s.shareAlliance === undefined) s.shareAlliance = false;
+  if (s.helpRequested === undefined) s.helpRequested = false;
+  if (s.helpRequestedAt === undefined) s.helpRequestedAt = null;
   if (!s.playerId) s.playerId = 'p_' + Math.random().toString(36).slice(2, 11);
   if (s.weekSnap === undefined) s.weekSnap = null;
   if (!s.allianceCode) s.allianceCode = DEFAULT_ALLIANCE_CODE;
@@ -11993,14 +11411,6 @@ const migrateState = s => {
 };
 export default function App() {
   const [state, setState] = useState(null);
-  const [apiKey, setApiKey] = useState(null); // null = unloaded; '' = none; 'sk-...' = key
-  const [showApiSetup, setShowApiSetup] = useState(false);
-  const [apiSetupErrorMode, setApiSetupErrorMode] = useState(false);
-  const [parsing, setParsing] = useState(false);
-  const [parseError, setParseError] = useState(null);
-  const [parsingStatus, setParsingStatus] = useState(''); // detailed status during long parses
-  const [scanInfo, setScanInfo] = useState(''); // persists which model ran + what was skipped
-  const [showScan, setShowScan] = useState(false); // photo-OCR is an optional, collapsed extra
   const [view, setView] = useState('path'); // 'path' | 'alliance' top-level tab
   const [activeAccount, setActiveAccount] = useState('main'); // 'main' | 'second'
   const [otherAccount, setOtherAccount] = useState(null); // the inactive account's saved data
@@ -12018,7 +11428,6 @@ export default function App() {
   });
   const [editingPiece, setEditingPiece] = useState(null); // { troop, slot, piece }
   const [editingResources, setEditingResources] = useState(false);
-  const [lastUploadSummary, setLastUploadSummary] = useState(null); // {heroesApplied, piecesApplied}
   const [pickingTroopFor, setPickingTroopFor] = useState(null); // troop name when picker is open
   const [showFeedback, setShowFeedback] = useState(false);
   const [showAlliance, setShowAlliance] = useState(false);
@@ -12096,12 +11505,6 @@ export default function App() {
         setState(defaultState());
         setOtherAccount(defaultState());
       }
-      try {
-        const keyStored = await window.storage.get(API_KEY_STORAGE);
-        setApiKey(keyStored?.value || '');
-      } catch {
-        setApiKey('');
-      }
     })();
   }, []);
 
@@ -12128,12 +11531,6 @@ export default function App() {
     setActiveAccount(target);
   };
 
-  // Persist API key
-  useEffect(() => {
-    if (apiKey === null) return; // not loaded yet
-    if (apiKey) window.storage.set(API_KEY_STORAGE, apiKey).catch(() => {});else window.storage.delete(API_KEY_STORAGE).catch(() => {});
-  }, [apiKey]);
-
   // Push progress to the shared alliance roster (debounced; only when opted in)
   useEffect(() => {
     if (!ALLIANCE_DB_URL || !state || !state.shareAlliance || !state.playerId) return;
@@ -12155,117 +11552,7 @@ export default function App() {
     m.weekRed = snap.red;
     const id = setTimeout(() => shareMember(m, state.allianceCode), 1200);
     return () => clearTimeout(id);
-  }, [state?.shareAlliance, state?.playerName, state?.gear, state?.specialization, state?.heroes, state?.allianceCode]);
-  const handleUpload = async files => {
-    setParsing(true);
-    setParsingStatus('');
-    setScanInfo('');
-    setParseError(null);
-    console.log('[KingshotPath] Upload started with', files.length, 'file(s)');
-    try {
-      const parsed = await parseImagesViaGemini(files, apiKey, setParsingStatus);
-      console.log('[KingshotPath] Parsed result:', parsed);
-      const usedModel = parsed.__model || 'unknown';
-      const skips = parsed.__skipped || [];
-      setScanInfo(`Scanned with ${usedModel}` + (skips.length ? ` — skipped: ${skips.join(' · ')}` : ''));
-      const parsedHeroes = parsed.heroes || [];
-      const heroesReturned = parsedHeroes.length;
-      const rejectedTroops = [];
-      const rejectedRarities = [];
-      let heroesApplied = 0;
-      let piecesApplied = 0;
-
-      // Build the next state synchronously so we can decide success/error
-      // accurately right here (a functional setState updater runs later, which
-      // previously made this check see stale zero counts and show a false error).
-      const next = JSON.parse(JSON.stringify(state));
-      // Apply heroes / gear — normalize wording (tier/troop) so model drift
-      // doesn't silently drop pieces. Resources are entered manually, not imported.
-      parsedHeroes.forEach(h => {
-        const troop = normalizeTroop(h.troop);
-        if (!troop) {
-          console.warn('[KingshotPath] Unknown troop:', h.troop);
-          if (h.troop) rejectedTroops.push(String(h.troop));
-          return;
-        }
-        if (h.name) next.heroes[troop] = h.name;
-        heroesApplied++;
-        if (h.gear) {
-          SLOTS.forEach(slot => {
-            const g = h.gear[slot];
-            if (!g) return;
-            const rarity = normalizeRarity(g.rarity);
-            if (!rarity) {
-              console.warn('[KingshotPath] Unknown rarity for', troop, slot, ':', g.rarity);
-              if (g.rarity) rejectedRarities.push(String(g.rarity));
-              return;
-            }
-            const lvl = Math.max(0, parseInt(g.level) || 0);
-            const mst = Math.max(0, parseInt(g.mastery) || 0);
-            next.gear[gearKey(troop, slot)] = {
-              rarity: sanitizeRarity(rarity, lvl, mst),
-              level: lvl,
-              mastery: mst
-            };
-            piecesApplied++;
-          });
-        }
-      });
-      if (heroesApplied > 0 || piecesApplied > 0) {
-        setState(next);
-        // OCR can't reliably tell Red from Mythic, so open the gear board and
-        // nudge the player to confirm each piece's rarity with the one-tap chips.
-        if (piecesApplied > 0) {
-          setShowGear(true);
-          setScanInfo(`Imported ${piecesApplied} piece${piecesApplied === 1 ? '' : 's'}. ⚠ Check each piece's rarity below — tap the R / M / E chip to fix any (the scan can't always tell Red from Mythic).`);
-        }
-      }
-      console.log(`[KingshotPath] Applied: ${heroesApplied} heroes, ${piecesApplied} pieces`);
-      if (heroesApplied === 0 && piecesApplied === 0) {
-        let msg;
-        if (heroesReturned === 0) {
-          // Gemini responded but read no heroes from the images
-          msg = `Gemini read the images but didn't detect any hero gear panels. Make sure each screenshot shows one hero's full 4-piece gear screen. Or tap any slot below to enter manually.`;
-        } else if (rejectedRarities.length || rejectedTroops.length) {
-          // It read heroes but we couldn't map the tier/troop wording
-          const bits = [];
-          if (rejectedRarities.length) bits.push(`tier "${[...new Set(rejectedRarities)].slice(0, 3).join('", "')}"`);
-          if (rejectedTroops.length) bits.push(`troop "${[...new Set(rejectedTroops)].slice(0, 3).join('", "')}"`);
-          msg = `Gemini detected ${heroesReturned} hero panel(s) but couldn't match the ${bits.join(' and ')} it returned. This usually means the model's wording changed — tap any slot to enter manually, and let me know what you see so I can map it.`;
-        } else {
-          msg = `Gemini detected ${heroesReturned} hero panel(s) but the gear values were empty. Try clearer, full-screen screenshots, or tap any slot to enter manually.`;
-        }
-        setParseError(msg);
-      } else {
-        // Show a success message briefly
-        setParseError(null);
-        setLastUploadSummary({
-          heroesApplied,
-          piecesApplied
-        });
-        setTimeout(() => setLastUploadSummary(null), 5000);
-      }
-    } catch (e) {
-      console.error('[KingshotPath] Upload error:', e);
-      if (e.code === 'AUTH') {
-        setApiSetupErrorMode(true);
-        setShowApiSetup(true);
-        setParseError(null);
-      } else if (e.code === 'NETWORK') {
-        setParseError('Cannot reach Gemini API. Check your internet connection.');
-      } else if (e.code === 'RATE') {
-        setParseError('Too many requests — wait a minute (free tier is 15 req/min).');
-      } else if (e.code === 'OVERLOADED') {
-        setParseError('Gemini servers are busy right now. We tried 3 models and all are overloaded. Wait 1-2 minutes and try again, or enter gear manually by tapping any slot.');
-      } else if (e.code === 'PARSE_ERROR') {
-        setParseError(`${e.message} You can also enter gear manually by tapping any slot.`);
-      } else {
-        setParseError(e.message || 'Parsing failed. Try the manual editor for each piece.');
-      }
-    } finally {
-      setParsing(false);
-    }
-  };
+  }, [state?.shareAlliance, state?.playerName, state?.gear, state?.specialization, state?.heroes, state?.allianceCode, state?.helpRequested]);
   const updatePiece = (troop, slot, newPiece) => {
     setState(prev => {
       const next = JSON.parse(JSON.stringify(prev));
@@ -12597,185 +11884,7 @@ export default function App() {
     }, /*#__PURE__*/React.createElement(Icon, {
       size: 14
     }), " ", label)));
-  })(), view === 'path' && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
-    onClick: () => setShowScan(s => !s),
-    className: "kp-card",
-    style: {
-      width: '100%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: 8,
-      padding: '9px 12px',
-      borderRadius: 10,
-      marginBottom: showScan ? 10 : 14,
-      background: 'var(--kp-surface-2)',
-      border: '1px dashed rgba(201,169,97,0.3)',
-      color: 'var(--kp-text-dim)',
-      fontSize: 12,
-      fontWeight: 700,
-      fontFamily: 'inherit',
-      cursor: 'pointer',
-      letterSpacing: 0.3
-    }
-  }, /*#__PURE__*/React.createElement(Upload, {
-    size: 14
-  }), " ", t('scan.optional'), " ", showScan ? /*#__PURE__*/React.createElement(ChevronDown, {
-    size: 14
-  }) : /*#__PURE__*/React.createElement(ChevronRight, {
-    size: 14
-  })), showScan && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginBottom: 10,
-      padding: '9px 12px',
-      borderRadius: 8,
-      background: 'rgba(251,191,36,0.08)',
-      border: '1px solid rgba(251,191,36,0.3)',
-      fontSize: 10.5,
-      color: '#fbbf24',
-      lineHeight: 1.5
-    }
-  }, "\u26A0 ", t('scan.notRecommended')), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: 8,
-      padding: '8px 11px',
-      marginBottom: 12,
-      background: apiKey ? 'rgba(34,197,94,0.06)' : 'rgba(251,191,36,0.06)',
-      border: apiKey ? '1px solid rgba(34,197,94,0.3)' : '1px dashed rgba(251,191,36,0.4)',
-      borderRadius: 9
-    }
-  }, apiKey ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Check, {
-    size: 14,
-    color: "#86efac"
-  }), /*#__PURE__*/React.createElement("div", {
-    style: {
-      flex: 1,
-      fontSize: 11,
-      color: '#86efac',
-      fontWeight: 600
-    }
-  }, t('api.ready')), /*#__PURE__*/React.createElement("button", {
-    onClick: () => {
-      setApiSetupErrorMode(false);
-      setShowApiSetup(true);
-    },
-    style: {
-      padding: '4px 9px',
-      borderRadius: 5,
-      background: 'transparent',
-      border: '1px solid rgba(34,197,94,0.4)',
-      color: '#86efac',
-      fontSize: 10,
-      fontWeight: 700,
-      cursor: 'pointer'
-    }
-  }, t('btn.change'))) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Info, {
-    size: 14,
-    color: "#fbbf24"
-  }), /*#__PURE__*/React.createElement("div", {
-    style: {
-      flex: 1,
-      fontSize: 11,
-      color: '#fbbf24',
-      fontWeight: 600
-    }
-  }, "Set up API for photo OCR (optional \u2014 manual entry works too)"), /*#__PURE__*/React.createElement("button", {
-    onClick: () => {
-      setApiSetupErrorMode(false);
-      setShowApiSetup(true);
-    },
-    style: {
-      padding: '4px 9px',
-      borderRadius: 5,
-      background: 'linear-gradient(135deg, #fbbf24, #b45309)',
-      border: 'none',
-      color: '#0f0d0a',
-      fontSize: 10,
-      fontWeight: 800,
-      fontFamily: 'Cinzel, serif',
-      letterSpacing: 0.3,
-      cursor: 'pointer'
-    }
-  }, "Setup"))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginBottom: 16
-    }
-  }, /*#__PURE__*/React.createElement(ImageUploader, {
-    onFilesChosen: handleUpload,
-    disabled: parsing,
-    t: t
-  }), parsing && /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginTop: 8,
-      padding: '10px 12px',
-      background: 'rgba(34,197,94,0.08)',
-      border: '1px solid rgba(34,197,94,0.35)',
-      borderRadius: 8,
-      fontSize: 12,
-      color: '#86efac',
-      display: 'flex',
-      alignItems: 'center',
-      gap: 9
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      width: 14,
-      height: 14,
-      borderRadius: '50%',
-      border: '2px solid rgba(134,239,172,0.3)',
-      borderTopColor: '#86efac',
-      animation: 'spin 0.8s linear infinite',
-      flexShrink: 0
-    }
-  }), /*#__PURE__*/React.createElement("span", null, parsingStatus || 'Analyzing images with Gemini... this takes 5-15 seconds for 4 images.')), lastUploadSummary && !parsing && /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginTop: 8,
-      padding: '8px 11px',
-      background: 'rgba(34,197,94,0.1)',
-      border: '1px solid rgba(34,197,94,0.45)',
-      borderRadius: 7,
-      fontSize: 11,
-      color: '#86efac',
-      display: 'flex',
-      alignItems: 'center',
-      gap: 6
-    }
-  }, /*#__PURE__*/React.createElement(Check, {
-    size: 13
-  }), /*#__PURE__*/React.createElement("span", null, "Imported ", lastUploadSummary.heroesApplied, " hero", lastUploadSummary.heroesApplied === 1 ? '' : 'es', ", ", lastUploadSummary.piecesApplied, " gear piece", lastUploadSummary.piecesApplied === 1 ? '' : 's', ".")), parseError && /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginTop: 8,
-      padding: '8px 11px',
-      background: 'rgba(239,68,68,0.1)',
-      border: '1px solid rgba(239,68,68,0.4)',
-      borderRadius: 7,
-      fontSize: 11,
-      color: '#fca5a5',
-      lineHeight: 1.5
-    }
-  }, "\u26A0 ", parseError), scanInfo && /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginTop: 8,
-      padding: '7px 10px',
-      background: 'rgba(34,211,238,0.07)',
-      border: '1px solid rgba(34,211,238,0.25)',
-      borderRadius: 7,
-      fontSize: 10,
-      color: '#9fdde8',
-      lineHeight: 1.45,
-      textAlign: 'center'
-    }
-  }, scanInfo), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontSize: 10,
-      color: 'var(--kp-text-fainter)',
-      marginTop: 6,
-      lineHeight: 1.4,
-      textAlign: 'center'
-    }
-  }, t('upload.help')))), (() => {
+  })(), view === 'path' && /*#__PURE__*/React.createElement(React.Fragment, null, (() => {
     const jp = pathProgress(state.gear, SHAKES_PATH);
     const red = gearStats(state.gear).red;
     return /*#__PURE__*/React.createElement("div", {
@@ -13581,7 +12690,43 @@ export default function App() {
     }
   }, t('roster.sharedAs', {
     name: state.playerName.trim()
-  })), /*#__PURE__*/React.createElement("div", {
+  })), state.shareAlliance && state.playerName.trim() && /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 10
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => setState(p => ({
+      ...p,
+      helpRequested: !p.helpRequested,
+      helpRequestedAt: !p.helpRequested ? Date.now() : null
+    })),
+    className: "kp-card",
+    style: {
+      width: '100%',
+      padding: '10px 12px',
+      borderRadius: 9,
+      background: state.helpRequested ? 'linear-gradient(135deg,#ef4444,#991b1b)' : 'var(--kp-surface-2)',
+      border: state.helpRequested ? 'none' : '1px solid rgba(239,68,68,0.45)',
+      color: state.helpRequested ? '#fff' : '#fca5a5',
+      fontFamily: 'Cinzel, serif',
+      fontWeight: 800,
+      fontSize: 12,
+      letterSpacing: 0.3,
+      cursor: 'pointer',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 7
+    }
+  }, state.helpRequested ? t('help.requested') : t('help.request')), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 9.5,
+      color: 'var(--kp-text-faint)',
+      marginTop: 6,
+      lineHeight: 1.45,
+      textAlign: 'center'
+    }
+  }, state.helpRequested ? t('help.cancel') + ' ↑' : t('help.hint'))), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       alignItems: 'center',
@@ -13816,18 +12961,6 @@ export default function App() {
       setEditingResources(false);
     },
     onClose: () => setEditingResources(false)
-  }), showApiSetup && /*#__PURE__*/React.createElement(ApiSetupModal, {
-    initialKey: apiKey,
-    errorMode: apiSetupErrorMode,
-    onSave: k => {
-      setApiKey(k);
-      setShowApiSetup(false);
-      setApiSetupErrorMode(false);
-    },
-    onClose: () => {
-      setShowApiSetup(false);
-      setApiSetupErrorMode(false);
-    }
   }), pickingTroopFor && /*#__PURE__*/React.createElement(HeroPickerModal, {
     troop: pickingTroopFor,
     currentHero: state.heroes[pickingTroopFor],
@@ -13879,3 +13012,9 @@ if (__el) {
 </script>
 </body>
 </html>
+
+
+
+
+
+
