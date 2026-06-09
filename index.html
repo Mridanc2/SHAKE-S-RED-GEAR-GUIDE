@@ -56,7 +56,7 @@ import { Upload, Check, X, AlertTriangle, ChevronRight, ChevronDown, Star, Hamme
 const BRAND_TITLE = "GEAR COMMAND CENTER";
 const GUIDE_AUTHOR = 'Shakes'; // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2'; // built this app
-const APP_VERSION = 'v9.18'; // bump this on every new build so you can confirm the deploy is live
+const APP_VERSION = 'v9.19'; // bump this on every new build so you can confirm the deploy is live
 const TROOPS = ['infantry', 'archer', 'cavalry'];
 const TROOP_LABEL = {
   infantry: 'Infantry',
@@ -12765,6 +12765,23 @@ function App() {
       return 'en';
     }
   });
+  useEffect(() => {
+    if (!EMBED) return;
+    const post = () => {
+      try {
+        window.parent.postMessage({
+          __kpHeight: document.body.scrollHeight
+        }, '*');
+      } catch (e) {}
+    };
+    post();
+    const iv = setInterval(post, 700);
+    window.addEventListener('resize', post);
+    return () => {
+      clearInterval(iv);
+      window.removeEventListener('resize', post);
+    };
+  }, []);
   const [visits, setVisits] = useState(null);
 
   // Persist language
@@ -13031,7 +13048,7 @@ function App() {
     lang: language,
     style: {
       ...themeVars,
-      minHeight: '100vh',
+      minHeight: EMBED ? 'auto' : '100vh',
       background: theme === 'light' ? 'radial-gradient(ellipse at top, #f5e9d0 0%, #e8d4a0 50%, #d4b873 100%)' : 'radial-gradient(ellipse at top, #0e1a30 0%, #0a1322 50%, #080d18 100%)',
       color: 'var(--kp-text)',
       fontFamily: 'Inter, sans-serif',
@@ -13043,6 +13060,9 @@ function App() {
   }, /*#__PURE__*/React.createElement("style", null, `
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
         * { box-sizing: border-box; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-thumb { background: rgba(232,194,90,0.32); border-radius: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
         body { margin: 0; background: ${theme === 'light' ? '#e8d4a0' : '#080d18'}; }
         button { font-family: inherit; transition: transform .12s ease, filter .14s ease, box-shadow .18s ease, background .18s ease; }
         @media (hover: hover) { button:hover { filter: brightness(1.08); } }
