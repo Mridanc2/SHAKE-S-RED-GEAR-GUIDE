@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Gear Command Center · Kingshot Red Gear</title>
 <meta name="description" content="Gear Command Center — track your Kingshot Red Gear progression and run your alliance gear board. Strategy by Shakes." />
-<meta name="theme-color" content="#05080f" />
+<meta name="theme-color" content="#080d18" />
 <link rel="manifest" href="manifest.webmanifest" />
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -13,7 +13,7 @@
 <meta name="apple-mobile-web-app-title" content="Red Gear" />
 <link rel="apple-touch-icon" href="icon-192.png" />
 <style>
-  html, body { margin: 0; background: #05080f; }
+  html, body { margin: 0; background: #080d18; }
   * { box-sizing: border-box; }
   #root > div { max-width: 520px; margin-inline: auto; }
   #__boot { color: #94a3bd; font-family: system-ui, sans-serif; text-align: center; padding: 80px 20px; }
@@ -56,7 +56,7 @@ import { Upload, Check, X, AlertTriangle, ChevronRight, ChevronDown, Star, Hamme
 const BRAND_TITLE = "GEAR COMMAND CENTER";
 const GUIDE_AUTHOR = 'Shakes'; // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2'; // built this app
-const APP_VERSION = 'v9.16'; // bump this on every new build so you can confirm the deploy is live
+const APP_VERSION = 'v9.17'; // bump this on every new build so you can confirm the deploy is live
 const TROOPS = ['infantry', 'archer', 'cavalry'];
 const TROOP_LABEL = {
   infantry: 'Infantry',
@@ -6536,7 +6536,7 @@ const Achievements = ({
       borderRadius: 13,
       padding: 14,
       background: 'var(--kp-panel)',
-      border: '1px solid rgba(201,169,97,0.25)',
+      border: '1px solid rgba(232,194,90,0.25)',
       boxShadow: '0 4px 18px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)'
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -6585,8 +6585,8 @@ const Achievements = ({
         textAlign: 'center',
         cursor: 'pointer',
         fontFamily: 'inherit',
-        background: got ? 'linear-gradient(135deg, rgba(201,169,97,0.22), rgba(139,105,20,0.12))' : 'var(--kp-surface-3)',
-        border: isSel ? '1.5px solid var(--kp-text-gold)' : got ? '1px solid rgba(201,169,97,0.5)' : '1px solid rgba(201,169,97,0.1)',
+        background: got ? 'linear-gradient(135deg, rgba(232,194,90,0.22), rgba(139,105,20,0.12))' : 'var(--kp-surface-3)',
+        border: isSel ? '1.5px solid var(--kp-text-gold)' : got ? '1px solid rgba(232,194,90,0.5)' : '1px solid rgba(232,194,90,0.1)',
         opacity: got ? 1 : 0.6
       }
     }, /*#__PURE__*/React.createElement("div", {
@@ -6617,7 +6617,7 @@ const Achievements = ({
       padding: '9px 12px',
       borderRadius: 9,
       background: 'rgba(0,0,0,0.2)',
-      border: '1px solid rgba(201,169,97,0.12)',
+      border: '1px solid rgba(232,194,90,0.12)',
       fontSize: 11,
       lineHeight: 1.45
     }
@@ -6669,7 +6669,7 @@ const SetupScreen = ({
       gap: 12,
       textAlign: 'left',
       background: 'var(--kp-surface-2)',
-      border: '1px solid rgba(201,169,97,0.2)',
+      border: '1px solid rgba(232,194,90,0.2)',
       borderRadius: 11,
       padding: '13px 15px',
       marginBottom: 10,
@@ -6725,7 +6725,7 @@ const SetupScreen = ({
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       background: 'var(--kp-panel)',
-      border: '1px solid rgba(201,169,97,0.5)',
+      border: '1px solid rgba(232,194,90,0.5)',
       borderRadius: 14,
       padding: 20,
       maxWidth: 440,
@@ -6756,7 +6756,7 @@ const SetupScreen = ({
       padding: 13,
       border: 'none',
       borderRadius: 10,
-      background: 'linear-gradient(135deg,#c9a961,#e0b96a)',
+      background: 'linear-gradient(135deg,#e8c25a,#e0b96a)',
       color: '#1a1208',
       fontWeight: 800,
       fontSize: 15,
@@ -6791,7 +6791,7 @@ const PieceEditor = ({
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       background: 'var(--kp-modal)',
-      border: '1px solid rgba(201,169,97,0.4)',
+      border: '1px solid rgba(232,194,90,0.4)',
       borderRadius: 14,
       padding: 18,
       maxWidth: 420,
@@ -6855,7 +6855,7 @@ const PieceEditor = ({
       padding: '7px 8px',
       borderRadius: 7,
       background: rarity === r ? RARITY_THEME[r].edge + '33' : 'var(--kp-surface-2)',
-      border: `1px solid ${rarity === r ? RARITY_THEME[r].edge : 'rgba(201,169,97,0.2)'}`,
+      border: `1px solid ${rarity === r ? RARITY_THEME[r].edge : 'rgba(232,194,90,0.2)'}`,
       color: rarity === r ? RARITY_THEME[r].glow : 'var(--kp-text-dim)',
       fontSize: 11,
       fontWeight: 700,
@@ -6887,7 +6887,7 @@ const PieceEditor = ({
       padding: '10px 12px',
       marginBottom: 12,
       background: 'var(--kp-surface-2)',
-      border: '1px solid rgba(201,169,97,0.25)',
+      border: '1px solid rgba(232,194,90,0.25)',
       borderRadius: 7,
       color: 'var(--kp-text)',
       fontSize: 14,
@@ -6919,7 +6919,7 @@ const PieceEditor = ({
       padding: '10px 12px',
       marginBottom: 16,
       background: 'var(--kp-surface-2)',
-      border: '1px solid rgba(201,169,97,0.25)',
+      border: '1px solid rgba(232,194,90,0.25)',
       borderRadius: 7,
       color: 'var(--kp-text)',
       fontSize: 14,
@@ -6941,7 +6941,7 @@ const PieceEditor = ({
       flex: 1,
       padding: '11px 14px',
       borderRadius: 8,
-      background: 'linear-gradient(135deg, #c9a961, #8b6914)',
+      background: 'linear-gradient(135deg, #e8c25a, #8b6914)',
       border: 'none',
       color: '#0f0d0a',
       fontFamily: 'Cinzel, serif',
@@ -6963,7 +6963,7 @@ const PieceEditor = ({
       borderRadius: 8,
       background: 'transparent',
       color: 'var(--kp-text-dim)',
-      border: '1px solid rgba(201,169,97,0.3)',
+      border: '1px solid rgba(232,194,90,0.3)',
       fontFamily: 'inherit',
       fontSize: 13,
       fontWeight: 600,
@@ -7155,7 +7155,7 @@ const HeroPickerModal = ({
         padding: 9,
         borderRadius: 10,
         background: isSelected ? `linear-gradient(135deg, ${troopColor}33, rgba(0,0,0,0.5))` : 'var(--kp-surface-3)',
-        border: isSelected ? `2px solid ${troopColor}` : '1px solid rgba(201,169,97,0.18)',
+        border: isSelected ? `2px solid ${troopColor}` : '1px solid rgba(232,194,90,0.18)',
         position: 'relative',
         cursor: 'pointer',
         boxShadow: isSelected ? `0 0 12px ${troopColor}55` : 'none'
@@ -7207,7 +7207,7 @@ const HeroPickerModal = ({
       borderRadius: 8,
       background: 'transparent',
       color: 'var(--kp-text-dim)',
-      border: '1px solid rgba(201,169,97,0.3)',
+      border: '1px solid rgba(232,194,90,0.3)',
       fontFamily: 'inherit',
       fontSize: 13,
       fontWeight: 600,
@@ -7229,7 +7229,7 @@ const HeroSelector = ({
   return /*#__PURE__*/React.createElement("div", {
     style: {
       background: 'var(--kp-panel)',
-      border: '1px solid rgba(201,169,97,0.3)',
+      border: '1px solid rgba(232,194,90,0.3)',
       borderRadius: 13,
       padding: 13,
       marginBottom: 14,
@@ -7261,7 +7261,7 @@ const HeroSelector = ({
       style: {
         padding: '10px 8px',
         borderRadius: 10,
-        background: name ? 'linear-gradient(160deg, rgba(201,169,97,0.09), var(--kp-card-bg))' : 'var(--kp-surface-2)',
+        background: name ? 'linear-gradient(160deg, rgba(232,194,90,0.09), var(--kp-card-bg))' : 'var(--kp-surface-2)',
         border: name ? `1px solid ${troopColor}55` : `1px dashed ${troopColor}44`,
         boxShadow: name ? '0 3px 14px rgba(0,0,0,0.32)' : 'none',
         color: 'var(--kp-text)',
@@ -7426,7 +7426,7 @@ const HeroBoard = ({
         padding: 9,
         borderRadius: 9,
         background: piece ? `linear-gradient(135deg, ${theme.bg}33, rgba(0,0,0,0.4))` : 'var(--kp-surface-3)',
-        border: piece ? `1px solid ${theme.edge}66` : '1px dashed rgba(201,169,97,0.25)',
+        border: piece ? `1px solid ${theme.edge}66` : '1px dashed rgba(232,194,90,0.25)',
         display: 'flex',
         flexDirection: 'column',
         gap: 7
@@ -7493,7 +7493,7 @@ const HeroBoard = ({
           borderRadius: 5,
           padding: 0,
           background: 'var(--kp-surface-2)',
-          border: '1px solid rgba(201,169,97,0.3)',
+          border: '1px solid rgba(232,194,90,0.3)',
           color: 'var(--kp-text-gold)',
           fontSize: 10,
           fontWeight: 800,
@@ -7516,7 +7516,7 @@ const HeroBoard = ({
       }
     }, EDITABLE_RARITIES.map(r => {
       const active = piece.rarity === r;
-      const col = RARITY_THEME[r] && RARITY_THEME[r].edge || '#c9a961';
+      const col = RARITY_THEME[r] && RARITY_THEME[r].edge || '#e8c25a';
       return /*#__PURE__*/React.createElement("button", {
         key: r,
         onClick: () => onSetRarity(troop, slot, r),
@@ -7552,7 +7552,7 @@ const HeroBoard = ({
           width: '100%',
           height: 22,
           borderRadius: 5,
-          border: '1px solid rgba(201,169,97,0.25)',
+          border: '1px solid rgba(232,194,90,0.25)',
           background: 'transparent',
           color: 'var(--kp-text-dim)',
           fontSize: 9.5,
@@ -7705,7 +7705,7 @@ const PhaseOverview = ({
   return /*#__PURE__*/React.createElement("div", {
     style: {
       background: 'var(--kp-panel)',
-      border: '1px solid rgba(201,169,97,0.22)',
+      border: '1px solid rgba(232,194,90,0.22)',
       borderRadius: 12,
       padding: 11,
       marginBottom: 14,
@@ -7731,8 +7731,8 @@ const PhaseOverview = ({
       fontWeight: 600,
       padding: '1px 6px',
       borderRadius: 99,
-      background: 'rgba(201,169,97,0.08)',
-      border: '1px solid rgba(201,169,97,0.2)',
+      background: 'rgba(232,194,90,0.08)',
+      border: '1px solid rgba(232,194,90,0.2)',
       textTransform: 'none',
       letterSpacing: 0.3
     }
@@ -7756,8 +7756,8 @@ const PhaseOverview = ({
         textAlign: 'center',
         padding: '6px 8px',
         borderRadius: 8,
-        background: isCurrent ? 'linear-gradient(135deg, #fbbf24, #b45309)' : isPast ? 'rgba(34,197,94,0.18)' : 'rgba(201,169,97,0.06)',
-        border: isOpen ? '2px solid #67e8f9' : isCurrent ? '1.5px solid #fbbf24' : isPast ? '1px solid rgba(34,197,94,0.45)' : '1px solid rgba(201,169,97,0.15)',
+        background: isCurrent ? 'linear-gradient(135deg, #fbbf24, #b45309)' : isPast ? 'rgba(34,197,94,0.18)' : 'rgba(232,194,90,0.06)',
+        border: isOpen ? '2px solid #67e8f9' : isCurrent ? '1.5px solid #fbbf24' : isPast ? '1px solid rgba(34,197,94,0.45)' : '1px solid rgba(232,194,90,0.15)',
         color: isCurrent ? '#0f0d0a' : isPast ? '#86efac' : 'var(--kp-text-faint)',
         position: 'relative',
         boxShadow: isOpen ? '0 0 12px rgba(103,232,249,0.5)' : isCurrent ? '0 0 10px rgba(251,191,36,0.5)' : 'none',
@@ -7843,7 +7843,7 @@ const PhaseOverview = ({
       padding: '8px 10px',
       borderRadius: 8,
       background: 'var(--kp-surface-2)',
-      border: '1px solid rgba(201,169,97,0.2)',
+      border: '1px solid rgba(232,194,90,0.2)',
       color: 'var(--kp-text-gold)',
       fontSize: 11,
       fontWeight: 700,
@@ -7871,7 +7871,7 @@ const PhaseOverview = ({
         padding: '10px 11px',
         borderRadius: 9,
         background: 'rgba(0,0,0,0.25)',
-        border: `1px solid ${status === 'current' ? 'rgba(251,191,36,0.4)' : 'rgba(201,169,97,0.15)'}`
+        border: `1px solid ${status === 'current' ? 'rgba(251,191,36,0.4)' : 'rgba(232,194,90,0.15)'}`
       }
     }, /*#__PURE__*/React.createElement("div", {
       style: {
@@ -7886,7 +7886,7 @@ const PhaseOverview = ({
         height: 22,
         borderRadius: '50%',
         flexShrink: 0,
-        background: status === 'current' ? 'linear-gradient(135deg,#fbbf24,#b45309)' : status === 'done' ? 'rgba(34,197,94,0.3)' : 'rgba(201,169,97,0.12)',
+        background: status === 'current' ? 'linear-gradient(135deg,#fbbf24,#b45309)' : status === 'done' ? 'rgba(34,197,94,0.3)' : 'rgba(232,194,90,0.12)',
         color: status === 'current' ? '#0f0d0a' : status === 'done' ? '#86efac' : 'var(--kp-text-faint)',
         fontFamily: 'Cinzel, serif',
         fontWeight: 900,
@@ -7959,7 +7959,7 @@ const PhaseOverview = ({
       height: 22,
       borderRadius: '50%',
       background: 'var(--kp-surface-2)',
-      border: '1px solid rgba(201,169,97,0.3)',
+      border: '1px solid rgba(232,194,90,0.3)',
       color: 'var(--kp-text-dim)',
       cursor: 'pointer',
       display: 'flex',
@@ -8292,11 +8292,11 @@ const StepCard = ({
     className: `kp-card${canAfford ? ' kp-ready' : ''}`,
     onClick: canToggle ? () => setShowSteps(s => !s) : undefined,
     style: {
-      background: canAfford ? 'linear-gradient(135deg, rgba(34,197,94,0.14), rgba(10,18,32,0.55))' : 'linear-gradient(135deg, rgba(201,169,97,0.10), var(--kp-card-bg))',
-      border: canAfford ? '1.5px solid rgba(34,197,94,0.55)' : '1.5px solid rgba(201,169,97,0.35)',
+      background: canAfford ? 'linear-gradient(135deg, rgba(34,197,94,0.14), rgba(10,18,32,0.55))' : 'linear-gradient(135deg, rgba(232,194,90,0.10), var(--kp-card-bg))',
+      border: canAfford ? '1.5px solid rgba(34,197,94,0.55)' : '1.5px solid rgba(232,194,90,0.35)',
       borderRadius: 12,
       padding: 13,
-      boxShadow: canAfford ? '0 0 20px rgba(34,197,94,0.16)' : '0 0 16px rgba(201,169,97,0.10)',
+      boxShadow: canAfford ? '0 0 20px rgba(34,197,94,0.16)' : '0 0 16px rgba(232,194,90,0.10)',
       cursor: canToggle ? 'pointer' : 'default'
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -8311,7 +8311,7 @@ const StepCard = ({
       width: 32,
       height: 32,
       borderRadius: '50%',
-      background: canAfford ? 'linear-gradient(135deg, #22c55e, #15803d)' : 'linear-gradient(135deg, #c9a961, #8b6914)',
+      background: canAfford ? 'linear-gradient(135deg, #22c55e, #15803d)' : 'linear-gradient(135deg, #e8c25a, #8b6914)',
       color: canAfford ? '#fff' : '#0f0d0a',
       display: 'flex',
       alignItems: 'center',
@@ -8475,7 +8475,7 @@ const StepCard = ({
       marginBottom: 10,
       background: 'rgba(0,0,0,0.3)',
       borderRadius: 8,
-      border: '1px solid rgba(201,169,97,0.12)'
+      border: '1px solid rgba(232,194,90,0.12)'
     }
   }, inGameSteps.map((s, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
@@ -8596,9 +8596,9 @@ const ResourcePills = ({
         flex: '1 1 100px',
         padding: '9px 11px',
         borderRadius: 9,
-        background: 'linear-gradient(135deg, rgba(201,169,97,0.10), var(--kp-card-bg))',
-        border: '1px solid rgba(201,169,97,0.35)',
-        boxShadow: '0 0 14px rgba(201,169,97,0.10)',
+        background: 'linear-gradient(135deg, rgba(232,194,90,0.10), var(--kp-card-bg))',
+        border: '1px solid rgba(232,194,90,0.35)',
+        boxShadow: '0 0 14px rgba(232,194,90,0.10)',
         color: 'var(--kp-text)',
         fontFamily: 'inherit',
         cursor: 'pointer',
@@ -8704,7 +8704,7 @@ const ResourceEditor = ({
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       background: 'var(--kp-modal)',
-      border: '1px solid rgba(201,169,97,0.4)',
+      border: '1px solid rgba(232,194,90,0.4)',
       borderRadius: 14,
       padding: 18,
       maxWidth: 460,
@@ -9080,7 +9080,7 @@ const ResourceEditor = ({
       flex: 1,
       padding: '11px 14px',
       borderRadius: 8,
-      background: 'linear-gradient(135deg, #c9a961, #8b6914)',
+      background: 'linear-gradient(135deg, #e8c25a, #8b6914)',
       border: 'none',
       color: '#0f0d0a',
       fontFamily: 'Cinzel, serif',
@@ -9102,7 +9102,7 @@ const ResourceEditor = ({
       borderRadius: 8,
       background: 'transparent',
       color: 'var(--kp-text-dim)',
-      border: '1px solid rgba(201,169,97,0.3)',
+      border: '1px solid rgba(232,194,90,0.3)',
       fontFamily: 'inherit',
       fontSize: 13,
       fontWeight: 600,
@@ -9378,7 +9378,7 @@ const FeedbackModal = ({
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       background: 'var(--kp-modal)',
-      border: '1px solid rgba(201,169,97,0.4)',
+      border: '1px solid rgba(232,194,90,0.4)',
       borderRadius: 14,
       padding: 18,
       maxWidth: 460,
@@ -9446,7 +9446,7 @@ const FeedbackModal = ({
       padding: '12px 14px',
       borderRadius: 8,
       boxSizing: 'border-box',
-      background: 'linear-gradient(135deg, #c9a961, #8b6914)',
+      background: 'linear-gradient(135deg, #e8c25a, #8b6914)',
       color: '#0f0d0a',
       textDecoration: 'none',
       fontFamily: 'Cinzel, serif',
@@ -9471,7 +9471,7 @@ const FeedbackModal = ({
       borderRadius: 7,
       background: 'transparent',
       color: 'var(--kp-text-faint)',
-      border: '1px solid rgba(201,169,97,0.15)',
+      border: '1px solid rgba(232,194,90,0.15)',
       fontFamily: 'inherit',
       fontSize: 11,
       fontWeight: 600,
@@ -9496,7 +9496,7 @@ const FeedbackModal = ({
       padding: '10px 12px',
       marginBottom: 12,
       background: 'var(--kp-surface-2)',
-      border: '1px solid rgba(201,169,97,0.3)',
+      border: '1px solid rgba(232,194,90,0.3)',
       borderRadius: 7,
       color: 'var(--kp-text)',
       fontSize: 13,
@@ -9523,7 +9523,7 @@ const FeedbackModal = ({
       padding: '10px 12px',
       marginBottom: 6,
       background: 'var(--kp-surface-2)',
-      border: '1px solid rgba(201,169,97,0.3)',
+      border: '1px solid rgba(232,194,90,0.3)',
       borderRadius: 7,
       color: 'var(--kp-text)',
       fontSize: 13,
@@ -9552,7 +9552,7 @@ const FeedbackModal = ({
       flex: 1,
       padding: '11px 14px',
       borderRadius: 8,
-      background: message.trim() ? 'linear-gradient(135deg, #c9a961, #8b6914)' : 'rgba(201,169,97,0.1)',
+      background: message.trim() ? 'linear-gradient(135deg, #e8c25a, #8b6914)' : 'rgba(232,194,90,0.1)',
       color: message.trim() ? '#0f0d0a' : 'var(--kp-text-fainter)',
       border: 'none',
       fontFamily: 'Cinzel, serif',
@@ -9574,7 +9574,7 @@ const FeedbackModal = ({
       borderRadius: 8,
       background: 'transparent',
       color: 'var(--kp-text-dim)',
-      border: '1px solid rgba(201,169,97,0.3)',
+      border: '1px solid rgba(232,194,90,0.3)',
       fontFamily: 'inherit',
       fontSize: 13,
       fontWeight: 600,
@@ -9659,7 +9659,7 @@ const CommentsSection = ({
   return /*#__PURE__*/React.createElement("div", {
     style: {
       background: 'var(--kp-panel)',
-      border: '1px solid rgba(201,169,97,0.25)',
+      border: '1px solid rgba(232,194,90,0.25)',
       borderRadius: 12,
       padding: 14,
       marginTop: 18,
@@ -9688,14 +9688,14 @@ const CommentsSection = ({
     style: {
       flex: 1,
       height: 1,
-      background: 'linear-gradient(90deg, rgba(201,169,97,0.3), transparent)'
+      background: 'linear-gradient(90deg, rgba(232,194,90,0.3), transparent)'
     }
   })), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: '12px 14px',
       borderRadius: 9,
       background: 'var(--kp-surface-3)',
-      border: '1px solid rgba(201,169,97,0.18)',
+      border: '1px solid rgba(232,194,90,0.18)',
       height: 104,
       overflow: 'hidden',
       display: 'flex',
@@ -9746,7 +9746,7 @@ const CommentsSection = ({
       width: i === idx % n ? 16 : 5,
       height: 5,
       borderRadius: 99,
-      background: i === idx % n ? '#fbbf24' : 'rgba(201,169,97,0.3)',
+      background: i === idx % n ? '#fbbf24' : 'rgba(232,194,90,0.3)',
       transition: 'width 0.3s, background 0.3s'
     }
   }))));
@@ -9772,7 +9772,7 @@ const LanguagePicker = ({
       padding: '5px 10px',
       borderRadius: 99,
       background: 'var(--kp-surface-2)',
-      border: '1px solid rgba(201,169,97,0.35)',
+      border: '1px solid rgba(232,194,90,0.35)',
       color: 'var(--kp-text-gold)',
       cursor: 'pointer',
       fontFamily: 'inherit',
@@ -9802,7 +9802,7 @@ const LanguagePicker = ({
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       background: 'var(--kp-modal)',
-      border: '1px solid rgba(201,169,97,0.4)',
+      border: '1px solid rgba(232,194,90,0.4)',
       borderRadius: 14,
       padding: 18,
       maxWidth: 420,
@@ -9848,7 +9848,7 @@ const LanguagePicker = ({
         padding: '9px 10px',
         borderRadius: 8,
         background: isSelected ? 'linear-gradient(135deg, rgba(251,191,36,0.22), rgba(251,191,36,0.05))' : 'var(--kp-surface-3)',
-        border: isSelected ? '2px solid #fbbf24' : '1px solid rgba(201,169,97,0.2)',
+        border: isSelected ? '2px solid #fbbf24' : '1px solid rgba(232,194,90,0.2)',
         color: isSelected ? '#fbbf24' : 'var(--kp-text-gold)',
         cursor: 'pointer',
         display: 'flex',
@@ -9881,7 +9881,7 @@ const LanguagePicker = ({
       borderRadius: 7,
       background: 'transparent',
       color: 'var(--kp-text-dim)',
-      border: '1px solid rgba(201,169,97,0.3)',
+      border: '1px solid rgba(232,194,90,0.3)',
       fontFamily: 'inherit',
       fontSize: 12,
       fontWeight: 600,
@@ -9907,7 +9907,7 @@ const AllianceWidget = ({
       marginTop: 18,
       borderRadius: 16,
       padding: '20px 18px',
-      border: '1.5px solid rgba(201,169,97,0.4)',
+      border: '1.5px solid rgba(232,194,90,0.4)',
       background: 'linear-gradient(160deg, #15233a 0%, #0d1525 60%, #0a0f1c 100%)',
       boxShadow: '0 0 24px rgba(0,0,0,0.4)',
       textAlign: 'center'
@@ -10011,7 +10011,7 @@ const AllianceModal = ({
       maxWidth: 420,
       borderRadius: 16,
       overflow: 'hidden',
-      border: '1.5px solid rgba(201,169,97,0.45)',
+      border: '1.5px solid rgba(232,194,90,0.45)',
       background: 'linear-gradient(160deg, #15233a 0%, #0d1525 60%, #0a0f1c 100%)',
       boxShadow: '0 12px 48px rgba(0,0,0,0.6)',
       maxHeight: '92vh',
@@ -10059,7 +10059,7 @@ const AllianceModal = ({
       fontFamily: 'Cinzel, serif',
       fontSize: 16,
       fontWeight: 800,
-      color: '#e8dcc4',
+      color: '#ece3d0',
       letterSpacing: 0.5,
       marginTop: 6
     }
@@ -10237,7 +10237,7 @@ const VisitCounter = ({
       gap: 7,
       padding: '5px 14px',
       borderRadius: 99,
-      border: '1px solid rgba(201,169,97,0.45)',
+      border: '1px solid rgba(232,194,90,0.45)',
       background: 'rgba(251,191,36,0.06)',
       fontSize: 11,
       color: 'var(--kp-text-dim)',
@@ -10404,7 +10404,7 @@ const SpecializationTabs = ({
       borderRadius: 13,
       padding: 14,
       background: 'var(--kp-panel)',
-      border: '1px solid rgba(201,169,97,0.25)',
+      border: '1px solid rgba(232,194,90,0.25)',
       boxShadow: '0 4px 18px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)'
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -10447,7 +10447,7 @@ const SpecializationTabs = ({
         padding: '10px 8px',
         borderRadius: 9,
         background: active ? `linear-gradient(135deg, ${s.color}26, var(--kp-card-bg))` : 'var(--kp-surface-2)',
-        border: active ? `1.5px solid ${s.color}` : '1px solid rgba(201,169,97,0.2)',
+        border: active ? `1.5px solid ${s.color}` : '1px solid rgba(232,194,90,0.2)',
         color: active ? 'var(--kp-text)' : 'var(--kp-text-dim)',
         cursor: 'pointer',
         fontFamily: 'inherit',
@@ -10475,7 +10475,7 @@ const SpecializationTabs = ({
       padding: '9px 11px',
       borderRadius: 9,
       background: 'var(--kp-surface-3)',
-      border: '1px solid rgba(201,169,97,0.14)'
+      border: '1px solid rgba(232,194,90,0.14)'
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -10575,7 +10575,7 @@ const AllianceSetup = ({
     borderRadius: 12,
     padding: 16,
     background: 'var(--kp-panel)',
-    border: '1px solid rgba(201,169,97,0.25)',
+    border: '1px solid rgba(232,194,90,0.25)',
     boxShadow: '0 4px 18px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)'
   };
   const input = {
@@ -10584,7 +10584,7 @@ const AllianceSetup = ({
     padding: '10px 12px',
     borderRadius: 8,
     background: 'var(--kp-surface-2)',
-    border: '1px solid rgba(201,169,97,0.3)',
+    border: '1px solid rgba(232,194,90,0.3)',
     color: 'var(--kp-text)',
     fontSize: 14,
     fontFamily: 'inherit',
@@ -10639,7 +10639,7 @@ const AllianceSetup = ({
     },
     className: "kp-card",
     style: {
-      ...btn('linear-gradient(135deg,#c9a961,#8b6914)'),
+      ...btn('linear-gradient(135deg,#e8c25a,#8b6914)'),
       color: '#0f0d0a',
       display: 'flex',
       alignItems: 'center',
@@ -10657,7 +10657,7 @@ const AllianceSetup = ({
     style: {
       ...btn('var(--kp-surface-2)'),
       color: 'var(--kp-text-gold)',
-      border: '1px solid rgba(201,169,97,0.35)',
+      border: '1px solid rgba(232,194,90,0.35)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -10692,7 +10692,7 @@ const AllianceSetup = ({
     disabled: !val.trim(),
     onClick: () => onCreate(genAllianceCode(val)),
     style: {
-      ...btn('linear-gradient(135deg,#c9a961,#8b6914)'),
+      ...btn('linear-gradient(135deg,#e8c25a,#8b6914)'),
       color: '#0f0d0a',
       opacity: val.trim() ? 1 : 0.5
     }
@@ -10750,7 +10750,7 @@ const AllianceSetup = ({
       width: 16,
       height: 16,
       flexShrink: 0,
-      accentColor: '#c9a961'
+      accentColor: '#e8c25a'
     }
   }), tr('setup.iLead')), /*#__PURE__*/React.createElement("button", {
     disabled: !val.trim(),
@@ -10797,7 +10797,7 @@ const WelcomeGate = ({
     padding: '11px 12px',
     borderRadius: 8,
     background: 'var(--kp-surface-2)',
-    border: '1px solid rgba(201,169,97,0.3)',
+    border: '1px solid rgba(232,194,90,0.3)',
     color: 'var(--kp-text)',
     fontSize: 15,
     fontFamily: 'inherit',
@@ -10814,7 +10814,7 @@ const WelcomeGate = ({
       inset: 0,
       zIndex: 200,
       overflowY: 'auto',
-      background: 'radial-gradient(circle at 50% 0%, #1a1410 0%, #05080f 70%)',
+      background: 'radial-gradient(circle at 50% 0%, #1a1410 0%, #080d18 70%)',
       display: 'flex',
       alignItems: 'flex-start',
       justifyContent: 'center',
@@ -10832,7 +10832,7 @@ const WelcomeGate = ({
       height: 34,
       borderRadius: '50%',
       background: 'rgba(0,0,0,0.4)',
-      border: '1px solid rgba(201,169,97,0.3)',
+      border: '1px solid rgba(232,194,90,0.3)',
       color: 'var(--kp-text-gold)',
       cursor: 'pointer',
       display: 'inline-flex',
@@ -10873,7 +10873,7 @@ const WelcomeGate = ({
       padding: 14,
       marginBottom: 16,
       background: 'var(--kp-panel)',
-      border: '1px solid rgba(201,169,97,0.22)'
+      border: '1px solid rgba(232,194,90,0.22)'
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -10937,7 +10937,7 @@ const WelcomeGate = ({
       alignItems: 'center',
       justifyContent: 'center',
       gap: 8,
-      boxShadow: '0 0 16px rgba(201,169,97,0.25)'
+      boxShadow: '0 0 16px rgba(232,194,90,0.25)'
     }
   }, /*#__PURE__*/React.createElement(Crown, {
     size: 17
@@ -10952,7 +10952,7 @@ const WelcomeGate = ({
       padding: '11px',
       borderRadius: 10,
       background: 'var(--kp-surface-2)',
-      border: '1px solid rgba(201,169,97,0.35)',
+      border: '1px solid rgba(232,194,90,0.35)',
       color: 'var(--kp-text-gold)',
       fontFamily: 'Cinzel, serif',
       fontWeight: 800,
@@ -11003,7 +11003,7 @@ const WelcomeGate = ({
       borderRadius: 12,
       padding: 14,
       background: 'var(--kp-panel)',
-      border: '1px solid rgba(201,169,97,0.25)'
+      border: '1px solid rgba(232,194,90,0.25)'
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -11035,7 +11035,7 @@ const WelcomeGate = ({
       width: '100%',
       padding: '12px',
       borderRadius: 9,
-      background: 'linear-gradient(135deg,#c9a961,#8b6914)',
+      background: 'linear-gradient(135deg,#e8c25a,#8b6914)',
       border: 'none',
       color: '#0f0d0a',
       fontFamily: 'Cinzel, serif',
@@ -11062,7 +11062,7 @@ const WelcomeGate = ({
       borderRadius: 12,
       padding: 14,
       background: 'var(--kp-panel)',
-      border: '1px solid rgba(201,169,97,0.25)'
+      border: '1px solid rgba(232,194,90,0.25)'
     }
   }, !invite && /*#__PURE__*/React.createElement("div", {
     style: {
@@ -11095,7 +11095,7 @@ const WelcomeGate = ({
       width: 16,
       height: 16,
       flexShrink: 0,
-      accentColor: '#c9a961'
+      accentColor: '#e8c25a'
     }
   }), tr('setup.iLead')), /*#__PURE__*/React.createElement("button", {
     disabled: !val.trim(),
@@ -11168,7 +11168,7 @@ const SuperAdminView = ({
         padding: '6px 12px',
         borderRadius: 8,
         background: 'var(--kp-surface-2)',
-        border: '1px solid rgba(201,169,97,0.3)',
+        border: '1px solid rgba(232,194,90,0.3)',
         color: 'var(--kp-text-gold)',
         fontSize: 11,
         fontWeight: 700,
@@ -11257,11 +11257,11 @@ const SuperAdminView = ({
       padding: '8px 10px',
       borderRadius: 9,
       background: 'var(--kp-surface-3)',
-      border: '1px solid rgba(201,169,97,0.14)'
+      border: '1px solid rgba(232,194,90,0.14)'
     }
   }, /*#__PURE__*/React.createElement(Sword, {
     size: 15,
-    color: "#c9a961",
+    color: "#e8c25a",
     style: {
       flexShrink: 0
     }
@@ -11404,7 +11404,7 @@ const AllianceGoal = ({
     padding: '8px 11px',
     borderRadius: 8,
     background: 'var(--kp-surface-2)',
-    border: '1px solid rgba(201,169,97,0.3)',
+    border: '1px solid rgba(232,194,90,0.3)',
     color: 'var(--kp-text)',
     fontSize: 13,
     fontFamily: 'inherit',
@@ -11503,7 +11503,7 @@ const AllianceGoal = ({
         padding: '9px 14px',
         borderRadius: 8,
         background: 'var(--kp-surface-2)',
-        border: '1px solid rgba(201,169,97,0.3)',
+        border: '1px solid rgba(232,194,90,0.3)',
         color: 'var(--kp-text-dim)',
         fontSize: 12,
         fontWeight: 700,
@@ -11575,7 +11575,7 @@ const AllianceGoal = ({
       padding: '3px 8px',
       borderRadius: 6,
       background: 'var(--kp-surface-2)',
-      border: '1px solid rgba(201,169,97,0.3)',
+      border: '1px solid rgba(232,194,90,0.3)',
       color: 'var(--kp-text-gold)',
       fontSize: 10,
       fontWeight: 700,
@@ -11743,7 +11743,7 @@ const AllianceRoster = ({
       borderRadius: 13,
       padding: 14,
       background: 'var(--kp-panel)',
-      border: '1px solid rgba(201,169,97,0.25)',
+      border: '1px solid rgba(232,194,90,0.25)',
       boxShadow: '0 4px 18px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)'
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -11755,7 +11755,7 @@ const AllianceRoster = ({
     }
   }, /*#__PURE__*/React.createElement(Sword, {
     size: 15,
-    color: "#c9a961"
+    color: "#e8c25a"
   }), /*#__PURE__*/React.createElement("span", {
     style: {
       flex: 1,
@@ -11777,7 +11777,7 @@ const AllianceRoster = ({
       fontSize: 10,
       fontWeight: 700,
       background: 'var(--kp-surface-2)',
-      border: '1px solid rgba(201,169,97,0.3)',
+      border: '1px solid rgba(232,194,90,0.3)',
       color: 'var(--kp-text-gold)',
       cursor: 'pointer',
       fontFamily: 'inherit'
@@ -11791,14 +11791,14 @@ const AllianceRoster = ({
       marginBottom: 10,
       flexWrap: 'wrap'
     }
-  }, [[tr('roster.statMembers'), stats.count, '#c9a961'], [tr('roster.statAvgPhase'), stats.avgPhase, '#67e8f9'], [tr('roster.statFullRed'), stats.fullRed, '#ef4444'], ['⚔/🛡', `${stats.offense}/${stats.defense}`, '#a78bfa']].map(([label, val, col], i) => /*#__PURE__*/React.createElement("div", {
+  }, [[tr('roster.statMembers'), stats.count, '#e8c25a'], [tr('roster.statAvgPhase'), stats.avgPhase, '#67e8f9'], [tr('roster.statFullRed'), stats.fullRed, '#ef4444'], ['⚔/🛡', `${stats.offense}/${stats.defense}`, '#a78bfa']].map(([label, val, col], i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
       flex: '1 1 64px',
       padding: '7px 6px',
       borderRadius: 8,
       background: 'var(--kp-surface-3)',
-      border: '1px solid rgba(201,169,97,0.14)',
+      border: '1px solid rgba(232,194,90,0.14)',
       textAlign: 'center'
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -11855,8 +11855,8 @@ const AllianceRoster = ({
       fontWeight: 700,
       fontFamily: 'inherit',
       cursor: 'pointer',
-      background: specFilter === id ? 'rgba(201,169,97,0.25)' : 'var(--kp-surface-2)',
-      border: specFilter === id ? '1px solid rgba(201,169,97,0.6)' : '1px solid rgba(201,169,97,0.18)',
+      background: specFilter === id ? 'rgba(232,194,90,0.25)' : 'var(--kp-surface-2)',
+      border: specFilter === id ? '1px solid rgba(232,194,90,0.6)' : '1px solid rgba(232,194,90,0.18)',
       color: specFilter === id ? 'var(--kp-text-gold)' : 'var(--kp-text-dim)'
     }
   }, label)), /*#__PURE__*/React.createElement("select", {
@@ -11869,7 +11869,7 @@ const AllianceRoster = ({
       fontSize: 10,
       fontFamily: 'inherit',
       background: 'var(--kp-surface-2)',
-      border: '1px solid rgba(201,169,97,0.2)',
+      border: '1px solid rgba(232,194,90,0.2)',
       color: 'var(--kp-text-dim)'
     }
   }, /*#__PURE__*/React.createElement("option", {
@@ -11889,7 +11889,7 @@ const AllianceRoster = ({
       borderRadius: 8,
       marginBottom: 10,
       background: 'var(--kp-surface-2)',
-      border: '1px solid rgba(201,169,97,0.2)',
+      border: '1px solid rgba(232,194,90,0.2)',
       color: 'var(--kp-text)',
       fontSize: 12,
       fontFamily: 'inherit',
@@ -11944,7 +11944,7 @@ const AllianceRoster = ({
       style: {
         borderRadius: 9,
         background: 'var(--kp-surface-3)',
-        border: `1px solid ${isOpen ? 'rgba(201,169,97,0.4)' : 'rgba(201,169,97,0.14)'}`,
+        border: `1px solid ${isOpen ? 'rgba(232,194,90,0.4)' : 'rgba(232,194,90,0.14)'}`,
         overflow: 'hidden'
       }
     }, /*#__PURE__*/React.createElement("div", {
@@ -11968,7 +11968,7 @@ const AllianceRoster = ({
         fontFamily: 'Cinzel, serif',
         fontWeight: 900,
         fontSize: 11,
-        background: i === 0 ? 'linear-gradient(135deg,#fbbf24,#b45309)' : 'rgba(201,169,97,0.12)',
+        background: i === 0 ? 'linear-gradient(135deg,#fbbf24,#b45309)' : 'rgba(232,194,90,0.12)',
         color: i === 0 ? '#0f0d0a' : 'var(--kp-text-dim)'
       }
     }, i + 1), /*#__PURE__*/React.createElement("div", {
@@ -12088,8 +12088,8 @@ const AllianceRoster = ({
         style: {
           padding: '10px 12px',
           borderRadius: 9,
-          background: 'rgba(201,169,97,0.08)',
-          border: '1px solid rgba(201,169,97,0.25)'
+          background: 'rgba(232,194,90,0.08)',
+          border: '1px solid rgba(232,194,90,0.25)'
         }
       }, /*#__PURE__*/React.createElement("div", {
         style: {
@@ -12160,7 +12160,7 @@ const AllianceRoster = ({
         borderRadius: 8,
         cursor: 'pointer',
         background: copied === m.key ? 'rgba(34,197,94,0.18)' : 'var(--kp-surface-2)',
-        border: copied === m.key ? '1px solid rgba(34,197,94,0.5)' : '1px solid rgba(201,169,97,0.3)',
+        border: copied === m.key ? '1px solid rgba(34,197,94,0.5)' : '1px solid rgba(232,194,90,0.3)',
         color: copied === m.key ? '#86efac' : 'var(--kp-text-gold)',
         fontFamily: 'inherit',
         fontSize: 11,
@@ -12179,7 +12179,7 @@ const AllianceRoster = ({
         padding: '9px 11px',
         borderRadius: 9,
         background: 'rgba(0,0,0,0.2)',
-        border: '1px solid rgba(201,169,97,0.12)'
+        border: '1px solid rgba(232,194,90,0.12)'
       }
     }, /*#__PURE__*/React.createElement("div", {
       style: {
@@ -12209,7 +12209,7 @@ const AllianceRoster = ({
           fontFamily: 'inherit',
           cursor: 'pointer',
           background: on ? 'rgba(251,191,36,0.2)' : 'var(--kp-surface-2)',
-          border: on ? '1px solid rgba(251,191,36,0.55)' : '1px solid rgba(201,169,97,0.2)',
+          border: on ? '1px solid rgba(251,191,36,0.55)' : '1px solid rgba(232,194,90,0.2)',
           color: on ? '#fbbf24' : 'var(--kp-text-faint)'
         }
       }, tg);
@@ -12223,7 +12223,7 @@ const AllianceRoster = ({
         padding: '6px 9px',
         borderRadius: 7,
         background: 'var(--kp-surface-2)',
-        border: '1px solid rgba(201,169,97,0.18)',
+        border: '1px solid rgba(232,194,90,0.18)',
         color: 'var(--kp-text)',
         fontSize: 11.5,
         fontFamily: 'inherit',
@@ -12242,7 +12242,7 @@ const AllianceRoster = ({
         padding: '6px 8px',
         borderRadius: 7,
         background: 'var(--kp-surface-3)',
-        border: '1px solid rgba(201,169,97,0.14)',
+        border: '1px solid rgba(232,194,90,0.14)',
         textAlign: 'center'
       }
     }, /*#__PURE__*/React.createElement("div", {
@@ -12329,7 +12329,7 @@ const Footer = ({
       padding: 14,
       borderRadius: 12,
       background: 'var(--kp-panel)',
-      border: '1px solid rgba(201,169,97,0.22)',
+      border: '1px solid rgba(232,194,90,0.22)',
       boxShadow: '0 4px 18px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)'
     }
   }, onSync && /*#__PURE__*/React.createElement("button", {
@@ -12361,7 +12361,7 @@ const Footer = ({
       borderRadius: 9,
       marginBottom: 8,
       background: 'var(--kp-surface-2)',
-      border: '1px solid rgba(201,169,97,0.3)',
+      border: '1px solid rgba(232,194,90,0.3)',
       color: 'var(--kp-text-gold)',
       fontSize: 12.5,
       fontWeight: 700,
@@ -12534,7 +12534,7 @@ const SyncModal = ({
     padding: '11px 12px',
     borderRadius: 8,
     background: 'var(--kp-surface-2)',
-    border: '1px solid rgba(201,169,97,0.3)',
+    border: '1px solid rgba(232,194,90,0.3)',
     color: 'var(--kp-text)',
     fontSize: 14,
     fontFamily: 'inherit',
@@ -12556,7 +12556,7 @@ const SyncModal = ({
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       background: 'var(--kp-modal)',
-      border: '1px solid rgba(201,169,97,0.4)',
+      border: '1px solid rgba(232,194,90,0.4)',
       borderRadius: 14,
       padding: 18,
       maxWidth: 420,
@@ -12601,7 +12601,7 @@ const SyncModal = ({
       padding: '11px 12px',
       borderRadius: 8,
       background: 'var(--kp-surface-2)',
-      border: '1px solid rgba(201,169,97,0.3)',
+      border: '1px solid rgba(232,194,90,0.3)',
       color: 'var(--kp-text-gold)',
       fontSize: 14,
       fontWeight: 700,
@@ -12615,7 +12615,7 @@ const SyncModal = ({
       flexShrink: 0,
       padding: '0 14px',
       borderRadius: 8,
-      background: copied ? 'rgba(34,197,94,0.2)' : 'linear-gradient(135deg,#c9a961,#8b6914)',
+      background: copied ? 'rgba(34,197,94,0.2)' : 'linear-gradient(135deg,#e8c25a,#8b6914)',
       border: 'none',
       color: copied ? '#86efac' : '#0f0d0a',
       fontFamily: 'Cinzel, serif',
@@ -12633,7 +12633,7 @@ const SyncModal = ({
   }), " ", tr('roster.copyCode')))), /*#__PURE__*/React.createElement("div", {
     style: {
       height: 1,
-      background: 'rgba(201,169,97,0.15)',
+      background: 'rgba(232,194,90,0.15)',
       margin: '0 0 14px'
     }
   }), /*#__PURE__*/React.createElement("label", {
@@ -12700,7 +12700,7 @@ const SyncModal = ({
       padding: '10px',
       borderRadius: 8,
       background: 'transparent',
-      border: '1px solid rgba(201,169,97,0.3)',
+      border: '1px solid rgba(232,194,90,0.3)',
       color: 'var(--kp-text-dim)',
       fontSize: 12,
       fontWeight: 600,
@@ -13015,16 +13015,16 @@ function App() {
   };
   const isLight = theme === 'light';
   const themeVars = {
-    '--kp-text': isLight ? '#3a2810' : '#e8dcc4',
+    '--kp-text': isLight ? '#3a2810' : '#ece3d0',
     '--kp-text-dim': isLight ? '#6b5836' : '#94a3bd',
-    '--kp-text-gold': isLight ? '#8a5a14' : '#c9a961',
+    '--kp-text-gold': isLight ? '#8a5a14' : '#e8c25a',
     '--kp-text-faint': isLight ? '#8a7656' : '#6b7689',
     '--kp-text-fainter': isLight ? '#a08a64' : '#4a5468',
     '--kp-card-bg': isLight ? 'rgba(255,251,242,0.78)' : 'rgba(26,38,58,0.92)',
     '--kp-surface-2': isLight ? 'rgba(120,90,40,0.10)' : 'rgba(6,12,24,0.5)',
     '--kp-surface-3': isLight ? 'rgba(120,90,40,0.07)' : 'rgba(6,12,24,0.4)',
-    '--kp-modal': isLight ? 'linear-gradient(155deg, #fffaf0, #f2e4c6)' : 'linear-gradient(160deg, #17273e, #0c1626)',
-    '--kp-panel': isLight ? 'linear-gradient(155deg, rgba(255,251,242,0.96), rgba(247,237,214,0.92))' : 'linear-gradient(160deg, rgba(28,42,66,0.97) 0%, rgba(16,26,42,0.98) 100%)'
+    '--kp-modal': isLight ? 'linear-gradient(155deg, #fffaf0, #f2e4c6)' : 'linear-gradient(160deg, #17273e, #0e1a30)',
+    '--kp-panel': isLight ? 'linear-gradient(155deg, rgba(255,251,242,0.96), rgba(247,237,214,0.92))' : 'linear-gradient(160deg, rgba(18,28,50,0.97) 0%, rgba(10,17,32,0.98) 100%)'
   };
   return /*#__PURE__*/React.createElement("div", {
     dir: isRTL ? 'rtl' : 'ltr',
@@ -13032,7 +13032,7 @@ function App() {
     style: {
       ...themeVars,
       minHeight: '100vh',
-      background: theme === 'light' ? 'radial-gradient(ellipse at top, #f5e9d0 0%, #e8d4a0 50%, #d4b873 100%)' : 'radial-gradient(ellipse at top, #0c1626 0%, #081020 50%, #05080f 100%)',
+      background: theme === 'light' ? 'radial-gradient(ellipse at top, #f5e9d0 0%, #e8d4a0 50%, #d4b873 100%)' : 'radial-gradient(ellipse at top, #0e1a30 0%, #0a1322 50%, #080d18 100%)',
       color: 'var(--kp-text)',
       fontFamily: 'Inter, sans-serif',
       maxWidth: EMBED ? 'none' : undefined,
@@ -13043,7 +13043,7 @@ function App() {
   }, /*#__PURE__*/React.createElement("style", null, `
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
         * { box-sizing: border-box; }
-        body { margin: 0; background: ${theme === 'light' ? '#e8d4a0' : '#05080f'}; }
+        body { margin: 0; background: ${theme === 'light' ? '#e8d4a0' : '#080d18'}; }
         button { font-family: inherit; transition: transform .12s ease, filter .14s ease, box-shadow .18s ease, background .18s ease; }
         @media (hover: hover) { button:hover { filter: brightness(1.08); } }
         button:active { transform: scale(0.97); }
@@ -13170,8 +13170,8 @@ function App() {
       marginTop: 10,
       padding: '5px 13px',
       borderRadius: 99,
-      background: 'rgba(201,169,97,0.1)',
-      border: '1px solid rgba(201,169,97,0.35)',
+      background: 'rgba(232,194,90,0.1)',
+      border: '1px solid rgba(232,194,90,0.35)',
       color: 'var(--kp-text-gold)',
       fontSize: 11,
       fontWeight: 700,
@@ -13217,8 +13217,8 @@ function App() {
         flex: 1,
         padding: '10px 6px',
         borderRadius: 10,
-        background: activeTab === id ? 'linear-gradient(135deg, rgba(201,169,97,0.28), rgba(26,38,58,0.92))' : 'var(--kp-surface-2)',
-        border: activeTab === id ? '1.5px solid rgba(201,169,97,0.6)' : '1px solid rgba(201,169,97,0.18)',
+        background: activeTab === id ? 'linear-gradient(135deg, rgba(232,194,90,0.28), rgba(26,38,58,0.92))' : 'var(--kp-surface-2)',
+        border: activeTab === id ? '1.5px solid rgba(232,194,90,0.6)' : '1px solid rgba(232,194,90,0.18)',
         color: activeTab === id ? 'var(--kp-text-gold)' : 'var(--kp-text-dim)',
         fontFamily: 'Cinzel, serif',
         fontWeight: 800,
@@ -13229,7 +13229,7 @@ function App() {
         alignItems: 'center',
         justifyContent: 'center',
         gap: 6,
-        boxShadow: activeTab === id ? '0 0 14px rgba(201,169,97,0.18)' : 'none'
+        boxShadow: activeTab === id ? '0 0 14px rgba(232,194,90,0.18)' : 'none'
       }
     }, /*#__PURE__*/React.createElement(Icon, {
       size: 14
@@ -13279,7 +13279,7 @@ function App() {
       style: {
         height: '100%',
         width: pct + '%',
-        background: 'linear-gradient(90deg,#c9a961,#e0b96a)',
+        background: 'linear-gradient(90deg,#e8c25a,#e0b96a)',
         transition: 'width 0.25s'
       }
     })), (gc === 0 || stale) && /*#__PURE__*/React.createElement("div", {
@@ -13288,7 +13288,7 @@ function App() {
         alignItems: 'center',
         gap: 10,
         flexWrap: 'wrap',
-        background: 'rgba(201,169,97,0.1)',
+        background: 'rgba(232,194,90,0.1)',
         border: '1px solid var(--kp-text-gold)',
         borderRadius: 11,
         padding: '11px 14px'
@@ -13312,7 +13312,7 @@ function App() {
         padding: '8px 14px',
         borderRadius: 9,
         border: 'none',
-        background: 'linear-gradient(135deg,#c9a961,#e0b96a)',
+        background: 'linear-gradient(135deg,#e8c25a,#e0b96a)',
         color: '#1a1208',
         fontWeight: 800,
         fontSize: 13,
@@ -13353,7 +13353,7 @@ function App() {
     const inc = /*#__PURE__*/React.createElement("div", {
       style: {
         background: 'var(--kp-surface-2)',
-        border: '1px solid rgba(201,169,97,0.25)',
+        border: '1px solid rgba(232,194,90,0.25)',
         borderRadius: 11,
         padding: '11px 13px',
         marginTop: 12,
@@ -13417,7 +13417,7 @@ function App() {
     const days = hammersNeed ? Math.ceil(short / (rate / 30)) : 0;
     return /*#__PURE__*/React.createElement("div", null, inc, /*#__PURE__*/React.createElement("div", {
       style: {
-        background: 'linear-gradient(160deg,rgba(28,42,66,0.97),rgba(16,26,42,0.98))',
+        background: 'linear-gradient(160deg,rgba(18,28,50,0.97),rgba(10,17,32,0.98))',
         border: '1px solid var(--kp-text-gold)',
         borderRadius: 14,
         padding: 16,
@@ -13567,9 +13567,9 @@ function App() {
       padding: '13px 15px',
       borderRadius: 11,
       marginBottom: showGear ? 10 : 18,
-      background: 'linear-gradient(135deg, rgba(201,169,97,0.22), rgba(26,38,58,0.92))',
-      border: '1.5px solid rgba(201,169,97,0.55)',
-      boxShadow: '0 0 18px rgba(201,169,97,0.18), inset 0 1px 0 rgba(255,255,255,0.08)',
+      background: 'linear-gradient(135deg, rgba(232,194,90,0.22), rgba(26,38,58,0.92))',
+      border: '1.5px solid rgba(232,194,90,0.55)',
+      boxShadow: '0 0 18px rgba(232,194,90,0.18), inset 0 1px 0 rgba(255,255,255,0.08)',
       color: 'var(--kp-text-gold)',
       fontFamily: 'Cinzel, serif',
       fontSize: 14,
@@ -13675,8 +13675,8 @@ function App() {
         marginBottom: 14,
         borderRadius: 13,
         padding: '13px 15px',
-        background: 'linear-gradient(135deg, rgba(201,169,97,0.14), var(--kp-panel))',
-        border: '1px solid rgba(201,169,97,0.3)',
+        background: 'linear-gradient(135deg, rgba(232,194,90,0.14), var(--kp-panel))',
+        border: '1px solid rgba(232,194,90,0.3)',
         boxShadow: '0 4px 18px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)'
       }
     }, /*#__PURE__*/React.createElement("div", {
@@ -13707,7 +13707,7 @@ function App() {
         borderRadius: 99,
         background: 'rgba(0,0,0,0.45)',
         overflow: 'hidden',
-        border: '1px solid rgba(201,169,97,0.18)'
+        border: '1px solid rgba(232,194,90,0.18)'
       }
     }, /*#__PURE__*/React.createElement("div", {
       style: {
@@ -14098,7 +14098,7 @@ function App() {
   })(), hasAnyGear && !phase.isStop && (total.xp > 0 || total.hammers > 0 || total.mg > 0) && /*#__PURE__*/React.createElement("div", {
     style: {
       background: 'var(--kp-surface-2)',
-      border: '1px solid rgba(201,169,97,0.25)',
+      border: '1px solid rgba(232,194,90,0.25)',
       borderRadius: 11,
       padding: 13,
       marginBottom: 14
@@ -14351,7 +14351,7 @@ function App() {
       borderRadius: 13,
       padding: 14,
       background: 'var(--kp-panel)',
-      border: '1px solid rgba(201,169,97,0.25)',
+      border: '1px solid rgba(232,194,90,0.25)',
       boxShadow: '0 4px 18px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)'
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -14386,7 +14386,7 @@ function App() {
       padding: '9px 12px',
       borderRadius: 8,
       background: 'var(--kp-surface-2)',
-      border: '1px solid rgba(201,169,97,0.3)',
+      border: '1px solid rgba(232,194,90,0.3)',
       color: 'var(--kp-text)',
       fontSize: 13,
       fontFamily: 'inherit',
@@ -14404,7 +14404,7 @@ function App() {
       borderRadius: 8,
       flexShrink: 0,
       background: state.shareAlliance ? 'linear-gradient(135deg,#22c55e,#15803d)' : 'var(--kp-surface-2)',
-      border: state.shareAlliance ? 'none' : '1px solid rgba(201,169,97,0.3)',
+      border: state.shareAlliance ? 'none' : '1px solid rgba(232,194,90,0.3)',
       color: state.shareAlliance ? '#fff' : 'var(--kp-text-gold)',
       fontFamily: 'Cinzel, serif',
       fontWeight: 800,
@@ -14464,7 +14464,7 @@ function App() {
       gap: 8,
       marginTop: 10,
       paddingTop: 10,
-      borderTop: '1px solid rgba(201,169,97,0.12)'
+      borderTop: '1px solid rgba(232,194,90,0.12)'
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
@@ -14494,7 +14494,7 @@ function App() {
       padding: '4px 10px',
       borderRadius: 7,
       background: codeCopied ? 'rgba(34,197,94,0.18)' : 'var(--kp-surface-2)',
-      border: codeCopied ? '1px solid rgba(34,197,94,0.5)' : '1px solid rgba(201,169,97,0.3)',
+      border: codeCopied ? '1px solid rgba(34,197,94,0.5)' : '1px solid rgba(232,194,90,0.3)',
       color: codeCopied ? '#86efac' : 'var(--kp-text-gold)',
       fontSize: 10,
       fontWeight: 700,
@@ -14523,7 +14523,7 @@ function App() {
       padding: '8px',
       borderRadius: 8,
       background: inviteCopied ? 'rgba(34,197,94,0.18)' : 'var(--kp-surface-2)',
-      border: inviteCopied ? '1px solid rgba(34,197,94,0.5)' : '1px solid rgba(201,169,97,0.3)',
+      border: inviteCopied ? '1px solid rgba(34,197,94,0.5)' : '1px solid rgba(232,194,90,0.3)',
       color: inviteCopied ? '#86efac' : 'var(--kp-text-gold)',
       fontSize: 11,
       fontWeight: 700,
@@ -14594,7 +14594,7 @@ function App() {
       padding: '6px 10px',
       borderRadius: 7,
       background: 'var(--kp-surface-2)',
-      border: '1px solid rgba(201,169,97,0.2)',
+      border: '1px solid rgba(232,194,90,0.2)',
       color: 'var(--kp-text)',
       fontSize: 12,
       fontFamily: 'inherit',
@@ -14606,7 +14606,7 @@ function App() {
       padding: '5px 9px',
       borderRadius: 7,
       background: 'var(--kp-surface-2)',
-      border: '1px solid rgba(201,169,97,0.2)',
+      border: '1px solid rgba(232,194,90,0.2)',
       color: 'var(--kp-text-faint)',
       fontSize: 10,
       cursor: 'pointer',
@@ -14661,7 +14661,7 @@ function App() {
       padding: '7px 14px',
       borderRadius: 7,
       background: resetConfirm ? 'rgba(239,68,68,0.15)' : 'transparent',
-      border: resetConfirm ? '1px solid rgba(239,68,68,0.5)' : '1px solid rgba(201,169,97,0.2)',
+      border: resetConfirm ? '1px solid rgba(239,68,68,0.5)' : '1px solid rgba(232,194,90,0.2)',
       color: resetConfirm ? '#fca5a5' : 'var(--kp-text-faint)',
       fontSize: 11,
       fontWeight: 600,
