@@ -56,7 +56,7 @@ import { Upload, Check, X, AlertTriangle, ChevronRight, ChevronDown, Star, Hamme
 const BRAND_TITLE = "GEAR COMMAND CENTER";
 const GUIDE_AUTHOR = 'Shakes'; // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2'; // built this app
-const APP_VERSION = 'v9.25'; // bump this on every new build so you can confirm the deploy is live
+const APP_VERSION = 'v9.26'; // bump this on every new build so you can confirm the deploy is live
 const TROOPS = ['infantry', 'archer', 'cavalry'];
 const TROOP_LABEL = {
   infantry: 'Infantry',
@@ -13170,9 +13170,20 @@ function App() {
     }), " ", label)));
   })(), view === 'path' && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ResourcePills, {
     resources: state.resources,
-    onEdit: () => setEditingResources(true),
+    onEdit: () => {
+      setEditingResources(true);
+      if (EMBED) setTimeout(() => {
+        const el = document.getElementById('kp-res-edit');
+        if (el) el.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }, 60);
+    },
     t: t
-  }), EMBED && editingResources && /*#__PURE__*/React.createElement(ResourceEditor, {
+  }), EMBED && editingResources && /*#__PURE__*/React.createElement("div", {
+    id: "kp-res-edit"
+  }, /*#__PURE__*/React.createElement(ResourceEditor, {
     inline: true,
     resources: state.resources,
     onSave: r => {
@@ -13183,7 +13194,7 @@ function App() {
       setEditingResources(false);
     },
     onClose: () => setEditingResources(false)
-  }), /*#__PURE__*/React.createElement(HeroSelector, {
+  })), /*#__PURE__*/React.createElement(HeroSelector, {
     t: t,
     heroes: state.heroes,
     customImages: state.heroImages || {},
