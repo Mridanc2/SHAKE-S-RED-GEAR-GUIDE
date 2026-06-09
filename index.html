@@ -56,7 +56,7 @@ import { Upload, Check, X, AlertTriangle, ChevronRight, ChevronDown, Star, Hamme
 const BRAND_TITLE = "GEAR COMMAND CENTER";
 const GUIDE_AUTHOR = 'Shakes'; // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2'; // built this app
-const APP_VERSION = 'v7.5'; // bump this on every new build so you can confirm the deploy is live
+const APP_VERSION = 'v9.15'; // bump this on every new build so you can confirm the deploy is live
 const TROOPS = ['infantry', 'archer', 'cavalry'];
 const TROOP_LABEL = {
   infantry: 'Infantry',
@@ -1160,7 +1160,7 @@ const I18N = {
     th: 'มุมขวาล่าง'
   },
   'step.open': {
-    en: 'Open your {troop} hero (tap the portrait in Heroes)',
+    en: 'Open Heroes and tap {hero}',
     es: 'Abre tu héroe de {troop} (toca el retrato en Héroes)',
     pt: 'Abra seu herói de {troop} (toque no retrato em Heróis)',
     fr: 'Ouvre ton héros {troop} (touche le portrait dans Héros)',
@@ -1178,6 +1178,10 @@ const I18N = {
     id: 'Buka hero {troop} (ketuk potret di Heroes)',
     vi: 'Mở tướng {troop} (chạm chân dung trong Heroes)',
     th: 'เปิดฮีโร่ {troop} (แตะรูปในเมนูฮีโร่)'
+  },
+  'step.gear': {
+    en: 'Tap the "Gear" tab',
+    he: 'הקש על לשונית "Gear"'
   },
   'step.tap': {
     en: 'Tap the {slot} ({pos} of the gear panel)',
@@ -5290,6 +5294,7 @@ const totalXp = r => {
   }
   // Backward compat: legacy `xp` field (single number)
   if (r.xp != null && r.xpBanked == null) t += r.xp;
+  if (r.gearMerge) t += (r.gearMerge.grey || 0) * 10 + (r.gearMerge.green || 0) * 30 + (r.gearMerge.blue || 0) * 60 + (r.gearMerge.purple || 0) * 150;
   return t;
 };
 
@@ -5394,6 +5399,60 @@ const XP_PER_LEVEL = {
 const HAMMERS_FOR_MASTERY = toLevel => toLevel * 10;
 const MG_FOR_ASCEND = 2; // Mythic Gears to ascend Mythic → Red
 const MASTERY_FOR_ASCEND = 10; // Required Mastery Lv before ascending
+const KP_XP = "data:image/webp;base64,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";
+const KP_HAMMER = "data:image/webp;base64,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";
+const KP_MG = "data:image/webp;base64,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";
+const KP_MITHRIL = "data:image/webp;base64,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";
+const KP_SPARE = "data:image/webp;base64,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";
+const FORGE_HAMMER = "data:image/webp;base64,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";
+const RARITY_WORD = {
+  grey: 'Grey',
+  green: 'Green',
+  blue: 'Rare',
+  purple: 'Epic',
+  mythic: 'Mythic',
+  red: 'Red'
+};
+const fmtNum = n => n >= 1000 ? (n / 1000).toFixed(n >= 10000 ? 0 : 1).replace(/\.0$/, '') + 'K' : String(n);
+const nextStage = piece => {
+  if (!piece) return null;
+  const r = piece.rarity,
+    lvl = piece.level || 0;
+  const cap = LEVEL_CAP[r] || 100;
+  const xpFn = XP_PER_LEVEL[r] || stepXp;
+  if (lvl < cap) {
+    const target = Math.min(cap, (Math.floor(lvl / 20) + 1) * 20);
+    let xp = 0;
+    for (let L = lvl + 1; L <= target; L++) xp += xpFn(L) || 0;
+    const mith = r === 'red' ? mithrilToReach(lvl, target) : 0;
+    const myth = r === 'red' ? redMgToReach(lvl, target) : 0;
+    return {
+      kind: 'level',
+      label: RARITY_WORD[r] + ' L' + target,
+      xp,
+      mith,
+      myth
+    };
+  }
+  if (r === 'mythic') return {
+    kind: 'ascend',
+    label: 'Ascend to Red',
+    myth: MG_FOR_ASCEND,
+    masteryReq: MASTERY_FOR_ASCEND
+  };
+  if (r === 'blue') return {
+    kind: 'upgrade',
+    label: 'Upgrade to Epic'
+  };
+  if (r === 'purple') return {
+    kind: 'upgrade',
+    label: 'Upgrade to Mythic'
+  };
+  return {
+    kind: 'maxed',
+    label: 'Fully maxed'
+  };
+};
 
 // ── XP needed to go from current state to target ──
 const xpToReach = (rarity, fromLevel, toLevel) => {
@@ -6357,15 +6416,27 @@ const gearStats = gear => {
 // Overall gear-strength score across all 12 pieces — rarity dominates, then
 // level, then mastery. Used to rank players who are tied on Red count so the
 // genuinely stronger player ranks higher even before anyone has Red gear.
+const RARITY_WEIGHT = {
+  grey: 50,
+  green: 150,
+  blue: 400,
+  purple: 900,
+  mythic: 2000,
+  red: 5000
+};
 const gearScore = gear => {
   if (!gear) return 0;
   let s = 0;
   TROOPS.forEach(tr => SLOTS.forEach(sl => {
     const p = gear[`${tr}-${sl}`];
     if (!p) return;
-    s += (RARITY_RANK[p.rarity] || 0) * 1000 + (p.level || 0) * 5 + (p.mastery || 0) * 25;
+    const base = RARITY_WEIGHT[p.rarity] || 0;
+    const cap = LEVEL_CAP[p.rarity] || 100;
+    const lvlF = 0.4 + 0.6 * Math.min(1, (p.level || 0) / cap);
+    const mF = p.rarity === 'mythic' || p.rarity === 'red' ? 1 + 0.1 * (p.mastery || 0) : 1;
+    s += base * lvlF * mF;
   }));
-  return s;
+  return Math.round(s);
 };
 const ACHIEVEMENTS = [{
   id: 'first_red',
@@ -6578,6 +6649,121 @@ const Achievements = ({
       color: 'var(--kp-text-faint)'
     }
   }, "\uD83D\uDC46 ", tr('ach.tapHint'))));
+};
+const SetupScreen = ({
+  state,
+  onPickHero,
+  onAddResources,
+  onStart
+}) => {
+  const heroCount = TROOPS.filter(tr => state.heroes && state.heroes[tr]).length;
+  const heroesDone = heroCount >= 3;
+  const gearDone = state.gear && Object.keys(state.gear).length > 0;
+  const resDone = state.resources && Object.keys(state.resources).length > 0;
+  const stepEl = (n, done, title, sub, onClick) => (/*#__PURE__*/React.createElement('div', {
+    onClick,
+    key: n,
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 12,
+      textAlign: 'left',
+      background: 'var(--kp-surface-2)',
+      border: '1px solid rgba(201,169,97,0.2)',
+      borderRadius: 11,
+      padding: '13px 15px',
+      marginBottom: 10,
+      cursor: 'pointer'
+    }
+  }, /*#__PURE__*/React.createElement('div', {
+    style: {
+      width: 28,
+      height: 28,
+      borderRadius: '50%',
+      background: done ? '#22c55e' : 'var(--kp-text-gold)',
+      color: done ? '#fff' : '#1a1208',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontWeight: 800,
+      flexShrink: 0
+    }
+  }, done ? '\u2713' : n), /*#__PURE__*/React.createElement('div', {
+    style: {
+      minWidth: 0,
+      flex: 1
+    }
+  }, /*#__PURE__*/React.createElement('div', {
+    style: {
+      fontWeight: 700,
+      fontSize: 14,
+      color: 'var(--kp-text)'
+    }
+  }, title), /*#__PURE__*/React.createElement('div', {
+    style: {
+      fontSize: 11,
+      color: 'var(--kp-text-dim)'
+    }
+  }, sub)), /*#__PURE__*/React.createElement('div', {
+    style: {
+      color: 'var(--kp-text-faint)'
+    }
+  }, '\u203A')));
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'fixed',
+      inset: 0,
+      zIndex: 90,
+      background: 'rgba(6,12,24,0.94)',
+      backdropFilter: 'blur(6px)',
+      display: 'flex',
+      alignItems: 'flex-start',
+      justifyContent: 'center',
+      padding: 16,
+      overflowY: 'auto'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: 'var(--kp-panel)',
+      border: '1px solid rgba(201,169,97,0.5)',
+      borderRadius: 14,
+      padding: 20,
+      maxWidth: 440,
+      width: '100%',
+      margin: '28px 0',
+      textAlign: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: 'Cinzel, serif',
+      color: 'var(--kp-text-gold)',
+      fontSize: 20,
+      fontWeight: 800,
+      marginBottom: 4
+    }
+  }, "Welcome, Commander"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      color: 'var(--kp-text-dim)',
+      fontSize: 13,
+      marginBottom: 18,
+      lineHeight: 1.5
+    }
+  }, "Three quick steps and your personal gear plan is ready."), stepEl(1, heroesDone, 'Pick your 3 march heroes', heroesDone ? TROOPS.map(tr => state.heroes[tr]).join(' \u00b7 ') : heroCount + ' of 3 chosen \u2014 tap to pick', onPickHero), stepEl(2, gearDone, 'Add your gear', 'Tap your pieces on the board to set rarity & level', onStart), stepEl(3, resDone, 'Add your resources', 'XP, hammers, mythic gears, mithril', onAddResources), /*#__PURE__*/React.createElement("button", {
+    onClick: onStart,
+    style: {
+      width: '100%',
+      marginTop: 8,
+      padding: 13,
+      border: 'none',
+      borderRadius: 10,
+      background: 'linear-gradient(135deg,#c9a961,#e0b96a)',
+      color: '#1a1208',
+      fontWeight: 800,
+      fontSize: 15,
+      fontFamily: 'Cinzel, serif',
+      cursor: 'pointer'
+    }
+  }, gearDone ? 'See my plan \u2192' : 'Start setting up')));
 };
 const PieceEditor = ({
   piece,
@@ -7141,6 +7327,7 @@ const HeroBoard = ({
   t
 }) => {
   const tr = t || (k => k);
+  const [openSlot, setOpenSlot] = useState(null);
   const troopColor = TROOP_COLOR[troop];
   const hasGear = SLOTS.some(s => gear[gearKey(troop, s)]);
   return /*#__PURE__*/React.createElement("div", {
@@ -7329,33 +7516,79 @@ const HeroBoard = ({
       }
     }, EDITABLE_RARITIES.map(r => {
       const active = piece.rarity === r;
-      const col = RARITY_THEME[r] && RARITY_THEME[r].glow || '#c9a961';
+      const col = RARITY_THEME[r] && RARITY_THEME[r].edge || '#c9a961';
       return /*#__PURE__*/React.createElement("button", {
         key: r,
         onClick: () => onSetRarity(troop, slot, r),
         title: tr('rarity.' + r),
         style: {
           flex: 1,
-          height: 19,
-          borderRadius: 5,
+          height: 24,
+          borderRadius: 6,
           padding: 0,
           cursor: 'pointer',
           background: active ? col : `${col}22`,
           border: active ? '1.5px solid #fff' : `1px solid ${col}66`,
           boxShadow: active ? `0 0 6px ${col}` : 'none',
-          fontSize: 8.5,
+          fontSize: 10,
           fontWeight: 800,
           fontFamily: 'inherit',
           color: active ? '#0f0d0a' : col,
           letterSpacing: 0.3
         }
       }, {
-        blue: 'Ra',
-        purple: 'Ep',
-        mythic: 'My',
-        red: 'Rd'
-      }[r] || tr('rarity.' + r).slice(0, 1).toUpperCase());
-    })));
+        blue: 'Rare',
+        purple: 'Epic',
+        mythic: 'Mythic',
+        red: 'Red'
+      }[r] || tr('rarity.' + r));
+    })), piece && (() => {
+      const ns = nextStage(piece);
+      if (!ns) return null;
+      const open = openSlot === slot;
+      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("button", {
+        onClick: () => setOpenSlot(open ? null : slot),
+        style: {
+          width: '100%',
+          height: 22,
+          borderRadius: 5,
+          border: '1px solid rgba(201,169,97,0.25)',
+          background: 'transparent',
+          color: 'var(--kp-text-dim)',
+          fontSize: 9.5,
+          fontWeight: 700,
+          cursor: 'pointer',
+          fontFamily: 'inherit'
+        }
+      }, open ? '\u25B4 Hide' : '\u25BE What\u2019s left?'), open && /*#__PURE__*/React.createElement("div", {
+        style: {
+          marginTop: 5,
+          padding: '7px 8px',
+          borderRadius: 6,
+          background: 'rgba(0,0,0,0.3)',
+          fontSize: 10,
+          color: 'var(--kp-text-dim)',
+          lineHeight: 1.55
+        }
+      }, ns.kind === 'maxed' && /*#__PURE__*/React.createElement("span", {
+        style: {
+          color: '#22c55e',
+          fontWeight: 700
+        }
+      }, '\u2713', " Fully maxed"), ns.kind === 'upgrade' && /*#__PURE__*/React.createElement("span", null, "Next: ", /*#__PURE__*/React.createElement("b", {
+        style: {
+          color: 'var(--kp-text)'
+        }
+      }, ns.label)), ns.kind === 'ascend' && /*#__PURE__*/React.createElement("span", null, "Next: ", /*#__PURE__*/React.createElement("b", {
+        style: {
+          color: '#ef4444'
+        }
+      }, ns.label), /*#__PURE__*/React.createElement("br", null), "Needs Mastery ", ns.masteryReq, " + ", ns.myth, " Mythic Gears"), ns.kind === 'level' && /*#__PURE__*/React.createElement("span", null, "To ", /*#__PURE__*/React.createElement("b", {
+        style: {
+          color: 'var(--kp-text)'
+        }
+      }, ns.label), ":", /*#__PURE__*/React.createElement("br", null), '\u2728', " ", fmtNum(ns.xp), " XP", ns.mith ? ' \u00b7 ' + ns.mith + ' Mithril' : '', ns.myth ? ' \u00b7 ' + ns.myth + ' Mythic' : '')));
+    })());
   })));
 };
 
@@ -7460,18 +7693,11 @@ const PhaseOverview = ({
   t
 }) => {
   const tr = t || ((k, v) => k);
-  const [openPhase, setOpenPhase] = useState(currentPhase?.phase ?? null); // current phase open by default
+  const [openPhase, setOpenPhase] = useState(null); // collapsed by default (detail lives in the action card below)
   const [showFull, setShowFull] = useState(false);
   const phases = path.filter(p => !p.isStop && !p.isChoose);
   const prog = pathProgress(gear, path);
   const curP = prog.per[currentPhase.phase];
-
-  // Keep the current phase's breakdown open by default, and re-open it when you advance a phase.
-  useEffect(() => {
-    if (currentPhase && currentPhase.phase && !currentPhase.isStop && !currentPhase.isChoose) {
-      setOpenPhase(currentPhase.phase);
-    }
-  }, [currentPhase?.phase]);
   const togglePhase = num => {
     setOpenPhase(prev => prev === num ? null : num);
   };
@@ -7855,7 +8081,7 @@ const SLOT_POSITION = {
 };
 
 // ─── Build human-readable in-game steps for an action ───
-const buildInGameSteps = (analyzed, t) => {
+const buildInGameSteps = (analyzed, t, heroName) => {
   const {
     action,
     piece,
@@ -7866,6 +8092,7 @@ const buildInGameSteps = (analyzed, t) => {
   // graceful fallback if no translator passed
   const tr = t || ((k, v) => T(k, 'en', v));
   const troop = tr('troop.' + action.troop);
+  const hero = heroName || troop;
   const slot = tr('slot.' + action.slot);
   const POS_KEY = {
     helmet: 'pos.tl',
@@ -7875,8 +8102,10 @@ const buildInGameSteps = (analyzed, t) => {
   };
   const pos = tr(POS_KEY[action.slot] || 'pos.tl');
   steps.push(tr('step.open', {
-    troop
+    troop,
+    hero
   }));
+  steps.push(tr('step.gear'));
   steps.push(tr('step.tap', {
     slot,
     pos
@@ -8035,7 +8264,7 @@ const StepCard = ({
   const troopColor = TROOP_COLOR[action.troop];
   const isAscend = action.type === 'ascend';
   const cost = getTotalCost(analyzed);
-  const inGameSteps = buildInGameSteps(analyzed, t);
+  const inGameSteps = buildInGameSteps(analyzed, t, hero);
   const title = isAscend ? tr('action.ascend', {
     slot: slotName
   }) : tr('action.upgrade', {
@@ -8160,26 +8389,50 @@ const StepCard = ({
       marginBottom: showSteps ? 8 : 10
     }
   }, [cost.xp > 0 && {
-    icon: /*#__PURE__*/React.createElement(Sparkles, {
-      size: 12
+    icon: /*#__PURE__*/React.createElement("img", {
+      src: KP_XP,
+      alt: "",
+      style: {
+        height: 14,
+        width: 'auto',
+        verticalAlign: -3
+      }
     }),
     c: cost.xp,
     h: totalXp(resources)
   }, cost.hammers > 0 && {
-    icon: /*#__PURE__*/React.createElement(Hammer, {
-      size: 12
+    icon: /*#__PURE__*/React.createElement("img", {
+      src: KP_HAMMER,
+      alt: "",
+      style: {
+        height: 14,
+        width: 'auto',
+        verticalAlign: -3
+      }
     }),
     c: cost.hammers,
     h: resources.hammers || 0
   }, cost.mithril > 0 && {
-    icon: /*#__PURE__*/React.createElement(Gem, {
-      size: 12
+    icon: /*#__PURE__*/React.createElement("img", {
+      src: KP_MITHRIL,
+      alt: "",
+      style: {
+        height: 14,
+        width: 'auto',
+        verticalAlign: -3
+      }
     }),
     c: cost.mithril,
     h: resources.mithril || 0
   }, cost.mg > 0 && {
-    icon: /*#__PURE__*/React.createElement(Star, {
-      size: 12
+    icon: /*#__PURE__*/React.createElement("img", {
+      src: KP_MG,
+      alt: "",
+      style: {
+        height: 14,
+        width: 'auto',
+        verticalAlign: -3
+      }
     }),
     c: cost.mg,
     h: resources.mythicGears || 0
@@ -8300,24 +8553,28 @@ const ResourcePills = ({
     key: 'xp',
     label: 'XP',
     icon: Sparkles,
+    img: KP_XP,
     color: '#22d3ee',
     getValue: r => totalXp(r)
   }, {
     key: 'hammers',
     label: 'Hammers',
     icon: Hammer,
+    img: KP_HAMMER,
     color: '#fbbf24',
     getValue: r => r?.hammers
   }, {
     key: 'mythicGears',
     label: 'Mythic Gears',
     icon: Star,
+    img: KP_MG,
     color: '#a855f7',
     getValue: r => r?.mythicGears
   }, {
     key: 'mithril',
     label: 'Mithril',
     icon: Gem,
+    img: KP_MITHRIL,
     color: '#60a5fa',
     getValue: r => r?.mithril
   }];
@@ -8350,9 +8607,15 @@ const ResourcePills = ({
         alignItems: 'center',
         gap: 8
       }
-    }, /*#__PURE__*/React.createElement(Icon, {
-      size: 18,
-      color: item.color
+    }, /*#__PURE__*/React.createElement("img", {
+      src: item.img,
+      alt: "",
+      style: {
+        height: 30,
+        width: 'auto',
+        objectFit: 'contain',
+        flex: 'none'
+      }
     }), /*#__PURE__*/React.createElement("div", {
       style: {
         flex: 1,
@@ -8395,6 +8658,12 @@ const ResourceEditor = ({
   const [hammers, setHammers] = useState(resources?.hammers ?? 0);
   const [mg, setMg] = useState(resources?.mythicGears ?? 0);
   const [mithril, setMithril] = useState(resources?.mithril ?? 0);
+  const [gearMerge, setGearMerge] = useState(() => ({
+    grey: resources?.gearMerge?.grey ?? 0,
+    green: resources?.gearMerge?.green ?? 0,
+    blue: resources?.gearMerge?.blue ?? 0,
+    purple: resources?.gearMerge?.purple ?? 0
+  }));
   const setTier = (tier, val) => {
     setXpParts(prev => ({
       ...prev,
@@ -8403,18 +8672,19 @@ const ResourceEditor = ({
   };
 
   // Live total preview
-  const computedTotal = xpBanked + XP_TIERS.reduce((sum, t) => sum + t * (xpParts[t] || 0), 0);
+  const computedTotal = XP_TIERS.reduce((sum, t) => sum + t * (xpParts[t] || 0), 0) + gearMerge.grey * 10 + gearMerge.green * 30 + gearMerge.blue * 60 + gearMerge.purple * 150;
   const save = () => {
     const xpPartsObj = {};
     XP_TIERS.forEach(t => {
       xpPartsObj[String(t)] = xpParts[t] || 0;
     });
     onSave({
-      xpBanked,
+      xpBanked: 0,
       xpParts: xpPartsObj,
       hammers,
       mythicGears: mg,
-      mithril
+      mithril,
+      gearMerge
     });
   };
   return /*#__PURE__*/React.createElement("div", {
@@ -8467,9 +8737,13 @@ const ResourceEditor = ({
       gap: 6,
       marginBottom: 8
     }
-  }, /*#__PURE__*/React.createElement(Sparkles, {
-    size: 14,
-    color: "#22d3ee"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: KP_XP,
+    alt: "",
+    style: {
+      height: 16,
+      width: 'auto'
+    }
   }), /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 11,
@@ -8563,51 +8837,86 @@ const ResourceEditor = ({
     }, "= ", fmt(contributes)));
   })), /*#__PURE__*/React.createElement("div", {
     style: {
-      padding: '7px 9px',
-      borderRadius: 7,
-      marginBottom: 8,
-      background: 'var(--kp-surface-3)',
-      border: '1px dashed rgba(34,211,238,0.35)',
       display: 'flex',
       alignItems: 'center',
-      gap: 8
+      gap: 6,
+      marginTop: 10,
+      marginBottom: 8
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("img", {
+    src: KP_SPARE,
+    alt: "",
     style: {
-      flex: 1
+      height: 16,
+      width: 'auto'
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  }), /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 11,
+      fontWeight: 800,
+      color: '#22d3ee',
+      letterSpacing: 0.4
+    }
+  }, "SPARE GEAR \u2192 XP")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10,
+      color: 'var(--kp-text-faint)',
+      marginBottom: 6
+    }
+  }, "Convert unused gear to XP \u2014 each rarity is worth the XP shown."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 6,
+      flexWrap: 'wrap',
+      marginBottom: 10
+    }
+  }, [['grey', 'Grey', 10, '#9ca3af'], ['green', 'Green', 30, '#22c55e'], ['blue', 'Blue', 60, '#3b82f6'], ['purple', 'Purple', 150, '#a855f7']].map(([key, label, xpv, color]) => /*#__PURE__*/React.createElement("div", {
+    key: key,
+    style: {
+      flex: 1,
+      minWidth: 70,
+      padding: '6px 7px',
+      borderRadius: 7,
+      background: 'var(--kp-surface-3)',
+      border: '1px solid ' + color + '44'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 4,
+      fontSize: 9.5,
+      color: 'var(--kp-text-dim)',
+      marginBottom: 3
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 9,
+      height: 9,
+      borderRadius: 2,
+      background: color,
+      display: 'inline-block'
+    }
+  }), label, " ", '\u00b7', xpv), /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    inputMode: "numeric",
+    value: gearMerge[key],
+    onChange: e => setGearMerge(prev => ({
+      ...prev,
+      [key]: Math.max(0, parseInt(e.target.value) || 0)
+    })),
+    style: {
+      width: '100%',
+      padding: '5px 4px',
+      borderRadius: 5,
+      border: '1px solid rgba(255,255,255,0.12)',
+      background: 'var(--kp-surface-2)',
       color: 'var(--kp-text)',
+      textAlign: 'center',
+      fontSize: 12,
       fontWeight: 700
     }
-  }, "Already in your bank"), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontSize: 9,
-      color: 'var(--kp-text-faint)'
-    }
-  }, "The big XP number shown at top of resources screen")), /*#__PURE__*/React.createElement("input", {
-    type: "number",
-    inputMode: "numeric",
-    value: xpBanked,
-    min: 0,
-    onChange: e => setXpBanked(Math.max(0, parseInt(e.target.value) || 0)),
-    onFocus: e => e.target.select(),
-    style: {
-      width: 90,
-      padding: '6px 8px',
-      background: 'rgba(0,0,0,0.5)',
-      border: '1px solid rgba(34,211,238,0.4)',
-      borderRadius: 6,
-      color: 'var(--kp-text)',
-      fontSize: 13,
-      fontWeight: 700,
-      fontFamily: 'inherit',
-      textAlign: 'center',
-      outline: 'none'
-    }
-  })), /*#__PURE__*/React.createElement("div", {
+  })))), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: '9px 11px',
       borderRadius: 7,
@@ -8644,9 +8953,12 @@ const ResourceEditor = ({
       marginBottom: 5,
       letterSpacing: 0.4
     }
-  }, /*#__PURE__*/React.createElement(Hammer, {
-    size: 11,
+  }, /*#__PURE__*/React.createElement("img", {
+    src: KP_HAMMER,
+    alt: "",
     style: {
+      height: 14,
+      width: 'auto',
       display: 'inline',
       verticalAlign: 'middle',
       marginRight: 4
@@ -8682,9 +8994,12 @@ const ResourceEditor = ({
       marginBottom: 5,
       letterSpacing: 0.4
     }
-  }, /*#__PURE__*/React.createElement(Star, {
-    size: 11,
+  }, /*#__PURE__*/React.createElement("img", {
+    src: KP_MG,
+    alt: "",
     style: {
+      height: 14,
+      width: 'auto',
       display: 'inline',
       verticalAlign: 'middle',
       marginRight: 4
@@ -8720,9 +9035,12 @@ const ResourceEditor = ({
       marginBottom: 5,
       letterSpacing: 0.4
     }
-  }, /*#__PURE__*/React.createElement(Gem, {
-    size: 11,
+  }, /*#__PURE__*/React.createElement("img", {
+    src: KP_MITHRIL,
+    alt: "",
     style: {
+      height: 14,
+      width: 'auto',
       display: 'inline',
       verticalAlign: 'middle',
       marginRight: 4
@@ -12054,7 +12372,7 @@ const Footer = ({
       justifyContent: 'center',
       gap: 7
     }
-  }, "\u2139\uFE0F ", t('footer.howItWorks')), /*#__PURE__*/React.createElement("button", {
+  }, "\u2139\uFE0F ", t('footer.howItWorks')), onFeedback && /*#__PURE__*/React.createElement("button", {
     onClick: onFeedback,
     className: "kp-card",
     style: {
@@ -12391,7 +12709,7 @@ const SyncModal = ({
     }
   }, tr('sync.close'))));
 };
-export default function App() {
+function App() {
   const [state, setState] = useState(null);
   const [view, setView] = useState('path'); // 'path' | 'alliance' top-level tab
   const [activeAccount, setActiveAccount] = useState('main'); // 'main' | 'second'
@@ -12408,7 +12726,8 @@ export default function App() {
       return '';
     }
   });
-  const [editingPiece, setEditingPiece] = useState(null); // { troop, slot, piece }
+  const [editingPiece, setEditingPiece] = useState(null);
+  const [setupDismissed, setSetupDismissed] = useState(false); // { troop, slot, piece }
   const [editingResources, setEditingResources] = useState(false);
   const [pickingTroopFor, setPickingTroopFor] = useState(null); // troop name when picker is open
   const [showFeedback, setShowFeedback] = useState(false);
@@ -12427,8 +12746,20 @@ export default function App() {
   }, [state]);
   // App is dark-only — the gold-on-dark theme is the identity.
   const theme = 'dark';
+  // Embed mode: when the Companion iframes this tool (?embed=1 or window.__KP_EMBED),
+  // hide this tool's own header / language picker / footer so it blends into the Companion chrome.
+  const EMBED = (() => {
+    try {
+      if (typeof window !== 'undefined' && window.__KP_EMBED) return true;
+      return new URLSearchParams(window.location.search).get('embed') === '1';
+    } catch {
+      return false;
+    }
+  })();
   const [language, setLanguage] = useState(() => {
     try {
+      const forced = typeof window !== 'undefined' && window.__KP_LANG || new URLSearchParams(window.location.search).get('lang');
+      if (forced) return forced;
       return localStorage.getItem('kingshot-path-lang') || 'en';
     } catch {
       return 'en';
@@ -12560,6 +12891,7 @@ export default function App() {
     setState(prev => {
       const next = JSON.parse(JSON.stringify(prev));
       if (newPiece == null) delete next.gear[gearKey(troop, slot)];else next.gear[gearKey(troop, slot)] = newPiece;
+      next.gearUpdatedAt = Date.now();
       return next;
     });
   };
@@ -12703,8 +13035,8 @@ export default function App() {
       background: theme === 'light' ? 'radial-gradient(ellipse at top, #f5e9d0 0%, #e8d4a0 50%, #d4b873 100%)' : 'radial-gradient(ellipse at top, #0c1626 0%, #081020 50%, #05080f 100%)',
       color: 'var(--kp-text)',
       fontFamily: 'Inter, sans-serif',
-      padding: '20px 14px',
-      paddingBottom: 60,
+      padding: EMBED ? '8px 12px' : '20px 14px',
+      paddingBottom: EMBED ? 20 : 60,
       transition: 'background 0.4s, color 0.4s'
     }
   }, /*#__PURE__*/React.createElement("style", null, `
@@ -12759,7 +13091,7 @@ export default function App() {
       maxWidth: 920,
       margin: '0 auto'
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  }, !EMBED && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       justifyContent: 'flex-end',
@@ -12848,7 +13180,7 @@ export default function App() {
       alignItems: 'center',
       gap: 5
     }
-  }, "\u2139\uFE0F ", t('footer.howItWorks'))), (() => {
+  }, "\u2139\uFE0F ", t('footer.howItWorks')))), (() => {
     const activeTab = view === 'alliance' ? 'alliance' : activeAccount;
     const tabs = [{
       id: 'main',
@@ -12858,11 +13190,7 @@ export default function App() {
       id: 'second',
       label: t('tab.second'),
       Icon: Copy
-    }, ...(ALLIANCE_DB_URL ? [{
-      id: 'alliance',
-      label: t('tab.alliance'),
-      Icon: Sword
-    }] : [])];
+    }];
     return /*#__PURE__*/React.createElement("div", {
       style: {
         display: 'flex',
@@ -12905,7 +13233,440 @@ export default function App() {
     }, /*#__PURE__*/React.createElement(Icon, {
       size: 14
     }), " ", label)));
-  })(), view === 'path' && /*#__PURE__*/React.createElement(React.Fragment, null, (() => {
+  })(), view === 'path' && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ResourcePills, {
+    resources: state.resources,
+    onEdit: () => setEditingResources(true),
+    t: t
+  }), /*#__PURE__*/React.createElement(HeroSelector, {
+    t: t,
+    heroes: state.heroes,
+    customImages: state.heroImages || {},
+    onPickTroop: troop => setPickingTroopFor(troop)
+  }), (() => {
+    const gc = TROOPS.reduce((a, tr) => a + SLOTS.filter(sl => {
+      const d = state.gear[gearKey(tr, sl)];
+      return d && ((d.level || 0) > 0 || (d.mastery || 0) > 0);
+    }).length, 0);
+    const pct = Math.round(gc / 12 * 100);
+    const stale = !state.gearUpdatedAt || Date.now() - state.gearUpdatedAt > 7 * 24 * 3600 * 1000;
+    return /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginTop: 12
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        fontSize: 11,
+        color: 'var(--kp-text-dim)',
+        marginBottom: 4
+      }
+    }, /*#__PURE__*/React.createElement("span", null, gc, " of 12 pieces set"), /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: 'var(--kp-text-gold)',
+        fontWeight: 700
+      }
+    }, pct, "%")), /*#__PURE__*/React.createElement("div", {
+      style: {
+        height: 6,
+        borderRadius: 99,
+        background: 'rgba(255,255,255,0.08)',
+        overflow: 'hidden',
+        marginBottom: gc === 0 || stale ? 10 : 0
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        height: '100%',
+        width: pct + '%',
+        background: 'linear-gradient(90deg,#c9a961,#e0b96a)',
+        transition: 'width 0.25s'
+      }
+    })), (gc === 0 || stale) && /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 10,
+        flexWrap: 'wrap',
+        background: 'rgba(201,169,97,0.1)',
+        border: '1px solid var(--kp-text-gold)',
+        borderRadius: 11,
+        padding: '11px 14px'
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 13,
+        color: 'var(--kp-text)',
+        flex: 1,
+        minWidth: 160
+      }
+    }, gc === 0 ? 'Add your gear to unlock your plan.' : 'Keep your gear current so your plan stays accurate.'), /*#__PURE__*/React.createElement("button", {
+      onClick: () => {
+        const el = document.getElementById('kp-gear-edit');
+        if (el) el.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      },
+      style: {
+        padding: '8px 14px',
+        borderRadius: 9,
+        border: 'none',
+        background: 'linear-gradient(135deg,#c9a961,#e0b96a)',
+        color: '#1a1208',
+        fontWeight: 800,
+        fontSize: 13,
+        cursor: 'pointer',
+        whiteSpace: 'nowrap'
+      }
+    }, gc === 0 ? 'Set up gear' : 'Update now')));
+  })(), (() => {
+    const rate = Math.max(1, parseInt(state.hammersPerMonth, 10) || 800);
+    const saved = Math.max(0, parseInt(state.resources && state.resources.hammers, 10) || 0);
+    let ns = null;
+    for (const ph of activePath) {
+      if (ph.isChoose || ph.isStop || !ph.actions) continue;
+      for (const act of ph.actions) {
+        const an = analyzeAction(act, state.gear);
+        if (!an.done) {
+          ns = {
+            act,
+            an
+          };
+          break;
+        }
+      }
+      if (ns) break;
+    }
+    const inputStyle = {
+      width: '100%',
+      marginTop: 3,
+      padding: '7px 9px',
+      borderRadius: 8,
+      border: '1px solid rgba(255,255,255,0.14)',
+      background: 'rgba(0,0,0,0.25)',
+      color: 'var(--kp-text)',
+      fontSize: 14,
+      fontWeight: 700,
+      textAlign: 'center'
+    };
+    const inc = /*#__PURE__*/React.createElement("div", {
+      style: {
+        background: 'var(--kp-surface-2)',
+        border: '1px solid rgba(201,169,97,0.25)',
+        borderRadius: 11,
+        padding: '11px 13px',
+        marginTop: 12,
+        marginBottom: 10
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 10,
+        fontWeight: 800,
+        letterSpacing: 0.5,
+        color: 'var(--kp-text-gold)',
+        textTransform: 'uppercase',
+        marginBottom: 8,
+        display: 'flex',
+        alignItems: 'center',
+        gap: 5
+      }
+    }, /*#__PURE__*/React.createElement("img", {
+      src: FORGE_HAMMER,
+      style: {
+        height: 15,
+        width: 15
+      }
+    }), " My Forgehammer income"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        gap: 10,
+        flexWrap: 'wrap'
+      }
+    }, /*#__PURE__*/React.createElement("label", {
+      style: {
+        flex: 1,
+        minWidth: 160,
+        fontSize: 10,
+        color: 'var(--kp-text-dim)'
+      }
+    }, "Forgehammers earned per month", /*#__PURE__*/React.createElement("input", {
+      type: "text",
+      inputMode: "numeric",
+      value: state.hammersPerMonth ?? 800,
+      onChange: e => setState(p => ({
+        ...p,
+        hammersPerMonth: e.target.value.replace(/[^0-9]/g, '')
+      })),
+      style: inputStyle
+    }))));
+    if (!ns) return /*#__PURE__*/React.createElement("div", null, inc);
+    const {
+      act,
+      an
+    } = ns;
+    const heroName = state.heroes && state.heroes[act.troop];
+    const hp = heroName && HERO_PORTRAITS[heroName];
+    const g = an.gap || {};
+    const isAscend = act.type === 'ascend' || g.needsAscension;
+    const tColor = TROOP_COLOR[act.troop] || 'var(--kp-text-gold)';
+    const label = isAscend ? 'Ascend ' + SLOT_LABEL[act.slot] + ' to Red' : SLOT_LABEL[act.slot] + ' \u2192 ' + (RARITY_WORD[act.rarity] || act.rarity) + ' L' + act.level;
+    const cost = getTotalCost(an);
+    const hammersNeed = cost.hammers || 0;
+    const short = Math.max(0, hammersNeed - saved);
+    const days = hammersNeed ? Math.ceil(short / (rate / 30)) : 0;
+    return /*#__PURE__*/React.createElement("div", null, inc, /*#__PURE__*/React.createElement("div", {
+      style: {
+        background: 'linear-gradient(160deg,rgba(28,42,66,0.97),rgba(16,26,42,0.98))',
+        border: '1px solid var(--kp-text-gold)',
+        borderRadius: 14,
+        padding: 16,
+        boxShadow: '0 6px 22px rgba(0,0,0,0.45)',
+        marginBottom: 12
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 11,
+        letterSpacing: 1,
+        color: 'var(--kp-text-gold)',
+        fontWeight: 800,
+        textTransform: 'uppercase',
+        marginBottom: 9
+      }
+    }, '\u26A1', " Your next step"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 12
+      }
+    }, hp ? /*#__PURE__*/React.createElement("img", {
+      src: hp,
+      alt: heroName,
+      style: {
+        width: 46,
+        height: 46,
+        borderRadius: '50%',
+        border: '2px solid ' + tColor,
+        objectFit: 'cover'
+      }
+    }) : /*#__PURE__*/React.createElement("div", {
+      style: {
+        width: 46,
+        height: 46,
+        borderRadius: '50%',
+        border: '2px solid ' + tColor,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: tColor,
+        fontWeight: 800
+      }
+    }, (heroName || TROOP_LABEL[act.troop]).charAt(0)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: 'Cinzel, serif',
+        fontSize: 17,
+        fontWeight: 800,
+        color: '#fff'
+      }
+    }, label), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 12,
+        color: tColor,
+        marginTop: 2
+      }
+    }, heroName || TROOP_LABEL[act.troop]))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        margin: '11px 0',
+        fontSize: 12,
+        color: 'var(--kp-text-dim)'
+      }
+    }, /*#__PURE__*/React.createElement("span", null, "Needs:", cost.hammers ? /*#__PURE__*/React.createElement(React.Fragment, null, " ", /*#__PURE__*/React.createElement("img", {
+      src: FORGE_HAMMER,
+      style: {
+        height: 15,
+        width: 15,
+        verticalAlign: -3
+      }
+    }), " ", /*#__PURE__*/React.createElement("b", {
+      style: {
+        color: 'var(--kp-text)'
+      }
+    }, cost.hammers)) : null, cost.mg ? /*#__PURE__*/React.createElement(React.Fragment, null, " ", '\u00b7', " ", /*#__PURE__*/React.createElement("b", {
+      style: {
+        color: 'var(--kp-text)'
+      }
+    }, cost.mg), " Mythic") : null, cost.xp ? /*#__PURE__*/React.createElement(React.Fragment, null, " ", '\u00b7', " ", /*#__PURE__*/React.createElement("b", {
+      style: {
+        color: 'var(--kp-text)'
+      }
+    }, fmtNum(cost.xp)), " XP") : null, cost.mithril ? /*#__PURE__*/React.createElement(React.Fragment, null, " ", '\u00b7', " ", /*#__PURE__*/React.createElement("b", {
+      style: {
+        color: 'var(--kp-text)'
+      }
+    }, cost.mithril), " Mithril") : null, isAscend ? /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: 'var(--kp-text-faint)'
+      }
+    }, " ", '\u2192', " ascend to Red") : null)), hammersNeed > 0 && /*#__PURE__*/React.createElement("div", {
+      style: {
+        background: 'var(--kp-surface-2)',
+        borderRadius: 9,
+        padding: '9px 11px',
+        fontSize: 12,
+        color: 'var(--kp-text-dim)',
+        marginBottom: 11,
+        lineHeight: 1.55
+      }
+    }, short <= 0 ? /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: '#22c55e',
+        fontWeight: 700
+      }
+    }, '\u2713', " You have enough Forgehammers now!") : /*#__PURE__*/React.createElement("span", null, "You have ", /*#__PURE__*/React.createElement("b", {
+      style: {
+        color: 'var(--kp-text)'
+      }
+    }, saved), " ", /*#__PURE__*/React.createElement("img", {
+      src: FORGE_HAMMER,
+      style: {
+        height: 14,
+        width: 14,
+        verticalAlign: -3
+      }
+    }), " ", '\u2014', " ", /*#__PURE__*/React.createElement("b", {
+      style: {
+        color: 'var(--kp-text)'
+      }
+    }, short, " short"), ", about ", /*#__PURE__*/React.createElement("b", {
+      style: {
+        color: 'var(--kp-text)'
+      }
+    }, days, " days"), " at your rate.")), /*#__PURE__*/React.createElement("button", {
+      onClick: () => handleMarkDone(an),
+      style: {
+        width: '100%',
+        padding: 11,
+        border: 'none',
+        borderRadius: 10,
+        background: 'linear-gradient(135deg,#22c55e,#15803d)',
+        color: '#fff',
+        fontWeight: 800,
+        fontSize: 14,
+        fontFamily: 'Cinzel, serif',
+        cursor: 'pointer'
+      }
+    }, '\u2713', " I did this")));
+  })(), /*#__PURE__*/React.createElement("button", {
+    onClick: () => setShowGear(s => !s),
+    className: "kp-card",
+    style: {
+      width: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10,
+      padding: '13px 15px',
+      borderRadius: 11,
+      marginBottom: showGear ? 10 : 18,
+      background: 'linear-gradient(135deg, rgba(201,169,97,0.22), rgba(26,38,58,0.92))',
+      border: '1.5px solid rgba(201,169,97,0.55)',
+      boxShadow: '0 0 18px rgba(201,169,97,0.18), inset 0 1px 0 rgba(255,255,255,0.08)',
+      color: 'var(--kp-text-gold)',
+      fontFamily: 'Cinzel, serif',
+      fontSize: 14,
+      fontWeight: 800,
+      cursor: 'pointer',
+      letterSpacing: 0.5
+    }
+  }, /*#__PURE__*/React.createElement(Shield, {
+    size: 17,
+    color: "#fbbf24"
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      flex: 1,
+      textAlign: 'left'
+    }
+  }, t('section.gearDetails')), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 24,
+      height: 24,
+      borderRadius: '50%',
+      background: 'rgba(251,191,36,0.18)',
+      border: '1px solid rgba(251,191,36,0.5)',
+      color: '#fbbf24',
+      flexShrink: 0
+    }
+  }, showGear ? /*#__PURE__*/React.createElement(ChevronDown, {
+    size: 15
+  }) : /*#__PURE__*/React.createElement(ChevronRight, {
+    size: 15
+  }))), showGear && /*#__PURE__*/React.createElement("div", {
+    id: "kp-gear-edit",
+    className: "heroes-grid",
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr',
+      gap: 10,
+      marginBottom: 18
+    }
+  }, TROOPS.map(t2 => /*#__PURE__*/React.createElement(HeroBoard, {
+    t: t,
+    key: t2,
+    troop: t2,
+    heroName: state.heroes[t2],
+    heroImage: state.heroes[t2] ? state.heroImages?.[state.heroes[t2]] : null,
+    gear: state.gear,
+    onEdit: (troop, slot) => setEditingPiece({
+      troop,
+      slot,
+      piece: state.gear[gearKey(troop, slot)] || null
+    }),
+    onBulkRarity: (troop, rarity) => setState(prev => {
+      const gear = {
+        ...prev.gear
+      };
+      SLOTS.forEach(slot => {
+        const k = gearKey(troop, slot);
+        if (gear[k]) gear[k] = {
+          ...gear[k],
+          rarity
+        };
+      });
+      return {
+        ...prev,
+        gear
+      };
+    }),
+    onSetRarity: (troop, slot, rarity) => setState(prev => {
+      const gear = {
+        ...prev.gear
+      };
+      const k = gearKey(troop, slot);
+      if (gear[k]) gear[k] = {
+        ...gear[k],
+        rarity
+      };
+      return {
+        ...prev,
+        gear
+      };
+    }),
+    onSetLevel: (troop, slot, level) => setState(prev => {
+      const gear = {
+        ...prev.gear
+      };
+      const k = gearKey(troop, slot);
+      if (gear[k]) gear[k] = {
+        ...gear[k],
+        level
+      };
+      return {
+        ...prev,
+        gear
+      };
+    })
+  }))), (() => {
     const jp = pathProgress(state.gear, SHAKES_PATH);
     const red = gearStats(state.gear).red;
     return /*#__PURE__*/React.createElement("div", {
@@ -12979,7 +13740,7 @@ export default function App() {
     }))));
   })(), (() => {
     const power = gearScore(state.gear);
-    const MAX = TROOPS.length * SLOTS.length * ((RARITY_RANK.red || 6) * 1000 + (LEVEL_CAP.red || 100) * 5 + MASTERY_MAX * 25);
+    const MAX = TROOPS.length * SLOTS.length * (RARITY_WEIGHT.red || 5000) * (1 + 0.1 * MASTERY_MAX);
     const pct = Math.min(100, Math.round(power / MAX * 100));
     return /*#__PURE__*/React.createElement("div", {
       style: {
@@ -13035,131 +13796,12 @@ export default function App() {
         lineHeight: 1.4
       }
     }, t('progress.powerHint')));
-  })(), /*#__PURE__*/React.createElement(ResourcePills, {
-    resources: state.resources,
-    onEdit: () => setEditingResources(true),
-    t: t
-  }), /*#__PURE__*/React.createElement(PhaseOverview, {
+  })(), /*#__PURE__*/React.createElement(PhaseOverview, {
     currentPhase: phase,
     gear: state.gear,
     path: activePath,
     t: t
-  }), /*#__PURE__*/React.createElement(HeroSelector, {
-    t: t,
-    heroes: state.heroes,
-    customImages: state.heroImages || {},
-    onPickTroop: troop => setPickingTroopFor(troop)
-  }), /*#__PURE__*/React.createElement("button", {
-    onClick: () => setShowGear(s => !s),
-    className: "kp-card",
-    style: {
-      width: '100%',
-      display: 'flex',
-      alignItems: 'center',
-      gap: 10,
-      padding: '13px 15px',
-      borderRadius: 11,
-      marginBottom: showGear ? 10 : 18,
-      background: 'linear-gradient(135deg, rgba(201,169,97,0.22), rgba(26,38,58,0.92))',
-      border: '1.5px solid rgba(201,169,97,0.55)',
-      boxShadow: '0 0 18px rgba(201,169,97,0.18), inset 0 1px 0 rgba(255,255,255,0.08)',
-      color: 'var(--kp-text-gold)',
-      fontFamily: 'Cinzel, serif',
-      fontSize: 14,
-      fontWeight: 800,
-      cursor: 'pointer',
-      letterSpacing: 0.5
-    }
-  }, /*#__PURE__*/React.createElement(Shield, {
-    size: 17,
-    color: "#fbbf24"
-  }), /*#__PURE__*/React.createElement("span", {
-    style: {
-      flex: 1,
-      textAlign: 'left'
-    }
-  }, t('section.gearDetails')), /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: 'inline-flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      width: 24,
-      height: 24,
-      borderRadius: '50%',
-      background: 'rgba(251,191,36,0.18)',
-      border: '1px solid rgba(251,191,36,0.5)',
-      color: '#fbbf24',
-      flexShrink: 0
-    }
-  }, showGear ? /*#__PURE__*/React.createElement(ChevronDown, {
-    size: 15
-  }) : /*#__PURE__*/React.createElement(ChevronRight, {
-    size: 15
-  }))), showGear && /*#__PURE__*/React.createElement("div", {
-    className: "heroes-grid",
-    style: {
-      display: 'grid',
-      gridTemplateColumns: '1fr',
-      gap: 10,
-      marginBottom: 18
-    }
-  }, TROOPS.map(t2 => /*#__PURE__*/React.createElement(HeroBoard, {
-    t: t,
-    key: t2,
-    troop: t2,
-    heroName: state.heroes[t2],
-    heroImage: state.heroes[t2] ? state.heroImages?.[state.heroes[t2]] : null,
-    gear: state.gear,
-    onEdit: (troop, slot) => setEditingPiece({
-      troop,
-      slot,
-      piece: state.gear[gearKey(troop, slot)] || null
-    }),
-    onBulkRarity: (troop, rarity) => setState(prev => {
-      const gear = {
-        ...prev.gear
-      };
-      SLOTS.forEach(slot => {
-        const k = gearKey(troop, slot);
-        if (gear[k]) gear[k] = {
-          ...gear[k],
-          rarity
-        };
-      });
-      return {
-        ...prev,
-        gear
-      };
-    }),
-    onSetRarity: (troop, slot, rarity) => setState(prev => {
-      const gear = {
-        ...prev.gear
-      };
-      const k = gearKey(troop, slot);
-      if (gear[k]) gear[k] = {
-        ...gear[k],
-        rarity
-      };
-      return {
-        ...prev,
-        gear
-      };
-    }),
-    onSetLevel: (troop, slot, level) => setState(prev => {
-      const gear = {
-        ...prev.gear
-      };
-      const k = gearKey(troop, slot);
-      if (gear[k]) gear[k] = {
-        ...gear[k],
-        level
-      };
-      return {
-        ...prev,
-        gear
-      };
-    })
-  }))), hasAnyGear && /*#__PURE__*/React.createElement("div", {
+  }), hasAnyGear && /*#__PURE__*/React.createElement("div", {
     style: {
       background: phase.isStop ? 'linear-gradient(135deg, rgba(168,85,247,0.15), rgba(10,18,32,0.7))' : 'linear-gradient(135deg, rgba(251,191,36,0.13), rgba(10,18,32,0.7))',
       border: phase.isStop ? '1.5px solid rgba(168,85,247,0.5)' : '1.5px solid rgba(251,191,36,0.5)',
@@ -13612,11 +14254,6 @@ export default function App() {
     active: state.specialization,
     onChoose: setSpecialization,
     t: t
-  }), /*#__PURE__*/React.createElement(CommentsSection, {
-    t: t
-  }), /*#__PURE__*/React.createElement(AllianceWidget, {
-    onJoin: () => setShowAlliance(true),
-    t: t
   })), view === 'alliance' && ALLIANCE_DB_URL && /*#__PURE__*/React.createElement(React.Fragment, null, !state.allianceSetup ? /*#__PURE__*/React.createElement(AllianceSetup, {
     t: t,
     invite: invite,
@@ -13999,15 +14636,12 @@ export default function App() {
     t: t,
     code: state.allianceCode,
     isAdmin: false
-  })))), /*#__PURE__*/React.createElement(Footer, {
-    onFeedback: () => setShowFeedback(true),
-    onHowItWorks: () => setShowGateManual(true),
-    onSync: () => setShowSync(true),
+  })))), !EMBED && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Footer, {
     t: t
   }), /*#__PURE__*/React.createElement(VisitCounter, {
     visits: visits,
     t: t
-  }), /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/React.createElement("div", {
     style: {
       textAlign: 'center',
       marginTop: 14
@@ -14064,7 +14698,15 @@ export default function App() {
       setPickingTroopFor(null);
     },
     onClose: () => setPickingTroopFor(null)
-  }), (!state.allianceSetup && !state.gateSeen || showGateManual) && ALLIANCE_DB_URL && /*#__PURE__*/React.createElement(WelcomeGate, {
+  }), state && !setupDismissed && (!state.gear || Object.keys(state.gear).length === 0) && !(!state.allianceSetup && !state.gateSeen && ALLIANCE_DB_URL) && /*#__PURE__*/React.createElement(SetupScreen, {
+    state: state,
+    onPickHero: () => {
+      const m = TROOPS.find(tr => !(state.heroes && state.heroes[tr]));
+      setPickingTroopFor(m || 'infantry');
+    },
+    onAddResources: () => setEditingResources(true),
+    onStart: () => setSetupDismissed(true)
+  }), false && /*#__PURE__*/React.createElement(WelcomeGate, {
     t: t,
     invite: invite,
     onClose: () => {
@@ -14130,12 +14772,10 @@ export default function App() {
     t: t
   }));
 }
-import { createRoot } from 'react-dom/client';
-const __el = document.getElementById('root');
-if (__el) {
-  __el.innerHTML = '';
-  createRoot(__el).render(/*#__PURE__*/React.createElement(App));
-}
+import { createRoot } from "react-dom/client";
+const __el=document.getElementById("root");
+if(__el){__el.innerHTML="";createRoot(__el).render(React.createElement(App));}
+
 </script>
 <script>
 (function () {
