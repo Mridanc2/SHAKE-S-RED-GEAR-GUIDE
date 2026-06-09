@@ -56,7 +56,7 @@ import { Upload, Check, X, AlertTriangle, ChevronRight, ChevronDown, Star, Hamme
 const BRAND_TITLE = "GEAR COMMAND CENTER";
 const GUIDE_AUTHOR = 'Shakes'; // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2'; // built this app
-const APP_VERSION = 'v9.17'; // bump this on every new build so you can confirm the deploy is live
+const APP_VERSION = 'v9.18'; // bump this on every new build so you can confirm the deploy is live
 const TROOPS = ['infantry', 'archer', 'cavalry'];
 const TROOP_LABEL = {
   infantry: 'Infantry',
@@ -13417,11 +13417,11 @@ function App() {
     const days = hammersNeed ? Math.ceil(short / (rate / 30)) : 0;
     return /*#__PURE__*/React.createElement("div", null, inc, /*#__PURE__*/React.createElement("div", {
       style: {
-        background: 'linear-gradient(160deg,rgba(18,28,50,0.97),rgba(10,17,32,0.98))',
-        border: '1px solid var(--kp-text-gold)',
+        background: 'linear-gradient(160deg,#2c2613,#15223a)',
+        border: '1.5px solid var(--kp-text-gold)',
         borderRadius: 14,
         padding: 16,
-        boxShadow: '0 6px 22px rgba(0,0,0,0.45)',
+        boxShadow: '0 0 22px rgba(232,194,90,0.14)',
         marginBottom: 12
       }
     }, /*#__PURE__*/React.createElement("div", {
@@ -13548,8 +13548,8 @@ function App() {
         padding: 11,
         border: 'none',
         borderRadius: 10,
-        background: 'linear-gradient(135deg,#22c55e,#15803d)',
-        color: '#fff',
+        background: 'linear-gradient(180deg,#e8c25a,#c39a3a)',
+        color: '#1a1205',
         fontWeight: 800,
         fontSize: 14,
         fontFamily: 'Cinzel, serif',
