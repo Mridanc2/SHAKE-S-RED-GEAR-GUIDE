@@ -56,7 +56,7 @@ import { Upload, Check, X, AlertTriangle, ChevronRight, ChevronDown, Star, Hamme
 const BRAND_TITLE = "GEAR COMMAND CENTER";
 const GUIDE_AUTHOR = 'Shakes'; // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2'; // built this app
-const APP_VERSION = 'v9.26'; // bump this on every new build so you can confirm the deploy is live
+const APP_VERSION = 'v9.27'; // bump this on every new build so you can confirm the deploy is live
 const TROOPS = ['infantry', 'archer', 'cavalry'];
 const TROOP_LABEL = {
   infantry: 'Infantry',
@@ -12696,6 +12696,31 @@ function App() {
       window.removeEventListener('resize', post);
     };
   }, []);
+  useEffect(() => {
+    if (!EMBED || !editingResources) return;
+    const tmr = setTimeout(() => {
+      const el = document.getElementById('kp-res-edit');
+      if (!el) return;
+      try {
+        const yInDoc = el.getBoundingClientRect().top + window.scrollY;
+        const pw = window.parent;
+        const frame = pw.document.querySelector('iframe[title="Gear"]');
+        if (frame && pw.scrollTo) {
+          const top = frame.getBoundingClientRect().top + pw.scrollY + yInDoc - 70;
+          pw.scrollTo({
+            top: top,
+            behavior: 'smooth'
+          });
+          return;
+        }
+      } catch (e) {}
+      el.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }, 90);
+    return () => clearTimeout(tmr);
+  }, [editingResources]);
   const [visits, setVisits] = useState(null);
 
   // Persist language
@@ -13170,16 +13195,7 @@ function App() {
     }), " ", label)));
   })(), view === 'path' && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ResourcePills, {
     resources: state.resources,
-    onEdit: () => {
-      setEditingResources(true);
-      if (EMBED) setTimeout(() => {
-        const el = document.getElementById('kp-res-edit');
-        if (el) el.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }, 60);
-    },
+    onEdit: () => setEditingResources(true),
     t: t
   }), EMBED && editingResources && /*#__PURE__*/React.createElement("div", {
     id: "kp-res-edit"
