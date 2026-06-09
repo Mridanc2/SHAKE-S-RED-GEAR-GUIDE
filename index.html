@@ -56,7 +56,7 @@ import { Upload, Check, X, AlertTriangle, ChevronRight, ChevronDown, Star, Hamme
 const BRAND_TITLE = "GEAR COMMAND CENTER";
 const GUIDE_AUTHOR = 'Shakes'; // created the strategy / guide
 const APP_AUTHOR = 'Mridanc2'; // built this app
-const APP_VERSION = 'v9.15'; // bump this on every new build so you can confirm the deploy is live
+const APP_VERSION = 'v9.16'; // bump this on every new build so you can confirm the deploy is live
 const TROOPS = ['infantry', 'archer', 'cavalry'];
 const TROOP_LABEL = {
   infantry: 'Infantry',
@@ -13035,6 +13035,7 @@ function App() {
       background: theme === 'light' ? 'radial-gradient(ellipse at top, #f5e9d0 0%, #e8d4a0 50%, #d4b873 100%)' : 'radial-gradient(ellipse at top, #0c1626 0%, #081020 50%, #05080f 100%)',
       color: 'var(--kp-text)',
       fontFamily: 'Inter, sans-serif',
+      maxWidth: EMBED ? 'none' : undefined,
       padding: EMBED ? '8px 12px' : '20px 14px',
       paddingBottom: EMBED ? 20 : 60,
       transition: 'background 0.4s, color 0.4s'
