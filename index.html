@@ -7512,7 +7512,7 @@
   var BRAND_TITLE = "GEAR COMMAND CENTER";
   var GUIDE_AUTHOR = "Shakes";
   var APP_AUTHOR = "Mridanc2";
-  var APP_VERSION = "v9.38";
+  var APP_VERSION = "v9.39";
   var TROOPS = ["infantry", "archer", "cavalry"];
   var TROOP_LABEL = { infantry: "Infantry", archer: "Archer", cavalry: "Cavalry" };
   var TROOP_CODE = { infantry: "I", archer: "A", cavalry: "C" };
@@ -11599,13 +11599,13 @@ Admin: add the "${FEEDBACK_LABEL}" label to publish this in the app.`;
           const pw = window.parent;
           const frame = pw.document.querySelector('iframe[title="Gear"]');
           if (frame && pw.scrollTo) {
-            const top = frame.getBoundingClientRect().top + pw.scrollY + yInDoc - 70;
+            const top = frame.getBoundingClientRect().top + pw.scrollY + yInDoc - Math.max(140, (pw.innerHeight || 600) * 0.35);
             pw.scrollTo({ top, behavior: "smooth" });
             return;
           }
         } catch (e) {
         }
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
       }, 90);
       return () => clearTimeout(tmr);
     }, [editingPiece]);
@@ -11954,19 +11954,6 @@ Admin: add the "${FEEDBACK_LABEL}" label to publish this in the app.`;
         },
         onClose: () => setEditingResources(false)
       }
-    )), EMBED && editingPiece && /* @__PURE__ */ import_react3.default.createElement("div", { id: "kp-piece-edit" }, /* @__PURE__ */ import_react3.default.createElement(
-      PieceEditor,
-      {
-        inline: true,
-        piece: editingPiece.piece,
-        troop: editingPiece.troop,
-        slot: editingPiece.slot,
-        onSave: (p) => {
-          updatePiece(editingPiece.troop, editingPiece.slot, p);
-          setEditingPiece(null);
-        },
-        onClose: () => setEditingPiece(null)
-      }
     )), /* @__PURE__ */ import_react3.default.createElement(
       HeroSelector,
       {
@@ -12048,7 +12035,7 @@ Admin: add the "${FEEDBACK_LABEL}" label to publish this in the app.`;
       border: "1px solid rgba(251,191,36,0.5)",
       color: "#fbbf24",
       flexShrink: 0
-    } }, showGear ? /* @__PURE__ */ import_react3.default.createElement(ChevronDown, { size: 15 }) : /* @__PURE__ */ import_react3.default.createElement(ChevronRight, { size: 15 }))), showGear && /* @__PURE__ */ import_react3.default.createElement("div", { id: "kp-gear-edit", className: "heroes-grid", style: {
+    } }, showGear ? /* @__PURE__ */ import_react3.default.createElement(ChevronDown, { size: 15 }) : /* @__PURE__ */ import_react3.default.createElement(ChevronRight, { size: 15 }))), showGear && /* @__PURE__ */ import_react3.default.createElement(import_react3.default.Fragment, null, /* @__PURE__ */ import_react3.default.createElement("div", { id: "kp-gear-edit", className: "heroes-grid", style: {
       display: "grid",
       gridTemplateColumns: "1fr",
       gap: 10,
@@ -12096,6 +12083,19 @@ Admin: add the "${FEEDBACK_LABEL}" label to publish this in the app.`;
           }
           return { ...prev, gear };
         })
+      }
+    ))), EMBED && editingPiece && /* @__PURE__ */ import_react3.default.createElement("div", { id: "kp-piece-edit" }, /* @__PURE__ */ import_react3.default.createElement(
+      PieceEditor,
+      {
+        inline: true,
+        piece: editingPiece.piece,
+        troop: editingPiece.troop,
+        slot: editingPiece.slot,
+        onSave: (p) => {
+          updatePiece(editingPiece.troop, editingPiece.slot, p);
+          setEditingPiece(null);
+        },
+        onClose: () => setEditingPiece(null)
       }
     ))), (() => {
       const jp = pathProgress(state.gear, SHAKES_PATH);
