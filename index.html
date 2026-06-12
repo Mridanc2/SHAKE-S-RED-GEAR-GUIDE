@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<!-- font receiver — honors &font= passed by the Companion (added on live v9.39) -->
+<!-- font receiver — honors &font= passed by the Companion (added on live v9.40) -->
 <style id="kc-embed-font">
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
@@ -7521,7 +7521,7 @@ html[data-kcfont="inter"] *{font-family:"Inter",system-ui,sans-serif!important;}
   var BRAND_TITLE = "GEAR COMMAND CENTER";
   var GUIDE_AUTHOR = "Shakes";
   var APP_AUTHOR = "Mridanc2";
-  var APP_VERSION = "v9.39";
+  var APP_VERSION = "v9.40";
   var TROOPS = ["infantry", "archer", "cavalry"];
   var TROOP_LABEL = { infantry: "Infantry", archer: "Archer", cavalry: "Cavalry" };
   var TROOP_CODE = { infantry: "I", archer: "A", cavalry: "C" };
@@ -12049,11 +12049,10 @@ Admin: add the "${FEEDBACK_LABEL}" label to publish this in the app.`;
       gridTemplateColumns: "1fr",
       gap: 10,
       marginBottom: 18
-    } }, TROOPS.map((t2) => /* @__PURE__ */ import_react3.default.createElement(
+    } }, TROOPS.map((t2) => /* @__PURE__ */ import_react3.default.createElement(import_react3.default.Fragment, { key: t2 }, /* @__PURE__ */ import_react3.default.createElement(
       HeroBoard,
       {
         t,
-        key: t2,
         troop: t2,
         heroName: state.heroes[t2],
         heroImage: state.heroes[t2] ? state.heroImages?.[state.heroes[t2]] : null,
@@ -12093,7 +12092,7 @@ Admin: add the "${FEEDBACK_LABEL}" label to publish this in the app.`;
           return { ...prev, gear };
         })
       }
-    ))), EMBED && editingPiece && /* @__PURE__ */ import_react3.default.createElement("div", { id: "kp-piece-edit" }, /* @__PURE__ */ import_react3.default.createElement(
+    ), EMBED && editingPiece && editingPiece.troop === t2 ? /* @__PURE__ */ import_react3.default.createElement("div", { id: "kp-piece-edit" }, /* @__PURE__ */ import_react3.default.createElement(
       PieceEditor,
       {
         inline: true,
@@ -12106,7 +12105,7 @@ Admin: add the "${FEEDBACK_LABEL}" label to publish this in the app.`;
         },
         onClose: () => setEditingPiece(null)
       }
-    ))), (() => {
+    )) : null)))), (() => {
       const jp = pathProgress(state.gear, SHAKES_PATH);
       const red = gearStats(state.gear).red;
       const power = gearScore(state.gear);
